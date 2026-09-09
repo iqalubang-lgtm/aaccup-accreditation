@@ -1,0 +1,1779 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>BSIT — AACCUP Accreditation System</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;800&family=Share+Tech+Mono&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+        <style>
+            /* ===== BSIT — IT / CYBER DASHBOARD THEME ===== */
+            :root {
+                --tech-bg: #0A0E17;
+                --tech-bg-2: #0D1420;
+                --tech-card: #111927;
+                --tech-card-soft: rgba(17, 25, 39, 0.72);
+                --tech-border: #1A2A3A;
+                --tech-cyan: #00D4FF;
+                --tech-purple: #7B2FBE;
+                --tech-orange: #FF6B35;
+                --tech-green: #00FF88;
+                --tech-pink: #FF2D95;
+                --tech-gold: #FFD700;
+                --tech-text: #E8F0F8;
+                --tech-text-muted: #8899AA;
+                --tech-line: #1E2D3D;
+
+                --radius: 10px;
+                --ease: cubic-bezier(.4, 0, .2, 1);
+
+                --glow-cyan: 0 0 30px rgba(0, 212, 255, .25);
+                --glow-purple: 0 0 30px rgba(123, 47, 190, .25);
+                --glow-orange: 0 0 30px rgba(255, 107, 53, .25);
+                --glow-green: 0 0 30px rgba(0, 255, 136, .25);
+
+                --shadow: 0 2px 10px rgba(0, 0, 0, .45);
+                --shadow-hover: 0 10px 28px rgba(0, 0, 0, .55);
+
+                /* legacy aliases so component rules stay short */
+                --white: #FFFFFF;
+                --paper: var(--tech-bg);
+                --line: var(--tech-border);
+                --ink: var(--tech-text);
+                --ink-soft: var(--tech-text-muted);
+            }
+
+            /* RESET & BASE */
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            html {
+                scroll-behavior: smooth;
+            }
+            body {
+                font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+                background: var(--tech-bg);
+                color: var(--tech-text);
+                min-height: 100vh;
+                display: flex;
+                flex-direction: column;
+                font-size: 18px;
+                line-height: 1.6;
+                position: relative;
+                overflow-x: hidden;
+            }
+            a {
+                color: inherit;
+            }
+            button {
+                font-family: inherit;
+                cursor: pointer;
+            }
+            ::selection {
+                background: rgba(0, 212, 255, .3);
+                color: #fff;
+            }
+
+            /* ===== BACKGROUND: dark gradient + grid + glow blobs + logo watermark ===== */
+            body::before {
+                content: '';
+                position: fixed;
+                inset: 0;
+                z-index: -3;
+                background:
+                    radial-gradient(ellipse 900px 600px at 8% -5%, rgba(0, 212, 255, .10), transparent 60%),
+                    radial-gradient(ellipse 900px 700px at 95% 10%, rgba(123, 47, 190, .12), transparent 60%),
+                    radial-gradient(ellipse 800px 600px at 50% 105%, rgba(255, 107, 53, .06), transparent 60%),
+                    linear-gradient(180deg, var(--tech-bg) 0%, var(--tech-bg-2) 55%, var(--tech-bg) 100%);
+            }
+            body::after {
+                content: '';
+                position: fixed;
+                inset: -50px;
+                z-index: -2;
+                background-image:
+                    linear-gradient(rgba(0, 212, 255, .05) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(0, 212, 255, .05) 1px, transparent 1px);
+                background-size: 46px 46px;
+                animation: gridMove 26s linear infinite;
+                pointer-events: none;
+            }
+            .bg-logo {
+                position: fixed;
+                inset: 0;
+                z-index: -1;
+                background-image: url('images/bsit-logo.png');
+                background-size: contain;
+                background-position: center;
+                background-repeat: no-repeat;
+                opacity: .04;
+                filter: grayscale(1) brightness(2);
+                pointer-events: none;
+            }
+            @keyframes gridMove {
+                from { background-position: 0 0, 0 0; }
+                to { background-position: 46px 46px, 46px 46px; }
+            }
+
+            /* HEADER */
+            header {
+                background: linear-gradient(180deg, #0D1B2A 0%, #0A121D 100%);
+                color: var(--white);
+                padding: 14px 32px;
+                position: sticky;
+                top: 0;
+                z-index: 100;
+                border-bottom: 1px solid var(--tech-border);
+                box-shadow: 0 1px 0 rgba(0, 212, 255, .35), 0 10px 30px rgba(0, 0, 0, .5);
+            }
+            header::after {
+                content: '';
+                position: absolute;
+                left: 0;
+                right: 0;
+                bottom: -1px;
+                height: 1px;
+                background: linear-gradient(90deg, transparent, var(--tech-cyan), var(--tech-purple), transparent);
+                opacity: .9;
+            }
+            .header-container {
+                display: flex;
+                align-items: center;
+                gap: 20px;
+                flex-wrap: wrap;
+                position: relative;
+            }
+            .logo-section {
+                display: flex;
+                align-items: center;
+                gap: 18px;
+                flex: 1;
+            }
+            .logo {
+                height: 68px;
+                width: 68px;
+                border-radius: 50%;
+                background: var(--tech-card);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                overflow: hidden;
+                flex-shrink: 0;
+                border: 1px solid var(--tech-cyan);
+                box-shadow: 0 0 0 3px rgba(0, 212, 255, .08), 0 0 22px rgba(0, 212, 255, .35);
+            }
+            .logo img {
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+                border-radius: 50%;
+            }
+            .title-block {
+                flex: 1;
+            }
+            .title-block h1 {
+                font-family: 'Orbitron', 'Inter', sans-serif;
+                font-size: 1.35rem;
+                font-weight: 700;
+                line-height: 1.25;
+                letter-spacing: .5px;
+                color: var(--tech-text);
+                text-shadow: 0 0 18px rgba(0, 212, 255, .35);
+            }
+            .title-block .sub-header {
+                display: block;
+                font-family: 'Share Tech Mono', monospace;
+                font-size: 1rem;
+                font-weight: 400;
+                color: var(--tech-cyan);
+                opacity: .85;
+                letter-spacing: 2px;
+                margin-top: 2px;
+            }
+
+            /* MAIN */
+            main {
+                flex: 1;
+                max-width: 1400px;
+                margin: 0 auto;
+                padding: 16px 16px 40px;
+                width: 100%;
+                position: relative;
+                z-index: 1;
+            }
+
+            /* ===== PAGE-LOAD ANIMATION ===== */
+            @keyframes glitchIn {
+                0% { opacity: 0; transform: translateY(14px); filter: blur(6px); }
+                60% { opacity: 1; transform: translateY(0); filter: blur(0); }
+                100% { opacity: 1; transform: translateY(0); filter: blur(0); }
+            }
+            #app {
+                animation: glitchIn .45s var(--ease);
+            }
+            .area-grid>*,
+            .param-grid>*,
+            .doc-grid>*,
+            .hierarchy-grid>*,
+            .extra-grid>*,
+            .param-extra-grid>* {
+                animation: glitchIn .4s var(--ease) both;
+            }
+
+            /* BREADCRUMB */
+            .breadcrumb {
+                font-family: 'Share Tech Mono', monospace;
+                font-size: .95rem;
+                color: var(--tech-text-muted);
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+                gap: 4px;
+                padding: 10px 14px;
+                background: var(--tech-card-soft);
+                border: 1px solid var(--tech-border);
+                border-radius: 8px;
+                backdrop-filter: blur(8px);
+                width: fit-content;
+                max-width: 100%;
+            }
+            .breadcrumb a {
+                color: var(--tech-cyan);
+                text-decoration: none;
+                font-weight: 500;
+                padding: 4px 8px;
+                border-radius: 4px;
+                transition: background .2s var(--ease), text-shadow .2s var(--ease);
+            }
+            .breadcrumb a:hover {
+                background: rgba(0, 212, 255, .10);
+                text-shadow: 0 0 10px rgba(0, 212, 255, .7);
+                text-decoration: underline;
+            }
+            .breadcrumb .sep {
+                color: transparent;
+                font-size: 0;
+                width: 14px;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .breadcrumb .sep::before {
+                content: '›';
+                color: var(--tech-purple);
+                font-size: 1.1rem;
+            }
+            .breadcrumb .current {
+                color: var(--tech-text);
+                font-weight: 500;
+                padding: 4px 8px;
+            }
+
+            /* PAGE HEADER */
+            .page-header-row {
+                display: grid;
+                grid-template-columns: auto 1fr 120px;
+                align-items: center;
+                gap: 16px;
+                margin: 22px 0;
+            }
+            .page-header-row h2 {
+                text-align: center;
+                margin: 0;
+                font-family: 'Orbitron', 'Inter', sans-serif;
+                font-size: clamp(1.5rem, 2.8vw, 2.2rem);
+                font-weight: 700;
+                letter-spacing: .3px;
+                color: var(--tech-text);
+                text-shadow: 0 0 24px rgba(0, 212, 255, .25);
+                position: relative;
+                z-index: 1;
+                padding: 0;
+            }
+            .page-header-row .btn-back {
+                justify-self: start;
+                padding: 10px 26px;
+                font-size: 1rem;
+            }
+            .page-header-row .spacer {
+                /* empty */
+            }
+
+            /* ===== GRIDS + ROTATING-BORDER BUTTONS ===== */
+            .area-grid,
+            .param-grid,
+            .doc-grid,
+            .hierarchy-grid,
+            .extra-grid,
+            .param-extra-grid {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 18px;
+                margin-top: 24px;
+            }
+
+            .area-grid>*,
+            .param-grid>*,
+            .doc-grid>*,
+            .hierarchy-grid>*,
+            .extra-grid>*,
+            .param-extra-grid>* {
+                flex: 0 0 calc(25% - 18px);
+                height: 140px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 18px;
+                text-align: center;
+                word-break: break-word;
+                border-radius: var(--radius);
+                background: var(--tech-card-soft);
+                backdrop-filter: blur(10px);
+                border: none;
+                color: var(--tech-text);
+                box-shadow: var(--shadow);
+                transition: transform .25s var(--ease), box-shadow .25s var(--ease);
+                cursor: pointer;
+                font-weight: 500;
+                position: relative;
+                isolation: isolate;
+                font-size: 1.02rem;
+            }
+            /* rotating conic border, shared plumbing */
+            .area-grid>*::before,
+            .param-grid>*::before,
+            .doc-grid>*::before,
+            .hierarchy-grid>*::before,
+            .extra-grid>*::before,
+            .param-extra-grid>*::before,
+            .btn-back::before,
+            .btn-open::before {
+                content: '';
+                position: absolute;
+                inset: -1.5px;
+                border-radius: inherit;
+                z-index: -2;
+                animation: spinBorder 4.5s linear infinite;
+                will-change: transform;
+            }
+            .area-grid>*::after,
+            .param-grid>*::after,
+            .doc-grid>*::after,
+            .hierarchy-grid>*::after,
+            .extra-grid>*::after,
+            .param-extra-grid>*::after,
+            .btn-back::after,
+            .btn-open::after {
+                content: '';
+                position: absolute;
+                inset: 1.5px;
+                background: var(--tech-card);
+                border-radius: calc(var(--radius) - 2px);
+                z-index: -1;
+            }
+            @keyframes spinBorder {
+                from { transform: rotate(0deg); }
+                to { transform: rotate(360deg); }
+            }
+
+            /* per-section border palettes + glow (see spec table) */
+            .area-grid>*::before {
+                background: conic-gradient(from 0deg, var(--tech-cyan), var(--tech-purple), var(--tech-pink), var(--tech-cyan));
+                animation-duration: 4s;
+            }
+            .param-grid>*::before {
+                background: conic-gradient(from 0deg, var(--tech-purple), var(--tech-pink), var(--tech-orange), var(--tech-purple));
+                animation-duration: 5s;
+            }
+            .doc-grid>*::before {
+                background: conic-gradient(from 0deg, var(--tech-green), var(--tech-cyan), #2E86FF, var(--tech-green));
+                animation-duration: 3.5s;
+            }
+            .hierarchy-grid>*::before {
+                background: conic-gradient(from 0deg, var(--tech-cyan), #2E86FF, var(--tech-purple), var(--tech-cyan));
+                animation-duration: 4.2s;
+            }
+            .extra-grid>*::before,
+            .param-extra-grid>*::before {
+                background: conic-gradient(from 0deg, var(--tech-orange), var(--tech-pink), var(--tech-purple), var(--tech-orange));
+                animation-duration: 4.5s;
+            }
+            .btn-back::before {
+                background: conic-gradient(from 0deg, #FFFFFF, #5A6B7A, #FFFFFF);
+                animation-duration: 3s;
+            }
+            .btn-open::before {
+                background: conic-gradient(from 0deg, var(--tech-gold), var(--tech-orange), #E22, var(--tech-gold));
+                animation-duration: 6s;
+            }
+
+            .area-grid>*:hover,
+            .param-grid>*:hover,
+            .doc-grid>*:hover,
+            .hierarchy-grid>*:hover,
+            .extra-grid>*:hover,
+            .param-extra-grid>*:hover {
+                transform: translateY(-3px) scale(1.015);
+                box-shadow: var(--shadow-hover), var(--glow-cyan);
+            }
+            .area-grid>*:hover::before,
+            .param-grid>*:hover::before,
+            .doc-grid>*:hover::before,
+            .hierarchy-grid>*:hover::before,
+            .extra-grid>*:hover::before,
+            .param-extra-grid>*:hover::before {
+                animation-duration: 1.8s;
+                filter: brightness(1.35);
+            }
+            .area-grid>*:active,
+            .param-grid>*:active,
+            .doc-grid>*:active,
+            .hierarchy-grid>*:active,
+            .extra-grid>*:active,
+            .param-extra-grid>*:active {
+                transform: scale(.97) translateY(0);
+                box-shadow: inset 0 3px 10px rgba(0, 0, 0, .5);
+            }
+
+            /* AREA BUTTONS */
+            .area-grid>* {
+                display: flex;
+                align-items: center;
+                gap: 14px;
+                padding: 16px 20px;
+                text-align: left;
+            }
+            .area-grid .num {
+                flex-shrink: 0;
+                width: 38px;
+                height: 38px;
+                border-radius: 8px;
+                background: rgba(0, 212, 255, .08);
+                border: 1px solid var(--tech-cyan);
+                color: var(--tech-cyan);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-family: 'JetBrains Mono', monospace;
+                font-weight: 600;
+                font-size: .9rem;
+                box-shadow: 0 0 14px rgba(0, 212, 255, .35);
+            }
+            .area-grid .label {
+                flex: 1;
+                font-weight: 500;
+                font-size: 1.02rem;
+                display: -webkit-box;
+                -webkit-line-clamp: 3;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                max-height: 3.8em;
+                line-height: 1.3;
+            }
+            .area-grid .arrow {
+                color: var(--tech-cyan);
+                font-size: .9rem;
+                opacity: .8;
+                flex-shrink: 0;
+            }
+
+            /* PARAMETER BUTTONS */
+            .param-grid>* {
+                display: flex;
+                align-items: center;
+                gap: 14px;
+                padding: 16px 20px;
+                text-align: left;
+            }
+            .param-grid .letter {
+                flex-shrink: 0;
+                width: 34px;
+                height: 34px;
+                border-radius: 50%;
+                background: rgba(123, 47, 190, .12);
+                border: 1px solid var(--tech-purple);
+                color: #C9A8F0;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-family: 'JetBrains Mono', monospace;
+                font-weight: 600;
+                font-size: .85rem;
+                box-shadow: 0 0 14px rgba(123, 47, 190, .4);
+            }
+            .param-grid .label {
+                flex: 1;
+                font-weight: 500;
+                font-size: 1.02rem;
+                display: -webkit-box;
+                -webkit-line-clamp: 3;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                max-height: 3.8em;
+                line-height: 1.3;
+            }
+            .param-grid .arrow {
+                color: var(--tech-purple);
+                font-size: .9rem;
+                opacity: .85;
+                flex-shrink: 0;
+            }
+
+            /* DOC CATEGORY */
+            .doc-grid>* {
+                flex-direction: column;
+                padding: 16px 12px;
+            }
+            .doc-grid .icon {
+                font-size: 2.2rem;
+                display: block;
+                margin-bottom: 6px;
+                filter: drop-shadow(0 0 10px rgba(0, 255, 136, .5));
+            }
+            .doc-grid .label {
+                font-weight: 600;
+                font-size: 1.02rem;
+                display: -webkit-box;
+                -webkit-line-clamp: 3;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                max-height: 3.8em;
+                line-height: 1.3;
+            }
+
+            /* HIERARCHY */
+            .hierarchy-grid>* {
+                display: flex;
+                align-items: center;
+                gap: 14px;
+                padding: 14px 20px;
+                text-align: left;
+                font-weight: 500;
+                justify-content: flex-start;
+            }
+            .hierarchy-grid .file-icon {
+                font-size: 1.7rem;
+                flex-shrink: 0;
+            }
+            .hierarchy-grid .file-name {
+                flex: 1;
+                font-weight: 500;
+                word-break: break-word;
+                font-size: 1rem;
+                display: -webkit-box;
+                -webkit-line-clamp: 3;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                max-height: 3.8em;
+                line-height: 1.3;
+            }
+            .hierarchy-grid .arrow {
+                font-size: 1.2rem;
+                opacity: .75;
+                color: var(--tech-cyan);
+                flex-shrink: 0;
+                transition: transform .2s var(--ease);
+            }
+            .hierarchy-grid>*:hover .arrow {
+                transform: translateX(4px);
+            }
+
+            /* BACK BUTTON */
+            .btn-back {
+                background: var(--tech-card-soft);
+                backdrop-filter: blur(10px);
+                border: none;
+                color: var(--tech-text);
+                padding: 12px 30px;
+                border-radius: var(--radius);
+                font-size: 1rem;
+                cursor: pointer;
+                font-weight: 500;
+                transition: transform .25s var(--ease), box-shadow .25s var(--ease);
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                gap: 6px;
+                text-decoration: none;
+                position: relative;
+                isolation: isolate;
+            }
+            .btn-back:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 0 20px rgba(255, 255, 255, .12);
+            }
+            .btn-back:hover::before {
+                animation-duration: 1.5s;
+            }
+            .btn-back:active {
+                transform: scale(.97);
+            }
+
+            /* OPEN BUTTON */
+            .btn-open {
+                padding: 12px 30px;
+                border-radius: var(--radius);
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                gap: 8px;
+                text-decoration: none;
+                font-size: 1rem;
+                font-weight: 600;
+                background: var(--tech-card-soft);
+                backdrop-filter: blur(10px);
+                border: none;
+                color: var(--tech-gold);
+                cursor: pointer;
+                position: relative;
+                isolation: isolate;
+                transition: transform .25s var(--ease), box-shadow .25s var(--ease);
+            }
+            .btn-open:hover {
+                transform: translateY(-3px);
+                box-shadow: var(--glow-orange);
+            }
+            .btn-open:hover::before {
+                animation-duration: 2.5s;
+                filter: brightness(1.3);
+            }
+            .btn-open:active {
+                transform: scale(.97) translateY(0);
+            }
+
+            /* PDF VIEWER */
+            .pdf-container {
+                background: var(--tech-card);
+                border-radius: var(--radius);
+                box-shadow: var(--shadow), 0 0 0 1px var(--tech-border);
+                overflow: hidden;
+                margin: 22px 0 16px;
+                border-top: 2px solid var(--tech-cyan);
+            }
+            .pdf-container iframe {
+                display: block;
+                border: none;
+                width: 100%;
+                min-height: 700px;
+                background: var(--tech-bg-2);
+            }
+            .doc-actions {
+                display: flex;
+                gap: 14px;
+                flex-wrap: wrap;
+                margin-top: 8px;
+            }
+
+            /* EMPTY STATE */
+            .empty-state {
+                background: var(--tech-card-soft);
+                backdrop-filter: blur(10px);
+                border: 1px dashed var(--tech-cyan);
+                border-radius: var(--radius);
+                padding: 60px 30px;
+                text-align: center;
+                margin-top: 10px;
+                box-shadow: var(--shadow);
+            }
+            .empty-state .icon {
+                font-size: 3.4rem;
+                margin-bottom: 16px;
+                filter: drop-shadow(0 0 14px rgba(0, 212, 255, .45));
+            }
+            .empty-state h3 {
+                font-family: 'Orbitron', 'Inter', sans-serif;
+                font-size: 1.3rem;
+                margin-bottom: 10px;
+                color: var(--tech-text);
+            }
+            .empty-state p {
+                color: var(--tech-text-muted);
+                font-size: 1.02rem;
+                margin-bottom: 24px;
+                max-width: 480px;
+                margin-left: auto;
+                margin-right: auto;
+                line-height: 1.6;
+            }
+
+            /* FOOTER */
+            footer {
+                background: #0A121D;
+                color: rgba(232, 240, 248, .85);
+                text-align: center;
+                padding: 28px 32px;
+                font-size: .92rem;
+                margin-top: auto;
+                border-top: 1px solid var(--tech-border);
+                box-shadow: 0 -1px 0 rgba(0, 212, 255, .3);
+                position: relative;
+                z-index: 1;
+            }
+            footer strong {
+                color: var(--tech-cyan);
+            }
+            footer .footer-course {
+                display: block;
+                margin-top: 4px;
+                font-family: 'Share Tech Mono', monospace;
+                font-size: .88rem;
+                color: var(--tech-text-muted);
+            }
+            footer .footer-divider {
+                width: 60px;
+                height: 1px;
+                background: linear-gradient(90deg, transparent, var(--tech-cyan), transparent);
+                margin: 16px auto;
+            }
+            footer .footer-contact {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 20px 40px;
+                margin-top: 10px;
+                font-size: .9rem;
+                font-family: 'JetBrains Mono', monospace;
+            }
+            footer .footer-contact p {
+                margin: 4px 0;
+            }
+            footer .footer-contact .label {
+                opacity: .6;
+                font-weight: 400;
+            }
+            footer .footer-contact .value {
+                font-weight: 600;
+                color: var(--tech-green);
+            }
+
+            /* RESPONSIVE */
+            @media (max-width:1023px) {
+                .area-grid>*,
+                .param-grid>*,
+                .doc-grid>*,
+                .hierarchy-grid>*,
+                .extra-grid>*,
+                .param-extra-grid>* {
+                    flex: 0 0 calc(33.33% - 18px);
+                    height: 130px;
+                }
+            }
+            @media (max-width:767px) {
+                .area-grid>*,
+                .param-grid>*,
+                .doc-grid>*,
+                .hierarchy-grid>*,
+                .extra-grid>*,
+                .param-extra-grid>* {
+                    flex: 0 0 calc(50% - 14px);
+                    height: 120px;
+                    font-size: .92rem;
+                    backdrop-filter: blur(6px);
+                }
+                .title-block h1 {
+                    font-size: 1.05rem;
+                }
+                .title-block .sub-header {
+                    font-size: .85rem;
+                }
+                header {
+                    padding: 12px 16px;
+                }
+                .pdf-container iframe {
+                    min-height: 420px;
+                }
+                main {
+                    padding: 12px 12px 30px;
+                }
+                .doc-actions {
+                    flex-direction: column;
+                }
+                .btn-open,
+                .btn-back {
+                    width: 100%;
+                    justify-content: center;
+                }
+                .page-header-row {
+                    grid-template-columns: 1fr;
+                    justify-items: center;
+                    gap: 8px;
+                    margin: 30px 0;
+                }
+                .page-header-row .btn-back {
+                    justify-self: center;
+                    order: 1;
+                }
+                .page-header-row h2 {
+                    order: 2;
+                    font-size: clamp(1.25rem, 5vw, 1.6rem);
+                    padding: 0;
+                }
+                .page-header-row .spacer {
+                    display: none;
+                }
+                .logo {
+                    height: 52px;
+                    width: 52px;
+                }
+                .footer-contact {
+                    flex-direction: column;
+                    gap: 8px;
+                }
+                body::after {
+                    background-size: 34px 34px;
+                }
+            }
+            @media (max-width:479px) {
+                .area-grid>*,
+                .param-grid>*,
+                .doc-grid>*,
+                .hierarchy-grid>*,
+                .extra-grid>*,
+                .param-extra-grid>* {
+                    flex: 0 0 100%;
+                    height: 100px;
+                }
+            }
+
+            /* respect reduced-motion preferences */
+            @media (prefers-reduced-motion: reduce) {
+                *, *::before, *::after {
+                    animation-duration: .001ms !important;
+                    animation-iteration-count: 1 !important;
+                    transition-duration: .001ms !important;
+                }
+            }
+        </style>
+    </head>
+    <body>
+
+        <div class="bg-logo"></div>
+
+        <header>
+            <div class="header-container">
+                <div class="logo-section">
+                    <div class="logo"><img src="images/OMSU-Logo.png" alt="OMSC Logo" onerror="this.parentElement.innerHTML='OMSC'" /></div>
+                    <div class="title-block">
+                        <h1>OCCIDENTAL MINDORO STATE UNIVERSITY</h1>
+                        <span class="sub-header">LUBANG CAMPUS</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main id="app"></main>
+
+        <footer>
+            <p>&copy; 2026 Occidental Mindoro State University — <strong>BSIT Accreditation Document System</strong></p>
+            <span class="footer-course">Bachelor of Science in Information Technology</span>
+            <div class="footer-divider"></div>
+            <div class="footer-contact">
+                <p><span class="label">Program Chairperson:</span> <span class="value">Ma. Kristina Tangi</span></p>
+                <p><span class="label">Email:</span> <span class="value">sample-email@gmail.com</span></p>
+                <p><span class="label">Technical Support:</span> <span class="value">Sample-IQA-Email@gmail.com</span></p>
+            </div>
+        </footer>
+
+        <script>
+            // ============================================================
+            // BSIT DATA
+            // ============================================================
+            var PROGRAM_CODE = 'BSIT';
+            var PROGRAM_NAME = 'Bachelor of Science in Information Technology';
+
+            var AREAS_FULL = {
+                1: { name: 'Vision, Mission, Goals, and Objectives', params: { A: 'PARAMETER A: STATEMENT OF VISION, MISSION, GOALS AND OBJECTIVES',
+                        B: 'PARAMETER B: DISSEMINATION AND ACCEPTABILITY' } },
+                2: { name: 'Faculty', params: { A: 'PARAMETER A: ACADEMIC QUALIFICATIONS AND PROFESSIONAL EXPERIENCE',
+                        B: 'PARAMETER B: RECRUITMENT, SELECTION, AND ORIENTATION',
+                        C: 'PARAMETER C: FACULTY ADEQUACY AND LEADING',
+                        D: 'PARAMETER D: RANK AND TENURE',
+                        E: 'PARAMETER E: FACULTY DEVELOPMENT',
+                        F: 'PARAMETER F: PROFESSIONAL PERFORMANCE AND SCHOLARLY WORKS',
+                        G: 'PARAMETER G: SALARIES, FRINGE BENEFITS, AND INCENTIVES',
+                        H: 'PARAMETER H: PROFESSIONALISM' } },
+                3: { name: 'Curriculum and Instruction', params: { A: 'PARAMETER A: CURRICULUM AND PROGRAM STUDIES',
+                        B: 'PARAMETER B: INSTRUCTIONAL PROCESS, METHODOLOGIES AND LEARNING OPPORTUNITIES',
+                        C: 'PARAMETER C: ASSESSMENT OF ACADEMIC PERFORMANCE',
+                        D: 'PARAMETER D: MANAGEMENT OF LEARNING',
+                        E: 'PARAMETER E: GRADUATION REQUIREMENTS',
+                        F: 'PARAMETER F: ADMINISTRATIVE SUPPORT FOR EFFECTIVE INSTRUCTION' } },
+                4: { name: 'Student Services', params: { A: 'PARAMETER A: STUDENT SERVICES PROGRAM (SSP)',
+                        B: 'PARAMETER B: STUDENT WELFARE',
+                        C: 'PARAMETER C: STUDENT DEVELOPMENT',
+                        D: 'PARAMETER D: INSTITUTIONAL STUDENT PROGRAM AND SERVICE',
+                        E: 'PARAMETER E: RESEARCH, MONITORING AND EVALUATION' } },
+                5: { name: 'Research', params: { A: 'PARAMETER A: PRIORITIES AND RELEVANCE',
+                        B: 'PARAMETER B: FUNDING AND OTHER RESOURCES',
+                        C: 'PARAMETER C: IMPLEMENTATION, MONITORING, EVALUATION AND UTILIZATION OF RESEARCH RESULTS/OUTPUTS',
+                        D: 'PARAMETER D: PUBLICATION AND DISSEMINATION' } },
+                6: { name: 'Extension and Community Involvement', params: { A: 'PARAMETER A: PRIORITIES AND RELEVANCE',
+                        B: 'PARAMETER B: PLANNING, IMPLEMENTATION, MONITORING, AND EVALUATION',
+                        C: 'PARAMETER C: FUNDING AND OTHER RESOURCES',
+                        D: 'PARAMETER D: MANAGEMENT OF LEARNING' } },
+                7: { name: 'Library', params: { A: 'PARAMETER A: ORGANIZATION AND ADMINISTRATION',
+                        B: 'PARAMETER B: COLLECTION DEVELOPMENT, ORGANIZATION AND PRESERVATION',
+                        C: 'PARAMETER C: LIBRARY SERVICES AND UTILIZATION',
+                        D: 'PARAMETER D: PHYSICAL FACILITIES AND EQUIPMENT',
+                        E: 'PARAMETER E: LIBRARY PERSONNEL',
+                        F: 'PARAMETER F: FINANCIAL SUPPORT',
+                        G: 'PARAMETER G: LINKAGES AND NETWORKING',
+                        H: 'PARAMETER H: EVALUATION AND MONITORING' } },
+                8: { name: 'Physical Plant and Facilities', params: { A: 'PARAMETER A: CAMPUS',
+                        B: 'PARAMETER B: BUILDINGS',
+                        C: 'PARAMETER C: CLASSROOMS',
+                        D: 'PARAMETER D: OFFICE AND STAFF ROOMS',
+                        E: 'PARAMETER E: ASSEMBLY, ATHLETIC AND SPORTS FACILITIES',
+                        F: 'PARAMETER F: MEDICAL AND DENTAL CLINIC',
+                        G: 'PARAMETER G: STUDENT CENTER',
+                        H: 'PARAMETER H: FOOD SERVICES/CANTEEN/CAFETERIA',
+                        I: 'PARAMETER I: ACCREDITATION CENTER',
+                        J: 'PARAMETER J: HOUSING (optional)' } },
+                9: { name: 'Laboratories', params: { A: 'PARAMETER A: LABORATORIES, SHOPS/FACILITIES',
+                        B: 'PARAMETER B: EQUIPMENT AND MATERIALS',
+                        C: 'PARAMETER C: MAINTENANCE',
+                        D: 'PARAMETER D: SPECIAL PROVISIONS' } },
+                10: { name: 'Administration', params: { A: 'PARAMETER A: ORGANIZATIONAL',
+                        B: 'PARAMETER B: ACADEMIC ADMINISTRATION',
+                        C: 'PARAMETER C: STUDENT ADMINISTRATION',
+                        D: 'PARAMETER D: FINANCIAL MANAGEMENT',
+                        E: 'PARAMETER E: SUPPLY MANAGEMENT',
+                        F: 'PARAMETER F: RECORDS MANAGEMENT',
+                        G: 'PARAMETER G: INSTITUTIONAL PLANNING AND DEVELOPMENT',
+                        H: 'PARAMETER H: PERFORMANCE OF ADMINISTRATIVE PERSONNEL' } }
+            };
+
+            var CATEGORIES = [
+                { key: 'SIP', label: 'System — Inputs and Processes', icon: '📋' },
+                { key: 'IMP', label: 'Implementation', icon: '⚙️' },
+                { key: 'OUT', label: 'Outcome/s', icon: '🏆' }
+            ];
+
+            // ============================================================
+            // SPECIAL FILE IDs – MANUAL NA PAGLALAGAY (per area / per parameter)
+            // ============================================================
+            var EXTRA_FILE_IDS = {
+                additional: {
+                    '1': '1ADD_FILE_ID_FOR_AREA1',
+                    '2': '2ADD_FILE_ID_FOR_AREA2',
+                },
+                compliance: {
+                    '1': '1COMP_FILE_ID_FOR_AREA1',
+                    '2': '2COMP_FILE_ID_FOR_AREA2',
+                },
+                selfsurvey: {
+                    '1': '1SELF_FILE_ID_FOR_AREA1',
+                    '2': '2SELF_FILE_ID_FOR_AREA2',
+                },
+                ppp: {
+                    '1-A': 'PPP_1A_FILE_ID',
+                    '1-B': 'PPP_1B_FILE_ID',
+                    '2-A': 'PPP_2A_FILE_ID',
+                },
+                bestpractices: {
+                    '1-A': 'BEST_1A_FILE_ID',
+                    '3-B': 'BEST_3B_FILE_ID',
+                }
+            };
+
+            // ============================================================
+            // DOCUMENT FILES – PALITAN NG IYONG ACTUAL NA DATA
+            // ============================================================
+            var DOCUMENT_FILES = {
+                'BSIT-1-A-SIP': [
+                    { id: '1Msel0ybyOMi6-e5ysfj93wJ-YS8KB3fw',
+                        name: 'S.1. The institution has a system of determining the Vision and Mission.' },
+                    { id: '1SRF0g3f3zg3kX9ilSMhCPzwAc24Wtc5n',
+                        name: 'S.2. The Vision clearly reflects what the institution hopes to become in the future.' }
+                ],
+                'BSIT-1-A-BEST': [
+                    { id: '1Msel0ybyOMi6-e5ysfj93wJ-YS8KB3fw',
+                        name: 'B.1. The institution has a system of determining the Vision and Mission.' }
+                ],
+            };
+
+            // ============================================================
+            // HELPER FUNCTIONS
+            // ============================================================
+            function getParamsForProgram(program, areaNum) {
+                var areaData = AREAS_FULL[areaNum];
+                return areaData ? areaData.params : {};
+            }
+
+            function getAreaNameForProgram(program, areaNum) {
+                var areaData = AREAS_FULL[areaNum];
+                return areaData ? areaData.name : 'Area ' + areaNum;
+            }
+
+            function getDocumentFiles(program, area, param, catKey) {
+                var key = program + '-' + area + '-' + param + '-' + catKey;
+                return DOCUMENT_FILES[key] || [];
+            }
+
+            function getDriveLink(fileId) {
+                if (!fileId || fileId === 'FILE_ID_HERE' || fileId === 'FILE_ID_HERE_2' || fileId === 'FILE_ID_HERE_3' ||
+                    fileId.indexOf('SAMPLE_') === 0 || fileId.indexOf('_FILE_ID') !== -1) return null;
+                return 'https://drive.google.com/file/d/' + fileId + '/preview';
+            }
+
+            function getDriveOpenLink(fileId) {
+                if (!fileId || fileId === 'FILE_ID_HERE' || fileId === 'FILE_ID_HERE_2' || fileId === 'FILE_ID_HERE_3' ||
+                    fileId.indexOf('SAMPLE_') === 0 || fileId.indexOf('_FILE_ID') !== -1) return null;
+                return 'https://drive.google.com/file/d/' + fileId + '/view?usp=sharing';
+            }
+
+            /**
+             * Kunin ang file ID para sa isang espesyal na uri (additional, compliance, selfsurvey, ppp, bestpractices)
+             * @param {string} type - 'additional' | 'compliance' | 'selfsurvey' | 'ppp' | 'bestpractices'
+             * @param {string|number} area - area number (e.g., '1')
+             * @param {string} [param] - parameter letter (e.g., 'A') – kinakailangan para sa ppp at bestpractices
+             * @returns {string|null} file ID o null kung walang entry
+             */
+            function getExtraFileId(type, area, param) {
+                var map = EXTRA_FILE_IDS[type];
+                if (!map) return null;
+
+                if (type === 'additional' || type === 'compliance' || type === 'selfsurvey') {
+                    return map[String(area)] || null;
+                } else if (type === 'ppp' || type === 'bestpractices') {
+                    if (!param) return null;
+                    var key = area + '-' + param;
+                    return map[key] || null;
+                }
+                return null;
+            }
+
+            // HIERARCHY BUILDER
+            function parseHierarchyCode(name) {
+                var cleaned = name.replace(/\.\s+/g, '.').replace(/\s+\./g, '.');
+                var match = cleaned.match(/^([A-Z]\.\d+(?:\.\d+)*)/);
+                return match ? match[1] : null;
+            }
+
+            function buildHierarchy(files) {
+                var root = { children: [] };
+                var nodeMap = {};
+                files.forEach(function(file) {
+                    var code = parseHierarchyCode(file.name);
+                    if (!code) return;
+                    if (!nodeMap[code]) nodeMap[code] = { code: code, name: file.name, id: null, index: null,
+                        children: [] };
+                });
+                files.forEach(function(file, index) {
+                    var code = parseHierarchyCode(file.name);
+                    if (!code) { root.children.push({ code: null, name: file.name, id: file.id, index: index,
+                            children: [] });
+                        return; }
+                    var node = nodeMap[code];
+                    if (node) { node.id = file.id;
+                        node.index = index;
+                        node.name = file.name; }
+                });
+                var allCodes = Object.keys(nodeMap);
+                allCodes.forEach(function(code) {
+                    var parts = code.split('.');
+                    if (parts.length === 1) { root.children.push(nodeMap[code]); } else {
+                        var parentCode = parts.slice(0, -1).join('.');
+                        if (nodeMap[parentCode]) nodeMap[parentCode].children.push(nodeMap[code]);
+                        else root.children.push(nodeMap[code]);
+                    }
+                });
+
+                function sortChildren(node) {
+                    if (node.children) {
+                        node.children.sort(function(a, b) {
+                            var aParts = a.code.split('.'),
+                                bParts = b.code.split('.');
+                            for (var i = 0; i < Math.min(aParts.length, bParts.length); i++) {
+                                if (aParts[i] !== bParts[i]) {
+                                    var aNum = parseInt(aParts[i]),
+                                        bNum = parseInt(bParts[i]);
+                                    if (!isNaN(aNum) && !isNaN(bNum)) return aNum - bNum;
+                                    return aParts[i].localeCompare(bParts[i]);
+                                }
+                            }
+                            return aParts.length - bParts.length;
+                        });
+                        node.children.forEach(sortChildren);
+                    }
+                }
+                sortChildren(root);
+                return root.children;
+            }
+
+            // ============================================================
+            // ROUTER (HASH-BASED)
+            // ============================================================
+            var state = {
+                page: 'landing',
+                program: PROGRAM_CODE,
+                area: null,
+                param: null,
+                category: null,
+                fileIndex: null,
+                currentPath: [],
+                specialFileId: null,
+                specialFileName: null,
+                specialType: null,
+                fromArea: null,
+                fromParam: null
+            };
+
+            function parseHash() {
+                var hash = window.location.hash.replace(/^#/, '') || '/';
+                var parts = hash.split('/').filter(Boolean);
+                if (parts.length === 0) return { page: 'landing' };
+
+                if (parts.length === 1) {
+                    var page = parts[0];
+                    if (page === 'additional' || page === 'compliance' || page === 'selfsurvey' ||
+                        page === 'ppp' || page === 'bestpractices') {
+                        return { page: 'special', specialType: page };
+                    }
+                    if (AREAS_FULL[page]) return { page: 'area', area: page };
+                    else return { page: 'notfound' };
+                }
+                if (parts.length === 2) {
+                    var area = parts[0],
+                        param = parts[1];
+                    var params = getParamsForProgram(PROGRAM_CODE, area);
+                    if (AREAS_FULL[area] && params[param]) return { page: 'parameter', area: area, param: param };
+                    else return { page: 'notfound' };
+                }
+                if (parts.length === 3) {
+                    var area = parts[0],
+                        param = parts[1],
+                        cat = parts[2];
+                    var isValidCat = CATEGORIES.some(function(c) { return c.key === cat; });
+                    var params2 = getParamsForProgram(PROGRAM_CODE, area);
+                    if (AREAS_FULL[area] && params2[param] && isValidCat) return { page: 'category', area: area,
+                        param: param, category: cat };
+                    else return { page: 'notfound' };
+                }
+                if (parts.length === 4) {
+                    var area = parts[0],
+                        param = parts[1],
+                        cat = parts[2],
+                        idx = parseInt(parts[3]);
+                    var isValidCat2 = CATEGORIES.some(function(c) { return c.key === cat; });
+                    var params3 = getParamsForProgram(PROGRAM_CODE, area);
+                    if (AREAS_FULL[area] && params3[param] && isValidCat2 && !isNaN(idx)) return { page: 'document',
+                        area: area, param: param, category: cat, fileIndex: idx };
+                    else return { page: 'notfound' };
+                }
+                return { page: 'notfound' };
+            }
+
+            function navigateTo(page, data) {
+                data = data || {};
+                var newState = Object.assign({}, state, { page: page }, data);
+                state = newState;
+
+                var parts = [];
+                if (data.area) parts.push(data.area);
+                if (data.param) parts.push(data.param);
+                if (data.category) parts.push(data.category);
+                if (data.fileIndex !== undefined && data.fileIndex !== null) parts.push(data.fileIndex);
+
+                if (page === 'special' && data.specialType) {
+                    parts = [data.specialType];
+                }
+
+                var hash = parts.length ? '#/' + parts.join('/') : '#/';
+                window.location.hash = hash;
+                render();
+            }
+
+            window.addEventListener('hashchange', function() {
+                var parsed = parseHash();
+                state = Object.assign({}, state, parsed);
+                render();
+            });
+
+            // ============================================================
+            // RENDER FUNCTIONS
+            // ============================================================
+
+            function applyStaggeredAnimation(container) {
+                if (!container) return;
+                var items = container.children;
+                for (var i = 0; i < items.length; i++) {
+                    items[i].style.animationDelay = ((i + 1) * 0.1) + 's';
+                }
+            }
+
+            function renderNotFound() {
+                var wrap = document.createElement('div');
+                wrap.innerHTML =
+                    `<div class="empty-state" style="margin-top:60px;"><div class="icon">🔍</div><h3>Page Not Found</h3><p>The requested page does not exist in this accreditation system.</p><button class="btn-back" onclick="navigateTo('landing',{})">← Go to Home</button></div>`;
+                return wrap;
+            }
+
+            function crumb(items) {
+                var clickable = items.slice(0, -1);
+                var html = '<nav class="breadcrumb">';
+                clickable.forEach(function(it, i) {
+                    html += '<a href="#" data-crumb="' + i + '">' + it.label + '</a>';
+                    if (i < clickable.length - 1) html += '<span class="sep">/</span>';
+                });
+                if (items.length > 0) {
+                    var last = items[items.length - 1];
+                    if (clickable.length > 0) html += '<span class="sep">/</span>';
+                    html += '<span class="current">' + last.label + '</span>';
+                }
+                html += '</nav>';
+                return html;
+            }
+
+            function bindCrumbs(container, items) {
+                var clickable = items.slice(0, -1);
+                container.querySelectorAll('[data-crumb]').forEach(function(a) {
+                    var idx = Number(a.dataset.crumb);
+                    if (idx < clickable.length) {
+                        a.addEventListener('click', function(e) { e.preventDefault();
+                            clickable[idx].go(); });
+                    }
+                });
+            }
+
+            function render() {
+                var app = document.getElementById('app');
+                app.innerHTML = '';
+                app.classList.remove('is-visible');
+                var node;
+                switch (state.page) {
+                    case 'landing':
+                        node = renderLanding();
+                        break;
+                    case 'area':
+                        node = renderArea();
+                        break;
+                    case 'parameter':
+                        node = renderParameter();
+                        break;
+                    case 'category':
+                        node = renderCategory();
+                        break;
+                    case 'document':
+                        node = renderDocument();
+                        break;
+                    case 'special':
+                        node = renderSpecialDocument();
+                        break;
+                    default:
+                        node = renderNotFound();
+                }
+                app.appendChild(node);
+                void app.offsetWidth;
+                app.style.animation = 'none';
+                void app.offsetHeight;
+                app.style.animation = '';
+                app.classList.add('is-visible');
+
+                var grids = node.querySelectorAll('.area-grid, .param-grid, .doc-grid, .hierarchy-grid, .extra-grid, .param-extra-grid');
+                for (var g = 0; g < grids.length; g++) {
+                    applyStaggeredAnimation(grids[g]);
+                }
+
+                var title = 'BSIT — AACCUP Accreditation';
+                if (state.page === 'area' && state.area) { var areaName = getAreaNameForProgram(PROGRAM_CODE, state.area);
+                    title = 'Area ' + state.area + ' — ' + areaName; } else if (state.page === 'parameter' && state.param) {
+                    var pn = getParamsForProgram(PROGRAM_CODE, state.area)[state.param] || 'Parameter';
+                    title = pn; } else if (state.page === 'category') { var cat = CATEGORIES.find(function(c) { return c
+                            .key === state.category; });
+                    title = cat ? cat.label : state.category; } else if (state.page === 'document') { var files =
+                        getDocumentFiles(PROGRAM_CODE, state.area, state.param, state.category);
+                    var f = files[state.fileIndex];
+                    title = f ? f.name : 'Document'; } else if (state.page === 'special') { title = state.specialFileName ||
+                        'Document'; }
+                document.title = title + ' | BSIT | OMSC';
+            }
+
+            // ---- LANDING ----
+            function renderLanding() {
+                var wrap = document.createElement('div');
+                var items = [{ label: 'BSIT Home', go: function() { navigateTo('landing', {}); } }];
+                var html = crumb(items);
+                html += '<div class="page-header-row">';
+                html += '<a href="index.html" class="btn-back">← Back to Home</a>';
+                html += '<h2>BSIT - Bachelor of Science in Information Technology</h2>';
+                html += '<span class="spacer"></span>';
+                html += '</div>';
+                html += '<div class="area-grid">';
+                var areaKeys = Object.keys(AREAS_FULL);
+                for (var a = 0; a < areaKeys.length; a++) {
+                    var key = areaKeys[a];
+                    var name = getAreaNameForProgram(PROGRAM_CODE, key);
+                    html += '<button class="btn-area" data-area="' + key + '"><span class="num">' + key +
+                        '</span><span class="label">' + name + '</span><span class="arrow">›</span></button>';
+                }
+                html += '</div>';
+                wrap.innerHTML = html;
+                bindCrumbs(wrap, items);
+                wrap.querySelectorAll('.btn-area').forEach(function(b) {
+                    b.addEventListener('click', function() { navigateTo('area', { area: b.dataset.area }); });
+                });
+                return wrap;
+            }
+
+            // ---- AREA ----
+            function renderArea() {
+                var area = state.area;
+                var areaName = getAreaNameForProgram(PROGRAM_CODE, area);
+                var params = getParamsForProgram(PROGRAM_CODE, area);
+                var wrap = document.createElement('div');
+                var items = [
+                    { label: 'BSIT Home', go: function() { navigateTo('landing', {}); } },
+                    { label: 'Area ' + area, go: function() { navigateTo('area', { area: area }); } }
+                ];
+                var html = crumb(items);
+
+                html +=
+                    '<div class="page-header-row"><button class="btn-back" data-back>← Back to Areas</button><h2>' +
+                    areaName + '</h2><span class="spacer"></span></div>';
+
+                html += '<div class="param-grid">';
+                var paramKeys = Object.keys(params);
+                for (var p = 0; p < paramKeys.length; p++) {
+                    var code = paramKeys[p];
+                    var name = params[code];
+                    html += '<button class="btn-param" data-param="' + code + '"><span class="letter">' + code +
+                        '</span><span class="label">' + name + '</span><span class="arrow">›</span></button>';
+                }
+                html += '</div>';
+
+                var additionalId = getExtraFileId('additional', area);
+                var complianceId = getExtraFileId('compliance', area);
+                var selfsurveyId = getExtraFileId('selfsurvey', area);
+
+                html += '<div class="extra-grid">';
+                if (additionalId) {
+                    html += '<button class="btn-extra" data-type="additional" data-fileid="' + additionalId +
+                        '">📋 Additional Needed Requirements</button>';
+                }
+                if (complianceId) {
+                    html += '<button class="btn-extra" data-type="compliance" data-fileid="' + complianceId +
+                        '">✅ Compliance w/ AACUP Recommendation</button>';
+                }
+                if (selfsurveyId) {
+                    html += '<button class="btn-extra" data-type="selfsurvey" data-fileid="' + selfsurveyId +
+                        '">📝 Self Survey</button>';
+                }
+                html += '</div>';
+
+                wrap.innerHTML = html;
+                bindCrumbs(wrap, items);
+
+                wrap.querySelector('[data-back]').addEventListener('click', function() { navigateTo('landing', {}); });
+
+                wrap.querySelectorAll('.btn-param').forEach(function(b) {
+                    b.addEventListener('click', function() {
+                        navigateTo('parameter', { area: area, param: b.dataset.param });
+                    });
+                });
+
+                wrap.querySelectorAll('.btn-extra').forEach(function(b) {
+                    b.addEventListener('click', function() {
+                        var fileId = b.dataset.fileid;
+                        var type = b.dataset.type;
+                        var nameMap = {
+                            'additional': 'Additional Needed Requirements',
+                            'compliance': 'Compliance w/ AACUP Recommendation',
+                            'selfsurvey': 'Self Survey'
+                        };
+                        var displayName = nameMap[type] || b.textContent.trim();
+                        navigateTo('special', {
+                            specialType: type,
+                            specialFileId: fileId,
+                            specialFileName: displayName,
+                            fromArea: area
+                        });
+                    });
+                });
+
+                return wrap;
+            }
+
+            // ---- PARAMETER ----
+            function renderParameter() {
+                var area = state.area,
+                    param = state.param;
+                var params = getParamsForProgram(PROGRAM_CODE, area);
+                var paramName = params[param] || 'Parameter ' + param;
+                var wrap = document.createElement('div');
+                var items = [
+                    { label: 'BSIT Home', go: function() { navigateTo('landing', {}); } },
+                    { label: 'Area ' + area, go: function() { navigateTo('area', { area: area }); } },
+                    { label: 'Parameter ' + param, go: function() { navigateTo('parameter', { area: area,
+                            param: param }); } }
+                ];
+                var html = crumb(items);
+                html +=
+                    '<div class="page-header-row"><button class="btn-back" data-back>← Back to Area ' + area +
+                    '</button><h2>' + paramName + '</h2><span class="spacer"></span></div>';
+
+                html += '<div class="doc-grid">';
+                for (var c = 0; c < CATEGORIES.length; c++) {
+                    var cat = CATEGORIES[c];
+                    html += '<button class="btn-doc" data-cat="' + cat.key + '"><span class="icon">' + cat.icon +
+                        '</span><span class="label">' + cat.label + '</span></button>';
+                }
+                html += '</div>';
+
+                html += '<div class="param-extra-grid">';
+
+                var pppId = getExtraFileId('ppp', area, param);
+                if (pppId) {
+                    html += '<button class="btn-param-extra" data-type="ppp" data-fileid="' + pppId +
+                        '">📊 PPP</button>';
+                }
+
+                var bestId = getExtraFileId('bestpractices', area, param);
+                if (bestId) {
+                    html += '<button class="btn-param-extra" data-type="bestpractices" data-fileid="' + bestId +
+                        '">⭐ Best Practice/s</button>';
+                }
+
+                html += '</div>';
+
+                wrap.innerHTML = html;
+                bindCrumbs(wrap, items);
+                wrap.querySelector('[data-back]').addEventListener('click', function() { navigateTo('area', { area: area }); });
+
+                wrap.querySelectorAll('.btn-doc').forEach(function(b) {
+                    b.addEventListener('click', function() {
+                        navigateTo('category', { area: area, param: param, category: b.dataset.cat });
+                    });
+                });
+
+                wrap.querySelectorAll('.btn-param-extra').forEach(function(b) {
+                    b.addEventListener('click', function() {
+                        var fileId = b.dataset.fileid;
+                        var type = b.dataset.type;
+                        var displayName = (type === 'ppp') ? 'PPP (Program Performance Profile)' :
+                            'Best Practice/s';
+                        navigateTo('special', {
+                            specialType: type,
+                            specialFileId: fileId,
+                            specialFileName: displayName,
+                            fromArea: area,
+                            fromParam: param
+                        });
+                    });
+                });
+
+                return wrap;
+            }
+
+            // ---- CATEGORY ----
+            function renderCategory() {
+                var area = state.area,
+                    param = state.param,
+                    category = state.category;
+                var params = getParamsForProgram(PROGRAM_CODE, area);
+                var catInfo = CATEGORIES.find(function(c) { return c.key === category; });
+                var files = getDocumentFiles(PROGRAM_CODE, area, param, category);
+                var tree = buildHierarchy(files);
+                if (!state.currentPath || !Array.isArray(state.currentPath)) state.currentPath = [];
+                var currentNode = { children: tree };
+                for (var cp = 0; cp < state.currentPath.length; cp++) {
+                    var code = state.currentPath[cp];
+                    var child = null;
+                    for (var cc = 0; cc < currentNode.children.length; cc++) {
+                        if (currentNode.children[cc].code === code) { child = currentNode.children[cc]; break; }
+                    }
+                    if (!child) { state.currentPath = [];
+                        currentNode = { children: tree }; break; }
+                    currentNode = child;
+                }
+                var displayNodes = currentNode.children || [];
+
+                var pathLabels = [];
+                var temp = { children: tree };
+                for (var lp = 0; lp < state.currentPath.length; lp++) {
+                    var cCode = state.currentPath[lp];
+                    var found = null;
+                    for (var fc = 0; fc < temp.children.length; fc++) {
+                        if (temp.children[fc].code === cCode) { found = temp.children[fc]; break; }
+                    }
+                    if (!found) break;
+                    pathLabels.push({ code: found.code, name: found.name });
+                    temp = found;
+                }
+
+                var wrap = document.createElement('div');
+                var items = [
+                    { label: 'BSIT Home', go: function() { navigateTo('landing', {}); } },
+                    { label: 'Area ' + area, go: function() { navigateTo('area', { area: area }); } },
+                    { label: 'Parameter ' + param, go: function() { navigateTo('parameter', { area: area,
+                            param: param }); } },
+                    { label: catInfo ? catInfo.label : category, go: function() { navigateTo('category', { area: area,
+                            param: param, category: category }); } }
+                ];
+                for (var pl = 0; pl < pathLabels.length; pl++) {
+                    (function(idx) {
+                        var p = pathLabels[idx];
+                        var pathUpTo = state.currentPath.slice(0, idx + 1);
+                        items.push({ label: p.code, go: function() { navigateTo('category', { area: area,
+                                    param: param, category: category, currentPath: pathUpTo }); } });
+                    })(pl);
+                }
+                var html = crumb(items);
+                var backTarget, backLabel;
+                if (state.currentPath && state.currentPath.length > 0) {
+                    var parentPath = state.currentPath.slice(0, -1);
+                    backTarget = function() { navigateTo('category', { area: area, param: param, category: category,
+                            currentPath: parentPath }); };
+                    backLabel = '← Back';
+                } else {
+                    backTarget = function() { navigateTo('parameter', { area: area, param: param }); };
+                    backLabel = '← Back to Parameter';
+                }
+                html += '<div class="page-header-row"><button class="btn-back" data-back>' + backLabel +
+                    '</button><h2>' + (catInfo ? catInfo.label : category) +
+                    '</h2><span class="spacer"></span></div>';
+                if (displayNodes.length === 0) {
+                    html +=
+                        '<div class="empty-state"><div class="icon">📁</div><h3>No items in this level</h3><p>This folder is empty.</p></div>';
+                } else {
+                    html += '<div class="hierarchy-grid">';
+                    for (var dn = 0; dn < displayNodes.length; dn++) {
+                        var node = displayNodes[dn];
+                        var isLeaf = node.children.length === 0;
+                        var icon = isLeaf ? '📄' : '📂';
+                        var dataAttr = isLeaf ? 'data-index="' + node.index + '"' : 'data-code="' + node.code + '"';
+                        html += '<button class="btn-file" ' + dataAttr + '><span class="file-icon">' + icon +
+                            '</span><span class="file-name">' + node.name +
+                            '</span><span class="arrow">›</span></button>';
+                    }
+                    html += '</div>';
+                }
+                wrap.innerHTML = html;
+                bindCrumbs(wrap, items);
+                wrap.querySelector('[data-back]').addEventListener('click', backTarget);
+                wrap.querySelectorAll('.btn-file').forEach(function(btn) {
+                    btn.addEventListener('click', function() {
+                        var index = this.dataset.index;
+                        if (index !== undefined) {
+                            navigateTo('document', { area: area, param: param, category: category,
+                                fileIndex: parseInt(index) });
+                        } else {
+                            var code2 = this.dataset.code;
+                            if (code2) {
+                                var newPath = state.currentPath.concat([code2]);
+                                navigateTo('category', { area: area, param: param, category: category,
+                                    currentPath: newPath });
+                            }
+                        }
+                    });
+                });
+                return wrap;
+            }
+
+            // ---- DOCUMENT ----
+            function renderDocument() {
+                var area = state.area,
+                    param = state.param,
+                    category = state.category,
+                    fileIndex = state.fileIndex;
+                var params = getParamsForProgram(PROGRAM_CODE, area);
+                var catInfo = CATEGORIES.find(function(c) { return c.key === category; });
+                var files = getDocumentFiles(PROGRAM_CODE, area, param, category);
+                var file = files[fileIndex];
+
+                var wrap = document.createElement('div');
+                var items = [
+                    { label: 'BSIT Home', go: function() { navigateTo('landing', {}); } },
+                    { label: 'Area ' + area, go: function() { navigateTo('area', { area: area }); } },
+                    { label: 'Parameter ' + param, go: function() { navigateTo('parameter', { area: area,
+                            param: param }); } },
+                    { label: catInfo ? catInfo.label : category, go: function() { navigateTo('category', { area: area,
+                            param: param, category: category, currentPath: state.currentPath || [] }); } }
+                ];
+                var filesForCat = getDocumentFiles(PROGRAM_CODE, area, param, category);
+                var tree2 = buildHierarchy(filesForCat);
+                var pathLabels2 = [];
+                var temp2 = { children: tree2 };
+                for (var lp2 = 0; lp2 < (state.currentPath || []).length; lp2++) {
+                    var cCode2 = state.currentPath[lp2];
+                    var found2 = null;
+                    for (var fc2 = 0; fc2 < temp2.children.length; fc2++) {
+                        if (temp2.children[fc2].code === cCode2) { found2 = temp2.children[fc2]; break; }
+                    }
+                    if (!found2) break;
+                    pathLabels2.push({ code: found2.code, name: found2.name });
+                    temp2 = found2;
+                }
+                for (var pl2 = 0; pl2 < pathLabels2.length; pl2++) {
+                    (function(idx) {
+                        var p2 = pathLabels2[idx];
+                        var pathUpTo2 = (state.currentPath || []).slice(0, idx + 1);
+                        items.push({ label: p2.code, go: function() { navigateTo('category', { area: area,
+                                    param: param, category: category, currentPath: pathUpTo2 }); } });
+                    })(pl2);
+                }
+
+                var html = crumb(items);
+                if (!file) {
+                    html +=
+                        '<div class="page-header-row"><button class="btn-back" data-back>← Back to files</button><h2>File not found</h2><span class="spacer"></span></div><div class="empty-state"><div class="icon">❌</div><p>The requested document could not be found.</p></div>';
+                    wrap.innerHTML = html;
+                    bindCrumbs(wrap, items);
+                    wrap.querySelector('[data-back]').addEventListener('click', function() { navigateTo('category', {
+                            area: area,
+                            param: param,
+                            category: category,
+                            currentPath: state.currentPath || []
+                        }); });
+                    return wrap;
+                }
+
+                var previewLink = getDriveLink(file.id);
+                var openLink = getDriveOpenLink(file.id);
+                html += '<div class="page-header-row"><button class="btn-back" data-back>← Back to files</button><h2>' +
+                    file.name + '</h2><span class="spacer"></span></div>';
+                if (previewLink) {
+                    html += '<div class="pdf-container"><iframe src="' + previewLink +
+                        '" allow="autoplay" title="' + file.name +
+                        '"></iframe></div><div class="doc-actions"><a class="btn-open" href="' + openLink +
+                        '" target="_blank" rel="noopener">Open in new tab</a></div>';
+                } else {
+                    var isSample = file.id && file.id.indexOf('SAMPLE_') === 0;
+                    var msg = isSample ?
+                        'This is a sample document placeholder. Please replace the file ID with an actual Google Drive file ID.' :
+                        'No Google Drive file has been assigned to this document yet.';
+                    html += '<div class="empty-state"><div class="icon">📄</div><h3>' + (isSample ? 'Sample Document' :
+                        'Document not yet linked') + '</h3><p>' + msg +
+                        '</p><p style="font-size:.8rem;color:var(--ink-soft);margin-top:8px;">File ID: ' + file.id +
+                        '</p></div>';
+                }
+                wrap.innerHTML = html;
+                bindCrumbs(wrap, items);
+                wrap.querySelector('[data-back]').addEventListener('click', function() { navigateTo('category', { area: area,
+                        param: param, category: category, currentPath: state.currentPath || [] }); });
+                return wrap;
+            }
+
+            // ---- SPECIAL DOCUMENT ----
+            function renderSpecialDocument() {
+                var fileId = state.specialFileId;
+                var fileName = state.specialFileName || 'Document';
+                var specialType = state.specialType;
+                var fromArea = state.fromArea || null;
+                var fromParam = state.fromParam || null;
+
+                var wrap = document.createElement('div');
+
+                var items = [];
+                items.push({ label: 'BSIT Home', go: function() { navigateTo('landing', {}); } });
+
+                if (fromArea) {
+                    var areaName = getAreaNameForProgram(PROGRAM_CODE, fromArea);
+                    items.push({ label: 'Area ' + fromArea, go: function() { navigateTo('area', { area: fromArea }); } });
+                    if (fromParam) {
+                        var params = getParamsForProgram(PROGRAM_CODE, fromArea);
+                        var paramName = params[fromParam] || 'Parameter ' + fromParam;
+                        items.push({ label: paramName, go: function() { navigateTo('parameter', { area: fromArea,
+                                param: fromParam }); } });
+                    }
+                }
+                items.push({ label: fileName, go: function() { /* same page */ } });
+
+                var html = crumb(items);
+
+                var backTarget;
+                var backLabel = '← Back';
+                if (fromArea) {
+                    if (fromParam) {
+                        backTarget = function() { navigateTo('parameter', { area: fromArea, param: fromParam }); };
+                        backLabel = '← Back to Parameter';
+                    } else {
+                        backTarget = function() { navigateTo('area', { area: fromArea }); };
+                        backLabel = '← Back to Area ' + fromArea;
+                    }
+                } else {
+                    backTarget = function() { navigateTo('landing', {}); };
+                    backLabel = '← Back to Home';
+                }
+
+                html += '<div class="page-header-row"><button class="btn-back" data-back>' + backLabel +
+                    '</button><h2>' + fileName + '</h2><span class="spacer"></span></div>';
+
+                var previewLink = getDriveLink(fileId);
+                var openLink = getDriveOpenLink(fileId);
+                if (previewLink) {
+                    html += '<div class="pdf-container"><iframe src="' + previewLink +
+                        '" allow="autoplay" title="' + fileName +
+                        '"></iframe></div><div class="doc-actions"><a class="btn-open" href="' + openLink +
+                        '" target="_blank" rel="noopener">Open in new tab</a></div>';
+                } else {
+                    var isSample = fileId && fileId.indexOf('SAMPLE_') === 0;
+                    var msg = isSample ?
+                        'This is a sample document placeholder. Please replace the file ID with an actual Google Drive file ID.' :
+                        'No Google Drive file has been assigned to this document yet.';
+                    html += '<div class="empty-state"><div class="icon">📄</div><h3>' + (isSample ? 'Sample Document' :
+                        'Document not yet linked') + '</h3><p>' + msg +
+                        '</p><p style="font-size:.8rem;color:var(--ink-soft);margin-top:8px;">File ID: ' + fileId +
+                        '</p></div>';
+                }
+
+                wrap.innerHTML = html;
+                bindCrumbs(wrap, items);
+                wrap.querySelector('[data-back]').addEventListener('click', backTarget);
+                return wrap;
+            }
+
+            // ============================================================
+            // INIT
+            // ============================================================
+            function init() {
+                var parsed = parseHash();
+                state = Object.assign({}, state, parsed, { currentPath: [] });
+
+                if (parsed.page === 'special') {
+                    var type = parsed.specialType;
+                    var fileId = null;
+                    var nameMap = {
+                        'additional': 'Additional Needed Requirements',
+                        'compliance': 'Compliance w/ AACUP Recommendation',
+                        'selfsurvey': 'Self Survey',
+                        'ppp': 'PPP (Program Performance Profile)',
+                        'bestpractices': 'Best Practice/s'
+                    };
+
+                    var areaKey = state.fromArea || null;
+                    var paramKey = state.fromParam || null;
+
+                    if (type === 'additional' || type === 'compliance' || type === 'selfsurvey') {
+                        if (areaKey) {
+                            fileId = getExtraFileId(type, areaKey);
+                        }
+                    } else if (type === 'ppp' || type === 'bestpractices') {
+                        if (areaKey && paramKey) {
+                            fileId = getExtraFileId(type, areaKey, paramKey);
+                        }
+                    }
+
+                    if (!fileId) {
+                        navigateTo('landing', {});
+                        return;
+                    }
+
+                    state.specialFileId = fileId;
+                    state.specialFileName = nameMap[type] || type;
+                }
+
+                render();
+            }
+            window.addEventListener('DOMContentLoaded', init);
+        </script>
+    </body>
+    </html>
