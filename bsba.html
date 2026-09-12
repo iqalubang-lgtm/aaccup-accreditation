@@ -15,8 +15,9 @@
 
     <style>
         /* ============================================================
-               BSBA — BUSINESS / PROFESSIONAL THEME (DARK + NEON + TRAVELING LIGHT)
-               WITH DARK/LIGHT MODE TOGGLE
+               BSBA — BUSINESS / PROFESSIONAL THEME (DARK + BLUE + GOLD)
+               All non-blue accents replaced with blue variants.
+               Gold retained for the "Additional" / extra buttons area.
                ============================================================ */
 
         /* ---- ROOT VARIABLES (DARK MODE — DEFAULT) ---- */
@@ -29,12 +30,13 @@
             --tech-border: #1A2A3A;
             --tech-border-light: #2A3A4A;
 
-            --tech-cyan: #00D4FF;
-            --tech-purple: #7B2FBE;
-            --tech-orange: #FF6B35;
-            --tech-green: #00FF88;
-            --tech-pink: #FF2D95;
-            --tech-gold: #FFD700;
+            /* ---- All accents are BLUE shades now; gold kept for extras ---- */
+            --tech-cyan: #00D4FF;      /* primary bright blue */
+            --tech-purple: #2979FF;    /* was #7B2FBE  → now vivid blue */
+            --tech-orange: #40C4FF;    /* was #FF6B35  → now sky blue */
+            --tech-green: #00B0FF;     /* was #00FF88  → now azure blue */
+            --tech-pink: #0091EA;      /* was #FF2D95  → now deep blue */
+            --tech-gold: #FFD700;      /* KEPT — gold for extra buttons */
 
             --tech-text: #E8F0F8;
             --tech-text-muted: #8899AA;
@@ -42,10 +44,10 @@
 
             --glow-cyan: 0 0 30px rgba(0, 212, 255, 0.25);
             --glow-cyan-strong: 0 0 50px rgba(0, 212, 255, 0.4);
-            --glow-purple: 0 0 30px rgba(123, 47, 190, 0.25);
-            --glow-orange: 0 0 30px rgba(255, 107, 53, 0.25);
-            --glow-green: 0 0 30px rgba(0, 255, 136, 0.25);
-            --glow-pink: 0 0 30px rgba(255, 45, 149, 0.25);
+            --glow-purple: 0 0 30px rgba(41, 121, 255, 0.25);
+            --glow-orange: 0 0 30px rgba(64, 196, 255, 0.25);
+            --glow-green: 0 0 30px rgba(0, 176, 255, 0.25);
+            --glow-pink: 0 0 30px rgba(0, 145, 234, 0.25);
             --glow-gold: 0 0 30px rgba(255, 215, 0, 0.25);
             --glow-white: 0 0 30px rgba(255, 255, 255, 0.15);
 
@@ -80,7 +82,7 @@
             --ease-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
         }
 
-        /* ---- LIGHT MODE (UPDATED TO MATCH SECOND FILE) ---- */
+        /* ---- LIGHT MODE ---- */
         [data-theme="light"] {
             /* Backgrounds */
             --tech-bg: #F5F9FF;
@@ -90,13 +92,13 @@
             --tech-border: #D6E4F0;
             --tech-border-light: #E8F0F8;
 
-            /* Accent Colors - Blue Shades */
+            /* Accent Colors - Blue Shades + Gold */
             --tech-cyan: #2196F3;
             --tech-purple: #0D47A1;
             --tech-orange: #64B5F6;
             --tech-green: #2196F3;
             --tech-pink: #0D47A1;
-            --tech-gold: #2196F3;
+            --tech-gold: #F5A623;   /* gold for extra buttons (was blue) */
 
             /* Text Colors */
             --tech-text: #1A2A3A;
@@ -110,10 +112,10 @@
             --glow-orange: 0 0 24px rgba(33, 150, 243, 0.15);
             --glow-green: 0 0 24px rgba(33, 150, 243, 0.15);
             --glow-pink: 0 0 24px rgba(13, 71, 161, 0.15);
-            --glow-gold: 0 0 24px rgba(33, 150, 243, 0.15);
+            --glow-gold: 0 0 24px rgba(245, 166, 35, 0.20);
             --glow-white: 0 0 24px rgba(0, 0, 0, 0.06);
 
-            /* Header & Footer (dark blue gradients) */
+            /* Header & Footer */
             --header-bg: linear-gradient(135deg, #0D47A1 0%, #1A3A6B 100%);
             --footer-bg: #0D47A1;
             --header-border: 4px solid #64B5F6;
@@ -133,7 +135,7 @@
             --shadow-hover: 0 8px 35px rgba(13, 71, 161, 0.18);
             --shadow-inset: inset 0 1px 0 rgba(255, 255, 255, 0.5);
 
-            --watermark-opacity: 0.03;
+            --watermark-opacity: 0.3;
             --grid-opacity: 0.04;
             --orb-opacity: 0.04;
 
@@ -234,7 +236,7 @@
             --border-color1: #2196F3;
         }
         [data-theme="light"] .btn-extra-neon {
-            --border-color1: #0D47A1;
+            --border-color1: #F5A623;   /* gold for extra buttons */
         }
         [data-theme="light"] .btn-back-neon {
             --border-color1: #2196F3;
@@ -469,6 +471,7 @@
             100% { background-position: 60px 60px; }
         }
 
+        /* ---- Orbs now all blue ---- */
         body::after {
             content: '';
             position: fixed;
@@ -476,8 +479,8 @@
             z-index: -1;
             background:
                 radial-gradient(ellipse 60% 40% at 10% 20%, rgba(0, 212, 255, var(--orb-opacity)) 0%, transparent 70%),
-                radial-gradient(ellipse 50% 60% at 90% 80%, rgba(123, 47, 190, var(--orb-opacity)) 0%, transparent 70%),
-                radial-gradient(ellipse 40% 30% at 50% 50%, rgba(255, 107, 53, calc(var(--orb-opacity) * 0.5)) 0%, transparent 60%);
+                radial-gradient(ellipse 50% 60% at 90% 80%, rgba(41, 121, 255, var(--orb-opacity)) 0%, transparent 70%),
+                radial-gradient(ellipse 40% 30% at 50% 50%, rgba(64, 196, 255, calc(var(--orb-opacity) * 0.5)) 0%, transparent 60%);
             pointer-events: none;
             animation: orbPulse 8s ease-in-out infinite alternate;
             transition: background 0.4s var(--ease);
@@ -617,6 +620,7 @@
             border-radius: 50%;
         }
 
+        /* ---- Logo ring: now all blue ---- */
         .logo-ring {
             position: absolute;
             inset: -4px;
@@ -1008,7 +1012,7 @@
             border-radius: var(--radius);
             background: var(--btn-bg);
             backdrop-filter: blur(8px);
-            border: none;
+            border: 2px solid #2195f361;
             color: var(--tech-text);
             font-weight: 600;
             font-size: 1.05rem;
@@ -1018,7 +1022,7 @@
             text-align: left;
             width: 100%;
             height: 100%;
-            min-height: 120px;
+            min-height: 130px;
             word-break: break-word;
             isolation: isolate;
             z-index: 1;
@@ -1072,9 +1076,10 @@
             filter: blur(0px) drop-shadow(0 0 25px var(--border-color1)) brightness(1.5);
         }
 
+        /* ---- Active: now blue instead of orange ---- */
         .btn-neon:active {
             transform: scale(0.97) translateY(0);
-            box-shadow: 0 0 60px rgba(255, 107, 53, 0.2), inset 0 0 40px rgba(255, 107, 53, 0.05);
+            box-shadow: 0 0 60px rgba(0, 212, 255, 0.2), inset 0 0 40px rgba(0, 212, 255, 0.05);
         }
 
         .btn-neon:active::before {
@@ -1082,7 +1087,7 @@
             filter: blur(0px) drop-shadow(0 0 35px var(--border-color1)) brightness(2);
         }
 
-        /* ---- Button Variants ---- */
+        /* ---- Button Variants — all blue now, gold only for extras ---- */
         .btn-area-neon {
             --border-color1: var(--tech-cyan);
             --border-speed: 20s;
@@ -1090,7 +1095,7 @@
         }
 
         .btn-param-neon {
-            --border-color1: var(--tech-purple);
+            --border-color1: var(--tech-cyan);
             --border-speed: 14s;
             --btn-glow: var(--glow-purple);
         }
@@ -1201,7 +1206,7 @@
         .area-grid .label {
             flex: 1;
             font-weight: 600;
-            font-size: 1.05rem;
+            font-size: 1.5rem;
             display: -webkit-box;
             -webkit-line-clamp: 3;
             -webkit-box-orient: vertical;
@@ -1224,32 +1229,32 @@
 
         /* ---- PARAMETER BUTTONS ---- */
         .param-grid>* {
-            flex: 0 0 calc(25% - 18px);
+            flex: 0 0 calc(33% - 18px);
         }
         .param-grid .letter {
-                flex-shrink: 0;
-                width: 34px;
-                height: 34px;
-                border-radius: 50%;
-                background: rgba(123, 47, 190, .12);
-                border: 1px solid var(--tech-purple);
-                color: #C9A8F0;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                font-family: 'JetBrains Mono', monospace;
-                font-weight: 600;
-                font-size: .85rem;
-                box-shadow: 0 0 14px rgba(123, 47, 190, .4);
+            flex-shrink: 0;
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            border: 1px solid #00d5ff93;
+            background:  rgba(41, 120, 255, 0.179);
+            color: var(--tech-text);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 0.85rem;
+            box-shadow: 0 2px 12px rgba(41, 121, 255, 0.25);
+            transition: all 0.3s var(--ease);
         }
         .param-grid .btn-neon:hover .letter {
-            box-shadow: 0 0 30px rgba(123, 47, 190, 0.4);
+            box-shadow: 0 0 30px rgba(41, 121, 255, 0.4);
             transform: scale(1.05);
         }
         .param-grid .label {
             flex: 1;
             font-weight: 600;
-            font-size: 1.05rem;
+            font-size: 1.3rem;
             display: -webkit-box;
             -webkit-line-clamp: 3;
             -webkit-box-orient: vertical;
@@ -1280,17 +1285,18 @@
             text-align: center;
             min-height: 130px;
         }
+        
         .doc-grid .btn-neon .icon {
             font-size: 2.4rem;
             width: auto;
-            filter: drop-shadow(0 0 20px rgba(0, 255, 136, 0.15));
+            filter: drop-shadow(0 0 20px rgba(0, 176, 255, 0.15));
         }
         .doc-grid .btn-neon:hover .icon {
             transform: scale(1.1) translateY(-2px);
         }
         .doc-grid .label {
             font-weight: 700;
-            font-size: 1.05rem;
+            font-size: 1.5rem;
             display: -webkit-box;
             -webkit-line-clamp: 2;
             -webkit-box-orient: vertical;
@@ -1303,8 +1309,8 @@
 
         /* ---- HIERARCHY BUTTONS ---- */
         .hierarchy-grid>* {
-            flex: 0 0 calc(25% - 18px);
-            min-height: 80px;
+            flex: 0 0 calc(50% - 18px);
+            min-height: 120px;
         }
         .hierarchy-grid .btn-neon {
             justify-content: flex-start;
@@ -1312,10 +1318,11 @@
             padding: 14px 20px;
             min-height: 80px;
         }
+        
         .hierarchy-grid .file-icon {
             font-size: 1.6rem;
             flex-shrink: 0;
-            filter: drop-shadow(0 0 16px rgba(255, 107, 53, 0.1));
+            filter: drop-shadow(0 0 16px rgba(64, 196, 255, 0.15));
             width: 2rem;
             text-align: center;
             transition: transform 0.3s var(--ease);
@@ -1327,7 +1334,7 @@
             flex: 1;
             font-weight: 600;
             word-break: break-word;
-            font-size: 1rem;
+            font-size: 1.3rem;
             display: -webkit-box;
             -webkit-line-clamp: 2;
             -webkit-box-orient: vertical;
@@ -1348,21 +1355,21 @@
             opacity: 1;
         }
 
-        /* ---- EXTRA BUTTONS ---- */
+        /* ---- EXTRA BUTTONS (gold) ---- */
         .extra-grid>* {
             flex: 0 0 calc(25% - 18px);
-            min-height: 80px;
+            min-height: 100px;
         }
         .param-extra-grid>* {
             flex: 0 0 calc(25% - 18px);
-            min-height: 80px;
+            min-height: 100px;
         }
         .extra-grid .btn-neon,
         .param-extra-grid .btn-neon {
             justify-content: center;
             gap: 10px;
-            min-height: 80px;
-            font-size: 1rem;
+            min-height: 100px;
+            font-size: 1.3rem;
             padding: 14px 18px;
             text-align: center;
         }
@@ -1543,6 +1550,7 @@
             box-shadow: var(--glow-cyan-strong), inset 0 0 60px rgba(0, 212, 255, 0.04);
         }
 
+        /* was purple → now blue */
         .pdf-container::before {
             content: '';
             position: absolute;
@@ -1552,7 +1560,7 @@
                     transparent,
                     rgba(0, 212, 255, 0.08),
                     transparent,
-                    rgba(123, 47, 190, 0.08),
+                    rgba(41, 121, 255, 0.08),
                     transparent);
             z-index: -1;
             animation: spinBorder 8s linear infinite;
@@ -1944,65 +1952,68 @@
         var PROGRAM_NAME = 'Bachelor of Science in Business Administration';
 
         var AREAS_FULL = {
-            1: { name: 'Vision, Mission, Goals, and Objectives', params: { A: 'PARAMETER A: STATEMENT OF VISION, MISSION, GOALS AND OBJECTIVES',
-                    B: 'PARAMETER B: DISSEMINATION AND ACCEPTABILITY' } },
-            2: { name: 'Faculty', params: { A: 'PARAMETER A: ACADEMIC QUALIFICATIONS AND PROFESSIONAL EXPERIENCE',
-                    B: 'PARAMETER B: RECRUITMENT, SELECTION, AND ORIENTATION',
-                    C: 'PARAMETER C: FACULTY ADEQUACY AND LEADING',
-                    D: 'PARAMETER D: RANK AND TENURE',
-                    E: 'PARAMETER E: FACULTY DEVELOPMENT',
-                    F: 'PARAMETER F: PROFESSIONAL PERFORMANCE AND SCHOLARLY WORKS',
-                    G: 'PARAMETER G: SALARIES, FRINGE BENEFITS, AND INCENTIVES',
-                    H: 'PARAMETER H: PROFESSIONALISM' } },
-            3: { name: 'Curriculum and Instruction', params: { A: 'PARAMETER A: CURRICULUM AND PROGRAM STUDIES',
-                    B: 'PARAMETER B: INSTRUCTIONAL PROCESS, METHODOLOGIES AND LEARNING OPPORTUNITIES',
-                    C: 'PARAMETER C: ASSESSMENT OF ACADEMIC PERFORMANCE',
-                    D: 'PARAMETER D: MANAGEMENT OF LEARNING',
-                    E: 'PARAMETER E: GRADUATION REQUIREMENTS',
-                    F: 'PARAMETER F: ADMINISTRATIVE SUPPORT FOR EFFECTIVE INSTRUCTION' } },
-            4: { name: 'Student Services', params: { A: 'PARAMETER A: STUDENT SERVICES PROGRAM (SSP)',
-                    B: 'PARAMETER B: STUDENT WELFARE',
-                    C: 'PARAMETER C: STUDENT DEVELOPMENT',
-                    D: 'PARAMETER D: INSTITUTIONAL STUDENT PROGRAM AND SERVICE',
-                    E: 'PARAMETER E: RESEARCH, MONITORING AND EVALUATION' } },
-            5: { name: 'Research', params: { A: 'PARAMETER A: PRIORITIES AND RELEVANCE',
-                    B: 'PARAMETER B: FUNDING AND OTHER RESOURCES',
-                    C: 'PARAMETER C: IMPLEMENTATION, MONITORING, EVALUATION AND UTILIZATION OF RESEARCH RESULTS/OUTPUTS',
-                    D: 'PARAMETER D: PUBLICATION AND DISSEMINATION' } },
-            6: { name: 'Extension and Community Involvement', params: { A: 'PARAMETER A: PRIORITIES AND RELEVANCE',
-                    B: 'PARAMETER B: PLANNING, IMPLEMENTATION, MONITORING, AND EVALUATION',
-                    C: 'PARAMETER C: FUNDING AND OTHER RESOURCES',
-                    D: 'PARAMETER D: MANAGEMENT OF LEARNING' } },
-            7: { name: 'Library', params: { A: 'PARAMETER A: ORGANIZATION AND ADMINISTRATION',
-                    B: 'PARAMETER B: COLLECTION DEVELOPMENT, ORGANIZATION AND PRESERVATION',
-                    C: 'PARAMETER C: LIBRARY SERVICES AND UTILIZATION',
-                    D: 'PARAMETER D: PHYSICAL FACILITIES AND EQUIPMENT',
-                    E: 'PARAMETER E: LIBRARY PERSONNEL',
-                    F: 'PARAMETER F: FINANCIAL SUPPORT',
-                    G: 'PARAMETER G: LINKAGES AND NETWORKING',
-                    H: 'PARAMETER H: EVALUATION AND MONITORING' } },
-            8: { name: 'Physical Plant and Facilities', params: { A: 'PARAMETER A: CAMPUS',
-                    B: 'PARAMETER B: BUILDINGS',
-                    C: 'PARAMETER C: CLASSROOMS',
-                    D: 'PARAMETER D: OFFICE AND STAFF ROOMS',
-                    E: 'PARAMETER E: ASSEMBLY, ATHLETIC AND SPORTS FACILITIES',
-                    F: 'PARAMETER F: MEDICAL AND DENTAL CLINIC',
-                    G: 'PARAMETER G: STUDENT CENTER',
-                    H: 'PARAMETER H: FOOD SERVICES/CANTEEN/CAFETERIA',
-                    I: 'PARAMETER I: ACCREDITATION CENTER',
-                    J: 'PARAMETER J: HOUSING (optional)' } },
-            9: { name: 'Laboratories', params: { A: 'PARAMETER A: LABORATORIES, SHOPS/FACILITIES',
-                    B: 'PARAMETER B: EQUIPMENT AND MATERIALS',
-                    C: 'PARAMETER C: MAINTENANCE',
-                    D: 'PARAMETER D: SPECIAL PROVISIONS' } },
-            10: { name: 'Administration', params: { A: 'PARAMETER A: ORGANIZATIONAL',
-                    B: 'PARAMETER B: ACADEMIC ADMINISTRATION',
-                    C: 'PARAMETER C: STUDENT ADMINISTRATION',
-                    D: 'PARAMETER D: FINANCIAL MANAGEMENT',
-                    E: 'PARAMETER E: SUPPLY MANAGEMENT',
-                    F: 'PARAMETER F: RECORDS MANAGEMENT',
-                    G: 'PARAMETER G: INSTITUTIONAL PLANNING AND DEVELOPMENT',
-                    H: 'PARAMETER H: PERFORMANCE OF ADMINISTRATIVE PERSONNEL' } }
+            1: { name: 'Vision, Mission, Goals, and Objectives', params: { 
+                    A: 'STATEMENT OF VISION, MISSION, GOALS AND OBJECTIVES',
+                    B: 'DISSEMINATION AND ACCEPTABILITY' } },
+            2: { name: 'Faculty', params: {
+                    A: 'ACADEMIC QUALIFICATIONS AND PROFESSIONAL EXPERIENCE',
+                    B: 'RECRUITMENT, SELECTION, AND ORIENTATION',
+                    C: 'FACULTY ADEQUACY AND LEADING',
+                    D: 'RANK AND TENURE',
+                    E: 'FACULTY DEVELOPMENT',
+                    F: 'PROFESSIONAL PERFORMANCE AND SCHOLARLY WORKS',
+                    G: 'SALARIES, FRINGE BENEFITS, AND INCENTIVES',
+                    H: 'PROFESSIONALISM' } },
+            3: { name: 'Curriculum and Instruction', params: { 
+                    A: 'CURRICULUM AND PROGRAM STUDIES',
+                    B: 'INSTRUCTIONAL PROCESS, METHODOLOGIES AND LEARNING OPPORTUNITIES',
+                    C: 'ASSESSMENT OF ACADEMIC PERFORMANCE',
+                    D: 'MANAGEMENT OF LEARNING',
+                    E: 'GRADUATION REQUIREMENTS',
+                    F: 'ADMINISTRATIVE SUPPORT FOR EFFECTIVE INSTRUCTION' } },
+            4: { name: 'Student Services', params: { A: 'STUDENT SERVICES PROGRAM (SSP)',
+                    B: 'STUDENT WELFARE',
+                    C: 'STUDENT DEVELOPMENT',
+                    D: 'INSTITUTIONAL STUDENT PROGRAM AND SERVICE',
+                    E: 'RESEARCH, MONITORING AND EVALUATION' } },
+            5: { name: 'Research', params: { A: 'PRIORITIES AND RELEVANCE',
+                    B: 'FUNDING AND OTHER RESOURCES',
+                    C: 'IMPLEMENTATION, MONITORING, EVALUATION AND UTILIZATION OF RESEARCH RESULTS/OUTPUTS',
+                    D: 'PUBLICATION AND DISSEMINATION' } },
+            6: { name: 'Extension and Community Involvement', params: { A: 'PRIORITIES AND RELEVANCE',
+                    B: 'PLANNING, IMPLEMENTATION, MONITORING, AND EVALUATION',
+                    C: 'FUNDING AND OTHER RESOURCES',
+                    D: 'MANAGEMENT OF LEARNING' } },
+            7: { name: 'Library', params: { A: 'ORGANIZATION AND ADMINISTRATION',
+                    B: 'COLLECTION DEVELOPMENT, ORGANIZATION AND PRESERVATION',
+                    C: 'LIBRARY SERVICES AND UTILIZATION',
+                    D: 'PHYSICAL FACILITIES AND EQUIPMENT',
+                    E: 'LIBRARY PERSONNEL',
+                    F: 'FINANCIAL SUPPORT',
+                    G: 'LINKAGES AND NETWORKING',
+                    H: 'EVALUATION AND MONITORING' } },
+            8: { name: 'Physical Plant and Facilities', params: { A: 'CAMPUS',
+                    B: 'BUILDINGS',
+                    C: 'CLASSROOMS',
+                    D: 'OFFICE AND STAFF ROOMS',
+                    E: 'ASSEMBLY, ATHLETIC AND SPORTS FACILITIES',
+                    F: 'MEDICAL AND DENTAL CLINIC',
+                    G: 'STUDENT CENTER',
+                    H: 'FOOD SERVICES/CANTEEN/CAFETERIA',
+                    I: 'ACCREDITATION CENTER',
+                    J: 'HOUSING (optional)' } },
+            9: { name: 'Laboratories', params: { A: 'LABORATORIES, SHOPS/FACILITIES',
+                    B: 'EQUIPMENT AND MATERIALS',
+                    C: 'MAINTENANCE',
+                    D: 'SPECIAL PROVISIONS' } },
+            10: { name: 'Administration', params: { A: 'ORGANIZATIONAL',
+                    B: 'ACADEMIC ADMINISTRATION',
+                    C: 'STUDENT ADMINISTRATION',
+                    D: 'FINANCIAL MANAGEMENT',
+                    E: 'SUPPLY MANAGEMENT',
+                    F: 'RECORDS MANAGEMENT',
+                    G: 'INSTITUTIONAL PLANNING AND DEVELOPMENT',
+                    H: 'PERFORMANCE OF ADMINISTRATIVE PERSONNEL' } }
         };
 
         var CATEGORIES = [
@@ -2186,21 +2197,21 @@
     // ------ Parameter A ------
     'BSBA-1-A-SIP': [
         { id: '1SRF0g3f3zg3kX9ilSMhCPzwAc24Wtc5n', name: 'S.1. The institution has a system of determining the Vision and Mission.' },
-        { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq', name: 'S.2. The Vision clearly reflects what the institution hopes to become in the future.' },
-        { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq', name: 'S.3. The Mission clearly reflects the institution\'s legal and other statutory mandates.' },
-        { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq', name: 'S.4. The Goals of the academic/ department are clearly stated and are consistent with the Mission of the institution.' },
-        { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq', name: 'S.5. The Objectives clearly state the expected outcomes in terms of competencies (skills and knowledge), values and other attributes of the graduates which include the development of:' },
-        { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq', name: 'S.5.1. technical skills in Business and Management Education;' },
-        { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq', name: 'S.5.2. research and extension capabilities;' },
-        { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq', name: 'S.5.3. students\' desirable attitudes and personal discipline;' },
-        { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq', name: 'S.5.4. moral character;' },
-        { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq', name: 'S.5.5. critical, analytical, problem solving and other higher order thinking skills; and' },
-        { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq', name: 'S.5.6. aesthetic and cultural values.' }
+        { id: 'SAMPLE_ID', name: 'S.2. The Vision clearly reflects what the institution hopes to become in the future.' },
+        { id: 'SAMPLE_ID', name: 'S.3. The Mission clearly reflects the institution\'s legal and other statutory mandates.' },
+        { id: 'SAMPLE_ID', name: 'S.4. The Goals of the academic/ department are clearly stated and are consistent with the Mission of the institution.' },
+        { id: 'SAMPLE_ID', name: 'S.5. The Objectives clearly state the expected outcomes in terms of competencies (skills and knowledge), values and other attributes of the graduates which include the development of:' },
+        { id: 'SAMPLE_ID', name: 'S.5.1. technical skills in Business and Management Education;' },
+        { id: 'SAMPLE_ID', name: 'S.5.2. research and extension capabilities;' },
+        { id: 'SAMPLE_ID', name: 'S.5.3. students\' desirable attitudes and personal discipline;' },
+        { id: 'SAMPLE_ID', name: 'S.5.4. moral character;' },
+        { id: 'SAMPLE_ID', name: 'S.5.5. critical, analytical, problem solving and other higher order thinking skills; and' },
+        { id: 'SAMPLE_ID', name: 'S.5.6. aesthetic and cultural values.' }
     ],
     'BSBA-1-A-IMP': [
-        { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq', name: 'I.1. The Institution/College conducts a review on the statement of the Vision and Mission as well as its goals and program objectives for the approval of authorities concerned.' },
-        { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq', name: 'I.2. The Academic Unit / College follows a system of formulating its goals and the objectives of the program.' },
-        { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq', name: 'I.3. The Institution\'s/Academic Unit\'s faculty, personnel, students and other stakeholders (cooperating agencies, linkages, alumni, industry sector and other concerned groups) participate in the formulation, review and/or revision of the VMGO.' }
+        { id: 'SAMPLE_ID', name: 'I.1. The Institution/College conducts a review on the statement of the Vision and Mission as well as its goals and program objectives for the approval of authorities concerned.' },
+        { id: 'SAMPLE_ID', name: 'I.2. The Academic Unit / College follows a system of formulating its goals and the objectives of the program.' },
+        { id: 'SAMPLE_ID', name: 'I.3. The Institution\'s/Academic Unit\'s faculty, personnel, students and other stakeholders (cooperating agencies, linkages, alumni, industry sector and other concerned groups) participate in the formulation, review and/or revision of the VMGO.' }
     ],
     'BSBA-1-A-OUT': [
         { id: 'SAMPLE_ID', name: 'O.1. The VMGO are crafted and duly approved by the BOT/BOR.' }
@@ -2211,27 +2222,27 @@
         { id: 'SAMPLE_ID', name: 'S.1. The VMGO are available on bulletin boards, in catalogs/manuals and in other forms of communication media.' }
     ],
     'BSBA-1-B-IMP': [
-        { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq', name: 'I.1. A system of dissemination and acceptability of the VMGO is enforced.' },
-        { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq', name: 'I.2. The administrators/faculty attend in-service seminars and training on awareness and acceptability of the:' },
-        { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq', name: 'I.2.1. Vision and Mission of the Institution;' },
-        { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq', name: 'I.2.2. Goals of the College/ Academic Unit; and' },
-        { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq', name: 'I.2.3. Objectives of the Program.' },
-        { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq', name: 'I.3. The formulation/review/revision of the VMGO is participated in by the following:' },
-        { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq', name: 'I.3.1. administrators;' },
-        { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq', name: 'I.3.2. faculty;' },
-        { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq', name: 'I.3.3. staff;' },
-        { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq', name: 'I.3.4. students; and' },
-        { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq', name: 'I.3.5. other stakeholders.' },
-        { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq', name: 'I.4. The faculty and staff perform their jobs/functions in consonance with the VMGO.' },
-        { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq', name: 'I.5. The VMGO are widely disseminated to the different agencies, institutions, industry sector and the community.' }
+        { id: 'SAMPLE_ID', name: 'I.1. A system of dissemination and acceptability of the VMGO is enforced.' },
+        { id: 'SAMPLE_ID', name: 'I.2. The administrators/faculty attend in-service seminars and training on awareness and acceptability of the:' },
+        { id: 'SAMPLE_ID', name: 'I.2.1. Vision and Mission of the Institution;' },
+        { id: 'SAMPLE_ID', name: 'I.2.2. Goals of the College/ Academic Unit; and' },
+        { id: 'SAMPLE_ID', name: 'I.2.3. Objectives of the Program.' },
+        { id: 'SAMPLE_ID', name: 'I.3. The formulation/review/revision of the VMGO is participated in by the following:' },
+        { id: 'SAMPLE_ID', name: 'I.3.1. administrators;' },
+        { id: 'SAMPLE_ID', name: 'I.3.2. faculty;' },
+        { id: 'SAMPLE_ID', name: 'I.3.3. staff;' },
+        { id: 'SAMPLE_ID', name: 'I.3.4. students; and' },
+        { id: 'SAMPLE_ID', name: 'I.3.5. other stakeholders.' },
+        { id: 'SAMPLE_ID', name: 'I.4. The faculty and staff perform their jobs/functions in consonance with the VMGO.' },
+        { id: 'SAMPLE_ID', name: 'I.5. The VMGO are widely disseminated to the different agencies, institutions, industry sector and the community.' }
     ],
     'BSBA-1-B-OUT': [
-        { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq', name: 'O.1. Awareness and acceptance of the VMGO by the administrators, faculty, staff, students and other stakeholders are evident.' },
-        { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq', name: 'O.2. There is congruency between actual educational practices and activities with the following:' },
-        { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq', name: 'O.2.1. Vision and Mission of the SUC;' },
-        { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq', name: 'O.2.2. Goals of the College/Academic Unit of Business Management Education; and' },
-        { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq', name: 'O.2.3. Objectives of the BSBA program.' },
-        { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq', name: 'O.3. The goal and objectives are being achieved.' }
+        { id: 'SAMPLE_ID', name: 'O.1. Awareness and acceptance of the VMGO by the administrators, faculty, staff, students and other stakeholders are evident.' },
+        { id: 'SAMPLE_ID', name: 'O.2. There is congruency between actual educational practices and activities with the following:' },
+        { id: 'SAMPLE_ID', name: 'O.2.1. Vision and Mission of the SUC;' },
+        { id: 'SAMPLE_ID', name: 'O.2.2. Goals of the College/Academic Unit of Business Management Education; and' },
+        { id: 'SAMPLE_ID', name: 'O.2.3. Objectives of the BSBA program.' },
+        { id: 'SAMPLE_ID', name: 'O.3. The goal and objectives are being achieved.' }
     ],
 
     // ==============================
@@ -3880,7 +3891,7 @@
             var extraTypes = ['additional', 'compliance', 'selfsurvey'];
             var nameMap = {
                 'additional': 'Additional Needed Requirements',
-                'compliance': 'Compliance w/ AACUP Recommendation',
+                'compliance': 'Compliance with AACUP Recommendations',
                 'selfsurvey': 'Self Survey'
             };
             for (var t = 0; t < extraTypes.length; t++) {
@@ -3938,8 +3949,8 @@
             function sortChildren(node) {
                 if (node.children) {
                     node.children.sort(function(a, b) {
-                        var aParts = a.code.split('.'),
-                            bParts = b.code.split('.');
+                        var aParts = a.code.split('.').length ? a.code.split('.') : [''],
+                            bParts = b.code.split('.').length ? b.code.split('.') : [''];
                         for (var i = 0; i < Math.min(aParts.length, bParts.length); i++) {
                             if (aParts[i] !== bParts[i]) {
                                 var aNum = parseInt(aParts[i]),
@@ -4309,7 +4320,7 @@
             }
             if (complianceId) {
                 html += '<div><button class="btn-neon btn-extra-neon btn-extra" data-type="compliance" data-fileid="' +
-                    complianceId + '"><span class="icon"><i class="fas fa-check-circle"></i></span> Compliance w/ AACUP Recommendation</button></div>';
+                    complianceId + '"><span class="icon"><i class="fas fa-check-circle"></i></span> Compliance with AACUP Recommendations</button></div>';
             }
             if (selfsurveyId) {
                 html += '<div><button class="btn-neon btn-extra-neon btn-extra" data-type="selfsurvey" data-fileid="' +
@@ -4331,7 +4342,7 @@
                     var type = b.dataset.type;
                     var nameMap = {
                         'additional': 'Additional Needed Requirements',
-                        'compliance': 'Compliance w/ AACUP Recommendation',
+                        'compliance': 'Compliance with AACUP Recommendations',
                         'selfsurvey': 'Self Survey'
                     };
                     var displayName = nameMap[type] || b.textContent.trim();
@@ -4682,7 +4693,7 @@
                 var fileId = null;
                 var nameMap = {
                     'additional': 'Additional Needed Requirements',
-                    'compliance': 'Compliance w/ AACUP Recommendation',
+                    'compliance': 'Compliance with AACUP Recommendations',
                     'selfsurvey': 'Self Survey',
                     'ppp': 'PPP (Program Performance Profile)',
                     'bestpractices': 'Best Practice/s'
