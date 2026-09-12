@@ -1010,7 +1010,7 @@
             border-radius: var(--radius);
             background: var(--btn-bg);
             backdrop-filter: blur(8px);
-            border: none;
+            border: 2px solid #6c28d950;
             color: var(--tech-text);
             font-weight: 600;
             font-size: 1.05rem;
@@ -1020,7 +1020,7 @@
             text-align: left;
             width: 100%;
             height: 100%;
-            min-height: 120px;
+            min-height: 130px;
             word-break: break-word;
             isolation: isolate;
             z-index: 1;
@@ -1203,7 +1203,7 @@
         .area-grid .label {
             flex: 1;
             font-weight: 600;
-            font-size: 1.05rem;
+            font-size: 1.3rem;
             display: -webkit-box;
             -webkit-line-clamp: 3;
             -webkit-box-orient: vertical;
@@ -1226,7 +1226,7 @@
 
         /* ---- PARAMETER BUTTONS ---- */
         .param-grid>* {
-            flex: 0 0 calc(25% - 18px);
+            flex: 0 0 calc(33% - 18px);
         }
         .param-grid .letter {
                 flex-shrink: 0;
@@ -1251,7 +1251,7 @@
         .param-grid .label {
             flex: 1;
             font-weight: 600;
-            font-size: 1.05rem;
+            font-size: 1.3rem;
             display: -webkit-box;
             -webkit-line-clamp: 3;
             -webkit-box-orient: vertical;
@@ -1292,7 +1292,7 @@
         }
         .doc-grid .label {
             font-weight: 700;
-            font-size: 1.05rem;
+            font-size: 1.3rem;
             display: -webkit-box;
             -webkit-line-clamp: 2;
             -webkit-box-orient: vertical;
@@ -1305,8 +1305,8 @@
 
         /* ---- HIERARCHY BUTTONS ---- */
         .hierarchy-grid>* {
-            flex: 0 0 calc(25% - 18px);
-            min-height: 80px;
+            flex: 0 0 calc(50% - 18px);
+            min-height: 120px;
         }
         .hierarchy-grid .btn-neon {
             justify-content: flex-start;
@@ -1329,7 +1329,7 @@
             flex: 1;
             font-weight: 600;
             word-break: break-word;
-            font-size: 1rem;
+            font-size: 1.3rem;
             display: -webkit-box;
             -webkit-line-clamp: 2;
             -webkit-box-orient: vertical;
@@ -1353,18 +1353,18 @@
         /* ---- EXTRA BUTTONS ---- */
         .extra-grid>* {
             flex: 0 0 calc(25% - 18px);
-            min-height: 80px;
+            min-height: 100px;
         }
         .param-extra-grid>* {
             flex: 0 0 calc(25% - 18px);
-            min-height: 80px;
+            min-height: 100px;
         }
         .extra-grid .btn-neon,
         .param-extra-grid .btn-neon {
             justify-content: center;
             gap: 10px;
-            min-height: 80px;
-            font-size: 1rem;
+            min-height: 100px;
+            font-size: 1.3rem;
             padding: 14px 18px;
             text-align: center;
         }
@@ -1946,65 +1946,65 @@
         var PROGRAM_NAME = 'Bachelor of Science in Information Technology';
 
         var AREAS_FULL = {
-            1: { name: 'Vision, Mission, Goals, and Objectives', params: { A: 'PARAMETER A: STATEMENT OF VISION, MISSION, GOALS AND OBJECTIVES',
-                    B: 'PARAMETER B: DISSEMINATION AND ACCEPTABILITY' } },
-            2: { name: 'Faculty', params: { A: 'PARAMETER A: ACADEMIC QUALIFICATIONS AND PROFESSIONAL EXPERIENCE',
-                    B: 'PARAMETER B: RECRUITMENT, SELECTION, AND ORIENTATION',
-                    C: 'PARAMETER C: FACULTY ADEQUACY AND LEADING',
-                    D: 'PARAMETER D: RANK AND TENURE',
-                    E: 'PARAMETER E: FACULTY DEVELOPMENT',
-                    F: 'PARAMETER F: PROFESSIONAL PERFORMANCE AND SCHOLARLY WORKS',
-                    G: 'PARAMETER G: SALARIES, FRINGE BENEFITS, AND INCENTIVES',
-                    H: 'PARAMETER H: PROFESSIONALISM' } },
-            3: { name: 'Curriculum and Instruction', params: { A: 'PARAMETER A: CURRICULUM AND PROGRAM STUDIES',
-                    B: 'PARAMETER B: INSTRUCTIONAL PROCESS, METHODOLOGIES AND LEARNING OPPORTUNITIES',
-                    C: 'PARAMETER C: ASSESSMENT OF ACADEMIC PERFORMANCE',
-                    D: 'PARAMETER D: MANAGEMENT OF LEARNING',
-                    E: 'PARAMETER E: GRADUATION REQUIREMENTS',
-                    F: 'PARAMETER F: ADMINISTRATIVE SUPPORT FOR EFFECTIVE INSTRUCTION' } },
-            4: { name: 'Student Services', params: { A: 'PARAMETER A: STUDENT SERVICES PROGRAM (SSP)',
-                    B: 'PARAMETER B: STUDENT WELFARE',
-                    C: 'PARAMETER C: STUDENT DEVELOPMENT',
-                    D: 'PARAMETER D: INSTITUTIONAL STUDENT PROGRAM AND SERVICE',
-                    E: 'PARAMETER E: RESEARCH, MONITORING AND EVALUATION' } },
-            5: { name: 'Research', params: { A: 'PARAMETER A: PRIORITIES AND RELEVANCE',
-                    B: 'PARAMETER B: FUNDING AND OTHER RESOURCES',
-                    C: 'PARAMETER C: IMPLEMENTATION, MONITORING, EVALUATION AND UTILIZATION OF RESEARCH RESULTS/OUTPUTS',
-                    D: 'PARAMETER D: PUBLICATION AND DISSEMINATION' } },
-            6: { name: 'Extension and Community Involvement', params: { A: 'PARAMETER A: PRIORITIES AND RELEVANCE',
-                    B: 'PARAMETER B: PLANNING, IMPLEMENTATION, MONITORING, AND EVALUATION',
-                    C: 'PARAMETER C: FUNDING AND OTHER RESOURCES',
-                    D: 'PARAMETER D: MANAGEMENT OF LEARNING' } },
-            7: { name: 'Library', params: { A: 'PARAMETER A: ORGANIZATION AND ADMINISTRATION',
-                    B: 'PARAMETER B: COLLECTION DEVELOPMENT, ORGANIZATION AND PRESERVATION',
-                    C: 'PARAMETER C: LIBRARY SERVICES AND UTILIZATION',
-                    D: 'PARAMETER D: PHYSICAL FACILITIES AND EQUIPMENT',
-                    E: 'PARAMETER E: LIBRARY PERSONNEL',
-                    F: 'PARAMETER F: FINANCIAL SUPPORT',
-                    G: 'PARAMETER G: LINKAGES AND NETWORKING',
-                    H: 'PARAMETER H: EVALUATION AND MONITORING' } },
-            8: { name: 'Physical Plant and Facilities', params: { A: 'PARAMETER A: CAMPUS',
-                    B: 'PARAMETER B: BUILDINGS',
-                    C: 'PARAMETER C: CLASSROOMS',
-                    D: 'PARAMETER D: OFFICE AND STAFF ROOMS',
-                    E: 'PARAMETER E: ASSEMBLY, ATHLETIC AND SPORTS FACILITIES',
-                    F: 'PARAMETER F: MEDICAL AND DENTAL CLINIC',
-                    G: 'PARAMETER G: STUDENT CENTER',
-                    H: 'PARAMETER H: FOOD SERVICES/CANTEEN/CAFETERIA',
-                    I: 'PARAMETER I: ACCREDITATION CENTER',
-                    J: 'PARAMETER J: HOUSING (optional)' } },
-            9: { name: 'Laboratories', params: { A: 'PARAMETER A: LABORATORIES, SHOPS/FACILITIES',
-                    B: 'PARAMETER B: EQUIPMENT AND MATERIALS',
-                    C: 'PARAMETER C: MAINTENANCE',
-                    D: 'PARAMETER D: SPECIAL PROVISIONS' } },
-            10: { name: 'Administration', params: { A: 'PARAMETER A: ORGANIZATIONAL',
-                    B: 'PARAMETER B: ACADEMIC ADMINISTRATION',
-                    C: 'PARAMETER C: STUDENT ADMINISTRATION',
-                    D: 'PARAMETER D: FINANCIAL MANAGEMENT',
-                    E: 'PARAMETER E: SUPPLY MANAGEMENT',
-                    F: 'PARAMETER F: RECORDS MANAGEMENT',
-                    G: 'PARAMETER G: INSTITUTIONAL PLANNING AND DEVELOPMENT',
-                    H: 'PARAMETER H: PERFORMANCE OF ADMINISTRATIVE PERSONNEL' } }
+               1: { name: 'Vision, Mission, Goals, and Objectives', params: { A: 'STATEMENT OF VISION, MISSION, GOALS AND OBJECTIVES',
+                    B: 'DISSEMINATION AND ACCEPTABILITY' } },
+            2: { name: 'Faculty', params: { A: 'ACADEMIC QUALIFICATIONS AND PROFESSIONAL EXPERIENCE',
+                    B: 'RECRUITMENT, SELECTION, AND ORIENTATION',
+                    C: 'FACULTY ADEQUACY AND LEADING',
+                    D: 'RANK AND TENURE',
+                    E: 'FACULTY DEVELOPMENT',
+                    F: 'PROFESSIONAL PERFORMANCE AND SCHOLARLY WORKS',
+                    G: 'SALARIES, FRINGE BENEFITS, AND INCENTIVES',
+                    H: 'PROFESSIONALISM' } },
+            3: { name: 'Curriculum and Instruction', params: { A: 'CURRICULUM AND PROGRAM STUDIES',
+                    B: 'INSTRUCTIONAL PROCESS, METHODOLOGIES AND LEARNING OPPORTUNITIES',
+                    C: 'ASSESSMENT OF ACADEMIC PERFORMANCE',
+                    D: 'MANAGEMENT OF LEARNING',
+                    E: 'GRADUATION REQUIREMENTS',
+                    F: 'ADMINISTRATIVE SUPPORT FOR EFFECTIVE INSTRUCTION' } },
+            4: { name: 'Student Services', params: { A: 'STUDENT SERVICES PROGRAM (SSP)',
+                    B: 'STUDENT WELFARE',
+                    C: 'STUDENT DEVELOPMENT',
+                    D: 'INSTITUTIONAL STUDENT PROGRAM AND SERVICE',
+                    E: 'RESEARCH, MONITORING AND EVALUATION' } },
+            5: { name: 'Research', params: { A: 'PRIORITIES AND RELEVANCE',
+                    B: 'FUNDING AND OTHER RESOURCES',
+                    C: 'IMPLEMENTATION, MONITORING, EVALUATION AND UTILIZATION OF RESEARCH RESULTS/OUTPUTS',
+                    D: 'PUBLICATION AND DISSEMINATION' } },
+            6: { name: 'Extension and Community Involvement', params: { A: 'PRIORITIES AND RELEVANCE',
+                    B: 'PLANNING, IMPLEMENTATION, MONITORING, AND EVALUATION',
+                    C: 'FUNDING AND OTHER RESOURCES',
+                    D: 'MANAGEMENT OF LEARNING' } },
+            7: { name: 'Library', params: { A: 'ORGANIZATION AND ADMINISTRATION',
+                    B: 'COLLECTION DEVELOPMENT, ORGANIZATION AND PRESERVATION',
+                    C: 'LIBRARY SERVICES AND UTILIZATION',
+                    D: 'PHYSICAL FACILITIES AND EQUIPMENT',
+                    E: 'LIBRARY PERSONNEL',
+                    F: 'FINANCIAL SUPPORT',
+                    G: 'LINKAGES AND NETWORKING',
+                    H: 'EVALUATION AND MONITORING' } },
+            8: { name: 'Physical Plant and Facilities', params: { A: 'CAMPUS',
+                    B: 'BUILDINGS',
+                    C: 'CLASSROOMS',
+                    D: 'OFFICE AND STAFF ROOMS',
+                    E: 'ASSEMBLY, ATHLETIC AND SPORTS FACILITIES',
+                    F: 'MEDICAL AND DENTAL CLINIC',
+                    G: 'STUDENT CENTER',
+                    H: 'FOOD SERVICES/CANTEEN/CAFETERIA',
+                    I: 'ACCREDITATION CENTER',
+                    J: 'HOUSING (optional)' } },
+            9: { name: 'Laboratories', params: { A: 'LABORATORIES, SHOPS/FACILITIES',
+                    B: 'EQUIPMENT AND MATERIALS',
+                    C: 'MAINTENANCE',
+                    D: 'SPECIAL PROVISIONS' } },
+            10: { name: 'Administration', params: { A: 'ORGANIZATIONAL',
+                    B: 'ACADEMIC ADMINISTRATION',
+                    C: 'STUDENT ADMINISTRATION',
+                    D: 'FINANCIAL MANAGEMENT',
+                    E: 'SUPPLY MANAGEMENT',
+                    F: 'RECORDS MANAGEMENT',
+                    G: 'INSTITUTIONAL PLANNING AND DEVELOPMENT',
+                    H: 'PERFORMANCE OF ADMINISTRATIVE PERSONNEL' } }
         };
 
         var CATEGORIES = [
@@ -2049,148 +2049,148 @@
             'BSIT-1-A-SIP': [
                 { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq',
                     name: 'S.1. The institution has a system of determining the Vision and Mission.' },
-                { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq',
+                { id: '1SRF0g3f3zg3kX9ilSMhCPzwAc24Wtc5n',
                     name: 'S.2. The Vision clearly reflects what the institution hopes to become in the future.' },
-                { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq',
+                { id: '1SRF0g3f3zg3kX9ilSMhCPzwAc24Wtc5n',
                     name: 'S.3. The Mission clearly reflects the institutions legal and other statutory mandate.' },
-                { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq',
+                { id: '1SRF0g3f3zg3kX9ilSMhCPzwAc24Wtc5n',
                     name: 'S.4. The Goals of the College/ Academic Unit are consistent with the Mission of the institution.' },
-                { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq',
+                { id: '1SRF0g3f3zg3kX9ilSMhCPzwAc24Wtc5n',
                     name: 'S.5. The Objectives of the program have the expected outcomes in terms of competencies (skills and knowledge), values and other attributes of the graduates which include the development of:' },
-                { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq',
+                { id: '1SRF0g3f3zg3kX9ilSMhCPzwAc24Wtc5n',
                     name: 'S.5.1. technical skills in Information Technology Education;' },
-                { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq',
+                { id: '1SRF0g3f3zg3kX9ilSMhCPzwAc24Wtc5n',
                     name: 'S.5.2. research and extension capabilities;' },
-                { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq',
+                { id: '1SRF0g3f3zg3kX9ilSMhCPzwAc24Wtc5n',
                     name: 'S.5.3. students own ideas, desirable attitudes, personal discipline' },
-                { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq',
+                { id: '1SRF0g3f3zg3kX9ilSMhCPzwAc24Wtc5n',
                     name: 'S.5.4. moral character;' },
-                { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq',
+                { id: '1SRF0g3f3zg3kX9ilSMhCPzwAc24Wtc5n',
                     name: 'S.5.5. critical thinking skills; and' },
-                { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq',
+                { id: '1SRF0g3f3zg3kX9ilSMhCPzwAc24Wtc5n',
                     name: 'S.5.6. aesthetic and cultural values.' }
             ],
             'BSIT-1-A-IMP': [
-                { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq',
+                { id: '1SRF0g3f3zg3kX9ilSMhCPzwAc24Wtc5n',
                     name: 'I.1. The institution/College conducts a review on the statement of the Vision and Mission as well as its goals and program objectives for the approval of authorities concerned.' },
-                { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq',
+                { id: '1SRF0g3f3zg3kX9ilSMhCPzwAc24Wtc5n',
                     name: 'I.2. The College/Academic Unit follows a system of formulating its goals and the objectives of the program.' },
-                { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq',
+                { id: '1SRF0g3f3zg3kX9ilSMhCPzwAc24Wtc5n',
                     name: 'I.3. The College/Academic Units faculty, personnel, students and other stakeholders (cooperating agencies, linkages, alumni, industry sector and other concerned groups) participates in the formulation, review and/or revision of the VMGO' }
             ],
             'BSIT-1-A-OUT': [
-                { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq',
+                { id: '1SRF0g3f3zg3kX9ilSMhCPzwAc24Wtc5n',
                     name: 'O.1. The VMGO are crafted and duly approved by the BOR/BOT.' }
             ],
 
             'BSIT-1-B-SIP': [
-                { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq',
+                { id: '1SRF0g3f3zg3kX9ilSMhCPzwAc24Wtc5n',
                     name: 'S.1. The VMGO are available on bulletin boards, in catalogs/manuals and in other forms of communication media.' }
             ],
             'BSIT-1-B-IMP': [
-                { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq',
+                { id: '1SRF0g3f3zg3kX9ilSMhCPzwAc24Wtc5n',
                     name: 'I.1. A system of dissemination and acceptability of the VMGO is enforced' },
-                { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq',
+                { id: '1SRF0g3f3zg3kX9ilSMhCPzwAc24Wtc5n',
                     name: 'I.2. The administrators/faculty attend in-service seminars and training on awareness and acceptability of the:' },
-                { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq',
+                { id: '1SRF0g3f3zg3kX9ilSMhCPzwAc24Wtc5n',
                     name: 'I.2.1. Vision and Mission of the Institution;' },
-                { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq',
+                { id: '1SRF0g3f3zg3kX9ilSMhCPzwAc24Wtc5n',
                     name: 'I.2.2. Goals of the College/Academic Unit; and' },
-                { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq',
+                { id: '1SRF0g3f3zg3kX9ilSMhCPzwAc24Wtc5n',
                     name: 'I.2.3. Objectives of the Program.' },
-                { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq',
+                { id: '1SRF0g3f3zg3kX9ilSMhCPzwAc24Wtc5n',
                     name: 'I.3. The formulation/review/revision of the VMGO is participated in by the following:' },
-                { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq',
+                { id: '1SRF0g3f3zg3kX9ilSMhCPzwAc24Wtc5n',
                     name: 'I.3.1. administrators;' },
-                { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq',
+                { id: '1SRF0g3f3zg3kX9ilSMhCPzwAc24Wtc5n',
                     name: 'I.3.2. faculty;' },
-                { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq',
+                { id: '1SRF0g3f3zg3kX9ilSMhCPzwAc24Wtc5n',
                     name: 'I.3.3. staff;' },
-                { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq',
+                { id: '1SRF0g3f3zg3kX9ilSMhCPzwAc24Wtc5n',
                     name: 'I.3.4. students; and' },
-                { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq',
+                { id: '1SRF0g3f3zg3kX9ilSMhCPzwAc24Wtc5n',
                     name: 'I.3.5. other stakeholders.' },
-                { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq',
+                { id: '1SRF0g3f3zg3kX9ilSMhCPzwAc24Wtc5n',
                     name: 'I.4. The faculty and staff perform their jobs/functions in consonance with the VMGO.' },
-                { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq',
+                { id: '1SRF0g3f3zg3kX9ilSMhCPzwAc24Wtc5n',
                     name: 'I.5. The VMGO are widely disseminated to different agencies, institutions, industry sector and the community.' }
             ],
             'BSIT-1-B-OUT': [
-                { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq',
+                { id: '1SRF0g3f3zg3kX9ilSMhCPzwAc24Wtc5n',
                     name: 'O.1. There is full awareness and acceptance of the VMGO by the administrators, faculty, staff, students and other stakeholders.' },
-                { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq',
+                { id: '1SRF0g3f3zg3kX9ilSMhCPzwAc24Wtc5n',
                     name: 'O.2. There is congruency between actual educational practices and activities with the following:' },
-                { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq',
+                { id: '1SRF0g3f3zg3kX9ilSMhCPzwAc24Wtc5n',
                     name: 'O.2.1. Vision and Mission of the SUC;' },
-                { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq',
+                { id: '1SRF0g3f3zg3kX9ilSMhCPzwAc24Wtc5n',
                     name: 'O.2.2. Goals of the College/ Academic Unit' },
-                { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq',
+                { id: '1SRF0g3f3zg3kX9ilSMhCPzwAc24Wtc5n',
                     name: 'O.2.3. Objectives of the Information Technology Education program' },
-                { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq',
+                { id: '1SRF0g3f3zg3kX9ilSMhCPzwAc24Wtc5n',
                     name: 'O.3. The goals and objectives are being achieved.' }
             ],
             'BSIT-2-A-SIP': [
-                { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq',
+                { id: '1SRF0g3f3zg3kX9ilSMhCPzwAc24Wtc5n',
                     name: 'S.1. The required number of faculty possess graduate degrees appropriate and relevant to the Program or any of the allied fields.' },
-                { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq',
+                { id: '1SRF0g3f3zg3kX9ilSMhCPzwAc24Wtc5n',
                     name: 'S.1.1. Master in Information Technology for 30% of the faculty handling IT courses; and' },
-                { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq',
+                { id: '1SRF0g3f3zg3kX9ilSMhCPzwAc24Wtc5n',
                     name: 'S.1.2. IT or allied degrees and any of the following:' },
-                { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq',
+                { id: '1SRF0g3f3zg3kX9ilSMhCPzwAc24Wtc5n',
                     name: 'S.1.2.1. IT industry experience of 20% of the faculty for years in technical administration, system design, applications programming or equivalent within the last 5 years; and' },
-                { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq',
+                { id: '1SRF0g3f3zg3kX9ilSMhCPzwAc24Wtc5n',
                     name: 'S.1.2.2. proficiency in the teaching ITE courses as proven by the certification issued by a certifying body as the Philippine National IT Standard (PhilNITS), Brainbench, Oracle or Microsoft, etc. provide that the teaching load assigned to him/her is aligned with the area of certification.' },
-                { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq',
+                { id: '1SRF0g3f3zg3kX9ilSMhCPzwAc24Wtc5n',
                     name: 'S.2. Other qualifications such as the following are considered:' },
-                { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq',
+                { id: '1SRF0g3f3zg3kX9ilSMhCPzwAc24Wtc5n',
                     name: 'S.2.2. Computer literacy.' },
-                { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq',
+                { id: '1SRF0g3f3zg3kX9ilSMhCPzwAc24Wtc5n',
                     name: 'S.2.3. technical skills and competence;' },
-                { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq',
+                { id: '1SRF0g3f3zg3kX9ilSMhCPzwAc24Wtc5n',
                     name: 'S.2.4. special abilities' },
-                { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq',
+                { id: '1SRF0g3f3zg3kX9ilSMhCPzwAc24Wtc5n',
                     name: 'S.2.5. research capability;' },
-                { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq',
+                { id: '1SRF0g3f3zg3kX9ilSMhCPzwAc24Wtc5n',
                     name: 'S.3. Faculty handling OJT/practicum courses have had at least three (3) Years of teaching and industry-based experience in the field, if applicable.' },
-                { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq',
+                { id: '1SRF0g3f3zg3kX9ilSMhCPzwAc24Wtc5n',
                     name: 'S.4. At least 50% of the faculty are Graduate Degree holders.' }
             ],
             'BSIT-2-A-IMP': [
-                { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq',
+                { id: '1SRF0g3f3zg3kX9ilSMhCPzwAc24Wtc5n',
                     name: 'I.1. The faculty demonstrate professional competence and are engage in any or a combination of the following:' },
-                { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq',
+                { id: '1SRF0g3f3zg3kX9ilSMhCPzwAc24Wtc5n',
                     name: 'I.1.1. instruction;' },
-                { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq',
+                { id: '1SRF0g3f3zg3kX9ilSMhCPzwAc24Wtc5n',
                     name: 'I.1.2. research;' },
-                { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq',
+                { id: '1SRF0g3f3zg3kX9ilSMhCPzwAc24Wtc5n',
                     name: 'I.1.3. extension;' },
-                { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq',
+                { id: '1SRF0g3f3zg3kX9ilSMhCPzwAc24Wtc5n',
                     name: 'I.1.4. Production;' },
-                { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq',
+                { id: '1SRF0g3f3zg3kX9ilSMhCPzwAc24Wtc5n',
                     name: 'I.1.5. consultancy and expert service; and' },
-                { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq',
+                { id: '1SRF0g3f3zg3kX9ilSMhCPzwAc24Wtc5n',
                     name: 'I.1.6. publication, creative and scholarly works.' },
-                { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq',
+                { id: '1SRF0g3f3zg3kX9ilSMhCPzwAc24Wtc5n',
                     name: 'I.2. Faculty pursue graduate degrees in Information Technology and/or allied fields from reputable institutions (with at least Level II accreditation status or Word/Asia rank.' }
             ],
             'BSIT-2-A-OUT': [
-                { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq',
+                { id: '1SRF0g3f3zg3kX9ilSMhCPzwAc24Wtc5n',
                     name: 'O.1. The institution has qualified and competent faculty.' }
             ],
 
             'BSIT-2-B-SIP': [
-                { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq',
+                { id: 'SAMPLE LINK',
                     name: 'S. 1. There is an institutional Human Resource Development Plan/Program (HRDP) designed for faculty recruitment.' }
             ],
             
             'BSIT-2-B-IMP': [
-                { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq',
+                { id: 'SAMPLE LINK',
                     name: 'I.1. Recruitment and selection of faculty is processed by the Faculty Selection Board using the following criteria:' },
-                { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq',
+                { id: 'SAMPLE LINK',
                     name: 'I.1.1. academic qualifications;' },
-                { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq',
+                { id: 'SAMPLE LINK',
                     name: 'I.1.2. personal qualities;' },
-                { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq',
+                { id: 'SAMPLE LINK',
                     name: 'I.1.3. communication skills;' },
                 { id: 'SAMPLE LINK',
                     name: 'I.1.4. teaching ability;' },
@@ -4951,7 +4951,7 @@
             var extraTypes = ['additional', 'compliance', 'selfsurvey'];
             var nameMap = {
                 'additional': 'Additional Needed Requirements',
-                'compliance': 'Compliance w/ AACUP Recommendation',
+                'compliance': 'Compliance with AACUP Recommendations',
                 'selfsurvey': 'Self Survey'
             };
             for (var t = 0; t < extraTypes.length; t++) {
@@ -5380,7 +5380,7 @@
             }
             if (complianceId) {
                 html += '<div><button class="btn-neon btn-extra-neon btn-extra" data-type="compliance" data-fileid="' +
-                    complianceId + '"><span class="icon"><i class="fas fa-check-circle"></i></span> Compliance w/ AACUP Recommendation</button></div>';
+                    complianceId + '"><span class="icon"><i class="fas fa-check-circle"></i></span> Compliance with AACUP Recommendations</button></div>';
             }
             if (selfsurveyId) {
                 html += '<div><button class="btn-neon btn-extra-neon btn-extra" data-type="selfsurvey" data-fileid="' +
@@ -5402,7 +5402,7 @@
                     var type = b.dataset.type;
                     var nameMap = {
                         'additional': 'Additional Needed Requirements',
-                        'compliance': 'Compliance w/ AACUP Recommendation',
+                        'compliance': 'Compliance with AACUP Recommendations',
                         'selfsurvey': 'Self Survey'
                     };
                     var displayName = nameMap[type] || b.textContent.trim();
@@ -5753,7 +5753,7 @@
                 var fileId = null;
                 var nameMap = {
                     'additional': 'Additional Needed Requirements',
-                    'compliance': 'Compliance w/ AACUP Recommendation',
+                    'compliance': 'Compliance with AACUP Recommendations',
                     'selfsurvey': 'Self Survey',
                     'ppp': 'PPP (Program Performance Profile)',
                     'bestpractices': 'Best Practice/s'
