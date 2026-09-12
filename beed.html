@@ -8,7 +8,7 @@
     <!-- ===== GOOGLE FONTS ===== -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&family=Nunito:wght@400;600;700;800;900&family=Quicksand:wght@400;500;600;700&family=Playfair+Display:wght@400;600;700;800&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&family=Orbitron:wght@400..900&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
     <!-- ===== FONT AWESOME ===== -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
@@ -38,10 +38,11 @@
             --beed-amber-light: #FDE8B3;
             --beed-gold: #F7C948;
             --beed-gold-light: #FDF0D0;
-            --beed-teal: #2E8B8B;
-            --beed-teal-dark: #1F6B6B;
-            --beed-teal-light: #D4ECEC;
-            --beed-teal-soft: #E8F5F5;
+            /* ---- Was green (teal) — now replaced with orange (system palette) ---- */
+            --beed-teal: #E8953A;
+            --beed-teal-dark: #D48E1A;
+            --beed-teal-light: #FDE8B3;
+            --beed-teal-soft: #FDF0D0;
             --beed-orange: #E8953A;
             --beed-brown: #4A3426;
             --beed-brown-light: #7A5F4A;
@@ -52,8 +53,9 @@
 
             --glow-amber: 0 0 40px rgba(245, 166, 35, 0.15);
             --glow-amber-strong: 0 0 60px rgba(245, 166, 35, 0.25);
-            --glow-teal: 0 0 40px rgba(46, 139, 139, 0.15);
-            --glow-teal-strong: 0 0 60px rgba(46, 139, 139, 0.25);
+            /* ---- Was green glow — now orange glow ---- */
+            --glow-teal: 0 0 40px rgba(232, 149, 58, 0.15);
+            --glow-teal-strong: 0 0 60px rgba(232, 149, 58, 0.25);
             --glow-gold: 0 0 40px rgba(247, 201, 72, 0.15);
 
             --radius: 18px;
@@ -74,7 +76,8 @@
             --footer-border: 6px solid #F5A623;
 
             --orb1-color: rgba(245, 166, 35, 0.06);
-            --orb2-color: rgba(46, 139, 139, 0.06);
+            /* ---- Was green orb — now orange orb ---- */
+            --orb2-color: rgba(232, 149, 58, 0.06);
             --orb3-color: rgba(247, 201, 72, 0.04);
 
             --scrollbar-track: #F7F2EC;
@@ -117,7 +120,8 @@
             --footer-border: 2px solid rgba(245, 166, 35, 0.08);
 
             --orb1-color: rgba(245, 166, 35, 0.05);
-            --orb2-color: rgba(46, 139, 139, 0.05);
+            /* ---- Was green orb — now orange orb ---- */
+            --orb2-color: rgba(232, 149, 58, 0.05);
             --orb3-color: rgba(247, 201, 72, 0.03);
 
             --scrollbar-track: #1A1512;
@@ -125,7 +129,7 @@
 
             --beed-amber: #F5A623;
             --beed-gold: #F7C948;
-            --beed-teal: #3A9F9F;
+            --beed-teal: #F5A623;
             --beed-orange: #E8953A;
 
             --beed-btn-bg: #1A1512;
@@ -133,7 +137,7 @@
             --beed-btn-after-bg: #1A1512;
 
             .beed-watermark {
-                opacity: 0.02 !important;
+                opacity: 0.1 !important;
             }
         }
 
@@ -144,13 +148,14 @@
         }
 
         [data-theme="light"] header::after {
-            background: linear-gradient(90deg, transparent, #F5A623, #2E8B8B, #F5A623, transparent);
+            /* ---- Was teal — now orange ---- */
+            background: linear-gradient(90deg, transparent, #F5A623, #E8953A, #F5A623, transparent);
             opacity: 0.5;
         }
 
         [data-theme="light"] .title-block h1 {
-            color: #ffffff;
-            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            /* gradient text handled below */
+            text-shadow: none;
         }
 
         [data-theme="light"] .title-block .sub-header {
@@ -163,7 +168,8 @@
         }
 
         [data-theme="light"] .logo-ring {
-            background: conic-gradient(from 0deg, #F5A623, #2E8B8B, #F7C948, #F5A623);
+            /* ---- Was teal — now orange ---- */
+            background: conic-gradient(from 0deg, #F5A623, #E8953A, #F7C948, #F5A623);
         }
 
         /* ---- LIGHT MODE: FOOTER OVERRIDES ---- */
@@ -181,7 +187,7 @@
         }
 
         [data-theme="light"] footer .footer-divider {
-            background: linear-gradient(90deg, #F5A623, #2E8B8B);
+            background: linear-gradient(90deg, #F5A623);
             box-shadow: 0 0 30px rgba(245, 166, 35, 0.3);
         }
 
@@ -195,7 +201,8 @@
         }
 
         [data-theme="light"] footer::before {
-            background: linear-gradient(90deg, transparent, #F5A623, #2E8B8B, #F5A623, transparent);
+            /* ---- Was teal — now orange ---- */
+            background: linear-gradient(90deg, transparent, #F5A623, #E8953A, #F5A623, transparent);
             opacity: 0.5;
         }
 
@@ -225,7 +232,7 @@
             --border-color1: #D48E1A;
         }
         [data-theme="light"] .btn-param-neon {
-            --border-color1: #2E8B8B;
+            --border-color1: var(--beed-amber);
         }
         [data-theme="light"] .btn-cat-neon {
             --border-color1: #F7C948;
@@ -234,7 +241,7 @@
             --border-color1: #E8953A;
         }
         [data-theme="light"] .btn-extra-neon {
-            --border-color1: #2E8B8B;
+            --border-color1: var(--beed-amber);
         }
 
         /* ---- LIGHT MODE: BACK BUTTON ---- */
@@ -293,7 +300,8 @@
             background: linear-gradient(160deg, #F5A623, #D48E1A);
         }
         [data-theme="light"] .param-grid .letter {
-            background: linear-gradient(160deg, #2E8B8B, #1F6B6B);
+            /* ---- Was teal — now orange/gold ---- */
+            background: linear-gradient(160deg, #E8953A, #D48E1A);
         }
 
         /* ---- LIGHT MODE: ICONS ---- */
@@ -317,13 +325,14 @@
 
         /* ---- LIGHT MODE: BREADCRUMB ---- */
         [data-theme="light"] .breadcrumb a {
-            color: #2E8B8B;
+            /* ---- Was green — now orange ---- */
+            color: #E8953A;
         }
         [data-theme="light"] .breadcrumb a::after {
             background: #F5A623;
         }
         [data-theme="light"] .breadcrumb a:hover {
-            background: rgba(46, 139, 139, 0.06);
+            background: rgba(232, 149, 58, 0.06);
             color: #F5A623;
         }
         [data-theme="light"] .breadcrumb .current {
@@ -381,7 +390,8 @@
             box-shadow: 0 0 20px rgba(245, 166, 35, 0.15);
         }
         [data-theme="light"] ::-webkit-scrollbar-thumb:hover {
-            background: #2E8B8B;
+            /* ---- Was green — now orange ---- */
+            background: #E8953A;
             box-shadow: var(--glow-teal);
         }
 
@@ -511,7 +521,7 @@
             left: 50%;
             transform: translate(-50%, -50%);
             z-index: -1;
-            opacity: 0.035;
+            opacity: 0.1;
             pointer-events: none;
             user-select: none;
             width: 600px;
@@ -522,8 +532,8 @@
         }
 
         @keyframes watermarkPulse {
-            0% { opacity: 0.10; transform: translate(-50%, -50%) scale(1); }
-            100% { opacity: 0.02; transform: translate(-50%, -50%) scale(1.06); }
+            0% { opacity: 0.1; transform: translate(-50%, -50%) scale(1); }
+            100% { opacity: 0.1; transform: translate(-50%, -50%) scale(1.06); }
         }
 
         @media (max-width: 767px) {
@@ -602,8 +612,8 @@
         }
 
         .logo {
-            height: 64px;
-            width: 64px;
+            height: 70px;
+            width: 70px;
             border-radius: 50%;
             background: var(--beed-bg-secondary);
             display: flex;
@@ -652,15 +662,26 @@
             flex: 1;
         }
 
+        /* ============================================================
+           HEADER TITLE — Futuristic font + gradient text (HEAD style)
+           ============================================================ */
         .title-block h1 {
-            font-family: 'Nunito', 'Segoe UI', sans-serif;
-            font-size: 1.25rem;
+            font-family: 'Orbitron', 'Segoe UI', sans-serif;
+            font-size: 1.05rem;
             font-weight: 800;
-            line-height: 1.2;
-            letter-spacing: 0.5px;
-            color: var(--beed-brown);
-            text-shadow: 0 2px 12px rgba(245, 166, 35, 0.03);
-            transition: color 0.5s var(--ease);
+            line-height: 1.3;
+            letter-spacing: 2px;
+            background: linear-gradient(135deg, #FFFFFF 0%, #FDE8B3 35%, #F7C948 70%, #F5A623 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            color: transparent;
+            filter: drop-shadow(0 2px 10px rgba(245, 166, 35, 0.25));
+            transition: filter 0.5s var(--ease);
+        }
+
+        .title-block h1:hover {
+            filter: drop-shadow(0 4px 16px rgba(245, 166, 35, 0.45));
         }
 
         .title-block .sub-header {
@@ -805,7 +826,8 @@
         }
 
         .breadcrumb a:hover {
-            background: rgba(46, 139, 139, 0.06);
+            /* ---- Was green — now orange ---- */
+            background: rgba(232, 149, 58, 0.06);
             color: var(--beed-amber);
             transform: translateY(-1px);
         }
@@ -938,24 +960,40 @@
             margin: 4px 0 10px;
         }
 
+        /* ============================================================
+           PAGE TITLE — Futuristic font + gradient text (HEAD style)
+           ============================================================ */
         .page-header-row h2 {
             text-align: center;
             margin: 0;
-            font-family: 'Nunito', 'Quicksand', sans-serif;
-            font-size: clamp(1.6rem, 3.2vw, 2.6rem);
+            font-family: 'Orbitron', 'Segoe UI', sans-serif;
+            font-size: clamp(1.15rem, 2.2vw, 2.75rem);
             font-weight: 800;
-            letter-spacing: 0.3px;
+            letter-spacing: 1.5px;
             position: relative;
             z-index: 1;
             padding: 0;
-            color: var(--beed-brown);
-            text-shadow: 0 2px 24px rgba(245, 166, 35, 0.03);
-            transition: color 0.5s var(--ease);
-            line-height: 1.2;
+            background: linear-gradient(135deg, #D48E1A 0%, #F5A623 30%, #F7C948 55%, #E8953A 80%, #D48E1A 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            color: transparent;
+            filter: drop-shadow(0 2px 12px rgba(245, 166, 35, 0.18));
+            transition: filter 0.5s var(--ease);
+            line-height: 1.35;
+        }
+
+        .page-header-row h2:hover {
+            filter: drop-shadow(0 3px 18px rgba(245, 166, 35, 0.35));
         }
 
         .page-header-row h2 .accent {
-            color: var(--beed-amber);
+            /* keep the span inside the gradient, no override */
+            background: inherit;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            color: transparent;
         }
 
         .page-header-row .btn-back {
@@ -980,7 +1018,7 @@
             padding: 16px 20px;
             border-radius: var(--radius);
             background: var(--beed-btn-bg);
-            border: none;
+            border: 2px solid #f5a5234c;
             color: var(--beed-text);
             font-weight: 600;
             font-size: 1.05rem;
@@ -990,7 +1028,7 @@
             text-align: left;
             width: 100%;
             height: 100%;
-            min-height: 150px; /* 120 before*/
+            min-height: 130px; /* 120 before*/
             word-break: break-word;
             isolation: isolate;
             z-index: 1;
@@ -1084,7 +1122,7 @@
         }
 
         .btn-extra-neon {
-            --border-color1: var(--beed-teal);
+            --border-color1: #F5A623;
             --border-speed: 6s;
             --btn-glow: var(--glow-teal);
         }
@@ -1190,7 +1228,7 @@
 
         /* ---- PARAMETER BUTTONS ---- */
         .param-grid>* {
-            flex: 0 0 calc(25% - 18px);
+            flex: 0 0 calc(33% - 18px);  /*-- 25%(4 column botton) before --*/
         }
         .param-grid .letter {
                 flex-shrink: 0;
@@ -1198,7 +1236,7 @@
                 height: 34px;
                 border-radius: 50%;
                 background:rgba(245, 165, 35, 0.092);
-                border: 1px solid var(--beed-teal);
+                border: 1px solid #F5A623;
                 color: #FFFFFF;
                 display: flex;
                 align-items: center;
@@ -1206,16 +1244,17 @@
                 font-family: 'JetBrains Mono', monospace;
                 font-weight: 600;
                 font-size: .85rem;
-                box-shadow: 0 2px 12px rgba(46, 139, 139, 0.2);
+                box-shadow: 0 2px 12px rgba(232, 149, 58, 0.2);
         }
         .param-grid .btn-neon:hover .letter {
-            box-shadow: 0 0 30px rgba(46, 139, 139, 0.3);
+            /* ---- Was green — now orange ---- */
+            box-shadow: 0 0 30px rgba(232, 149, 58, 0.3);
             transform: scale(1.05);
         }
         .param-grid .label {
             flex: 1;
             font-weight: 700;
-            font-size: 1.5rem; /* 1.05 before */
+            font-size: 1.2rem; /* 1.05 before */
             display: -webkit-box;
             -webkit-line-clamp: 3;
             -webkit-box-orient: vertical;
@@ -1231,7 +1270,7 @@
             opacity: 0.6;
             flex-shrink: 0;
             transition: transform 0.3s var(--ease), opacity 0.3s var(--ease);
-            color: var(--beed-teal);
+            color: var(--beed-amber);
         }
         .param-grid .btn-neon:hover .arrow {
             transform: translateX(6px);
@@ -1272,8 +1311,8 @@
 
         /* ---- HIERARCHY BUTTONS ---- */
         .hierarchy-grid>* {
-            flex: 0 0 calc(25% - 18px);
-            min-height: 150px;
+            flex: 0 0 calc(50% - 18px);/*--  before 25%/ 4 column - maximum column of botton --*/
+            min-height: 100px;
         }
         .hierarchy-grid .btn-neon {
             justify-content: flex-start;
@@ -1324,17 +1363,17 @@
         /* ---- EXTRA BUTTONS ---- */
         .extra-grid>* {
             flex: 0 0 calc(25% - 18px);
-            min-height: 120px;/* 80 before */
+            min-height: 100px;/* 80 before */
         }
         .param-extra-grid>* {
             flex: 0 0 calc(25% - 18px);
-            min-height: 120px;/* 80 before */
+            min-height: 100px;/* 80 before */
         }
         .extra-grid .btn-neon,
         .param-extra-grid .btn-neon {
             justify-content: center;
             gap: 10px;
-            min-height: 120px;/* 80 before */
+            min-height: 100px;/* 80 before */
             font-size: 1.3rem;
             padding: 14px 18px;
             text-align: center;
@@ -1345,7 +1384,8 @@
             font-size: 1.4rem;
             width: auto;
             color: var(--beed-teal);
-            filter: drop-shadow(0 0 12px rgba(46, 139, 139, 0.06));
+            /* ---- Was green — now orange ---- */
+            filter: drop-shadow(0 0 12px rgba(232, 149, 58, 0.06));
         }
 
         .extra-grid .btn-neon:hover .icon,
@@ -1533,7 +1573,8 @@
                     transparent,
                     rgba(245, 166, 35, 0.03),
                     transparent,
-                    rgba(46, 139, 139, 0.03),
+                    /* ---- Was green — now orange ---- */
+                    rgba(232, 149, 58, 0.03),
                     transparent);
             z-index: -1;
             animation: spinBorder 12s linear infinite;
@@ -1585,7 +1626,7 @@
         }
 
         .empty-state h3 {
-            font-family: 'Nunito', 'Quicksand', sans-serif;
+            font-family: 'Quicksand', sans-serif;
             font-size: 1.5rem;
             margin-bottom: 12px;
             color: var(--beed-text);
@@ -1628,6 +1669,7 @@
             left: 0;
             right: 0;
             height: 2px;
+            /* ---- Was teal — now orange ---- */
             background: linear-gradient(90deg, transparent, var(--beed-amber), var(--beed-teal), var(--beed-amber), transparent);
             background-size: 300% 100%;
             animation: scanLine 6s linear infinite;
@@ -1646,7 +1688,7 @@
             margin-top: 4px;
             font-size: 0.85rem;
             opacity: 0.8;
-            font-family: 'Nunito', sans-serif;
+            font-family: 'Quicksand', sans-serif;
             letter-spacing: 1.5px;
             font-weight: 700;
             color: var(--beed-amber);
@@ -1656,7 +1698,7 @@
         footer .footer-divider {
             width: 60px;
             height: 3px;
-            background: linear-gradient(90deg, var(--beed-amber), var(--beed-teal));
+            background:var(--beed-amber);
             margin: 16px auto;
             border-radius: 3px;
             box-shadow: var(--glow-amber);
@@ -1682,8 +1724,9 @@
 
         footer .footer-contact .value {
             font-weight: 700;
-            color: var(--beed-teal);
-            text-shadow: 0 0 24px rgba(46, 139, 139, 0.04);
+            color: var( --beed-amber);
+            /* ---- Was green shadow — now orange ---- */
+            text-shadow: 0 0 24px rgba(232, 149, 58, 0.04);
             transition: color 0.5s var(--ease);
         }
 
@@ -1706,8 +1749,8 @@
                 padding: 10px 16px;
             }
             .title-block h1 {
-                font-size: 1rem;
-                letter-spacing: 0.3px;
+                font-size: 0.78rem;
+                letter-spacing: 1.2px;
             }
             .title-block .sub-header {
                 font-size: 0.7rem;
@@ -1760,8 +1803,9 @@
             }
             .page-header-row h2 {
                 order: 2;
-                font-size: clamp(1.1rem, 4.5vw, 1.5rem);
+                font-size: clamp(0.85rem, 3.2vw, 1.1rem);
                 padding: 0;
+                letter-spacing: 1px;
             }
             .page-header-row .spacer {
                 display: none;
@@ -1898,7 +1942,7 @@
         <span class="footer-course">Bachelor of Elementary Education</span>
         <div class="footer-divider"></div>
         <div class="footer-contact">
-            <p><span class="label">Program Chairperson:</span> <span class="value">Dr. Liezel T. Parallag</span></p>
+            <p><span class="label">Program Chairperson:</span> <span class="value">Dr. Liezel T. Parallag, Phd.</span></p>
             <p><span class="label">Email:</span> <span class="value">beed.lubang@omsu.edu.ph</span></p>
             <p><span class="label">Technical Support:</span> <span class="value">iqa.lubang@omsu.edu.ph</span></p>
         </div>
@@ -2229,9 +2273,6 @@
         // ============================================================
         var DOCUMENT_FILES = {
 
-// ================================================================
-// BEED — Bachelor of Elementary Education
-// ================================================================
 
 // ================================================================
 // AREA I — Vision, Mission, Goals, and Objectives
@@ -2280,12 +2321,12 @@
     { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq', name: 'I.5. The VMGO are widely disseminated to the different agencies, institutions, industry sector and the community.' }
 ],
 'BEED-1-B-OUT': [
-    { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq', name: 'O.1. There is full awareness and acceptance of the VMGO by the administrators, faculty, staff, students and other stakeholders.' },
-    { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq', name: 'O.2. There is congruency between actual educational practices and activities with the following:' },
-    { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq', name: 'O.2.1. Vision and Mission of the SUC;' },
-    { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq', name: 'O.2.2. Goals of the College/Academic Unit;' },
-    { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq', name: 'O.2.3. Objectives of the Office Administration program.' },
-    { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq', name: 'O.3. The goals and objectives are being achieved.' }
+    { id: 'SAMPLE_ID', name: 'O.1. There is full awareness and acceptance of the VMGO by the administrators, faculty, staff, students and other stakeholders.' },
+    { id: 'SAMPLE_ID', name: 'O.2. There is congruency between actual educational practices and activities with the following:' },
+    { id: 'SAMPLE_ID', name: 'O.2.1. Vision and Mission of the SUC;' },
+    { id: 'SAMPLE_ID', name: 'O.2.2. Goals of the College/Academic Unit;' },
+    { id: 'SAMPLE_ID', name: 'O.2.3. Objectives of the Office Administration program.' },
+    { id: 'SAMPLE_ID', name: 'O.3. The goals and objectives are being achieved.' }
 ],
 
 // ================================================================
@@ -3798,7 +3839,7 @@
             var extraTypes = ['additional', 'compliance', 'selfsurvey'];
             var nameMap = {
                 'additional': 'Additional Needed Requirements',
-                'compliance': 'Compliance w/ AACUP Recommendation',
+                'compliance': 'Compliance with AACUP Recommendations',
                 'selfsurvey': 'Self Survey'
             };
             for (var t = 0; t < extraTypes.length; t++) {
@@ -3856,8 +3897,8 @@
             function sortChildren(node) {
                 if (node.children) {
                     node.children.sort(function(a, b) {
-                        var aParts = a.code.split('.'),
-                            bParts = b.code.split('.');
+                        var aParts = a.code.split('.').length ? a.code.split('.') : [''],
+                            bParts = b.code.split('.').length ? b.code.split('.') : [''];
                         for (var i = 0; i < Math.min(aParts.length, bParts.length); i++) {
                             if (aParts[i] !== bParts[i]) {
                                 var aNum = parseInt(aParts[i]),
@@ -4172,7 +4213,6 @@
             html += '<h2>BEED — <span class="accent">Bachelor of Elementary Education</span></h2>';
             html += '<span class="spacer"></span>';
             html += '</div>';
-            html += '<p style="text-align:center;color:var(--beed-text-muted);margin:0 0 4px;font-size:0.95rem;opacity:0.8;">AACCUP Accreditation Document System</p>';
             html += '<div class="area-grid">';
             var areaKeys = Object.keys(AREAS_FULL);
             for (var a = 0; a < areaKeys.length; a++) {
@@ -4227,7 +4267,7 @@
             }
             if (complianceId) {
                 html += '<div><button class="btn-neon btn-extra-neon btn-extra" data-type="compliance" data-fileid="' +
-                    complianceId + '"><span class="icon"><i class="fas fa-check-circle"></i></span> Compliance w/ AACUP Recommendation</button></div>';
+                    complianceId + '"><span class="icon"><i class="fas fa-check-circle"></i></span> Compliance with AACUP Recommendations</button></div>';
             }
             if (selfsurveyId) {
                 html += '<div><button class="btn-neon btn-extra-neon btn-extra" data-type="selfsurvey" data-fileid="' +
@@ -4249,7 +4289,7 @@
                     var type = b.dataset.type;
                     var nameMap = {
                         'additional': 'Additional Needed Requirements',
-                        'compliance': 'Compliance w/ AACUP Recommendation',
+                        'compliance': 'Compliance with AACUP Recommendations',
                         'selfsurvey': 'Self Survey'
                     };
                     var displayName = nameMap[type] || b.textContent.trim();
@@ -4600,7 +4640,7 @@
                 var fileId = null;
                 var nameMap = {
                     'additional': 'Additional Needed Requirements',
-                    'compliance': 'Compliance w/ AACUP Recommendation',
+                    'compliance': 'Compliance with AACUP Recommendations',
                     'selfsurvey': 'Self Survey',
                     'ppp': 'PPP (Program Performance Profile)',
                     'bestpractices': 'Best Practice/s'
