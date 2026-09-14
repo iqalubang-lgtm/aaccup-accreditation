@@ -587,13 +587,13 @@
         .logo-section {
             display: flex;
             align-items: center;
-            gap: 18px;
+            gap: 12px;/*-- before 18px  --*/
             flex: 1;
         }
 
         .logo {
-            height: 70px;
-            width: 70px;
+            height: 80px;
+            width: 80px;
             border-radius: 50%;
             background: var(--tech-bg-secondary);
             display: flex;
@@ -620,6 +620,48 @@
         }
 
         .logo-ring {
+            position: absolute;
+            inset: -4px;
+            border-radius: 50%;
+            border: 2px solid transparent;
+            background: conic-gradient(from 0deg, var(--tech-violet), var(--tech-purple), var(--tech-pink), var(--tech-violet));
+            -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 3px), #000 calc(100% - 2px));
+            mask: radial-gradient(farthest-side, transparent calc(100% - 3px), #000 calc(100% - 2px));
+            animation: spinBorder 8s linear infinite;
+            opacity: 0.6;
+            pointer-events: none;
+            transition: opacity 0.4s var(--ease);
+        }
+
+        .bsit-logo {
+            height: 70px;
+            width: 70px;
+            border-radius: 50%;
+            background: var(--tech-bg-secondary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            flex-shrink: 0;
+            border: 2px solid var(--tech-violet);
+            box-shadow: var(--glow-violet), inset 0 0 30px rgba(139, 92, 246, 0.05);
+            transition: box-shadow 0.4s var(--ease), border-color 0.4s var(--ease), background 0.4s var(--ease);
+            position: relative;
+        }
+
+        .bsit-logo:hover {
+            box-shadow: var(--glow-violet-strong), inset 0 0 40px rgba(139, 92, 246, 0.08);
+            border-color: var(--tech-purple);
+        }
+
+        .bsit-logo img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        .bsit-logo-ring {
             position: absolute;
             inset: -4px;
             border-radius: 50%;
@@ -1080,7 +1122,7 @@
         }
 
         .btn-neon:active::before {
-            animation-duration: 3s;
+            animation-duration: 5s;
             filter: blur(0px) drop-shadow(0 0 35px var(--border-color1)) brightness(2);
         }
 
@@ -1740,6 +1782,13 @@
             .logo-ring {
                 inset: -3px;
             }
+            .bsit-logo {
+                height: 45px;
+                width: 45px;
+            }
+            .bsit-logo-ring {
+                inset: -3px;
+            }
 
             .theme-toggle {
                 width: 40px;
@@ -1883,6 +1932,10 @@
                 <div class="logo">
                     <img src="images/OMSU-Logo.png" alt="OMSC Logo" onerror="this.parentElement.innerHTML='OMSC'" />
                     <span class="logo-ring"></span>
+                </div>
+                <div class="bsit-logo">
+                    <img src="images/bsit-Logo.png" alt="OMSC Logo" onerror="this.parentElement.innerHTML='OMSC'" />
+                    <span class="bsit-logo-ring"></span>
                 </div>
                 <div class="title-block">
                     <h1>OCCIDENTAL MINDORO STATE UNIVERSITY</h1>
