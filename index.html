@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>AACCUP Accreditation System — OMSC</title>
   <style>
-    /* ===== LANDING STYLES (gaya ng bsit.html) ===== */
+    /* ===== LANDING STYLES ===== */
     :root {
       --primary: #0047AB;
       --primary-dark: #002a66;
@@ -43,7 +43,7 @@
     }
     a { color: inherit; text-decoration: none; }
 
-    /* ===== HEADER (eksaktong kapareho ng bsit.html) ===== */
+    /* ===== HEADER ===== */
     header {
       background: linear-gradient(180deg, var(--primary) 0%, var(--primary-dark) 100%);
       color: var(--white);
@@ -183,7 +183,6 @@
       overflow: hidden;
       text-decoration: none;
     }
-    /* gold seam sa itaas */
     .program-grid a::before {
       content: '';
       position: absolute;
@@ -196,7 +195,7 @@
       z-index: 2; /* nasa itaas ng logo */
     }
 
-    /* pseudo‑element para sa department logo */
+    /* pseudo‑element  */
     .program-grid a::after {
       content: '';
       position: absolute;
@@ -207,9 +206,9 @@
       background-size: contain;
       background-position: center;
       background-repeat: no-repeat;
-      opacity: 0.15;           /* mababang opacity para hindi matabunan ang text */
-      pointer-events: none;    /* hindi nakaka‑intercept ng click */
-      z-index: 0;             /* nasa likod ng gradient at text */
+      opacity: 0.15;    
+      pointer-events: none;  
+      z-index: 0;           
       transition: opacity .3s ease;
     }
 
