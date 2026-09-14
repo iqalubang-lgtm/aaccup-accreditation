@@ -588,13 +588,13 @@
         .logo-section {
             display: flex;
             align-items: center;
-            gap: 18px;
+            gap: 12px;
             flex: 1;
         }
 
         .logo {
-            height: 70px;
-            width: 70px;
+            height: 80px;
+            width: 80px;
             border-radius: 50%;
             background: var(--tech-bg-secondary);
             display: flex;
@@ -613,7 +613,7 @@
             border-color: var(--tech-purple);
         }
 
-        .logo img {
+        .logo img, .bsba-logo img {
             height: 100%;
             width: 100%;
             object-fit: cover;
@@ -622,6 +622,41 @@
 
         /* ---- Logo ring: now all blue ---- */
         .logo-ring {
+            position: absolute;
+            inset: -4px;
+            border-radius: 50%;
+            border: 2px solid transparent;
+            background: conic-gradient(from 0deg, var(--tech-cyan), var(--tech-purple), var(--tech-pink), var(--tech-cyan));
+            -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 3px), #000 calc(100% - 2px));
+            mask: radial-gradient(farthest-side, transparent calc(100% - 3px), #000 calc(100% - 2px));
+            animation: spinBorder 6s linear infinite;
+            opacity: 0.6;
+            pointer-events: none;
+            transition: opacity 0.4s var(--ease);
+        }
+        .bsba-logo {
+            height: 70px;
+            width: 70px;
+            border-radius: 50%;
+            background: var(--tech-bg-secondary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            flex-shrink: 0;
+            border: 2px solid var(--tech-cyan);
+            box-shadow: var(--glow-cyan), inset 0 0 30px rgba(0, 212, 255, 0.05);
+            transition: box-shadow 0.4s var(--ease), border-color 0.4s var(--ease), background 0.4s var(--ease);
+            position: relative;
+        }
+
+        .bsbalogo:hover {
+            box-shadow: var(--glow-cyan-strong), inset 0 0 40px rgba(0, 212, 255, 0.08);
+            border-color: var(--tech-purple);
+        }
+
+        /* ---- Logo ring: now all blue ---- */
+        .bsba-logo-ring {
             position: absolute;
             inset: -4px;
             border-radius: 50%;
@@ -1083,14 +1118,14 @@
         }
 
         .btn-neon:active::before {
-            animation-duration: 1s;
+            animation-duration: 5s;
             filter: blur(0px) drop-shadow(0 0 35px var(--border-color1)) brightness(2);
         }
 
         /* ---- Button Variants — all blue now, gold only for extras ---- */
         .btn-area-neon {
             --border-color1: var(--tech-cyan);
-            --border-speed: 20s;
+            --border-speed: 14s;
             --btn-glow: var(--glow-cyan);
         }
 
@@ -1102,7 +1137,7 @@
 
         .btn-cat-neon {
             --border-color1: var(--tech-green);
-            --border-speed: 12s;
+            --border-speed: 14s;
             --btn-glow: var(--glow-green);
         }
 
@@ -1114,7 +1149,7 @@
 
         .btn-extra-neon {
             --border-color1: var(--tech-gold);
-            --border-speed: 16s;
+            --border-speed: 14s;
             --btn-glow: var(--glow-gold);
         }
 
@@ -1126,7 +1161,7 @@
 
         .btn-open-neon {
             --border-color1: var(--tech-cyan);
-            --border-speed: 12s;
+            --border-speed: 14s;
             --btn-glow: var(--glow-cyan-strong);
         }
 
@@ -1746,6 +1781,13 @@
             .logo-ring {
                 inset: -3px;
             }
+            .bsba-logo {
+                height: 45px;
+                width: 45px;
+            }
+            .bsba-logo-ring {
+                inset: -3px;
+            }
 
             .theme-toggle {
                 width: 40px;
@@ -1889,6 +1931,10 @@
                 <div class="logo">
                     <img src="images/OMSU-Logo.png" alt="OMSC Logo" onerror="this.parentElement.innerHTML='OMSC'" />
                     <span class="logo-ring"></span>
+                </div>
+                <div class="bsba-logo">
+                    <img src="images/bsba-Logo.png" alt="OMSC Logo" onerror="this.parentElement.innerHTML='OMSC'" />
+                    <span class="bsba-logo-ring"></span>
                 </div>
                 <div class="title-block">
                     <h1>OCCIDENTAL MINDORO STATE UNIVERSITY</h1>
