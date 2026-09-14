@@ -532,8 +532,8 @@
         }
 
         @keyframes watermarkPulse {
-            0% { opacity: 0.1; transform: translate(-50%, -50%) scale(1); }
-            100% { opacity: 0.1; transform: translate(-50%, -50%) scale(1.06); }
+            0% { opacity: 0.10; transform: translate(-50%, -50%) scale(1); }
+            100% { opacity: 0.02; transform: translate(-50%, -50%) scale(1.06); }
         }
 
         @media (max-width: 767px) {
@@ -612,8 +612,8 @@
         }
 
         .logo {
-            height: 70px;
-            width: 70px;
+            height: 80px;
+            width: 80px;
             border-radius: 50%;
             background: var(--beed-bg-secondary);
             display: flex;
@@ -627,20 +627,20 @@
             position: relative;
         }
 
-        .logo:hover {
+        .logo:hover,.beed-logo:hover {
             box-shadow: 0 6px 36px rgba(245, 166, 35, 0.2), inset 0 0 50px rgba(245, 166, 35, 0.04);
             border-color: var(--beed-teal);
             transform: scale(1.03) rotate(-2deg);
         }
 
-        .logo img {
+        .logo img, .beed-logo img {
             height: 100%;
             width: 100%;
             object-fit: cover;
             border-radius: 50%;
         }
 
-        .logo-ring {
+        .logo-ring, .beed-logo-ring {
             position: absolute;
             inset: -5px;
             border-radius: 50%;
@@ -651,6 +651,22 @@
             animation: spinBorder 10s linear infinite;
             opacity: 0.4;
             pointer-events: none;
+        }
+
+        .beed-logo {
+            height: 70px;
+            width: 70px;
+            border-radius: 50%;
+            background: var(--beed-bg-secondary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            flex-shrink: 0;
+            border: 2px solid var(--beed-amber);
+            box-shadow: 0 4px 24px rgba(245, 166, 35, 0.12), inset 0 0 40px rgba(245, 166, 35, 0.02);
+            transition: all 0.4s var(--ease);
+            position: relative;
         }
 
         @keyframes spinBorder {
@@ -1092,38 +1108,38 @@
         }
 
         .btn-neon:active::before {
-            animation-duration: 1s;
+            animation-duration: 5s;
             filter: blur(0px) drop-shadow(0 0 35px var(--border-color1)) brightness(2);
         }
 
         /* ---- Button Variants ---- */
         .btn-area-neon {
             --border-color1: var(--beed-amber);
-            --border-speed: 7s;
+            --border-speed: 14s;
             --btn-glow: var(--glow-amber);
         }
 
         .btn-param-neon {
             --border-color1: var(--beed-teal);
-            --border-speed: 5s;
+            --border-speed: 14s;
             --btn-glow: var(--glow-teal);
         }
 
         .btn-cat-neon {
             --border-color1: var(--beed-gold);
-            --border-speed: 4s;
+            --border-speed: 14s;
             --btn-glow: var(--glow-gold);
         }
 
         .btn-doc-neon {
             --border-color1: var(--beed-orange);
-            --border-speed: 5s;
+            --border-speed: 14s;
             --btn-glow: var(--glow-amber);
         }
 
         .btn-extra-neon {
             --border-color1: #F5A623;
-            --border-speed: 6s;
+            --border-speed: 14s;
             --btn-glow: var(--glow-teal);
         }
 
@@ -1763,6 +1779,13 @@
             .logo-ring {
                 inset: -3px;
             }
+            .beed-logo {
+                height: 45px;
+                width: 45px;
+            }
+            .beed-logo-ring {
+                inset: -3px;
+            }
 
             .header-actions .theme-toggle {
                 width: 38px;
@@ -1919,6 +1942,10 @@
                 <div class="logo">
                     <img src="images/OMSU-Logo.png" alt="OMSC Logo" onerror="this.parentElement.innerHTML='OMSC'" />
                     <span class="logo-ring"></span>
+                </div>
+                <div class="beed-logo">
+                    <img src="images/beed-logo.png" alt="OMSC Logo" onerror="this.parentElement.innerHTML='OMSC'" />
+                    <span class="beed-logo-ring"></span>
                 </div>
                 <div class="title-block">
                     <h1>OCCIDENTAL MINDORO STATE UNIVERSITY</h1>
