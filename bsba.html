@@ -5,22 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>BSBA — AACCUP Accreditation System</title>
 
-    <!-- ===== GOOGLE FONTS (BUSINESS THEME) ===== -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;0,900;1,400&family=Inter:wght@400;500;600;700;800&family=Lora:wght@400;600;700&display=swap" rel="stylesheet" />
-
-    <!-- ===== FONT AWESOME 6 (FREE ICONS) ===== -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
     <style>
         /* ============================================================
                BSBA — BUSINESS / PROFESSIONAL THEME (DARK + BLUE + GOLD)
-               All non-blue accents replaced with blue variants.
-               Gold retained for the "Additional" / extra buttons area.
                ============================================================ */
-
-        /* ---- ROOT VARIABLES (DARK MODE — DEFAULT) ---- */
         :root,
         [data-theme="dark"] {
             --tech-bg: #0A0E17;
@@ -30,13 +23,12 @@
             --tech-border: #1A2A3A;
             --tech-border-light: #2A3A4A;
 
-            /* ---- All accents are BLUE shades now; gold kept for extras ---- */
-            --tech-cyan: #00D4FF;      /* primary bright blue */
-            --tech-purple: #2979FF;    /* was #7B2FBE  → now vivid blue */
-            --tech-orange: #40C4FF;    /* was #FF6B35  → now sky blue */
-            --tech-green: #00B0FF;     /* was #00FF88  → now azure blue */
-            --tech-pink: #0091EA;      /* was #FF2D95  → now deep blue */
-            --tech-gold: #FFD700;      /* KEPT — gold for extra buttons */
+            --tech-cyan: #00D4FF;
+            --tech-purple: #2979FF;
+            --tech-orange: #40C4FF;
+            --tech-green: #00B0FF;
+            --tech-pink: #0091EA;
+            --tech-gold: #FFD700;
 
             --tech-text: #E8F0F8;
             --tech-text-muted: #8899AA;
@@ -82,30 +74,22 @@
             --ease-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
         }
 
-        /* ---- LIGHT MODE ---- */
         [data-theme="light"] {
-            /* Backgrounds */
             --tech-bg: #F5F9FF;
             --tech-bg-secondary: #EBF3FC;
             --tech-card: #FFFFFF;
             --tech-card-hover: #FAFCFE;
             --tech-border: #D6E4F0;
             --tech-border-light: #E8F0F8;
-
-            /* Accent Colors - Blue Shades + Gold */
             --tech-cyan: #2196F3;
             --tech-purple: #0D47A1;
             --tech-orange: #64B5F6;
             --tech-green: #2196F3;
             --tech-pink: #0D47A1;
-            --tech-gold: #F5A623;   /* gold for extra buttons (was blue) */
-
-            /* Text Colors */
+            --tech-gold: #F5A623;
             --tech-text: #1A2A3A;
             --tech-text-muted: #546E7A;
             --tech-text-dim: #90A4AE;
-
-            /* Glows */
             --glow-cyan: 0 0 24px rgba(33, 150, 243, 0.15);
             --glow-cyan-strong: 0 0 40px rgba(33, 150, 243, 0.25);
             --glow-purple: 0 0 24px rgba(13, 71, 161, 0.15);
@@ -114,349 +98,157 @@
             --glow-pink: 0 0 24px rgba(13, 71, 161, 0.15);
             --glow-gold: 0 0 24px rgba(245, 166, 35, 0.20);
             --glow-white: 0 0 24px rgba(0, 0, 0, 0.06);
-
-            /* Header & Footer */
             --header-bg: linear-gradient(135deg, #0D47A1 0%, #1A3A6B 100%);
             --footer-bg: #0D47A1;
             --header-border: 4px solid #64B5F6;
             --footer-border: 6px solid #64B5F6;
-
             --glass-bg: rgba(255, 255, 255, 0.6);
             --glass-border: rgba(0, 0, 0, 0.06);
-
-            /* Button Backgrounds */
             --btn-bg: #ffffff;
             --btn-bg-hover: #FAFCFE;
             --btn-after-bg: #ffffff;
-
-            /* Shadows */
             --shadow-color: rgba(0, 0, 0, 0.06);
             --shadow-soft: 0 4px 20px rgba(13, 71, 161, 0.08);
             --shadow-hover: 0 8px 35px rgba(13, 71, 161, 0.18);
             --shadow-inset: inset 0 1px 0 rgba(255, 255, 255, 0.5);
-
             --watermark-opacity: 0.3;
             --grid-opacity: 0.04;
             --orb-opacity: 0.04;
-
             --scrollbar-track: #EBF0F6;
             --scrollbar-thumb: #2196F3;
         }
 
-        /* ---- LIGHT MODE: HEADER OVERRIDES ---- */
-        [data-theme="light"] header {
-            color: #ffffff;
-            border-bottom: 4px solid #64B5F6;
-        }
-
+        [data-theme="light"] header { color: #ffffff; border-bottom: 4px solid #64B5F6; }
         [data-theme="light"] header::after {
             background: linear-gradient(90deg, transparent, #64B5F6, #2196F3, #64B5F6, transparent);
             opacity: 0.4;
         }
-
         [data-theme="light"] .title-block h1 {
-            color: #ffffff;
-            -webkit-text-fill-color: #ffffff;
-            background: none;
-            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            color: #ffffff; -webkit-text-fill-color: #ffffff;
+            background: none; text-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
-
         [data-theme="light"] .title-block .sub-header {
-            color: #BBDEFB;
-            -webkit-text-fill-color: #BBDEFB;
-            background: none;
+            color: #BBDEFB; -webkit-text-fill-color: #BBDEFB; background: none;
         }
-
-        /* ---- LIGHT MODE: FOOTER OVERRIDES ---- */
-        [data-theme="light"] footer {
-            color: rgba(255, 255, 255, 0.8);
-            border-top: 6px solid #64B5F6;
-        }
-
-        [data-theme="light"] footer strong {
-            color: #ffffff;
-        }
-
-        [data-theme="light"] footer .footer-course {
-            color: #90CAF9;
-        }
-
+        [data-theme="light"] footer { color: rgba(255, 255, 255, 0.8); border-top: 6px solid #64B5F6; }
+        [data-theme="light"] footer strong { color: #ffffff; }
+        [data-theme="light"] footer .footer-course { color: #90CAF9; }
         [data-theme="light"] footer .footer-divider {
             background: linear-gradient(90deg, #64B5F6, #2196F3);
             box-shadow: 0 0 30px rgba(33, 150, 243, 0.3);
         }
-
-        [data-theme="light"] footer .footer-contact .value {
-            color: #90CAF9;
-            text-shadow: 0 0 20px rgba(33, 150, 243, 0.2);
-        }
-
-        [data-theme="light"] footer .footer-contact .label {
-            opacity: 0.6;
-        }
-
+        [data-theme="light"] footer .footer-contact .value { color: #90CAF9; text-shadow: 0 0 20px rgba(33, 150, 243, 0.2); }
+        [data-theme="light"] footer .footer-contact .label { opacity: 0.6; }
         [data-theme="light"] footer::before {
             background: linear-gradient(90deg, transparent, #64B5F6, #2196F3, #64B5F6, transparent);
             opacity: 0.5;
         }
-
-        /* ---- LIGHT MODE: BUTTON OVERRIDES ---- */
         [data-theme="light"] .btn-neon {
-            background: #ffffff;
-            border: 2px solid #D6E4F0;
-            color: #1A2A3A;
-            box-shadow: var(--shadow-soft);
+            background: #ffffff; border: 2px solid #D6E4F0;
+            color: #1A2A3A; box-shadow: var(--shadow-soft);
         }
-
-        [data-theme="light"] .btn-neon::after {
-            background: #ffffff;
-        }
-
+        [data-theme="light"] .btn-neon::after { background: #ffffff; }
         [data-theme="light"] .btn-neon:hover {
             transform: translateY(-6px) scale(1.01);
             box-shadow: var(--shadow-hover), 0 0 25px rgba(33, 150, 243, 0.12);
             border-color: #2196F3;
         }
-
-        [data-theme="light"] .btn-neon:hover::after {
-            background: #FAFCFE;
-        }
-
-        /* ---- Button variant border colors (spinning light) ---- */
-        [data-theme="light"] .btn-area-neon {
-            --border-color1: #0D47A1;
-        }
-        [data-theme="light"] .btn-param-neon {
-            --border-color1: #2196F3;
-        }
-        [data-theme="light"] .btn-cat-neon {
-            --border-color1: #64B5F6;
-        }
-        [data-theme="light"] .btn-doc-neon {
-            --border-color1: #2196F3;
-        }
-        [data-theme="light"] .btn-extra-neon {
-            --border-color1: #F5A623;   /* gold for extra buttons */
-        }
-        [data-theme="light"] .btn-back-neon {
-            --border-color1: #2196F3;
-        }
-        [data-theme="light"] .btn-open-neon {
-            --border-color1: #2196F3;
-        }
-
-        /* ---- LIGHT MODE: BACK BUTTON ---- */
-        [data-theme="light"] .btn-back {
-            color: #0D47A1;
-            background: #ffffff;
-            border: 2px solid #D6E4F0;
-        }
-
-        [data-theme="light"] .btn-back::after {
-            background: #ffffff;
-        }
-
+        [data-theme="light"] .btn-neon:hover::after { background: #FAFCFE; }
+        [data-theme="light"] .btn-area-neon { --border-color1: #0D47A1; }
+        [data-theme="light"] .btn-param-neon { --border-color1: #2196F3; }
+        [data-theme="light"] .btn-cat-neon { --border-color1: #64B5F6; }
+        [data-theme="light"] .btn-doc-neon { --border-color1: #2196F3; }
+        [data-theme="light"] .btn-extra-neon { --border-color1: #F5A623; }
+        [data-theme="light"] .btn-back-neon { --border-color1: #2196F3; }
+        [data-theme="light"] .btn-open-neon { --border-color1: #2196F3; }
+        [data-theme="light"] .btn-back { color: #0D47A1; background: #ffffff; border: 2px solid #D6E4F0; }
+        [data-theme="light"] .btn-back::after { background: #ffffff; }
         [data-theme="light"] .btn-back:hover {
-            transform: translateY(-3px);
-            border-color: #2196F3;
+            transform: translateY(-3px); border-color: #2196F3;
             box-shadow: var(--shadow-hover), 0 0 20px rgba(33, 150, 243, 0.08);
         }
-
         [data-theme="light"] .btn-back::before {
             background: conic-gradient(
                 from var(--angle),
-                transparent 0deg,
-                #2196F3 10deg,
-                transparent 24deg,
-                transparent 176deg,
-                #2196F3 186deg,
-                transparent 200deg,
+                transparent 0deg, #2196F3 10deg, transparent 24deg,
+                transparent 176deg, #2196F3 186deg, transparent 200deg,
                 transparent 360deg
             );
         }
-
-        /* ---- LIGHT MODE: OPEN BUTTON ---- */
-        [data-theme="light"] .btn-open {
-            color: #0D47A1;
-            background: #E3F2FD;
-            border: 2px solid #2196F3;
-        }
-
-        [data-theme="light"] .btn-open::after {
-            background: #E3F2FD;
-        }
-
+        [data-theme="light"] .btn-open { color: #0D47A1; background: #E3F2FD; border: 2px solid #2196F3; }
+        [data-theme="light"] .btn-open::after { background: #E3F2FD; }
         [data-theme="light"] .btn-open:hover {
-            transform: translateY(-4px);
-            border-color: #0D47A1;
+            transform: translateY(-4px); border-color: #0D47A1;
             box-shadow: var(--shadow-hover), 0 0 30px rgba(33, 150, 243, 0.15);
         }
-
-        [data-theme="light"] .btn-open:hover::after {
-            background: #D6EAF8;
-        }
-
-        /* ---- LIGHT MODE: NUM & LETTER BADGES ---- */
-        [data-theme="light"] .area-grid .num {
-            background: linear-gradient(160deg, #2196F3, #0D47A1);
-        }
-
-        [data-theme="light"] .param-grid .letter {
-            background: linear-gradient(160deg, #2196F3, #0D47A1);
-        }
-
-        /* ---- LIGHT MODE: ICONS ---- */
-        [data-theme="light"] .btn-neon .icon {
-            color: #2196F3;
-            filter: drop-shadow(0 0 10px rgba(33, 150, 243, 0.2));
-        }
-
-        [data-theme="light"] .doc-grid .btn-neon .icon {
-            color: #2196F3;
-            filter: drop-shadow(0 0 10px rgba(33, 150, 243, 0.1));
-        }
-
-        [data-theme="light"] .hierarchy-grid .file-icon {
-            color: #2196F3;
-            filter: drop-shadow(0 0 8px rgba(33, 150, 243, 0.08));
-        }
-
+        [data-theme="light"] .btn-open:hover::after { background: #D6EAF8; }
+        [data-theme="light"] .area-grid .num { background: linear-gradient(160deg, #2196F3, #0D47A1); }
+        [data-theme="light"] .param-grid .letter { background: linear-gradient(160deg, #2196F3, #0D47A1); }
+        [data-theme="light"] .btn-neon .icon { color: #2196F3; filter: drop-shadow(0 0 10px rgba(33, 150, 243, 0.2)); }
+        [data-theme="light"] .doc-grid .btn-neon .icon { color: #2196F3; filter: drop-shadow(0 0 10px rgba(33, 150, 243, 0.1)); }
+        [data-theme="light"] .hierarchy-grid .file-icon { color: #2196F3; filter: drop-shadow(0 0 8px rgba(33, 150, 243, 0.08)); }
         [data-theme="light"] .area-grid .arrow,
         [data-theme="light"] .param-grid .arrow,
-        [data-theme="light"] .hierarchy-grid .arrow {
-            color: #2196F3;
-        }
-
-        /* ---- LIGHT MODE: BREADCRUMB ---- */
-        [data-theme="light"] .breadcrumb a {
-            color: #0D47A1;
-        }
-        [data-theme="light"] .breadcrumb a::after {
-            background: #2196F3;
-        }
+        [data-theme="light"] .hierarchy-grid .arrow { color: #2196F3; }
+        [data-theme="light"] .breadcrumb a { color: #0D47A1; }
+        [data-theme="light"] .breadcrumb a::after { background: #2196F3; }
         [data-theme="light"] .breadcrumb a:hover {
-            background: rgba(33, 150, 243, 0.06);
-            color: var(--tech-text);
+            background: rgba(33, 150, 243, 0.06); color: var(--tech-text);
         }
         [data-theme="light"] .breadcrumb .current {
-            background: #E3F2FD;
-            border-color: #BBDEFB;
-            color: var(--tech-text);
+            background: #E3F2FD; border-color: #BBDEFB; color: var(--tech-text);
         }
-
-        /* ---- LIGHT MODE: SEARCH BAR ---- */
         [data-theme="light"] .search-container input {
-            background: rgba(255, 255, 255, 0.8);
-            border-color: #D6E4F0;
+            background: rgba(255, 255, 255, 0.8); border-color: #D6E4F0;
         }
         [data-theme="light"] .search-container input:focus {
-            border-color: #2196F3;
-            box-shadow: 0 0 20px rgba(33, 150, 243, 0.15);
+            border-color: #2196F3; box-shadow: 0 0 20px rgba(33, 150, 243, 0.15);
         }
-
-        /* ---- LIGHT MODE: EMPTY STATE ---- */
-        [data-theme="light"] .empty-state {
-            background: rgba(255, 255, 255, 0.6);
-            border-color: #D6E4F0;
-        }
-        [data-theme="light"] .empty-state .icon {
-            color: #2196F3;
-        }
-        [data-theme="light"] .empty-state h3 {
-            color: #0D47A1;
-        }
-
-        /* ---- LIGHT MODE: PDF CONTAINER ---- */
+        [data-theme="light"] .empty-state { background: rgba(255, 255, 255, 0.6); border-color: #D6E4F0; }
+        [data-theme="light"] .empty-state .icon { color: #2196F3; }
+        [data-theme="light"] .empty-state h3 { color: #0D47A1; }
         [data-theme="light"] .pdf-container {
-            background: white;
-            border-color: #D6E4F0;
-            box-shadow: var(--shadow-soft);
+            background: white; border-color: #D6E4F0; box-shadow: var(--shadow-soft);
         }
         [data-theme="light"] .pdf-container:hover {
             border-color: #2196F3;
             box-shadow: var(--shadow-hover), 0 0 30px rgba(33, 150, 243, 0.04);
         }
-        [data-theme="light"] .pdf-container iframe {
-            background: #EBF3FC;
-        }
-
-        /* ---- LIGHT MODE: BACKGROUND GRID & ORBS ---- */
+        [data-theme="light"] .pdf-container iframe { background: #EBF3FC; }
         [data-theme="light"] body::before {
             background:
                 linear-gradient(rgba(33, 150, 243, var(--grid-opacity)) 1px, transparent 1px),
                 linear-gradient(90deg, rgba(33, 150, 243, var(--grid-opacity)) 1px, transparent 1px);
         }
-
         [data-theme="light"] body::after {
             background:
                 radial-gradient(ellipse 60% 40% at 10% 20%, rgba(33, 150, 243, var(--orb-opacity)) 0%, transparent 70%),
                 radial-gradient(ellipse 50% 60% at 90% 80%, rgba(13, 71, 161, var(--orb-opacity)) 0%, transparent 70%),
                 radial-gradient(ellipse 40% 30% at 50% 50%, rgba(33, 150, 243, calc(var(--orb-opacity) * 0.5)) 0%, transparent 60%);
         }
-
-        /* ---- LIGHT MODE: SCROLLBAR ---- */
         [data-theme="light"] ::-webkit-scrollbar-thumb {
-            background: #2196F3;
-            box-shadow: 0 0 20px rgba(33, 150, 243, 0.15);
+            background: #2196F3; box-shadow: 0 0 20px rgba(33, 150, 243, 0.15);
         }
-        [data-theme="light"] ::-webkit-scrollbar-thumb:hover {
-            background: #0D47A1;
-        }
+        [data-theme="light"] ::-webkit-scrollbar-thumb:hover { background: #0D47A1; }
 
-        /* ============================================================
-           CSS PROPERTY para sa animated angle
-           ============================================================ */
-        @property --angle {
-            syntax: '<angle>';
-            initial-value: 0deg;
-            inherits: false;
-        }
+        @property --angle { syntax: '<angle>'; initial-value: 0deg; inherits: false; }
 
-        /* ---- RESET & BASE ---- */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-            transition: background 0.4s var(--ease);
-        }
-
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; transition: background 0.4s var(--ease); }
         body {
             font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
             background: var(--tech-bg);
             color: var(--tech-text);
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            font-size: 18px;
-            line-height: 1.6;
-            position: relative;
-            overflow-x: hidden;
+            min-height: 100vh; display: flex; flex-direction: column;
+            font-size: 18px; line-height: 1.6;
+            position: relative; overflow-x: hidden;
             transition: background 0.4s var(--ease), color 0.4s var(--ease);
         }
+        a { color: inherit; text-decoration: none; }
+        button { font-family: inherit; cursor: pointer; border: none; background: none; }
 
-        a {
-            color: inherit;
-            text-decoration: none;
-        }
-        button {
-            font-family: inherit;
-            cursor: pointer;
-            border: none;
-            background: none;
-        }
-
-        /* ============================================================
-           BACKGROUND — Animated Grid + Glow Orbs + BSBA Logo Watermark
-           ============================================================ */
         body::before {
-            content: '';
-            position: fixed;
-            inset: 0;
-            z-index: -2;
+            content: ''; position: fixed; inset: 0; z-index: -2;
             background:
                 linear-gradient(rgba(0, 212, 255, var(--grid-opacity)) 1px, transparent 1px),
                 linear-gradient(90deg, rgba(0, 212, 255, var(--grid-opacity)) 1px, transparent 1px);
@@ -465,18 +257,10 @@
             pointer-events: none;
             transition: background 0.4s var(--ease);
         }
+        @keyframes gridMove { 0% { background-position: 0 0; } 100% { background-position: 60px 60px; } }
 
-        @keyframes gridMove {
-            0% { background-position: 0 0; }
-            100% { background-position: 60px 60px; }
-        }
-
-        /* ---- Orbs now all blue ---- */
         body::after {
-            content: '';
-            position: fixed;
-            inset: 0;
-            z-index: -1;
+            content: ''; position: fixed; inset: 0; z-index: -1;
             background:
                 radial-gradient(ellipse 60% 40% at 10% 20%, rgba(0, 212, 255, var(--orb-opacity)) 0%, transparent 70%),
                 radial-gradient(ellipse 50% 60% at 90% 80%, rgba(41, 121, 255, var(--orb-opacity)) 0%, transparent 70%),
@@ -485,322 +269,176 @@
             animation: orbPulse 8s ease-in-out infinite alternate;
             transition: background 0.4s var(--ease);
         }
-
         @keyframes orbPulse {
             0% { opacity: 0.6; transform: scale(1); }
             100% { opacity: 1; transform: scale(1.05); }
         }
 
-        /* ---- BSBA LOGO WATERMARK ---- */
         .bsba-watermark {
-            position: fixed;
-            top: 50%;
-            left: 50%;
+            position: fixed; top: 50%; left: 50%;
             transform: translate(-50%, -50%);
-            z-index: -1;
-            opacity: var(--watermark-opacity);
-            pointer-events: none;
-            user-select: none;
-            width: 600px;
-            height: 600px;
+            z-index: -1; opacity: var(--watermark-opacity);
+            pointer-events: none; user-select: none;
+            width: 600px; height: 600px;
             background: url('images/bsba-logo.png') center/contain no-repeat;
             animation: watermarkPulse 20s ease-in-out infinite alternate;
             transition: opacity 0.6s var(--ease);
         }
-
         @keyframes watermarkPulse {
             0% { opacity: 0.10; transform: translate(-50%, -50%) scale(1); }
-            100% { opacity: 0.02;; transform: translate(-50%, -50%) scale(1.05); }
+            100% { opacity: 0.02; transform: translate(-50%, -50%) scale(1.05); }
         }
+        @media (max-width: 767px) { .bsba-watermark { width: 300px; height: 300px; } }
 
-        @media (max-width: 767px) {
-            .bsba-watermark {
-                width: 300px;
-                height: 300px;
-            }
-        }
-
-        ::-webkit-scrollbar {
-            width: 8px;
-            height: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: var(--scrollbar-track);
-            transition: background 0.4s var(--ease);
-        }
+        ::-webkit-scrollbar { width: 8px; height: 8px; }
+        ::-webkit-scrollbar-track { background: var(--scrollbar-track); transition: background 0.4s var(--ease); }
         ::-webkit-scrollbar-thumb {
-            background: var(--scrollbar-thumb);
-            border-radius: 4px;
+            background: var(--scrollbar-thumb); border-radius: 4px;
             box-shadow: var(--glow-cyan);
             transition: background 0.4s var(--ease), box-shadow 0.4s var(--ease);
         }
-        ::-webkit-scrollbar-thumb:hover {
-            background: var(--tech-purple);
-            box-shadow: var(--glow-purple);
-        }
+        ::-webkit-scrollbar-thumb:hover { background: var(--tech-purple); box-shadow: var(--glow-purple); }
 
-        /* ============================================================
-           HEADER
-           ============================================================ */
         header {
             background: var(--header-bg);
             color: var(--tech-text);
             padding: 12px 32px;
             box-shadow: var(--shadow-soft), inset 0 -2px 0 var(--tech-cyan);
-            position: sticky;
-            top: 0;
-            z-index: 100;
+            position: sticky; top: 0; z-index: 100;
             border-bottom: 2px solid var(--header-border);
             backdrop-filter: blur(10px);
             transition: background 0.4s var(--ease), border-color 0.4s var(--ease), box-shadow 0.4s var(--ease);
         }
-
         header::after {
-            content: '';
-            position: absolute;
-            bottom: -2px;
-            left: 0;
-            right: 0;
+            content: ''; position: absolute; bottom: -2px; left: 0; right: 0;
             height: 2px;
             background: linear-gradient(90deg, transparent, var(--tech-cyan), var(--tech-purple), var(--tech-cyan), transparent);
             background-size: 200% 100%;
             animation: scanLine 4s linear infinite;
-            opacity: 0.5;
-            pointer-events: none;
+            opacity: 0.5; pointer-events: none;
             transition: opacity 0.4s var(--ease);
         }
-
-        @keyframes scanLine {
-            0% { background-position: -200% 0; }
-            100% { background-position: 200% 0; }
-        }
+        @keyframes scanLine { 0% { background-position: -200% 0; } 100% { background-position: 200% 0; } }
 
         .header-container {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            flex-wrap: wrap;
-            margin: 0 auto;
-            position: relative;
-            z-index: 1;
+            display: flex; align-items: center; gap: 20px;
+            flex-wrap: wrap; margin: 0 auto; position: relative; z-index: 1;
         }
-
-        .logo-section {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            flex: 1;
-        }
-
+        .logo-section { display: flex; align-items: center; gap: 12px; flex: 1; }
         .logo {
-            height: 80px;
-            width: 80px;
-            border-radius: 50%;
+            height: 80px; width: 80px; border-radius: 50%;
             background: var(--tech-bg-secondary);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-            flex-shrink: 0;
+            display: flex; align-items: center; justify-content: center;
+            overflow: hidden; flex-shrink: 0;
             border: 2px solid var(--tech-cyan);
             box-shadow: var(--glow-cyan), inset 0 0 30px rgba(0, 212, 255, 0.05);
             transition: box-shadow 0.4s var(--ease), border-color 0.4s var(--ease), background 0.4s var(--ease);
             position: relative;
         }
-
         .logo:hover {
             box-shadow: var(--glow-cyan-strong), inset 0 0 40px rgba(0, 212, 255, 0.08);
             border-color: var(--tech-purple);
         }
-
-        .logo img, .bsba-logo img {
-            height: 100%;
-            width: 100%;
-            object-fit: cover;
-            border-radius: 50%;
-        }
-
-        /* ---- Logo ring: now all blue ---- */
+        .logo img, .bsba-logo img { height: 100%; width: 100%; object-fit: cover; border-radius: 50%; }
         .logo-ring {
-            position: absolute;
-            inset: -4px;
-            border-radius: 50%;
+            position: absolute; inset: -4px; border-radius: 50%;
             border: 2px solid transparent;
             background: conic-gradient(from 0deg, var(--tech-cyan), var(--tech-purple), var(--tech-pink), var(--tech-cyan));
             -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 3px), #000 calc(100% - 2px));
             mask: radial-gradient(farthest-side, transparent calc(100% - 3px), #000 calc(100% - 2px));
             animation: spinBorder 6s linear infinite;
-            opacity: 0.6;
-            pointer-events: none;
+            opacity: 0.6; pointer-events: none;
             transition: opacity 0.4s var(--ease);
         }
         .bsba-logo {
-            height: 70px;
-            width: 70px;
-            border-radius: 50%;
+            height: 70px; width: 70px; border-radius: 50%;
             background: var(--tech-bg-secondary);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-            flex-shrink: 0;
+            display: flex; align-items: center; justify-content: center;
+            overflow: hidden; flex-shrink: 0;
             border: 2px solid var(--tech-cyan);
             box-shadow: var(--glow-cyan), inset 0 0 30px rgba(0, 212, 255, 0.05);
             transition: box-shadow 0.4s var(--ease), border-color 0.4s var(--ease), background 0.4s var(--ease);
             position: relative;
         }
-
-        .bsbalogo:hover {
-            box-shadow: var(--glow-cyan-strong), inset 0 0 40px rgba(0, 212, 255, 0.08);
-            border-color: var(--tech-purple);
-        }
-
-        /* ---- Logo ring: now all blue ---- */
         .bsba-logo-ring {
-            position: absolute;
-            inset: -4px;
-            border-radius: 50%;
+            position: absolute; inset: -4px; border-radius: 50%;
             border: 2px solid transparent;
             background: conic-gradient(from 0deg, var(--tech-cyan), var(--tech-purple), var(--tech-pink), var(--tech-cyan));
             -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 3px), #000 calc(100% - 2px));
             mask: radial-gradient(farthest-side, transparent calc(100% - 3px), #000 calc(100% - 2px));
             animation: spinBorder 6s linear infinite;
-            opacity: 0.6;
-            pointer-events: none;
-            transition: opacity 0.4s var(--ease);
+            opacity: 0.6; pointer-events: none;
         }
+        @keyframes spinBorder { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
 
-        @keyframes spinBorder {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
-
-        .title-block {
-            flex: 1;
-        }
-
+        .title-block { flex: 1; }
         .title-block h1 {
             font-family: 'Playfair Display', 'Times New Roman', serif;
-            font-size: 1.4rem;
-            font-weight: 800;
-            line-height: 1.2;
+            font-size: 1.4rem; font-weight: 800; line-height: 1.2;
             letter-spacing: 1px;
             text-shadow: 0 0 30px rgba(0, 212, 255, 0.15);
             background: linear-gradient(90deg, var(--tech-text), var(--tech-cyan));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
             background-clip: text;
             transition: background 0.4s var(--ease);
         }
-
         .title-block .sub-header {
-            display: block;
-            font-family: 'Inter', sans-serif;
-            font-size: 1rem;
-            font-weight: 500;
-            color: var(--tech-text-muted);
-            letter-spacing: 2px;
+            display: block; font-family: 'Inter', sans-serif;
+            font-size: 1rem; font-weight: 500;
+            color: var(--tech-text-muted); letter-spacing: 2px;
             -webkit-text-fill-color: var(--tech-text-muted);
             background: none;
             transition: color 0.4s var(--ease);
         }
+        .header-actions { display: flex; align-items: center; gap: 14px; flex-shrink: 0; }
 
-        .header-actions {
-            display: flex;
-            align-items: center;
-            gap: 14px;
-            flex-shrink: 0;
-        }
-
-        /* ---- THEME TOGGLE BUTTON ---- */
         .theme-toggle {
-            width: 48px;
-            height: 48px;
-            border-radius: 50%;
+            width: 48px; height: 48px; border-radius: 50%;
             background: var(--btn-bg);
             backdrop-filter: blur(8px);
             border: 2px solid rgba(255, 255, 255, 0.06);
-            color: var(--tech-text);
-            font-size: 1.3rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            color: var(--tech-text); font-size: 1.3rem;
+            display: flex; align-items: center; justify-content: center;
             transition: all 0.3s var(--ease);
             box-shadow: var(--shadow-soft);
-            position: relative;
-            overflow: visible;
-            isolation: isolate;
+            position: relative; overflow: visible; isolation: isolate;
         }
-
         .theme-toggle::before {
-            content: '';
-            position: absolute;
-            inset: -2px;
-            border-radius: 50%;
+            content: ''; position: absolute; inset: -2px; border-radius: 50%;
             background: conic-gradient(
                 from var(--angle),
-                transparent 0deg,
-                var(--tech-cyan) 12deg,
-                transparent 28deg,
-                transparent 172deg,
-                var(--tech-cyan) 188deg,
-                transparent 204deg,
+                transparent 0deg, var(--tech-cyan) 12deg, transparent 28deg,
+                transparent 172deg, var(--tech-cyan) 188deg, transparent 204deg,
                 transparent 360deg
             );
             z-index: -2;
             animation: spinLight 4s linear infinite;
-            will-change: --angle;
-            pointer-events: none;
+            will-change: --angle; pointer-events: none;
             filter: blur(1px) drop-shadow(0 0 8px var(--tech-cyan));
             opacity: 0.4;
         }
-
         .theme-toggle::after {
-            content: '';
-            position: absolute;
-            inset: 2px;
-            border-radius: 50%;
-            background: var(--btn-bg);
-            z-index: -1;
+            content: ''; position: absolute; inset: 2px; border-radius: 50%;
+            background: var(--btn-bg); z-index: -1;
             transition: background 0.3s var(--ease);
         }
-
         .theme-toggle:hover {
-            transform: scale(1.08);
-            border-color: var(--tech-cyan);
+            transform: scale(1.08); border-color: var(--tech-cyan);
             box-shadow: var(--glow-cyan);
         }
-
         .theme-toggle:hover::before {
             animation-duration: 1.5s;
             filter: blur(0px) drop-shadow(0 0 20px var(--tech-cyan)) brightness(1.5);
             opacity: 1;
         }
+        .theme-toggle:active { transform: scale(0.94); }
+        @keyframes spinLight { to { --angle: 360deg; } }
 
-        .theme-toggle:active {
-            transform: scale(0.94);
-        }
-
-        @keyframes spinLight {
-            to { --angle: 360deg; }
-        }
-
-        /* ============================================================
-           MAIN
-           ============================================================ */
         main {
-            flex: 1;
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 20px 20px 40px;
-            width: 100%;
-            position: relative;
-            z-index: 1;
+            flex: 1; max-width: 1400px; margin: 0 auto;
+            padding: 20px 20px 40px; width: 100%; position: relative; z-index: 1;
         }
 
-        /* ============================================================
-           ANIMATIONS
-           ============================================================ */
         @keyframes glitchIn {
             0% { opacity: 0; transform: scale(0.98) translateY(24px); filter: blur(6px); }
             15% { opacity: 0.4; transform: scale(1.01) translateX(-4px); filter: blur(2px); }
@@ -808,34 +446,18 @@
             50% { opacity: 0.9; transform: scale(1); filter: blur(0); }
             100% { opacity: 1; transform: scale(1) translateY(0); filter: blur(0); }
         }
-
         @keyframes fadeUp {
             from { opacity: 0; transform: translateY(18px); filter: blur(4px); }
             to { opacity: 1; transform: translateY(0); filter: blur(0); }
         }
-
-        #app {
-            animation: glitchIn 0.8s var(--ease) both;
-        }
-
-        .area-grid>*,
-        .param-grid>*,
-        .doc-grid>*,
-        .hierarchy-grid>*,
-        .extra-grid>*,
-        .param-extra-grid>* {
+        #app { animation: glitchIn 0.8s var(--ease) both; }
+        .area-grid>*, .param-grid>*, .doc-grid>*, .hierarchy-grid>*, .extra-grid>*, .param-extra-grid>* {
             animation: fadeUp 0.6s var(--ease-bounce) both;
         }
 
-        /* ============================================================
-           BREADCRUMB
-           ============================================================ */
         .breadcrumb-wrapper {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 12px;
+            display: flex; align-items: center; justify-content: space-between;
+            flex-wrap: wrap; gap: 12px;
             background: var(--glass-bg);
             backdrop-filter: blur(12px);
             border-radius: var(--radius-sm);
@@ -844,230 +466,128 @@
             margin-bottom: 12px;
             box-shadow: var(--shadow-inset);
             transition: background 0.4s var(--ease), border-color 0.4s var(--ease), box-shadow 0.4s var(--ease);
+            position: relative;
+            z-index: 40;
         }
-
         .breadcrumb {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            gap: 6px;
-            font-size: 0.95rem;
-            color: var(--tech-text-muted);
-            flex: 1;
+            display: flex; flex-wrap: wrap; align-items: center;
+            gap: 6px; font-size: 0.95rem;
+            color: var(--tech-text-muted); flex: 1;
             transition: color 0.4s var(--ease);
         }
-
         .breadcrumb a {
-            color: var(--tech-cyan);
-            text-decoration: none;
-            font-weight: 600;
-            padding: 4px 12px;
-            border-radius: 4px;
+            color: var(--tech-cyan); text-decoration: none;
+            font-weight: 600; padding: 4px 12px; border-radius: 4px;
             transition: all 0.25s var(--ease);
-            font-size: 0.95rem;
-            position: relative;
+            font-size: 0.95rem; position: relative;
         }
-
         .breadcrumb a::after {
-            content: '';
-            position: absolute;
-            bottom: 2px;
-            left: 12px;
-            right: 12px;
-            height: 1px;
-            background: var(--tech-cyan);
-            opacity: 0;
-            transition: opacity 0.3s var(--ease);
+            content: ''; position: absolute; bottom: 2px; left: 12px; right: 12px;
+            height: 1px; background: var(--tech-cyan);
+            opacity: 0; transition: opacity 0.3s var(--ease);
             box-shadow: var(--glow-cyan);
         }
-
         .breadcrumb a:hover {
             background: rgba(0, 212, 255, 0.06);
             color: var(--tech-text);
             text-shadow: 0 0 20px rgba(0, 212, 255, 0.2);
         }
-
-        .breadcrumb a:hover::after {
-            opacity: 1;
-        }
-
+        .breadcrumb a:hover::after { opacity: 1; }
         .breadcrumb .sep {
-            color: var(--tech-text-dim);
-            font-size: 1.1rem;
-            font-weight: 300;
-            padding: 0 2px;
+            color: var(--tech-text-dim); font-size: 1.1rem;
+            font-weight: 300; padding: 0 2px;
             transition: color 0.4s var(--ease);
         }
-
         .breadcrumb .current {
-            color: var(--tech-text);
-            font-weight: 500;
-            padding: 4px 12px;
-            font-size: 0.95rem;
+            color: var(--tech-text); font-weight: 500;
+            padding: 4px 12px; font-size: 0.95rem;
             background: rgba(0, 212, 255, 0.04);
             border-radius: 4px;
             border: 1px solid rgba(0, 212, 255, 0.06);
             transition: color 0.4s var(--ease), background 0.4s var(--ease), border-color 0.4s var(--ease);
         }
 
-        /* ---- SEARCH BAR ---- */
         .search-container {
             position: relative;
-            display: flex;
-            align-items: center;
-            flex-shrink: 0;
+            display: flex; align-items: center; flex-shrink: 0;
         }
-
         .search-container input {
             background: rgba(0, 0, 0, 0.3);
             border: 1px solid rgba(0, 212, 255, 0.15);
             border-radius: 20px;
             padding: 6px 36px 6px 14px;
-            font-size: 0.9rem;
-            color: var(--tech-text);
-            outline: none;
-            transition: all 0.3s var(--ease);
-            width: 180px;
-            font-family: 'Inter', sans-serif;
+            font-size: 0.9rem; color: var(--tech-text);
+            outline: none; transition: all 0.3s var(--ease);
+            width: 180px; font-family: 'Inter', sans-serif;
             backdrop-filter: blur(4px);
         }
-
         [data-theme="light"] .search-container input {
             background: rgba(255, 255, 255, 0.6);
             border-color: rgba(0, 0, 0, 0.08);
         }
-
-        .search-container input::placeholder {
-            color: var(--tech-text-dim);
-            font-weight: 400;
-        }
-
+        .search-container input::placeholder { color: var(--tech-text-dim); font-weight: 400; }
         .search-container input:focus {
             border-color: var(--tech-cyan);
             box-shadow: 0 0 20px rgba(0, 212, 255, 0.15);
             width: 240px;
         }
-
         .search-container .search-icon {
-            position: absolute;
-            right: 12px;
-            top: 50%;
+            position: absolute; right: 12px; top: 50%;
             transform: translateY(-50%);
-            color: var(--tech-text-dim);
-            font-size: 0.85rem;
-            pointer-events: none;
-            transition: color 0.3s var(--ease);
+            color: var(--tech-text-dim); font-size: 0.85rem;
+            pointer-events: none; transition: color 0.3s var(--ease);
         }
-
-        .search-container input:focus ~ .search-icon {
-            color: var(--tech-cyan);
-        }
-
+        .search-container input:focus ~ .search-icon { color: var(--tech-cyan); display: none; }
         .search-container .clear-search {
-            position: absolute;
-            right: 12px;
-            top: 50%;
+            position: absolute; right: 12px; top: 50%;
             transform: translateY(-50%);
-            background: none;
-            border: none;
-            color: var(--tech-text-dim);
-            font-size: 0.8rem;
-            cursor: pointer;
-            padding: 0;
-            display: none;
-            transition: color 0.2s;
-            z-index: 2;
+            background: none; border: none;
+            color: var(--tech-text-dim); font-size: 0.8rem;
+            cursor: pointer; padding: 0; display: none;
+            transition: color 0.2s; z-index: 2;
         }
+        .search-container .clear-search:hover { color: var(--tech-text); }
+        .search-container .clear-search.visible { display: block; }
+        .search-container .clear-search.visible ~ .search-icon { display: none; }
 
-        .search-container .clear-search:hover {
-            color: var(--tech-text);
-        }
-
-        .search-container .clear-search.visible {
-            display: block;
-        }
-
-        .search-container input:focus ~ .search-icon {
-            display: none;
-        }
-
-        .search-container .clear-search.visible ~ .search-icon {
-            display: none;
-        }
-
-        /* ============================================================
-           PAGE HEADER ROW
-           ============================================================ */
         .page-header-row {
-            display: grid;
-            grid-template-columns: auto 1fr auto;
-            align-items: center;
-            gap: 16px;
-            margin: 6px 0 4px;
+            display: grid; grid-template-columns: auto 1fr auto;
+            align-items: center; gap: 16px; margin: 6px 0 4px;
         }
-
         .page-header-row h2 {
-            text-align: center;
-            margin: 0;
+            text-align: center; margin: 0;
             font-family: 'Playfair Display', 'Times New Roman', serif;
             font-size: clamp(1.6rem, 3vw, 2.4rem);
-            font-weight: 800;
-            letter-spacing: 0.5px;
-            position: relative;
-            z-index: 1;
-            padding: 0;
+            font-weight: 800; letter-spacing: 0.5px;
+            position: relative; z-index: 1; padding: 0;
             background: linear-gradient(135deg, var(--tech-text) 40%, var(--tech-cyan));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
             background-clip: text;
             text-shadow: 0 0 40px rgba(0, 212, 255, 0.08);
             transition: background 0.4s var(--ease), text-shadow 0.4s var(--ease);
         }
+        .page-header-row .btn-back { justify-self: start; padding: 10px 28px; font-size: 1rem; }
+        .page-header-row .spacer { width: 120px; }
 
-        .page-header-row .btn-back {
-            justify-self: start;
-            padding: 10px 28px;
-            font-size: 1rem;
-        }
-
-        .page-header-row .spacer {
-            width: 120px;
-        }
-
-        /* ============================================================
-           BUTTON — NEON WITH TRAVELING LIGHT
-           ============================================================ */
         .btn-neon {
             position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 14px;
-            padding: 16px 20px;
+            display: flex; align-items: center; justify-content: center;
+            gap: 14px; padding: 16px 20px;
             border-radius: var(--radius);
             background: var(--btn-bg);
             backdrop-filter: blur(8px);
             border: 2px solid #2195f361;
             color: var(--tech-text);
-            font-weight: 600;
-            font-size: 1.05rem;
-            cursor: pointer;
-            transition: all 0.3s var(--ease);
-            overflow: visible;
-            text-align: left;
-            width: 100%;
-            height: 100%;
-            min-height: 130px;
+            font-weight: 600; font-size: 1.05rem;
+            cursor: pointer; transition: all 0.3s var(--ease);
+            overflow: visible; text-align: left;
+            width: 100%; height: 100%; min-height: 130px;
             word-break: break-word;
-            isolation: isolate;
-            z-index: 1;
+            isolation: isolate; z-index: 1;
             box-shadow: var(--shadow-inset);
         }
-
         .btn-neon::before {
-            content: '';
-            position: absolute;
-            inset: -2px;
+            content: ''; position: absolute; inset: -2px;
             border-radius: var(--radius);
             background: conic-gradient(
                 from var(--angle),
@@ -1082,356 +602,170 @@
             z-index: -2;
             animation: spinLightBtn var(--border-speed, 8s) linear infinite;
             transition: filter 0.3s var(--ease), animation-duration 0.3s var(--ease);
-            will-change: --angle;
-            pointer-events: none;
+            will-change: --angle; pointer-events: none;
             filter: blur(0.5px) drop-shadow(0 0 10px var(--border-color1));
         }
-
-        @keyframes spinLightBtn {
-            to { --angle: 360deg; }
-        }
-
+        @keyframes spinLightBtn { to { --angle: 360deg; } }
         .btn-neon::after {
-            content: '';
-            position: absolute;
-            inset: 2px;
+            content: ''; position: absolute; inset: 2px;
             border-radius: calc(var(--radius) - 2px);
             background: var(--btn-after-bg);
             z-index: -1;
             transition: background 0.3s var(--ease);
         }
-
         .btn-neon:hover {
             transform: translateY(-4px) scale(1.02);
             box-shadow: var(--btn-glow, var(--glow-cyan));
         }
-
         .btn-neon:hover::before {
             animation-duration: calc(var(--border-speed, 8s) / 0.7);
             filter: blur(0px) drop-shadow(0 0 25px var(--border-color1)) brightness(1.5);
         }
-
-        /* ---- Active: now blue instead of orange ---- */
         .btn-neon:active {
             transform: scale(0.97) translateY(0);
             box-shadow: 0 0 60px rgba(0, 212, 255, 0.2), inset 0 0 40px rgba(0, 212, 255, 0.05);
         }
-
         .btn-neon:active::before {
             animation-duration: 5s;
             filter: blur(0px) drop-shadow(0 0 35px var(--border-color1)) brightness(2);
         }
-
-        /* ---- Button Variants — all blue now, gold only for extras ---- */
-        .btn-area-neon {
-            --border-color1: var(--tech-cyan);
-            --border-speed: 14s;
-            --btn-glow: var(--glow-cyan);
-        }
-
-        .btn-param-neon {
-            --border-color1: var(--tech-cyan);
-            --border-speed: 14s;
-            --btn-glow: var(--glow-purple);
-        }
-
-        .btn-cat-neon {
-            --border-color1: var(--tech-green);
-            --border-speed: 14s;
-            --btn-glow: var(--glow-green);
-        }
-
-        .btn-doc-neon {
-            --border-color1: var(--tech-orange);
-            --border-speed: 14s;
-            --btn-glow: var(--glow-orange);
-        }
-
-        .btn-extra-neon {
-            --border-color1: var(--tech-gold);
-            --border-speed: 14s;
-            --btn-glow: var(--glow-gold);
-        }
-
-        .btn-back-neon {
-            --border-color1: rgba(255, 255, 255, 0.8);
-            --border-speed: 14s;
-            --btn-glow: var(--glow-white);
-        }
-
-        .btn-open-neon {
-            --border-color1: var(--tech-cyan);
-            --border-speed: 14s;
-            --btn-glow: var(--glow-cyan-strong);
-        }
-
-        /* ---- Icon styles ---- */
+        .btn-area-neon { --border-color1: var(--tech-cyan); --border-speed: 14s; --btn-glow: var(--glow-cyan); }
+        .btn-param-neon { --border-color1: var(--tech-cyan); --border-speed: 14s; --btn-glow: var(--glow-purple); }
+        .btn-cat-neon { --border-color1: var(--tech-green); --border-speed: 14s; --btn-glow: var(--glow-green); }
+        .btn-doc-neon { --border-color1: var(--tech-orange); --border-speed: 14s; --btn-glow: var(--glow-orange); }
+        .btn-extra-neon { --border-color1: var(--tech-gold); --border-speed: 14s; --btn-glow: var(--glow-gold); }
+        .btn-back-neon { --border-color1: rgba(255, 255, 255, 0.8); --border-speed: 14s; --btn-glow: var(--glow-white); }
+        .btn-open-neon { --border-color1: var(--tech-cyan); --border-speed: 14s; --btn-glow: var(--glow-cyan-strong); }
         .btn-neon .icon {
-            font-size: 1.6rem;
-            flex-shrink: 0;
-            width: 2rem;
+            font-size: 1.6rem; flex-shrink: 0; width: 2rem;
             text-align: center;
             filter: drop-shadow(0 0 10px var(--border-color1, rgba(0,212,255,0.2)));
             transition: transform 0.3s var(--ease);
         }
+        .btn-neon:hover .icon { transform: scale(1.1); }
+        .btn-neon .btn-icon-sm { font-size: 1.2rem; flex-shrink: 0; width: 1.6rem; text-align: center; }
 
-        .btn-neon:hover .icon {
-            transform: scale(1.1);
+        .area-grid, .param-grid, .doc-grid, .hierarchy-grid, .extra-grid, .param-extra-grid {
+            display: flex; flex-wrap: wrap; justify-content: center;
+            gap: 18px; margin-top: 20px;
         }
-
-        .btn-neon .btn-icon-sm {
-            font-size: 1.2rem;
-            flex-shrink: 0;
-            width: 1.6rem;
-            text-align: center;
-        }
-
-        /* ============================================================
-           GRIDS
-           ============================================================ */
-        .area-grid,
-        .param-grid,
-        .doc-grid,
-        .hierarchy-grid,
-        .extra-grid,
-        .param-extra-grid {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 18px;
-            margin-top: 20px;
-        }
-
-        .area-grid>*,
-        .param-grid>*,
-        .doc-grid>*,
-        .hierarchy-grid>*,
-        .extra-grid>*,
-        .param-extra-grid>* {
+        .area-grid>*, .param-grid>*, .doc-grid>*, .hierarchy-grid>*, .extra-grid>*, .param-extra-grid>* {
             flex: 0 0 calc(25% - 18px);
             min-height: 120px;
             display: flex;
             border-radius: var(--radius);
             transition: all 0.3s var(--ease);
         }
-
-        /* ---- AREA BUTTONS ---- */
-        .area-grid>* {
-            flex: 0 0 calc(25% - 18px);
-        }
+        .area-grid>* { flex: 0 0 calc(25% - 18px); }
         .area-grid .num {
-            flex-shrink: 0;
-            width: 38px;
-            height: 38px;
+            flex-shrink: 0; width: 38px; height: 38px;
             border-radius: 8px;
             background: linear-gradient(160deg, var(--tech-cyan), var(--tech-purple));
             color: var(--tech-bg);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 800;
-            font-size: 0.85rem;
+            display: flex; align-items: center; justify-content: center;
+            font-weight: 800; font-size: 0.85rem;
             box-shadow: 0 2px 12px rgba(0, 212, 255, 0.2);
             transition: all 0.3s var(--ease);
         }
         .area-grid .btn-neon:hover .num {
-            box-shadow: 0 0 30px rgba(0, 212, 255, 0.4);
-            transform: scale(1.05);
+            box-shadow: 0 0 30px rgba(0, 212, 255, 0.4); transform: scale(1.05);
         }
         .area-grid .label {
-            flex: 1;
-            font-weight: 600;
-            font-size: 1.5rem;
-            display: -webkit-box;
-            -webkit-line-clamp: 3;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            max-height: 3.8em;
-            line-height: 1.3;
+            flex: 1; font-weight: 600; font-size: 1.5rem;
+            display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical;
+            overflow: hidden; text-overflow: ellipsis;
+            max-height: 3.8em; line-height: 1.3;
             transition: color 0.3s var(--ease);
         }
         .area-grid .arrow {
-            font-size: 1.2rem;
-            opacity: 0.6;
-            flex-shrink: 0;
+            font-size: 1.2rem; opacity: 0.6; flex-shrink: 0;
             transition: transform 0.3s var(--ease), opacity 0.3s var(--ease);
         }
-        .area-grid .btn-neon:hover .arrow {
-            transform: translateX(4px);
-            opacity: 1;
-        }
+        .area-grid .btn-neon:hover .arrow { transform: translateX(4px); opacity: 1; }
 
-        /* ---- PARAMETER BUTTONS ---- */
-        .param-grid>* {
-            flex: 0 0 calc(33% - 18px);
-        }
+        .param-grid>* { flex: 0 0 calc(33% - 18px); }
         .param-grid .letter {
-            flex-shrink: 0;
-            width: 34px;
-            height: 34px;
+            flex-shrink: 0; width: 34px; height: 34px;
             border-radius: 50%;
             border: 1px solid #00d5ff93;
-            background:  rgba(41, 120, 255, 0.179);
+            background: rgba(41, 120, 255, 0.179);
             color: var(--tech-text);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 800;
-            font-size: 0.85rem;
+            display: flex; align-items: center; justify-content: center;
+            font-weight: 800; font-size: 0.85rem;
             box-shadow: 0 2px 12px rgba(41, 121, 255, 0.25);
             transition: all 0.3s var(--ease);
         }
         .param-grid .btn-neon:hover .letter {
-            box-shadow: 0 0 30px rgba(41, 121, 255, 0.4);
-            transform: scale(1.05);
+            box-shadow: 0 0 30px rgba(41, 121, 255, 0.4); transform: scale(1.05);
         }
         .param-grid .label {
-            flex: 1;
-            font-weight: 600;
-            font-size: 1.3rem;
-            display: -webkit-box;
-            -webkit-line-clamp: 3;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            max-height: 3.8em;
-            line-height: 1.3;
+            flex: 1; font-weight: 600; font-size: 1.3rem;
+            display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical;
+            overflow: hidden; text-overflow: ellipsis;
+            max-height: 3.8em; line-height: 1.3;
             transition: color 0.3s var(--ease);
         }
         .param-grid .arrow {
-            font-size: 1.2rem;
-            opacity: 0.6;
-            flex-shrink: 0;
+            font-size: 1.2rem; opacity: 0.6; flex-shrink: 0;
             transition: transform 0.3s var(--ease), opacity 0.3s var(--ease);
         }
-        .param-grid .btn-neon:hover .arrow {
-            transform: translateX(4px);
-            opacity: 1;
-        }
+        .param-grid .btn-neon:hover .arrow { transform: translateX(4px); opacity: 1; }
 
-        /* ---- DOC CATEGORY BUTTONS ---- */
-        .doc-grid>* {
-            flex: 0 0 calc(25% - 18px);
-        }
-        .doc-grid .btn-neon {
-            flex-direction: column;
-            gap: 8px;
-            text-align: center;
-            min-height: 130px;
-        }
-        
+        .doc-grid>* { flex: 0 0 calc(25% - 18px); }
+        .doc-grid .btn-neon { flex-direction: column; gap: 8px; text-align: center; min-height: 130px; }
         .doc-grid .btn-neon .icon {
-            font-size: 2.4rem;
-            width: auto;
+            font-size: 2.4rem; width: auto;
             filter: drop-shadow(0 0 20px rgba(0, 176, 255, 0.15));
         }
-        .doc-grid .btn-neon:hover .icon {
-            transform: scale(1.1) translateY(-2px);
-        }
+        .doc-grid .btn-neon:hover .icon { transform: scale(1.1) translateY(-2px); }
         .doc-grid .label {
-            font-weight: 700;
-            font-size: 1.5rem;
-            display: -webkit-box;
-            -webkit-line-clamp: 2;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            max-height: 2.6em;
-            line-height: 1.3;
+            font-weight: 700; font-size: 1.5rem;
+            display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;
+            overflow: hidden; text-overflow: ellipsis;
+            max-height: 2.6em; line-height: 1.3;
             transition: color 0.3s var(--ease);
         }
 
-        /* ---- HIERARCHY BUTTONS ---- */
-        .hierarchy-grid>* {
-            flex: 0 0 calc(50% - 18px);
-            min-height: 120px;
-        }
-        .hierarchy-grid .btn-neon {
-            justify-content: flex-start;
-            gap: 14px;
-            padding: 14px 20px;
-            min-height: 80px;
-        }
-        
+        .hierarchy-grid>* { flex: 0 0 calc(50% - 18px); min-height: 120px; }
+        .hierarchy-grid .btn-neon { justify-content: flex-start; gap: 14px; padding: 14px 20px; min-height: 80px; }
         .hierarchy-grid .file-icon {
-            font-size: 1.6rem;
-            flex-shrink: 0;
+            font-size: 1.6rem; flex-shrink: 0;
             filter: drop-shadow(0 0 16px rgba(64, 196, 255, 0.15));
-            width: 2rem;
-            text-align: center;
+            width: 2rem; text-align: center;
             transition: transform 0.3s var(--ease);
         }
-        .hierarchy-grid .btn-neon:hover .file-icon {
-            transform: scale(1.1);
-        }
+        .hierarchy-grid .btn-neon:hover .file-icon { transform: scale(1.1); }
         .hierarchy-grid .file-name {
-            flex: 1;
-            font-weight: 600;
-            word-break: break-word;
+            flex: 1; font-weight: 600; word-break: break-word;
             font-size: 1.3rem;
-            display: -webkit-box;
-            -webkit-line-clamp: 2;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            max-height: 2.6em;
-            line-height: 1.3;
+            display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;
+            overflow: hidden; text-overflow: ellipsis;
+            max-height: 2.6em; line-height: 1.3;
             transition: color 0.3s var(--ease);
         }
         .hierarchy-grid .arrow {
-            font-size: 1.3rem;
-            opacity: 0.5;
-            flex-shrink: 0;
+            font-size: 1.3rem; opacity: 0.5; flex-shrink: 0;
             transition: transform 0.3s var(--ease), opacity 0.3s var(--ease);
         }
-        .hierarchy-grid .btn-neon:hover .arrow {
-            transform: translateX(6px);
-            opacity: 1;
-        }
+        .hierarchy-grid .btn-neon:hover .arrow { transform: translateX(6px); opacity: 1; }
 
-        /* ---- EXTRA BUTTONS (gold) ---- */
-        .extra-grid>* {
-            flex: 0 0 calc(25% - 18px);
-            min-height: 100px;
+        .extra-grid>* { flex: 0 0 calc(25% - 18px); min-height: 100px; }
+        .param-extra-grid>* { flex: 0 0 calc(25% - 18px); min-height: 100px; }
+        .extra-grid .btn-neon, .param-extra-grid .btn-neon {
+            justify-content: center; gap: 10px;
+            min-height: 100px; font-size: 1.3rem;
+            padding: 14px 18px; text-align: center;
         }
-        .param-extra-grid>* {
-            flex: 0 0 calc(25% - 18px);
-            min-height: 100px;
+        .extra-grid .btn-neon .icon, .param-extra-grid .btn-neon .icon {
+            font-size: 1.4rem; width: auto;
         }
-        .extra-grid .btn-neon,
-        .param-extra-grid .btn-neon {
-            justify-content: center;
-            gap: 10px;
-            min-height: 100px;
-            font-size: 1.3rem;
-            padding: 14px 18px;
-            text-align: center;
-        }
+        .grid-item-hidden { display: none !important; }
 
-        .extra-grid .btn-neon .icon,
-        .param-extra-grid .btn-neon .icon {
-            font-size: 1.4rem;
-            width: auto;
-        }
-
-        /* ---- FILTERED ---- */
-        .grid-item-hidden {
-            display: none !important;
-        }
-
-        /* ============================================================
-           BACK BUTTON
-           ============================================================ */
         .btn-back {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            padding: 10px 28px;
+            display: inline-flex; align-items: center; justify-content: center;
+            gap: 8px; padding: 10px 28px;
             border-radius: var(--radius-sm);
-            font-size: 1rem;
-            font-weight: 600;
+            font-size: 1rem; font-weight: 600;
             color: var(--tech-text);
             background: var(--btn-bg);
             backdrop-filter: blur(8px);
@@ -1439,136 +773,88 @@
             cursor: pointer;
             transition: all 0.3s var(--ease);
             text-decoration: none;
-            position: relative;
-            overflow: visible;
+            position: relative; overflow: visible;
             isolation: isolate;
             box-shadow: var(--shadow-soft);
         }
-
         .btn-back::before {
-            content: '';
-            position: absolute;
-            inset: -2px;
+            content: ''; position: absolute; inset: -2px;
             border-radius: var(--radius-sm);
             background: conic-gradient(
                 from var(--angle),
-                transparent 0deg,
-                rgba(255, 255, 255, 0.8) 10deg,
-                transparent 24deg,
-                transparent 176deg,
-                rgba(255, 255, 255, 0.8) 186deg,
-                transparent 200deg,
+                transparent 0deg, rgba(255, 255, 255, 0.8) 10deg, transparent 24deg,
+                transparent 176deg, rgba(255, 255, 255, 0.8) 186deg, transparent 200deg,
                 transparent 360deg
             );
             z-index: -2;
             animation: spinLightBtn 8s linear infinite;
-            will-change: --angle;
-            pointer-events: none;
+            will-change: --angle; pointer-events: none;
             filter: blur(0.5px) drop-shadow(0 0 8px rgba(255,255,255,0.3));
         }
-
         .btn-back::after {
-            content: '';
-            position: absolute;
-            inset: 2px;
+            content: ''; position: absolute; inset: 2px;
             border-radius: calc(var(--radius-sm) - 2px);
             background: var(--btn-after-bg);
             z-index: -1;
             transition: background 0.3s var(--ease);
         }
-
         .btn-back:hover {
             transform: translateY(-2px);
             border-color: var(--tech-cyan);
             box-shadow: var(--glow-cyan);
         }
-
         .btn-back:hover::before {
             animation-duration: 8s;
             filter: blur(0px) drop-shadow(0 0 20px rgba(255,255,255,0.6)) brightness(1.5);
         }
+        .btn-back:active { transform: scale(0.97); }
 
-        .btn-back:active {
-            transform: scale(0.97);
-        }
-
-        /* ============================================================
-           OPEN BUTTON
-           ============================================================ */
         .btn-open {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            padding: 12px 36px;
+            display: inline-flex; align-items: center; justify-content: center;
+            gap: 10px; padding: 12px 36px;
             border-radius: var(--radius-sm);
-            font-size: 1.05rem;
-            font-weight: 600;
+            font-size: 1.05rem; font-weight: 600;
             color: var(--tech-text);
             background: rgba(0, 212, 255, 0.06);
             backdrop-filter: blur(8px);
-            border: none;
-            cursor: pointer;
+            border: none; cursor: pointer;
             text-decoration: none;
             transition: all 0.3s var(--ease);
-            position: relative;
-            overflow: visible;
+            position: relative; overflow: visible;
             isolation: isolate;
         }
-
         .btn-open::before {
-            content: '';
-            position: absolute;
-            inset: -2px;
+            content: ''; position: absolute; inset: -2px;
             border-radius: var(--radius-sm);
             background: conic-gradient(
                 from var(--angle),
-                transparent 0deg,
-                var(--tech-cyan) 10deg,
-                transparent 24deg,
-                transparent 176deg,
-                var(--tech-cyan) 186deg,
-                transparent 200deg,
+                transparent 0deg, var(--tech-cyan) 10deg, transparent 24deg,
+                transparent 176deg, var(--tech-cyan) 186deg, transparent 200deg,
                 transparent 360deg
             );
             z-index: -2;
             animation: spinLightBtn 3s linear infinite;
-            will-change: --angle;
-            pointer-events: none;
+            will-change: --angle; pointer-events: none;
             filter: blur(0.5px) drop-shadow(0 0 10px var(--tech-cyan));
         }
-
         .btn-open::after {
-            content: '';
-            position: absolute;
-            inset: 2px;
+            content: ''; position: absolute; inset: 2px;
             border-radius: calc(var(--radius-sm) - 2px);
             background: rgba(0, 212, 255, 0.04);
             z-index: -1;
             transition: background 0.3s var(--ease);
         }
-
         .btn-open:hover {
             transform: translateY(-3px);
             box-shadow: var(--glow-cyan-strong);
         }
-
         .btn-open:hover::before {
             animation-duration: 1.5s;
             filter: blur(0px) drop-shadow(0 0 25px var(--tech-cyan)) brightness(1.5);
         }
+        .btn-open:hover::after { background: rgba(0, 212, 255, 0.08); }
+        .btn-open:active { transform: scale(0.97); }
 
-        .btn-open:hover::after {
-            background: rgba(0, 212, 255, 0.08);
-        }
-
-        .btn-open:active {
-            transform: scale(0.97);
-        }
-
-        /* ============================================================
-           PDF VIEWER
-           ============================================================ */
         .pdf-container {
             background: var(--tech-card);
             border-radius: var(--radius);
@@ -1579,352 +865,364 @@
             transition: border-color 0.4s var(--ease), box-shadow 0.4s var(--ease), background 0.4s var(--ease);
             position: relative;
         }
-
         .pdf-container:hover {
             border-color: rgba(0, 212, 255, 0.3);
             box-shadow: var(--glow-cyan-strong), inset 0 0 60px rgba(0, 212, 255, 0.04);
         }
-
-        /* was purple → now blue */
         .pdf-container::before {
-            content: '';
-            position: absolute;
-            inset: -2px;
+            content: ''; position: absolute; inset: -2px;
             border-radius: var(--radius);
             background: conic-gradient(from 0deg,
-                    transparent,
-                    rgba(0, 212, 255, 0.08),
-                    transparent,
-                    rgba(41, 121, 255, 0.08),
-                    transparent);
+                    transparent, rgba(0, 212, 255, 0.08),
+                    transparent, rgba(41, 121, 255, 0.08), transparent);
             z-index: -1;
             animation: spinBorder 8s linear infinite;
             pointer-events: none;
             transition: opacity 0.4s var(--ease);
         }
-
         .pdf-container iframe {
-            display: block;
-            border: none;
-            width: 100%;
+            display: block; border: none; width: 100%;
             min-height: 700px;
             background: var(--tech-bg-secondary);
             transition: background 0.4s var(--ease);
         }
+        .doc-actions { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 8px; }
 
-        .doc-actions {
-            display: flex;
-            gap: 14px;
-            flex-wrap: wrap;
-            margin-top: 8px;
-        }
-
-        /* ============================================================
-           EMPTY STATE
-           ============================================================ */
         .empty-state {
             background: var(--glass-bg);
             backdrop-filter: blur(12px);
             border: 2px dashed rgba(0, 212, 255, 0.15);
             border-radius: var(--radius);
-            padding: 60px 30px;
-            text-align: center;
-            margin-top: 10px;
+            padding: 60px 30px; text-align: center; margin-top: 10px;
             box-shadow: inset 0 0 60px rgba(0, 212, 255, 0.02);
             transition: border-color 0.4s var(--ease), background 0.4s var(--ease);
         }
-
-        .empty-state:hover {
-            border-color: rgba(0, 212, 255, 0.25);
-        }
-
+        .empty-state:hover { border-color: rgba(0, 212, 255, 0.25); }
         .empty-state .icon {
-            font-size: 3.5rem;
-            margin-bottom: 16px;
+            font-size: 3.5rem; margin-bottom: 16px;
             filter: drop-shadow(0 0 30px rgba(0, 212, 255, 0.1));
             color: var(--tech-cyan);
             transition: color 0.4s var(--ease);
         }
-
         .empty-state h3 {
             font-family: 'Playfair Display', 'Times New Roman', serif;
-            font-size: 1.4rem;
-            margin-bottom: 10px;
+            font-size: 1.4rem; margin-bottom: 10px;
             color: var(--tech-text);
             transition: color 0.4s var(--ease);
         }
-
         .empty-state p {
-            color: var(--tech-text-muted);
-            font-size: 1.05rem;
-            margin-bottom: 24px;
-            max-width: 480px;
-            margin-left: auto;
-            margin-right: auto;
-            line-height: 1.6;
+            color: var(--tech-text-muted); font-size: 1.05rem;
+            margin-bottom: 24px; max-width: 480px;
+            margin-left: auto; margin-right: auto; line-height: 1.6;
             transition: color 0.4s var(--ease);
         }
 
-        /* ============================================================
-           FOOTER
-           ============================================================ */
         footer {
             background: var(--footer-bg);
             color: var(--tech-text-muted);
             text-align: center;
             padding: 32px 32px 28px;
-            font-size: 0.95rem;
-            margin-top: auto;
+            font-size: 0.95rem; margin-top: auto;
             border-top: 2px solid var(--footer-border);
-            position: relative;
-            z-index: 1;
+            position: relative; z-index: 1;
             transition: background 0.4s var(--ease), border-color 0.4s var(--ease), color 0.4s var(--ease);
         }
-
         footer::before {
-            content: '';
-            position: absolute;
-            top: -2px;
-            left: 0;
-            right: 0;
+            content: ''; position: absolute; top: -2px; left: 0; right: 0;
             height: 2px;
             background: linear-gradient(90deg, transparent, var(--tech-cyan), var(--tech-purple), var(--tech-cyan), transparent);
             background-size: 200% 100%;
             animation: scanLine 4s linear infinite;
-            opacity: 0.3;
-            pointer-events: none;
+            opacity: 0.3; pointer-events: none;
             transition: opacity 0.4s var(--ease);
         }
-
-        footer strong {
-            color: var(--tech-text);
-            font-weight: 700;
-            transition: color 0.4s var(--ease);
-        }
-
+        footer strong { color: var(--tech-text); font-weight: 700; transition: color 0.4s var(--ease); }
         footer .footer-course {
-            display: block;
-            margin-top: 4px;
-            font-size: 0.9rem;
-            opacity: 0.7;
-            font-family: 'Playfair Display', serif;
+            display: block; margin-top: 4px; font-size: 0.9rem;
+            opacity: 0.7; font-family: 'Playfair Display', serif;
             letter-spacing: 1px;
             transition: opacity 0.4s var(--ease);
         }
-
         footer .footer-divider {
-            width: 60px;
-            height: 2px;
+            width: 60px; height: 2px;
             background: linear-gradient(90deg, var(--tech-cyan), var(--tech-purple));
-            margin: 16px auto;
-            border-radius: 2px;
+            margin: 16px auto; border-radius: 2px;
             box-shadow: var(--glow-cyan);
             transition: background 0.4s var(--ease), box-shadow 0.4s var(--ease);
         }
-
         footer .footer-contact {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px 40px;
-            margin-top: 12px;
-            font-size: 0.9rem;
+            display: flex; flex-wrap: wrap; justify-content: center;
+            gap: 20px 40px; margin-top: 12px; font-size: 0.9rem;
         }
-
-        footer .footer-contact p {
-            margin: 4px 0;
-        }
-
-        footer .footer-contact .label {
-            opacity: 0.5;
-            font-weight: 400;
-            transition: opacity 0.4s var(--ease);
-        }
-
+        footer .footer-contact p { margin: 4px 0; }
+        footer .footer-contact .label { opacity: 0.5; font-weight: 400; transition: opacity 0.4s var(--ease); }
         footer .footer-contact .value {
-            font-weight: 600;
-            color: var(--tech-cyan);
+            font-weight: 600; color: var(--tech-cyan);
             text-shadow: 0 0 20px rgba(0, 212, 255, 0.1);
             transition: color 0.4s var(--ease), text-shadow 0.4s var(--ease);
         }
 
-        /* ============================================================
-           RESPONSIVE
-           ============================================================ */
         @media (max-width: 1023px) {
-            .area-grid>*,
-            .param-grid>*,
-            .doc-grid>*,
-            .hierarchy-grid>*,
-            .extra-grid>*,
-            .param-extra-grid>* {
+            .area-grid>*, .param-grid>*, .doc-grid>*, .hierarchy-grid>*, .extra-grid>*, .param-extra-grid>* {
                 flex: 0 0 calc(33.33% - 18px);
             }
         }
-
         @media (max-width: 767px) {
-            header {
-                padding: 10px 16px;
+            header { padding: 10px 16px; }
+            .title-block h1 { font-size: 1.1rem; letter-spacing: 0.5px; }
+            .title-block .sub-header { font-size: 0.8rem; letter-spacing: 1px; }
+            .logo { height: 50px; width: 50px; }
+            .logo-ring { inset: -3px; }
+            .bsba-logo { height: 45px; width: 45px; }
+            .bsba-logo-ring { inset: -3px; }
+            .theme-toggle { width: 40px; height: 40px; font-size: 1.1rem; }
+            main { padding: 12px 12px 30px; }
+            .area-grid>*, .param-grid>*, .doc-grid>*, .hierarchy-grid>*, .extra-grid>*, .param-extra-grid>* {
+                flex: 0 0 calc(50% - 14px); min-height: 100px;
             }
-            .title-block h1 {
-                font-size: 1.1rem;
-                letter-spacing: 0.5px;
-            }
-            .title-block .sub-header {
-                font-size: 0.8rem;
-                letter-spacing: 1px;
-            }
-            .logo {
-                height: 50px;
-                width: 50px;
-            }
-            .logo-ring {
-                inset: -3px;
-            }
-            .bsba-logo {
-                height: 45px;
-                width: 45px;
-            }
-            .bsba-logo-ring {
-                inset: -3px;
-            }
-
-            .theme-toggle {
-                width: 40px;
-                height: 40px;
-                font-size: 1.1rem;
-            }
-
-            main {
-                padding: 12px 12px 30px;
-            }
-
-            .area-grid>*,
-            .param-grid>*,
-            .doc-grid>*,
-            .hierarchy-grid>*,
-            .extra-grid>*,
-            .param-extra-grid>* {
-                flex: 0 0 calc(50% - 14px);
-                min-height: 100px;
-            }
-
-            .area-grid .label,
-            .param-grid .label {
-                font-size: 0.95rem;
-            }
-
+            .area-grid .label, .param-grid .label { font-size: 0.95rem; }
             .page-header-row {
-                grid-template-columns: 1fr;
-                justify-items: center;
-                gap: 8px;
-                margin: 8px 0 4px;
+                grid-template-columns: 1fr; justify-items: center;
+                gap: 8px; margin: 8px 0 4px;
             }
-            .page-header-row .btn-back {
-                justify-self: center;
-                order: 1;
-                width: 100%;
-                justify-content: center;
-            }
-            .page-header-row h2 {
-                order: 2;
-                font-size: clamp(1.2rem, 5vw, 1.6rem);
-                padding: 0;
-            }
-            .page-header-row .spacer {
-                display: none;
-            }
-
-            .pdf-container iframe {
-                min-height: 380px;
-            }
-            .doc-actions {
-                flex-direction: column;
-            }
-            .btn-open,
-            .btn-back {
-                width: 100%;
-                justify-content: center;
-            }
-
-            .breadcrumb-wrapper {
-                flex-direction: column;
-                align-items: stretch;
-                gap: 8px;
-                padding: 10px 14px;
-            }
-
-            .search-container {
-                width: 100%;
-            }
-
-            .search-container input {
-                width: 100% !important;
-            }
-
-            .search-container input:focus {
-                width: 100% !important;
-            }
-
-            .footer-contact {
-                flex-direction: column;
-                gap: 6px;
-            }
+            .page-header-row .btn-back { justify-self: center; order: 1; width: 100%; justify-content: center; }
+            .page-header-row h2 { order: 2; font-size: clamp(1.2rem, 5vw, 1.6rem); padding: 0; }
+            .page-header-row .spacer { display: none; }
+            .pdf-container iframe { min-height: 380px; }
+            .doc-actions { flex-direction: column; }
+            .btn-open, .btn-back { width: 100%; justify-content: center; }
+            .breadcrumb-wrapper { flex-direction: column; align-items: stretch; gap: 8px; padding: 10px 14px; }
+            .search-container { width: 100%; }
+            .search-container input, .search-container input:focus { width: 100% !important; }
+            .footer-contact { flex-direction: column; gap: 6px; }
         }
-
         @media (max-width: 479px) {
-            .area-grid>*,
-            .param-grid>*,
-            .doc-grid>*,
-            .hierarchy-grid>*,
-            .extra-grid>*,
-            .param-extra-grid>* {
-                flex: 0 0 100%;
-                min-height: 85px;
+            .area-grid>*, .param-grid>*, .doc-grid>*, .hierarchy-grid>*, .extra-grid>*, .param-extra-grid>* {
+                flex: 0 0 100%; min-height: 85px;
             }
-            .area-grid .btn-neon,
-            .param-grid .btn-neon {
-                min-height: 80px;
-                padding: 12px 16px;
-            }
-            .doc-grid .btn-neon {
-                min-height: 100px;
-            }
-            .area-grid .label,
-            .param-grid .label {
-                font-size: 0.9rem;
-            }
-            .doc-grid .btn-neon .icon {
-                font-size: 1.8rem;
-            }
-            .doc-grid .label {
-                font-size: 0.9rem;
-            }
-            .hierarchy-grid .btn-neon {
-                padding: 12px 16px;
-                min-height: 70px;
-            }
-            .hierarchy-grid .file-icon {
-                font-size: 1.3rem;
-                width: 1.8rem;
-            }
-            .hierarchy-grid .file-name {
-                font-size: 0.9rem;
-            }
+            .area-grid .btn-neon, .param-grid .btn-neon { min-height: 80px; padding: 12px 16px; }
+            .doc-grid .btn-neon { min-height: 100px; }
+            .area-grid .label, .param-grid .label { font-size: 0.9rem; }
+            .doc-grid .btn-neon .icon { font-size: 1.8rem; }
+            .doc-grid .label { font-size: 0.9rem; }
+            .hierarchy-grid .btn-neon { padding: 12px 16px; min-height: 70px; }
+            .hierarchy-grid .file-icon { font-size: 1.3rem; width: 1.8rem; }
+            .hierarchy-grid .file-name { font-size: 0.9rem; }
         }
+        .is-visible { animation: none !important; }
 
-        .is-visible {
-            animation: none !important;
+        /* ============================================================
+           PREDICTIVE SEARCH — SUGGESTIONS DROPDOWN
+           Matches BSBA dark-blue + business theme
+           ============================================================ */
+        .search-suggestions {
+            position: absolute;
+            top: calc(100% + 12px);
+            right: 0;
+            width: min(460px, calc(100vw - 40px));
+            max-height: 440px;
+            overflow-y: auto;
+            overscroll-behavior: contain;
+            background: var(--tech-card);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-sm);
+            box-shadow:
+                0 16px 50px rgba(0, 0, 0, 0.45),
+                0 0 40px rgba(0, 212, 255, 0.12);
+            padding: 6px;
+            z-index: 999;
+            display: none;
+        }
+        [data-theme="light"] .search-suggestions {
+            box-shadow:
+                0 16px 50px rgba(13, 71, 161, 0.18),
+                0 0 40px rgba(33, 150, 243, 0.10);
+        }
+        .search-suggestions.is-open {
+            display: block;
+            animation: suggestDropIn 0.2s var(--ease) both;
+        }
+        @keyframes suggestDropIn {
+            from { opacity: 0; transform: translateY(-8px) scale(0.98); }
+            to   { opacity: 1; transform: translateY(0) scale(1); }
+        }
+        .search-suggestions::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 20px; right: 20px;
+            height: 2px;
+            background: linear-gradient(90deg,
+                transparent, var(--tech-cyan), var(--tech-purple),
+                var(--tech-cyan), transparent);
+            opacity: 0.65;
+            border-radius: 2px;
+            pointer-events: none;
+            z-index: 1;
+        }
+        .search-suggestions .s-header {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.68rem;
+            text-transform: uppercase;
+            letter-spacing: 2.2px;
+            font-weight: 700;
+            color: var(--tech-text-dim);
+            padding: 10px 14px 6px;
+            position: sticky;
+            top: 0;
+            background: var(--tech-card);
+            border-radius: 8px 8px 0 0;
+            z-index: 2;
+        }
+        .search-suggestion-item {
+            position: relative;
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            width: 100%;
+            padding: 10px 14px;
+            border-radius: 8px;
+            background: transparent;
+            color: var(--tech-text);
+            text-align: left;
+            transition: background 0.2s var(--ease);
+            font-family: inherit;
+            cursor: pointer;
+        }
+        .search-suggestion-item:hover,
+        .search-suggestion-item.is-active {
+            background: rgba(0, 212, 255, 0.08);
+        }
+        [data-theme="light"] .search-suggestion-item:hover,
+        [data-theme="light"] .search-suggestion-item.is-active {
+            background: rgba(33, 150, 243, 0.08);
+        }
+        .search-suggestion-item.is-active::before {
+            content: '';
+            position: absolute;
+            left: 4px; top: 50%;
+            transform: translateY(-50%);
+            width: 3px; height: 60%;
+            background: var(--tech-cyan);
+            border-radius: 2px;
+            box-shadow: 0 0 12px var(--tech-cyan);
+        }
+        .search-suggestion-item .s-icon {
+            flex-shrink: 0;
+            width: 36px; height: 36px;
+            border-radius: 8px;
+            display: flex; align-items: center; justify-content: center;
+            background: rgba(0, 212, 255, 0.10);
+            border: 1px solid rgba(0, 212, 255, 0.22);
+            color: var(--tech-cyan);
+            font-size: 0.9rem;
+            margin-top: 1px;
+            transition: all 0.2s var(--ease);
+        }
+        .search-suggestion-item:hover .s-icon,
+        .search-suggestion-item.is-active .s-icon {
+            background: rgba(0, 212, 255, 0.18);
+            border-color: rgba(0, 212, 255, 0.4);
+            box-shadow: 0 0 12px rgba(0, 212, 255, 0.25);
+        }
+        /* Indicator (document) items — gold accent to distinguish from area/parameter */
+        .search-suggestion-item[data-type="document"] .s-icon {
+            color: var(--tech-gold);
+            background: rgba(255, 215, 0, 0.08);
+            border-color: rgba(255, 215, 0, 0.22);
+        }
+        .search-suggestion-item[data-type="document"]:hover .s-icon,
+        .search-suggestion-item[data-type="document"].is-active .s-icon {
+            background: rgba(255, 215, 0, 0.16);
+            border-color: rgba(255, 215, 0, 0.42);
+            box-shadow: 0 0 12px rgba(255, 215, 0, 0.28);
+        }
+        [data-theme="light"] .search-suggestion-item[data-type="document"] .s-icon {
+            color: #B8860B;
+            background: rgba(245, 166, 35, 0.10);
+            border-color: rgba(245, 166, 35, 0.28);
+        }
+        .search-suggestion-item .s-text { flex: 1; min-width: 0; }
+        .search-suggestion-item .s-title {
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            font-size: 0.9rem;
+            font-weight: 600;
+            line-height: 1.35;
+            color: var(--tech-text);
+        }
+        .search-suggestion-item .s-subtitle {
+            display: block;
+            margin-top: 2px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            color: var(--tech-text-muted);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .search-suggestion-item .s-go {
+            align-self: center;
+            font-size: 0.75rem;
+            color: var(--tech-cyan);
+            opacity: 0.35;
+            flex-shrink: 0;
+            transition: all 0.2s var(--ease);
+        }
+        .search-suggestion-item:hover .s-go,
+        .search-suggestion-item.is-active .s-go {
+            opacity: 1;
+            transform: translateX(3px);
+        }
+        .search-suggestion-item mark {
+            background: rgba(0, 212, 255, 0.22);
+            color: var(--tech-text);
+            font-weight: 700;
+            border-radius: 3px;
+            padding: 0 2px;
+        }
+        [data-theme="light"] .search-suggestion-item mark {
+            background: rgba(33, 150, 243, 0.22);
+            color: #0D47A1;
+        }
+        .search-suggestions .no-results {
+            padding: 28px 16px 24px;
+            text-align: center;
+            color: var(--tech-text-muted);
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+        .search-suggestions .no-results i {
+            display: block;
+            font-size: 1.6rem;
+            color: var(--tech-cyan);
+            opacity: 0.55;
+            margin-bottom: 10px;
+        }
+        .search-suggestions::-webkit-scrollbar { width: 6px; }
+        .search-suggestions::-webkit-scrollbar-track { background: transparent; }
+        .search-suggestions::-webkit-scrollbar-thumb {
+            background: var(--tech-cyan);
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 212, 255, 0.4);
+        }
+        @media (max-width: 767px) {
+            .search-suggestions {
+                left: 0; right: 0;
+                width: 100%;
+                max-height: 340px;
+            }
         }
     </style>
 </head>
 
 <body>
 
-    <!-- ===== BSBA LOGO WATERMARK ===== -->
     <div class="bsba-watermark"></div>
 
-    <!-- ===== HEADER ===== -->
     <header>
         <div class="header-container">
             <div class="logo-section">
@@ -1949,10 +1247,8 @@
         </div>
     </header>
 
-    <!-- ===== MAIN ===== -->
     <main id="app"></main>
 
-    <!-- ===== FOOTER ===== -->
     <footer>
         <p>&copy; 2026 Occidental Mindoro State University — <strong>BSBA Accreditation Document System</strong></p>
         <span class="footer-course">Bachelor of Science in Business Administration</span>
@@ -1964,41 +1260,29 @@
         </div>
     </footer>
 
-    <!-- ============================================================
-    JAVASCRIPT (unchanged)
-    ============================================================ -->
     <script>
-        // ============================================================
         // THEME TOGGLE
-        // ============================================================
         (function() {
             const toggle = document.getElementById('themeToggle');
             const icon = toggle.querySelector('i');
-
             let currentTheme = localStorage.getItem('bsba-theme') || 'dark';
-
             function setTheme(theme) {
                 currentTheme = theme;
                 document.documentElement.setAttribute('data-theme', theme);
                 icon.className = theme === 'dark' ? 'fas fa-moon' : 'fas fa-sun';
                 localStorage.setItem('bsba-theme', theme);
             }
-
             setTheme(currentTheme);
-
             toggle.addEventListener('click', function() {
                 setTheme(currentTheme === 'dark' ? 'light' : 'dark');
             });
         })();
 
-        // ============================================================
-        // BSBA DATA (unchanged)
-        // ============================================================
         var PROGRAM_CODE = 'BSBA';
         var PROGRAM_NAME = 'Bachelor of Science in Business Administration';
 
         var AREAS_FULL = {
-            1: { name: 'Vision, Mission, Goals, and Objectives', params: { 
+            1: { name: 'Vision, Mission, Goals, and Objectives', params: {
                     A: 'STATEMENT OF VISION, MISSION, GOALS AND OBJECTIVES',
                     B: 'DISSEMINATION AND ACCEPTABILITY' } },
             2: { name: 'Faculty', params: {
@@ -2010,7 +1294,7 @@
                     F: 'PROFESSIONAL PERFORMANCE AND SCHOLARLY WORKS',
                     G: 'SALARIES, FRINGE BENEFITS, AND INCENTIVES',
                     H: 'PROFESSIONALISM' } },
-            3: { name: 'Curriculum and Instruction', params: { 
+            3: { name: 'Curriculum and Instruction', params: {
                     A: 'CURRICULUM AND PROGRAM STUDIES',
                     B: 'INSTRUCTIONAL PROCESS, METHODOLOGIES AND LEARNING OPPORTUNITIES',
                     C: 'ASSESSMENT OF ACADEMIC PERFORMANCE',
@@ -2034,31 +1318,21 @@
                     B: 'COLLECTION DEVELOPMENT, ORGANIZATION AND PRESERVATION',
                     C: 'LIBRARY SERVICES AND UTILIZATION',
                     D: 'PHYSICAL FACILITIES AND EQUIPMENT',
-                    E: 'LIBRARY PERSONNEL',
-                    F: 'FINANCIAL SUPPORT',
+                    E: 'LIBRARY PERSONNEL', F: 'FINANCIAL SUPPORT',
                     G: 'LINKAGES AND NETWORKING',
                     H: 'EVALUATION AND MONITORING' } },
-            8: { name: 'Physical Plant and Facilities', params: { A: 'CAMPUS',
-                    B: 'BUILDINGS',
-                    C: 'CLASSROOMS',
+            8: { name: 'Physical Plant and Facilities', params: { A: 'CAMPUS', B: 'BUILDINGS', C: 'CLASSROOMS',
                     D: 'OFFICE AND STAFF ROOMS',
                     E: 'ASSEMBLY, ATHLETIC AND SPORTS FACILITIES',
-                    F: 'MEDICAL AND DENTAL CLINIC',
-                    G: 'STUDENT CENTER',
+                    F: 'MEDICAL AND DENTAL CLINIC', G: 'STUDENT CENTER',
                     H: 'FOOD SERVICES/CANTEEN/CAFETERIA',
-                    I: 'ACCREDITATION CENTER',
-                    J: 'HOUSING (optional)' } },
+                    I: 'ACCREDITATION CENTER', J: 'HOUSING (optional)' } },
             9: { name: 'Laboratories', params: { A: 'LABORATORIES, SHOPS/FACILITIES',
-                    B: 'EQUIPMENT AND MATERIALS',
-                    C: 'MAINTENANCE',
-                    D: 'SPECIAL PROVISIONS' } },
+                    B: 'EQUIPMENT AND MATERIALS', C: 'MAINTENANCE', D: 'SPECIAL PROVISIONS' } },
             10: { name: 'Administration', params: { A: 'ORGANIZATIONAL',
-                    B: 'ACADEMIC ADMINISTRATION',
-                    C: 'STUDENT ADMINISTRATION',
-                    D: 'FINANCIAL MANAGEMENT',
-                    E: 'SUPPLY MANAGEMENT',
-                    F: 'RECORDS MANAGEMENT',
-                    G: 'INSTITUTIONAL PLANNING AND DEVELOPMENT',
+                    B: 'ACADEMIC ADMINISTRATION', C: 'STUDENT ADMINISTRATION',
+                    D: 'FINANCIAL MANAGEMENT', E: 'SUPPLY MANAGEMENT',
+                    F: 'RECORDS MANAGEMENT', G: 'INSTITUTIONAL PLANNING AND DEVELOPMENT',
                     H: 'PERFORMANCE OF ADMINISTRATIVE PERSONNEL' } }
         };
 
@@ -2068,179 +1342,80 @@
             { key: 'OUT', label: 'Outcome/s', icon: 'fa-trophy' }
         ];
 
-        // ============================================================
-        // SPECIAL FILE IDs (BSBA)
-        // ============================================================
         var EXTRA_FILE_IDS = {
             additional: {
-                '1': 'BSBA_1_ADD_FILE_ID',
-                '2': 'BSBA_2_ADD_FILE_ID',
-                '3': 'BSBA_3_ADD_FILE_ID',
-                '4': 'BSBA_4_ADD_FILE_ID',
-                '5': 'BSBA_5_ADD_FILE_ID',
-                '6': 'BSBA_6_ADD_FILE_ID',
-                '7': 'BSBA_7_ADD_FILE_ID',
-                '8': 'BSBA_8_ADD_FILE_ID',
-                '9': 'BSBA_9_ADD_FILE_ID',
+                '1': 'BSBA_1_ADD_FILE_ID', '2': 'BSBA_2_ADD_FILE_ID', '3': 'BSBA_3_ADD_FILE_ID',
+                '4': 'BSBA_4_ADD_FILE_ID', '5': 'BSBA_5_ADD_FILE_ID', '6': 'BSBA_6_ADD_FILE_ID',
+                '7': 'BSBA_7_ADD_FILE_ID', '8': 'BSBA_8_ADD_FILE_ID', '9': 'BSBA_9_ADD_FILE_ID',
                 '10': 'BSBA_10_ADD_FILE_ID'
             },
             compliance: {
-                '1': 'BSBA_1_COMP_FILE_ID',
-                '2': 'BSBA_2_COMP_FILE_ID',
-                '3': 'BSBA_3_COMP_FILE_ID',
-                '4': 'BSBA_4_COMP_FILE_ID',
-                '5': 'BSBA_5_COMP_FILE_ID',
-                '6': 'BSBA_6_COMP_FILE_ID',
-                '7': 'BSBA_7_COMP_FILE_ID',
-                '8': 'BSBA_8_COMP_FILE_ID',
-                '9': 'BSBA_9_COMP_FILE_ID',
+                '1': 'BSBA_1_COMP_FILE_ID', '2': 'BSBA_2_COMP_FILE_ID', '3': 'BSBA_3_COMP_FILE_ID',
+                '4': 'BSBA_4_COMP_FILE_ID', '5': 'BSBA_5_COMP_FILE_ID', '6': 'BSBA_6_COMP_FILE_ID',
+                '7': 'BSBA_7_COMP_FILE_ID', '8': 'BSBA_8_COMP_FILE_ID', '9': 'BSBA_9_COMP_FILE_ID',
                 '10': 'BSBA_10_COMP_FILE_ID'
             },
             selfsurvey: {
-                '1': 'BSBA_1_SELF_FILE_ID',
-                '2': 'BSBA_2_SELF_FILE_ID',
-                '3': 'BSBA_3_SELF_FILE_ID',
-                '4': 'BSBA_4_SELF_FILE_ID',
-                '5': 'BSBA_5_SELF_FILE_ID',
-                '6': 'BSBA_6_SELF_FILE_ID',
-                '7': 'BSBA_7_SELF_FILE_ID',
-                '8': 'BSBA_8_SELF_FILE_ID',
-                '9': 'BSBA_9_SELF_FILE_ID',
+                '1': 'BSBA_1_SELF_FILE_ID', '2': 'BSBA_2_SELF_FILE_ID', '3': 'BSBA_3_SELF_FILE_ID',
+                '4': 'BSBA_4_SELF_FILE_ID', '5': 'BSBA_5_SELF_FILE_ID', '6': 'BSBA_6_SELF_FILE_ID',
+                '7': 'BSBA_7_SELF_FILE_ID', '8': 'BSBA_8_SELF_FILE_ID', '9': 'BSBA_9_SELF_FILE_ID',
                 '10': 'BSBA_10_SELF_FILE_ID'
             },
             ppp: {
-                '1-A': 'BSBA_PPP_1A_FILE_ID',
-                '1-B': 'BSBA_PPP_1B_FILE_ID',
-                '2-A': 'BSBA_PPP_2A_FILE_ID',
-                '2-B': 'BSBA_PPP_2B_FILE_ID',
-                '2-C': 'BSBA_PPP_2C_FILE_ID',
-                '2-D': 'BSBA_PPP_2D_FILE_ID',
-                '2-E': 'BSBA_PPP_2E_FILE_ID',
-                '2-F': 'BSBA_PPP_2F_FILE_ID',
-                '2-G': 'BSBA_PPP_2G_FILE_ID',
-                '2-H': 'BSBA_PPP_2H_FILE_ID',
-                '3-A': 'BSBA_PPP_3A_FILE_ID',
-                '3-B': 'BSBA_PPP_3B_FILE_ID',
-                '3-C': 'BSBA_PPP_3C_FILE_ID',
-                '3-D': 'BSBA_PPP_3D_FILE_ID',
-                '3-E': 'BSBA_PPP_3E_FILE_ID',
-                '3-F': 'BSBA_PPP_3F_FILE_ID',
-                '4-A': 'BSBA_PPP_4A_FILE_ID',
-                '4-B': 'BSBA_PPP_4B_FILE_ID',
-                '4-C': 'BSBA_PPP_4C_FILE_ID',
-                '4-D': 'BSBA_PPP_4D_FILE_ID',
-                '4-E': 'BSBA_PPP_4E_FILE_ID',
-                '5-A': 'BSBA_PPP_5A_FILE_ID',
-                '5-B': 'BSBA_PPP_5B_FILE_ID',
-                '5-C': 'BSBA_PPP_5C_FILE_ID',
+                '1-A': 'BSBA_PPP_1A_FILE_ID', '1-B': 'BSBA_PPP_1B_FILE_ID',
+                '2-A': 'BSBA_PPP_2A_FILE_ID', '2-B': 'BSBA_PPP_2B_FILE_ID', '2-C': 'BSBA_PPP_2C_FILE_ID',
+                '2-D': 'BSBA_PPP_2D_FILE_ID', '2-E': 'BSBA_PPP_2E_FILE_ID', '2-F': 'BSBA_PPP_2F_FILE_ID',
+                '2-G': 'BSBA_PPP_2G_FILE_ID', '2-H': 'BSBA_PPP_2H_FILE_ID',
+                '3-A': 'BSBA_PPP_3A_FILE_ID', '3-B': 'BSBA_PPP_3B_FILE_ID', '3-C': 'BSBA_PPP_3C_FILE_ID',
+                '3-D': 'BSBA_PPP_3D_FILE_ID', '3-E': 'BSBA_PPP_3E_FILE_ID', '3-F': 'BSBA_PPP_3F_FILE_ID',
+                '4-A': 'BSBA_PPP_4A_FILE_ID', '4-B': 'BSBA_PPP_4B_FILE_ID', '4-C': 'BSBA_PPP_4C_FILE_ID',
+                '4-D': 'BSBA_PPP_4D_FILE_ID', '4-E': 'BSBA_PPP_4E_FILE_ID',
+                '5-A': 'BSBA_PPP_5A_FILE_ID', '5-B': 'BSBA_PPP_5B_FILE_ID', '5-C': 'BSBA_PPP_5C_FILE_ID',
                 '5-D': 'BSBA_PPP_5D_FILE_ID',
-                '6-A': 'BSBA_PPP_6A_FILE_ID',
-                '6-B': 'BSBA_PPP_6B_FILE_ID',
-                '6-C': 'BSBA_PPP_6C_FILE_ID',
+                '6-A': 'BSBA_PPP_6A_FILE_ID', '6-B': 'BSBA_PPP_6B_FILE_ID', '6-C': 'BSBA_PPP_6C_FILE_ID',
                 '6-D': 'BSBA_PPP_6D_FILE_ID',
-                '7-A': 'BSBA_PPP_7A_FILE_ID',
-                '7-B': 'BSBA_PPP_7B_FILE_ID',
-                '7-C': 'BSBA_PPP_7C_FILE_ID',
-                '7-D': 'BSBA_PPP_7D_FILE_ID',
-                '7-E': 'BSBA_PPP_7E_FILE_ID',
-                '7-F': 'BSBA_PPP_7F_FILE_ID',
-                '7-G': 'BSBA_PPP_7G_FILE_ID',
-                '7-H': 'BSBA_PPP_7H_FILE_ID',
-                '8-A': 'BSBA_PPP_8A_FILE_ID',
-                '8-B': 'BSBA_PPP_8B_FILE_ID',
-                '8-C': 'BSBA_PPP_8C_FILE_ID',
-                '8-D': 'BSBA_PPP_8D_FILE_ID',
-                '8-E': 'BSBA_PPP_8E_FILE_ID',
-                '8-F': 'BSBA_PPP_8F_FILE_ID',
-                '8-G': 'BSBA_PPP_8G_FILE_ID',
-                '8-H': 'BSBA_PPP_8H_FILE_ID',
-                '8-I': 'BSBA_PPP_8I_FILE_ID',
+                '7-A': 'BSBA_PPP_7A_FILE_ID', '7-B': 'BSBA_PPP_7B_FILE_ID', '7-C': 'BSBA_PPP_7C_FILE_ID',
+                '7-D': 'BSBA_PPP_7D_FILE_ID', '7-E': 'BSBA_PPP_7E_FILE_ID', '7-F': 'BSBA_PPP_7F_FILE_ID',
+                '7-G': 'BSBA_PPP_7G_FILE_ID', '7-H': 'BSBA_PPP_7H_FILE_ID',
+                '8-A': 'BSBA_PPP_8A_FILE_ID', '8-B': 'BSBA_PPP_8B_FILE_ID', '8-C': 'BSBA_PPP_8C_FILE_ID',
+                '8-D': 'BSBA_PPP_8D_FILE_ID', '8-E': 'BSBA_PPP_8E_FILE_ID', '8-F': 'BSBA_PPP_8F_FILE_ID',
+                '8-G': 'BSBA_PPP_8G_FILE_ID', '8-H': 'BSBA_PPP_8H_FILE_ID', '8-I': 'BSBA_PPP_8I_FILE_ID',
                 '8-J': 'BSBA_PPP_8J_FILE_ID',
-                '9-A': 'BSBA_PPP_9A_FILE_ID',
-                '9-B': 'BSBA_PPP_9B_FILE_ID',
-                '9-C': 'BSBA_PPP_9C_FILE_ID',
+                '9-A': 'BSBA_PPP_9A_FILE_ID', '9-B': 'BSBA_PPP_9B_FILE_ID', '9-C': 'BSBA_PPP_9C_FILE_ID',
                 '9-D': 'BSBA_PPP_9D_FILE_ID',
-                '10-A': 'BSBA_PPP_10A_FILE_ID',
-                '10-B': 'BSBA_PPP_10B_FILE_ID',
-                '10-C': 'BSBA_PPP_10C_FILE_ID',
-                '10-D': 'BSBA_PPP_10D_FILE_ID',
-                '10-E': 'BSBA_PPP_10E_FILE_ID',
-                '10-F': 'BSBA_PPP_10F_FILE_ID',
-                '10-G': 'BSBA_PPP_10G_FILE_ID',
-                '10-H': 'BSBA_PPP_10H_FILE_ID'
+                '10-A': 'BSBA_PPP_10A_FILE_ID', '10-B': 'BSBA_PPP_10B_FILE_ID', '10-C': 'BSBA_PPP_10C_FILE_ID',
+                '10-D': 'BSBA_PPP_10D_FILE_ID', '10-E': 'BSBA_PPP_10E_FILE_ID', '10-F': 'BSBA_PPP_10F_FILE_ID',
+                '10-G': 'BSBA_PPP_10G_FILE_ID', '10-H': 'BSBA_PPP_10H_FILE_ID'
             },
             bestpractices: {
-                '1-A': 'BSBA_BEST_1A_FILE_ID',
-                '1-B': 'BSBA_BEST_1B_FILE_ID',
-                '2-A': 'BSBA_BEST_2A_FILE_ID',
-                '2-B': 'BSBA_BEST_2B_FILE_ID',
-                '2-C': 'BSBA_BEST_2C_FILE_ID',
-                '2-D': 'BSBA_BEST_2D_FILE_ID',
-                '2-E': 'BSBA_BEST_2E_FILE_ID',
-                '2-F': 'BSBA_BEST_2F_FILE_ID',
-                '2-G': 'BSBA_BEST_2G_FILE_ID',
-                '2-H': 'BSBA_BEST_2H_FILE_ID',
-                '3-A': 'BSBA_BEST_3A_FILE_ID',
-                '3-B': 'BSBA_BEST_3B_FILE_ID',
-                '3-C': 'BSBA_BEST_3C_FILE_ID',
-                '3-D': 'BSBA_BEST_3D_FILE_ID',
-                '3-E': 'BSBA_BEST_3E_FILE_ID',
-                '3-F': 'BSBA_BEST_3F_FILE_ID',
-                '4-A': 'BSBA_BEST_4A_FILE_ID',
-                '4-B': 'BSBA_BEST_4B_FILE_ID',
-                '4-C': 'BSBA_BEST_4C_FILE_ID',
-                '4-D': 'BSBA_BEST_4D_FILE_ID',
-                '4-E': 'BSBA_BEST_4E_FILE_ID',
-                '5-A': 'BSBA_BEST_5A_FILE_ID',
-                '5-B': 'BSBA_BEST_5B_FILE_ID',
-                '5-C': 'BSBA_BEST_5C_FILE_ID',
+                '1-A': 'BSBA_BEST_1A_FILE_ID', '1-B': 'BSBA_BEST_1B_FILE_ID',
+                '2-A': 'BSBA_BEST_2A_FILE_ID', '2-B': 'BSBA_BEST_2B_FILE_ID', '2-C': 'BSBA_BEST_2C_FILE_ID',
+                '2-D': 'BSBA_BEST_2D_FILE_ID', '2-E': 'BSBA_BEST_2E_FILE_ID', '2-F': 'BSBA_BEST_2F_FILE_ID',
+                '2-G': 'BSBA_BEST_2G_FILE_ID', '2-H': 'BSBA_BEST_2H_FILE_ID',
+                '3-A': 'BSBA_BEST_3A_FILE_ID', '3-B': 'BSBA_BEST_3B_FILE_ID', '3-C': 'BSBA_BEST_3C_FILE_ID',
+                '3-D': 'BSBA_BEST_3D_FILE_ID', '3-E': 'BSBA_BEST_3E_FILE_ID', '3-F': 'BSBA_BEST_3F_FILE_ID',
+                '4-A': 'BSBA_BEST_4A_FILE_ID', '4-B': 'BSBA_BEST_4B_FILE_ID', '4-C': 'BSBA_BEST_4C_FILE_ID',
+                '4-D': 'BSBA_BEST_4D_FILE_ID', '4-E': 'BSBA_BEST_4E_FILE_ID',
+                '5-A': 'BSBA_BEST_5A_FILE_ID', '5-B': 'BSBA_BEST_5B_FILE_ID', '5-C': 'BSBA_BEST_5C_FILE_ID',
                 '5-D': 'BSBA_BEST_5D_FILE_ID',
-                '6-A': 'BSBA_BEST_6A_FILE_ID',
-                '6-B': 'BSBA_BEST_6B_FILE_ID',
-                '6-C': 'BSBA_BEST_6C_FILE_ID',
+                '6-A': 'BSBA_BEST_6A_FILE_ID', '6-B': 'BSBA_BEST_6B_FILE_ID', '6-C': 'BSBA_BEST_6C_FILE_ID',
                 '6-D': 'BSBA_BEST_6D_FILE_ID',
-                '7-A': 'BSBA_BEST_7A_FILE_ID',
-                '7-B': 'BSBA_BEST_7B_FILE_ID',
-                '7-C': 'BSBA_BEST_7C_FILE_ID',
-                '7-D': 'BSBA_BEST_7D_FILE_ID',
-                '7-E': 'BSBA_BEST_7E_FILE_ID',
-                '7-F': 'BSBA_BEST_7F_FILE_ID',
-                '7-G': 'BSBA_BEST_7G_FILE_ID',
-                '7-H': 'BSBA_BEST_7H_FILE_ID',
-                '8-A': 'BSBA_BEST_8A_FILE_ID',
-                '8-B': 'BSBA_BEST_8B_FILE_ID',
-                '8-C': 'BSBA_BEST_8C_FILE_ID',
-                '8-D': 'BSBA_BEST_8D_FILE_ID',
-                '8-E': 'BSBA_BEST_8E_FILE_ID',
-                '8-F': 'BSBA_BEST_8F_FILE_ID',
-                '8-G': 'BSBA_BEST_8G_FILE_ID',
-                '8-H': 'BSBA_BEST_8H_FILE_ID',
-                '8-I': 'BSBA_BEST_8I_FILE_ID',
+                '7-A': 'BSBA_BEST_7A_FILE_ID', '7-B': 'BSBA_BEST_7B_FILE_ID', '7-C': 'BSBA_BEST_7C_FILE_ID',
+                '7-D': 'BSBA_BEST_7D_FILE_ID', '7-E': 'BSBA_BEST_7E_FILE_ID', '7-F': 'BSBA_BEST_7F_FILE_ID',
+                '7-G': 'BSBA_BEST_7G_FILE_ID', '7-H': 'BSBA_BEST_7H_FILE_ID',
+                '8-A': 'BSBA_BEST_8A_FILE_ID', '8-B': 'BSBA_BEST_8B_FILE_ID', '8-C': 'BSBA_BEST_8C_FILE_ID',
+                '8-D': 'BSBA_BEST_8D_FILE_ID', '8-E': 'BSBA_BEST_8E_FILE_ID', '8-F': 'BSBA_BEST_8F_FILE_ID',
+                '8-G': 'BSBA_BEST_8G_FILE_ID', '8-H': 'BSBA_BEST_8H_FILE_ID', '8-I': 'BSBA_BEST_8I_FILE_ID',
                 '8-J': 'BSBA_BEST_8J_FILE_ID',
-                '9-A': 'BSBA_BEST_9A_FILE_ID',
-                '9-B': 'BSBA_BEST_9B_FILE_ID',
-                '9-C': 'BSBA_BEST_9C_FILE_ID',
+                '9-A': 'BSBA_BEST_9A_FILE_ID', '9-B': 'BSBA_BEST_9B_FILE_ID', '9-C': 'BSBA_BEST_9C_FILE_ID',
                 '9-D': 'BSBA_BEST_9D_FILE_ID',
-                '10-A': 'BSBA_BEST_10A_FILE_ID',
-                '10-B': 'BSBA_BEST_10B_FILE_ID',
-                '10-C': 'BSBA_BEST_10C_FILE_ID',
-                '10-D': 'BSBA_BEST_10D_FILE_ID',
-                '10-E': 'BSBA_BEST_10E_FILE_ID',
-                '10-F': 'BSBA_BEST_10F_FILE_ID',
-                '10-G': 'BSBA_BEST_10G_FILE_ID',
-                '10-H': 'BSBA_BEST_10H_FILE_ID'
+                '10-A': 'BSBA_BEST_10A_FILE_ID', '10-B': 'BSBA_BEST_10B_FILE_ID', '10-C': 'BSBA_BEST_10C_FILE_ID',
+                '10-D': 'BSBA_BEST_10D_FILE_ID', '10-E': 'BSBA_BEST_10E_FILE_ID', '10-F': 'BSBA_BEST_10F_FILE_ID',
+                '10-G': 'BSBA_BEST_10G_FILE_ID', '10-H': 'BSBA_BEST_10H_FILE_ID'
             }
         };
 
-        // ============================================================
-        // DOCUMENT FILES (BSBA sample data)
-        // ============================================================
         var DOCUMENT_FILES = {
-     // ==============================
-    // AREA I — Vision, Mission, Goals, and Objectives
-    // ==============================
-
-    // ------ Parameter A ------
     'BSBA-1-A-SIP': [
         { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq', name: 'S.1. The institution has a system of determining the Vision and Mission.' },
         { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq', name: 'S.2. The Vision clearly reflects what the institution hopes to become in the future.' },
@@ -2262,8 +1437,6 @@
     'BSBA-1-A-OUT': [
         { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq', name: 'O.1. The VMGO are crafted and duly approved by the BOT/BOR.' }
     ],
-
-    // ------ Parameter B ------
     'BSBA-1-B-SIP': [
         { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq', name: 'S.1. The VMGO are available on bulletin boards, in catalogs/manuals and in other forms of communication media.' }
     ],
@@ -3873,36 +3046,29 @@
 ]
         };
 
-        // ============================================================
-        // HELPER FUNCTIONS (same logic, renamed to BSBA)
-        // ============================================================
+        // HELPERS
         function getParamsForProgram(program, areaNum) {
             var areaData = AREAS_FULL[areaNum];
             return areaData ? areaData.params : {};
         }
-
         function getAreaNameForProgram(program, areaNum) {
             var areaData = AREAS_FULL[areaNum];
             return areaData ? areaData.name : 'Area ' + areaNum;
         }
-
         function getDocumentFiles(program, area, param, catKey) {
             var key = program + '-' + area + '-' + param + '-' + catKey;
             return DOCUMENT_FILES[key] || [];
         }
-
         function getDriveLink(fileId) {
             if (!fileId || fileId === 'FILE_ID_HERE' || fileId === 'FILE_ID_HERE_2' || fileId === 'FILE_ID_HERE_3' ||
                 fileId.indexOf('SAMPLE_') === 0 || fileId.indexOf('_FILE_ID') !== -1) return null;
             return 'https://drive.google.com/file/d/' + fileId + '/preview';
         }
-
         function getDriveOpenLink(fileId) {
             if (!fileId || fileId === 'FILE_ID_HERE' || fileId === 'FILE_ID_HERE_2' || fileId === 'FILE_ID_HERE_3' ||
                 fileId.indexOf('SAMPLE_') === 0 || fileId.indexOf('_FILE_ID') !== -1) return null;
             return 'https://drive.google.com/file/d/' + fileId + '/view?usp=sharing';
         }
-
         function getExtraFileId(type, area, param) {
             var map = EXTRA_FILE_IDS[type];
             if (!map) return null;
@@ -3910,28 +3076,22 @@
                 return map[String(area)] || null;
             } else if (type === 'ppp' || type === 'bestpractices') {
                 if (!param) return null;
-                var key = area + '-' + param;
-                return map[key] || null;
+                return map[area + '-' + param] || null;
             }
             return null;
         }
-
         function getAllSearchableTextForArea(areaNum) {
             var texts = [];
             var areaData = AREAS_FULL[areaNum];
             if (!areaData) return '';
             texts.push(areaData.name);
             var params = areaData.params;
-            for (var p in params) {
-                texts.push(params[p]);
-            }
+            for (var p in params) texts.push(params[p]);
             var prefix = 'BSBA-' + areaNum + '-';
             for (var key in DOCUMENT_FILES) {
                 if (key.indexOf(prefix) === 0) {
                     var files = DOCUMENT_FILES[key];
-                    for (var f = 0; f < files.length; f++) {
-                        texts.push(files[f].name);
-                    }
+                    for (var f = 0; f < files.length; f++) texts.push(files[f].name);
                 }
             }
             var extraTypes = ['additional', 'compliance', 'selfsurvey'];
@@ -3941,66 +3101,50 @@
                 'selfsurvey': 'Self Survey'
             };
             for (var t = 0; t < extraTypes.length; t++) {
-                var type = extraTypes[t];
-                var fileId = getExtraFileId(type, areaNum);
-                if (fileId) {
-                    texts.push(nameMap[type]);
-                }
+                if (getExtraFileId(extraTypes[t], areaNum)) texts.push(nameMap[extraTypes[t]]);
             }
             for (var p2 in params) {
-                var pppId = getExtraFileId('ppp', areaNum, p2);
-                if (pppId) texts.push('PPP');
-                var bestId = getExtraFileId('bestpractices', areaNum, p2);
-                if (bestId) texts.push('Best Practice/s');
+                if (getExtraFileId('ppp', areaNum, p2)) texts.push('PPP');
+                if (getExtraFileId('bestpractices', areaNum, p2)) texts.push('Best Practice/s');
             }
             return texts.join(' ').toLowerCase();
         }
 
-        // HIERARCHY BUILDER (unchanged)
         function parseHierarchyCode(name) {
             var cleaned = name.replace(/\.\s+/g, '.').replace(/\s+\./g, '.');
             var match = cleaned.match(/^([A-Z]\.\d+(?:\.\d+)*)/);
             return match ? match[1] : null;
         }
-
         function buildHierarchy(files) {
             var root = { children: [] };
             var nodeMap = {};
             files.forEach(function(file) {
                 var code = parseHierarchyCode(file.name);
                 if (!code) return;
-                if (!nodeMap[code]) nodeMap[code] = { code: code, name: file.name, id: null, index: null,
-                    children: [] };
+                if (!nodeMap[code]) nodeMap[code] = { code: code, name: file.name, id: null, index: null, children: [] };
             });
             files.forEach(function(file, index) {
                 var code = parseHierarchyCode(file.name);
-                if (!code) { root.children.push({ code: null, name: file.name, id: file.id, index: index,
-                        children: [] });
-                    return; }
+                if (!code) { root.children.push({ code: null, name: file.name, id: file.id, index: index, children: [] }); return; }
                 var node = nodeMap[code];
-                if (node) { node.id = file.id;
-                    node.index = index;
-                    node.name = file.name; }
+                if (node) { node.id = file.id; node.index = index; node.name = file.name; }
             });
-            var allCodes = Object.keys(nodeMap);
-            allCodes.forEach(function(code) {
+            Object.keys(nodeMap).forEach(function(code) {
                 var parts = code.split('.');
-                if (parts.length === 1) { root.children.push(nodeMap[code]); } else {
+                if (parts.length === 1) root.children.push(nodeMap[code]);
+                else {
                     var parentCode = parts.slice(0, -1).join('.');
                     if (nodeMap[parentCode]) nodeMap[parentCode].children.push(nodeMap[code]);
                     else root.children.push(nodeMap[code]);
                 }
             });
-
             function sortChildren(node) {
                 if (node.children) {
                     node.children.sort(function(a, b) {
-                        var aParts = a.code.split('.').length ? a.code.split('.') : [''],
-                            bParts = b.code.split('.').length ? b.code.split('.') : [''];
+                        var aParts = a.code.split('.'), bParts = b.code.split('.');
                         for (var i = 0; i < Math.min(aParts.length, bParts.length); i++) {
                             if (aParts[i] !== bParts[i]) {
-                                var aNum = parseInt(aParts[i]),
-                                    bNum = parseInt(bParts[i]);
+                                var aNum = parseInt(aParts[i]), bNum = parseInt(bParts[i]);
                                 if (!isNaN(aNum) && !isNaN(bNum)) return aNum - bNum;
                                 return aParts[i].localeCompare(bParts[i]);
                             }
@@ -4014,22 +3158,11 @@
             return root.children;
         }
 
-        // ============================================================
-        // ROUTER (same as BSIT, but with BSBA program code)
-        // ============================================================
+        // ROUTER
         var state = {
-            page: 'landing',
-            program: PROGRAM_CODE,
-            area: null,
-            param: null,
-            category: null,
-            fileIndex: null,
-            currentPath: [],
-            specialFileId: null,
-            specialFileName: null,
-            specialType: null,
-            fromArea: null,
-            fromParam: null
+            page: 'landing', program: PROGRAM_CODE, area: null, param: null,
+            category: null, fileIndex: null, currentPath: [], specialFileId: null,
+            specialFileName: null, specialType: null, fromArea: null, fromParam: null
         };
 
         function parseHash() {
@@ -4039,57 +3172,42 @@
             if (parts.length === 1) {
                 var page = parts[0];
                 if (page === 'additional' || page === 'compliance' || page === 'selfsurvey' ||
-                    page === 'ppp' || page === 'bestpractices') {
-                    return { page: 'special', specialType: page };
-                }
+                    page === 'ppp' || page === 'bestpractices') return { page: 'special', specialType: page };
                 if (AREAS_FULL[page]) return { page: 'area', area: page };
-                else return { page: 'notfound' };
+                return { page: 'notfound' };
             }
             if (parts.length === 2) {
-                var area = parts[0],
-                    param = parts[1];
-                var params = getParamsForProgram(PROGRAM_CODE, area);
-                if (AREAS_FULL[area] && params[param]) return { page: 'parameter', area: area, param: param };
-                else return { page: 'notfound' };
+                var area = parts[0], param = parts[1];
+                if (AREAS_FULL[area] && getParamsForProgram(PROGRAM_CODE, area)[param]) return { page: 'parameter', area: area, param: param };
+                return { page: 'notfound' };
             }
             if (parts.length === 3) {
-                var area = parts[0],
-                    param = parts[1],
-                    cat = parts[2];
+                var area = parts[0], param = parts[1], cat = parts[2];
                 var isValidCat = CATEGORIES.some(function(c) { return c.key === cat; });
-                var params2 = getParamsForProgram(PROGRAM_CODE, area);
-                if (AREAS_FULL[area] && params2[param] && isValidCat) return { page: 'category', area: area,
-                    param: param, category: cat };
-                else return { page: 'notfound' };
+                if (AREAS_FULL[area] && getParamsForProgram(PROGRAM_CODE, area)[param] && isValidCat)
+                    return { page: 'category', area: area, param: param, category: cat };
+                return { page: 'notfound' };
             }
             if (parts.length === 4) {
-                var area = parts[0],
-                    param = parts[1],
-                    cat = parts[2],
-                    idx = parseInt(parts[3]);
+                var area = parts[0], param = parts[1], cat = parts[2], idx = parseInt(parts[3]);
                 var isValidCat2 = CATEGORIES.some(function(c) { return c.key === cat; });
-                var params3 = getParamsForProgram(PROGRAM_CODE, area);
-                if (AREAS_FULL[area] && params3[param] && isValidCat2 && !isNaN(idx)) return { page: 'document',
-                    area: area, param: param, category: cat, fileIndex: idx };
-                else return { page: 'notfound' };
+                if (AREAS_FULL[area] && getParamsForProgram(PROGRAM_CODE, area)[param] && isValidCat2 && !isNaN(idx))
+                    return { page: 'document', area: area, param: param, category: cat, fileIndex: idx };
+                return { page: 'notfound' };
             }
             return { page: 'notfound' };
         }
 
         function navigateTo(page, data) {
             data = data || {};
-            var newState = Object.assign({}, state, { page: page }, data);
-            state = newState;
+            state = Object.assign({}, state, { page: page }, data);
             var parts = [];
             if (data.area) parts.push(data.area);
             if (data.param) parts.push(data.param);
             if (data.category) parts.push(data.category);
             if (data.fileIndex !== undefined && data.fileIndex !== null) parts.push(data.fileIndex);
-            if (page === 'special' && data.specialType) {
-                parts = [data.specialType];
-            }
-            var hash = parts.length ? '#/' + parts.join('/') : '#/';
-            window.location.hash = hash;
+            if (page === 'special' && data.specialType) parts = [data.specialType];
+            window.location.hash = parts.length ? '#/' + parts.join('/') : '#/';
             render();
         }
 
@@ -4099,26 +3217,20 @@
             render();
         });
 
-        // ============================================================
-        // RENDER FUNCTIONS (same logic, with BSBA labels)
-        // ============================================================
-
         function applyStaggeredAnimation(container) {
             if (!container) return;
             var items = container.children;
-            for (var i = 0; i < items.length; i++) {
-                items[i].style.animationDelay = ((i + 1) * 0.07) + 's';
-            }
+            for (var i = 0; i < items.length; i++) items[i].style.animationDelay = ((i + 1) * 0.07) + 's';
         }
-
         function renderNotFound() {
             var wrap = document.createElement('div');
-            wrap.innerHTML =
-                `<div class="empty-state" style="margin-top:60px;"><div class="icon"><i class="fas fa-search"></i></div><h3>Page Not Found</h3><p>The requested page does not exist in this accreditation system.</p><button class="btn-back" onclick="navigateTo('landing',{})">← Go to Home</button></div>`;
+            wrap.innerHTML = '<div class="empty-state" style="margin-top:60px;"><div class="icon"><i class="fas fa-search"></i></div><h3>Page Not Found</h3><p>The requested page does not exist in this accreditation system.</p><button class="btn-back" onclick="navigateTo(\'landing\',{})">← Go to Home</button></div>';
             return wrap;
         }
 
-        // ---- BREADCRUMB FUNCTIONS ----
+        // ============================================================
+        // BREADCRUMB — updated with predictive search dropdown
+        // ============================================================
         function crumbWithSearch(items) {
             var clickable = items.slice(0, -1);
             var html = '<div class="breadcrumb-wrapper">';
@@ -4133,11 +3245,12 @@
                 html += '<span class="current">' + last.label + '</span>';
             }
             html += '</nav>';
-
             html += '<div class="search-container">';
-            html += '<input type="text" id="globalSearch" placeholder="Search..." autocomplete="off" />';
+            html += '<input type="text" id="globalSearch" placeholder="Search areas, parameters, indicators..." autocomplete="off" ' +
+                    'role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="searchSuggestions" />';
             html += '<i class="fas fa-search search-icon"></i>';
             html += '<button class="clear-search" id="clearSearch" aria-label="Clear search"><i class="fas fa-times"></i></button>';
+            html += '<div class="search-suggestions" id="searchSuggestions" role="listbox" aria-label="Search suggestions"></div>';
             html += '</div>';
             html += '</div>';
             return html;
@@ -4166,38 +3279,28 @@
             container.querySelectorAll('[data-crumb]').forEach(function(a) {
                 var idx = Number(a.dataset.crumb);
                 if (idx < clickable.length) {
-                    a.addEventListener('click', function(e) { e.preventDefault();
-                        clickable[idx].go(); });
+                    a.addEventListener('click', function(e) { e.preventDefault(); clickable[idx].go(); });
                 }
             });
-
             if (withSearch) {
                 var searchInput = container.querySelector('#globalSearch');
                 if (searchInput) {
                     var newInput = searchInput.cloneNode(true);
                     searchInput.parentNode.replaceChild(newInput, searchInput);
-
                     newInput.addEventListener('input', function() {
                         var query = this.value.trim().toLowerCase();
                         var clear = container.querySelector('#clearSearch');
                         if (clear) {
-                            if (query.length > 0) {
-                                clear.classList.add('visible');
-                            } else {
-                                clear.classList.remove('visible');
-                            }
+                            if (query.length > 0) clear.classList.add('visible');
+                            else clear.classList.remove('visible');
                         }
                         filterGridItems(container, query);
                     });
-
                     var newClear = container.querySelector('#clearSearch');
                     if (newClear) {
                         newClear.addEventListener('click', function() {
                             var inp = container.querySelector('#globalSearch');
-                            if (inp) {
-                                inp.value = '';
-                                inp.dispatchEvent(new Event('input'));
-                            }
+                            if (inp) { inp.value = ''; inp.dispatchEvent(new Event('input')); }
                             this.classList.remove('visible');
                         });
                     }
@@ -4212,17 +3315,13 @@
                 for (var i = 0; i < items.length; i++) {
                     var item = items[i];
                     var show = false;
-                    if (query === '') {
-                        show = true;
-                    } else {
+                    if (query === '') show = true;
+                    else {
                         if (state.page === 'landing') {
                             var btn = item.querySelector('.btn-neon');
                             if (btn && btn.dataset.area) {
-                                var areaNum = btn.dataset.area;
-                                var searchableText = getAllSearchableTextForArea(areaNum);
-                                if (searchableText.indexOf(query) !== -1) {
-                                    show = true;
-                                }
+                                var searchableText = getAllSearchableTextForArea(btn.dataset.area);
+                                if (searchableText.indexOf(query) !== -1) show = true;
                             }
                         } else {
                             var text = item.textContent.toLowerCase();
@@ -4234,17 +3333,11 @@
                                 if (btn2.dataset.cat) dataText += ' ' + btn2.dataset.cat;
                                 if (btn2.dataset.type) dataText += ' ' + btn2.dataset.type;
                             }
-                            var fullText = text + ' ' + dataText;
-                            if (fullText.indexOf(query) !== -1) {
-                                show = true;
-                            }
+                            if ((text + ' ' + dataText).indexOf(query) !== -1) show = true;
                         }
                     }
-                    if (show) {
-                        item.classList.remove('grid-item-hidden');
-                    } else {
-                        item.classList.add('grid-item-hidden');
-                    }
+                    if (show) item.classList.remove('grid-item-hidden');
+                    else item.classList.add('grid-item-hidden');
                 }
             });
         }
@@ -4255,26 +3348,13 @@
             app.classList.remove('is-visible');
             var node;
             switch (state.page) {
-                case 'landing':
-                    node = renderLanding();
-                    break;
-                case 'area':
-                    node = renderArea();
-                    break;
-                case 'parameter':
-                    node = renderParameter();
-                    break;
-                case 'category':
-                    node = renderCategory();
-                    break;
-                case 'document':
-                    node = renderDocument();
-                    break;
-                case 'special':
-                    node = renderSpecialDocument();
-                    break;
-                default:
-                    node = renderNotFound();
+                case 'landing': node = renderLanding(); break;
+                case 'area': node = renderArea(); break;
+                case 'parameter': node = renderParameter(); break;
+                case 'category': node = renderCategory(); break;
+                case 'document': node = renderDocument(); break;
+                case 'special': node = renderSpecialDocument(); break;
+                default: node = renderNotFound();
             }
             app.appendChild(node);
             void app.offsetWidth;
@@ -4282,27 +3362,26 @@
             void app.offsetHeight;
             app.style.animation = '';
             app.classList.add('is-visible');
-
             var grids = node.querySelectorAll('.area-grid, .param-grid, .doc-grid, .hierarchy-grid, .extra-grid, .param-extra-grid');
-            for (var g = 0; g < grids.length; g++) {
-                applyStaggeredAnimation(grids[g]);
-            }
+            for (var g = 0; g < grids.length; g++) applyStaggeredAnimation(grids[g]);
 
             var title = 'BSBA — AACCUP Accreditation';
-            if (state.page === 'area' && state.area) { var areaName = getAreaNameForProgram(PROGRAM_CODE, state.area);
-                title = 'Area ' + state.area + ' — ' + areaName; } else if (state.page === 'parameter' && state.param) {
-                var pn = getParamsForProgram(PROGRAM_CODE, state.area)[state.param] || 'Parameter';
-                title = pn; } else if (state.page === 'category') { var cat = CATEGORIES.find(function(c) { return c
-                        .key === state.category; });
-                title = cat ? cat.label : state.category; } else if (state.page === 'document') { var files =
-                    getDocumentFiles(PROGRAM_CODE, state.area, state.param, state.category);
-                var f = files[state.fileIndex];
-                title = f ? f.name : 'Document'; } else if (state.page === 'special') { title = state.specialFileName ||
-                    'Document'; }
+            if (state.page === 'area' && state.area) {
+                title = 'Area ' + state.area + ' — ' + getAreaNameForProgram(PROGRAM_CODE, state.area);
+            } else if (state.page === 'parameter' && state.param) {
+                title = getParamsForProgram(PROGRAM_CODE, state.area)[state.param] || 'Parameter';
+            } else if (state.page === 'category') {
+                var cat = CATEGORIES.find(function(c) { return c.key === state.category; });
+                title = cat ? cat.label : state.category;
+            } else if (state.page === 'document') {
+                var f = getDocumentFiles(PROGRAM_CODE, state.area, state.param, state.category)[state.fileIndex];
+                title = f ? f.name : 'Document';
+            } else if (state.page === 'special') {
+                title = state.specialFileName || 'Document';
+            }
             document.title = title + ' | BSBA | OMSC';
         }
 
-        // ---- LANDING ----
         function renderLanding() {
             var wrap = document.createElement('div');
             var items = [{ label: 'BSBA Home', go: function() { navigateTo('landing', {}); } }];
@@ -4319,7 +3398,8 @@
                 var name = getAreaNameForProgram(PROGRAM_CODE, key);
                 html += '<div><button class="btn-neon btn-area-neon btn-area" data-area="' + key +
                     '"><span class="num">' + key +
-                    '</span><span class="label">' + name + '</span><span class="arrow"><i class="fas fa-chevron-right"></i></span></button></div>';
+                    '</span><span class="label">' + name +
+                    '</span><span class="arrow"><i class="fas fa-chevron-right"></i></span></button></div>';
             }
             html += '</div>';
             wrap.innerHTML = html;
@@ -4330,7 +3410,6 @@
             return wrap;
         }
 
-        // ---- AREA ----
         function renderArea() {
             var area = state.area;
             var areaName = getAreaNameForProgram(PROGRAM_CODE, area);
@@ -4341,61 +3420,42 @@
                 { label: 'Area ' + area, go: function() { navigateTo('area', { area: area }); } }
             ];
             var html = crumbWithoutSearch(items);
-            html +=
-                '<div class="page-header-row"><button class="btn-back" data-back>← Back to Areas</button><h2>' +
+            html += '<div class="page-header-row"><button class="btn-back" data-back>← Back to Areas</button><h2>' +
                 areaName + '</h2><span class="spacer"></span></div>';
             html += '<div class="param-grid">';
             var paramKeys = Object.keys(params);
             for (var p = 0; p < paramKeys.length; p++) {
                 var code = paramKeys[p];
-                var name = params[code];
                 html += '<div><button class="btn-neon btn-param-neon btn-param" data-param="' + code +
                     '"><span class="letter">' + code +
-                    '</span><span class="label">' + name + '</span><span class="arrow"><i class="fas fa-chevron-right"></i></span></button></div>';
+                    '</span><span class="label">' + params[code] +
+                    '</span><span class="arrow"><i class="fas fa-chevron-right"></i></span></button></div>';
             }
             html += '</div>';
-
             var additionalId = getExtraFileId('additional', area);
             var complianceId = getExtraFileId('compliance', area);
             var selfsurveyId = getExtraFileId('selfsurvey', area);
-
             html += '<div class="extra-grid">';
-            if (additionalId) {
-                html += '<div><button class="btn-neon btn-extra-neon btn-extra" data-type="additional" data-fileid="' +
-                    additionalId + '"><span class="icon"><i class="fas fa-paperclip"></i></span> Additional Needed Requirements</button></div>';
-            }
-            if (complianceId) {
-                html += '<div><button class="btn-neon btn-extra-neon btn-extra" data-type="compliance" data-fileid="' +
-                    complianceId + '"><span class="icon"><i class="fas fa-check-circle"></i></span> Compliance with AACUP Recommendations</button></div>';
-            }
-            if (selfsurveyId) {
-                html += '<div><button class="btn-neon btn-extra-neon btn-extra" data-type="selfsurvey" data-fileid="' +
-                    selfsurveyId + '"><span class="icon"><i class="fas fa-pen"></i></span> Self Survey</button></div>';
-            }
+            if (additionalId) html += '<div><button class="btn-neon btn-extra-neon btn-extra" data-type="additional" data-fileid="' + additionalId + '"><span class="icon"><i class="fas fa-paperclip"></i></span> Additional Needed Requirements</button></div>';
+            if (complianceId) html += '<div><button class="btn-neon btn-extra-neon btn-extra" data-type="compliance" data-fileid="' + complianceId + '"><span class="icon"><i class="fas fa-check-circle"></i></span> Compliance with AACUP Recommendations</button></div>';
+            if (selfsurveyId) html += '<div><button class="btn-neon btn-extra-neon btn-extra" data-type="selfsurvey" data-fileid="' + selfsurveyId + '"><span class="icon"><i class="fas fa-pen"></i></span> Self Survey</button></div>';
             html += '</div>';
-
             wrap.innerHTML = html;
             bindCrumbs(wrap, items, false);
             wrap.querySelector('[data-back]').addEventListener('click', function() { navigateTo('landing', {}); });
             wrap.querySelectorAll('.btn-param').forEach(function(b) {
-                b.addEventListener('click', function() {
-                    navigateTo('parameter', { area: area, param: b.dataset.param });
-                });
+                b.addEventListener('click', function() { navigateTo('parameter', { area: area, param: b.dataset.param }); });
             });
             wrap.querySelectorAll('.btn-extra').forEach(function(b) {
                 b.addEventListener('click', function() {
-                    var fileId = b.dataset.fileid;
-                    var type = b.dataset.type;
                     var nameMap = {
                         'additional': 'Additional Needed Requirements',
                         'compliance': 'Compliance with AACUP Recommendations',
                         'selfsurvey': 'Self Survey'
                     };
-                    var displayName = nameMap[type] || b.textContent.trim();
                     navigateTo('special', {
-                        specialType: type,
-                        specialFileId: fileId,
-                        specialFileName: displayName,
+                        specialType: b.dataset.type, specialFileId: b.dataset.fileid,
+                        specialFileName: nameMap[b.dataset.type] || b.textContent.trim(),
                         fromArea: area
                     });
                 });
@@ -4403,77 +3463,50 @@
             return wrap;
         }
 
-        // ---- PARAMETER ----
         function renderParameter() {
-            var area = state.area,
-                param = state.param;
-            var params = getParamsForProgram(PROGRAM_CODE, area);
-            var paramName = params[param] || 'Parameter ' + param;
+            var area = state.area, param = state.param;
+            var paramName = getParamsForProgram(PROGRAM_CODE, area)[param] || 'Parameter ' + param;
             var wrap = document.createElement('div');
             var items = [
                 { label: 'BSBA Home', go: function() { navigateTo('landing', {}); } },
                 { label: 'Area ' + area, go: function() { navigateTo('area', { area: area }); } },
-                { label: 'Parameter ' + param, go: function() { navigateTo('parameter', { area: area,
-                        param: param }); } }
+                { label: 'Parameter ' + param, go: function() { navigateTo('parameter', { area: area, param: param }); } }
             ];
             var html = crumbWithoutSearch(items);
-            html +=
-                '<div class="page-header-row"><button class="btn-back" data-back>← Back to Area ' + area +
-                '</button><h2>' + paramName + '</h2><span class="spacer"></span></div>';
+            html += '<div class="page-header-row"><button class="btn-back" data-back>← Back to Area ' + area + '</button><h2>' + paramName + '</h2><span class="spacer"></span></div>';
             html += '<div class="doc-grid">';
             for (var c = 0; c < CATEGORIES.length; c++) {
                 var cat = CATEGORIES[c];
                 html += '<div><button class="btn-neon btn-cat-neon btn-doc" data-cat="' + cat.key +
-                    '"><span class="icon"><i class="fas ' + cat.icon + '"></i></span><span class="label">' + cat
-                    .label + '</span></button></div>';
+                    '"><span class="icon"><i class="fas ' + cat.icon + '"></i></span><span class="label">' + cat.label + '</span></button></div>';
             }
             html += '</div>';
-
             html += '<div class="param-extra-grid">';
             var pppId = getExtraFileId('ppp', area, param);
-            if (pppId) {
-                html += '<div><button class="btn-neon btn-extra-neon btn-param-extra" data-type="ppp" data-fileid="' +
-                    pppId + '"><span class="icon"><i class="fas fa-chart-bar"></i></span> PPP</button></div>';
-            }
+            if (pppId) html += '<div><button class="btn-neon btn-extra-neon btn-param-extra" data-type="ppp" data-fileid="' + pppId + '"><span class="icon"><i class="fas fa-chart-bar"></i></span> PPP</button></div>';
             var bestId = getExtraFileId('bestpractices', area, param);
-            if (bestId) {
-                html += '<div><button class="btn-neon btn-extra-neon btn-param-extra" data-type="bestpractices" data-fileid="' +
-                    bestId + '"><span class="icon"><i class="fas fa-star"></i></span> Best Practice/s</button></div>';
-            }
+            if (bestId) html += '<div><button class="btn-neon btn-extra-neon btn-param-extra" data-type="bestpractices" data-fileid="' + bestId + '"><span class="icon"><i class="fas fa-star"></i></span> Best Practice/s</button></div>';
             html += '</div>';
-
             wrap.innerHTML = html;
             bindCrumbs(wrap, items, false);
             wrap.querySelector('[data-back]').addEventListener('click', function() { navigateTo('area', { area: area }); });
             wrap.querySelectorAll('.btn-doc').forEach(function(b) {
-                b.addEventListener('click', function() {
-                    navigateTo('category', { area: area, param: param, category: b.dataset.cat });
-                });
+                b.addEventListener('click', function() { navigateTo('category', { area: area, param: param, category: b.dataset.cat }); });
             });
             wrap.querySelectorAll('.btn-param-extra').forEach(function(b) {
                 b.addEventListener('click', function() {
-                    var fileId = b.dataset.fileid;
-                    var type = b.dataset.type;
-                    var displayName = (type === 'ppp') ? 'PPP (Program Performance Profile)' :
-                        'Best Practice/s';
+                    var displayName = (b.dataset.type === 'ppp') ? 'PPP (Program Performance Profile)' : 'Best Practice/s';
                     navigateTo('special', {
-                        specialType: type,
-                        specialFileId: fileId,
-                        specialFileName: displayName,
-                        fromArea: area,
-                        fromParam: param
+                        specialType: b.dataset.type, specialFileId: b.dataset.fileid,
+                        specialFileName: displayName, fromArea: area, fromParam: param
                     });
                 });
             });
             return wrap;
         }
 
-        // ---- CATEGORY ----
         function renderCategory() {
-            var area = state.area,
-                param = state.param,
-                category = state.category;
-            var params = getParamsForProgram(PROGRAM_CODE, area);
+            var area = state.area, param = state.param, category = state.category;
             var catInfo = CATEGORIES.find(function(c) { return c.key === category; });
             var files = getDocumentFiles(PROGRAM_CODE, area, param, category);
             var tree = buildHierarchy(files);
@@ -4485,12 +3518,10 @@
                 for (var cc = 0; cc < currentNode.children.length; cc++) {
                     if (currentNode.children[cc].code === code) { child = currentNode.children[cc]; break; }
                 }
-                if (!child) { state.currentPath = [];
-                    currentNode = { children: tree }; break; }
+                if (!child) { state.currentPath = []; currentNode = { children: tree }; break; }
                 currentNode = child;
             }
             var displayNodes = currentNode.children || [];
-
             var pathLabels = [];
             var temp = { children: tree };
             for (var lp = 0; lp < state.currentPath.length; lp++) {
@@ -4503,51 +3534,43 @@
                 pathLabels.push({ code: found.code, name: found.name });
                 temp = found;
             }
-
             var wrap = document.createElement('div');
             var items = [
                 { label: 'BSBA Home', go: function() { navigateTo('landing', {}); } },
                 { label: 'Area ' + area, go: function() { navigateTo('area', { area: area }); } },
-                { label: 'Parameter ' + param, go: function() { navigateTo('parameter', { area: area,
-                        param: param }); } },
-                { label: catInfo ? catInfo.label : category, go: function() { navigateTo('category', { area: area,
-                        param: param, category: category }); } }
+                { label: 'Parameter ' + param, go: function() { navigateTo('parameter', { area: area, param: param }); } },
+                { label: catInfo ? catInfo.label : category, go: function() { navigateTo('category', { area: area, param: param, category: category }); } }
             ];
             for (var pl = 0; pl < pathLabels.length; pl++) {
                 (function(idx) {
                     var p = pathLabels[idx];
                     var pathUpTo = state.currentPath.slice(0, idx + 1);
-                    items.push({ label: p.code, go: function() { navigateTo('category', { area: area,
-                                param: param, category: category, currentPath: pathUpTo }); } });
+                    items.push({ label: p.code, go: function() { navigateTo('category', { area: area, param: param, category: category, currentPath: pathUpTo }); } });
                 })(pl);
             }
             var html = crumbWithoutSearch(items);
             var backTarget, backLabel;
             if (state.currentPath && state.currentPath.length > 0) {
                 var parentPath = state.currentPath.slice(0, -1);
-                backTarget = function() { navigateTo('category', { area: area, param: param, category: category,
-                        currentPath: parentPath }); };
+                backTarget = function() { navigateTo('category', { area: area, param: param, category: category, currentPath: parentPath }); };
                 backLabel = '← Back';
             } else {
                 backTarget = function() { navigateTo('parameter', { area: area, param: param }); };
                 backLabel = '← Back to Parameter';
             }
             html += '<div class="page-header-row"><button class="btn-back" data-back>' + backLabel +
-                '</button><h2>' + (catInfo ? catInfo.label : category) +
-                '</h2><span class="spacer"></span></div>';
+                '</button><h2>' + (catInfo ? catInfo.label : category) + '</h2><span class="spacer"></span></div>';
             if (displayNodes.length === 0) {
-                html +=
-                    '<div class="empty-state"><div class="icon"><i class="fas fa-folder-open"></i></div><h3>No items in this level</h3><p>This folder is empty.</p></div>';
+                html += '<div class="empty-state"><div class="icon"><i class="fas fa-folder-open"></i></div><h3>No items in this level</h3><p>This folder is empty.</p></div>';
             } else {
                 html += '<div class="hierarchy-grid">';
                 for (var dn = 0; dn < displayNodes.length; dn++) {
                     var node = displayNodes[dn];
                     var isLeaf = node.children.length === 0;
-                    var icon = isLeaf ? 'fa-file' : 'fa-folder';
                     var dataAttr = isLeaf ? 'data-index="' + node.index + '"' : 'data-code="' + node.code + '"';
                     html += '<div><button class="btn-neon btn-doc-neon btn-file" ' + dataAttr +
-                        '><span class="file-icon"><i class="fas ' + icon + '"></i></span><span class="file-name">' +
-                        node.name +
+                        '><span class="file-icon"><i class="fas ' + (isLeaf ? 'fa-file' : 'fa-folder') +
+                        '"></i></span><span class="file-name">' + node.name +
                         '</span><span class="arrow"><i class="fas fa-chevron-right"></i></span></button></div>';
                 }
                 html += '</div>';
@@ -4557,175 +3580,335 @@
             wrap.querySelector('[data-back]').addEventListener('click', backTarget);
             wrap.querySelectorAll('.btn-file').forEach(function(btn) {
                 btn.addEventListener('click', function() {
-                    var index = this.dataset.index;
-                    if (index !== undefined) {
-                        navigateTo('document', { area: area, param: param, category: category,
-                            fileIndex: parseInt(index) });
-                    } else {
-                        var code2 = this.dataset.code;
-                        if (code2) {
-                            var newPath = state.currentPath.concat([code2]);
-                            navigateTo('category', { area: area, param: param, category: category,
-                                currentPath: newPath });
-                        }
+                    if (this.dataset.index !== undefined) {
+                        navigateTo('document', { area: area, param: param, category: category, fileIndex: parseInt(this.dataset.index) });
+                    } else if (this.dataset.code) {
+                        var newPath = state.currentPath.concat([this.dataset.code]);
+                        navigateTo('category', { area: area, param: param, category: category, currentPath: newPath });
                     }
                 });
             });
             return wrap;
         }
 
-        // ---- DOCUMENT ----
         function renderDocument() {
-            var area = state.area,
-                param = state.param,
-                category = state.category,
-                fileIndex = state.fileIndex;
-            var params = getParamsForProgram(PROGRAM_CODE, area);
+            var area = state.area, param = state.param, category = state.category, fileIndex = state.fileIndex;
             var catInfo = CATEGORIES.find(function(c) { return c.key === category; });
             var files = getDocumentFiles(PROGRAM_CODE, area, param, category);
             var file = files[fileIndex];
-
             var wrap = document.createElement('div');
             var items = [
                 { label: 'BSBA Home', go: function() { navigateTo('landing', {}); } },
                 { label: 'Area ' + area, go: function() { navigateTo('area', { area: area }); } },
-                { label: 'Parameter ' + param, go: function() { navigateTo('parameter', { area: area,
-                        param: param }); } },
-                { label: catInfo ? catInfo.label : category, go: function() { navigateTo('category', { area: area,
-                        param: param, category: category, currentPath: state.currentPath || [] }); } }
+                { label: 'Parameter ' + param, go: function() { navigateTo('parameter', { area: area, param: param }); } },
+                { label: catInfo ? catInfo.label : category, go: function() { navigateTo('category', { area: area, param: param, category: category, currentPath: state.currentPath || [] }); } }
             ];
             var filesForCat = getDocumentFiles(PROGRAM_CODE, area, param, category);
             var tree2 = buildHierarchy(filesForCat);
-            var pathLabels2 = [];
             var temp2 = { children: tree2 };
             for (var lp2 = 0; lp2 < (state.currentPath || []).length; lp2++) {
-                var cCode2 = state.currentPath[lp2];
                 var found2 = null;
                 for (var fc2 = 0; fc2 < temp2.children.length; fc2++) {
-                    if (temp2.children[fc2].code === cCode2) { found2 = temp2.children[fc2]; break; }
+                    if (temp2.children[fc2].code === state.currentPath[lp2]) { found2 = temp2.children[fc2]; break; }
                 }
                 if (!found2) break;
-                pathLabels2.push({ code: found2.code, name: found2.name });
+                (function(idx) {
+                    var pathUpTo2 = (state.currentPath || []).slice(0, idx + 1);
+                    items.push({ label: found2.code, go: function() { navigateTo('category', { area: area, param: param, category: category, currentPath: pathUpTo2 }); } });
+                })(lp2);
                 temp2 = found2;
             }
-            for (var pl2 = 0; pl2 < pathLabels2.length; pl2++) {
-                (function(idx) {
-                    var p2 = pathLabels2[idx];
-                    var pathUpTo2 = (state.currentPath || []).slice(0, idx + 1);
-                    items.push({ label: p2.code, go: function() { navigateTo('category', { area: area,
-                                param: param, category: category, currentPath: pathUpTo2 }); } });
-                })(pl2);
-            }
-
             var html = crumbWithoutSearch(items);
             if (!file) {
-                html +=
-                    '<div class="page-header-row"><button class="btn-back" data-back>← Back to files</button><h2>File not found</h2><span class="spacer"></span></div><div class="empty-state"><div class="icon"><i class="fas fa-exclamation-circle"></i></div><p>The requested document could not be found.</p></div>';
+                html += '<div class="page-header-row"><button class="btn-back" data-back>← Back to files</button><h2>File not found</h2><span class="spacer"></span></div><div class="empty-state"><div class="icon"><i class="fas fa-exclamation-circle"></i></div><p>The requested document could not be found.</p></div>';
                 wrap.innerHTML = html;
                 bindCrumbs(wrap, items, false);
-                wrap.querySelector('[data-back]').addEventListener('click', function() { navigateTo('category', {
-                        area: area,
-                        param: param,
-                        category: category,
-                        currentPath: state.currentPath || []
-                    }); });
+                wrap.querySelector('[data-back]').addEventListener('click', function() {
+                    navigateTo('category', { area: area, param: param, category: category, currentPath: state.currentPath || [] });
+                });
                 return wrap;
             }
-
             var previewLink = getDriveLink(file.id);
             var openLink = getDriveOpenLink(file.id);
-            html += '<div class="page-header-row"><button class="btn-back" data-back>← Back to files</button><h2>' +
-                file.name + '</h2><span class="spacer"></span></div>';
+            html += '<div class="page-header-row"><button class="btn-back" data-back>← Back to files</button><h2>' + file.name + '</h2><span class="spacer"></span></div>';
             if (previewLink) {
-                html += '<div class="pdf-container"><iframe src="' + previewLink +
-                    '" allow="autoplay" title="' + file.name +
-                    '"></iframe></div><div class="doc-actions"><a class="btn-open" href="' + openLink +
-                    '" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> Open in new tab</a></div>';
+                html += '<div class="pdf-container"><iframe src="' + previewLink + '" allow="autoplay" title="' + file.name + '"></iframe></div><div class="doc-actions"><a class="btn-open" href="' + openLink + '" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> Open in new tab</a></div>';
             } else {
                 var isSample = file.id && file.id.indexOf('SAMPLE_') === 0;
-                var msg = isSample ?
-                    'This is a sample document placeholder. Please replace the file ID with an actual Google Drive file ID.' :
-                    'No Google Drive file has been assigned to this document yet.';
-                html += '<div class="empty-state"><div class="icon"><i class="fas fa-file-pdf"></i></div><h3>' + (
-                    isSample ? 'Sample Document' :
-                    'Document not yet linked') + '</h3><p>' + msg +
-                    '</p><p style="font-size:.8rem;color:var(--tech-text-muted);margin-top:8px;">File ID: ' + file
-                    .id +
-                    '</p></div>';
+                var msg = isSample ? 'This is a sample document placeholder. Please replace the file ID with an actual Google Drive file ID.' : 'No Google Drive file has been assigned to this document yet.';
+                html += '<div class="empty-state"><div class="icon"><i class="fas fa-file-pdf"></i></div><h3>' + (isSample ? 'Sample Document' : 'Document not yet linked') + '</h3><p>' + msg + '</p><p style="font-size:.8rem;color:var(--tech-text-muted);margin-top:8px;">File ID: ' + file.id + '</p></div>';
             }
             wrap.innerHTML = html;
             bindCrumbs(wrap, items, false);
-            wrap.querySelector('[data-back]').addEventListener('click', function() { navigateTo('category', { area: area,
-                    param: param, category: category, currentPath: state.currentPath || [] }); });
+            wrap.querySelector('[data-back]').addEventListener('click', function() {
+                navigateTo('category', { area: area, param: param, category: category, currentPath: state.currentPath || [] });
+            });
             return wrap;
         }
 
-        // ---- SPECIAL DOCUMENT ----
         function renderSpecialDocument() {
             var fileId = state.specialFileId;
             var fileName = state.specialFileName || 'Document';
-            var specialType = state.specialType;
             var fromArea = state.fromArea || null;
             var fromParam = state.fromParam || null;
-
             var wrap = document.createElement('div');
-            var items = [];
-            items.push({ label: 'BSBA Home', go: function() { navigateTo('landing', {}); } });
+            var items = [{ label: 'BSBA Home', go: function() { navigateTo('landing', {}); } }];
             if (fromArea) {
-                var areaName = getAreaNameForProgram(PROGRAM_CODE, fromArea);
                 items.push({ label: 'Area ' + fromArea, go: function() { navigateTo('area', { area: fromArea }); } });
                 if (fromParam) {
-                    var params = getParamsForProgram(PROGRAM_CODE, fromArea);
-                    var paramName = params[fromParam] || 'Parameter ' + fromParam;
-                    items.push({ label: paramName, go: function() { navigateTo('parameter', { area: fromArea,
-                            param: fromParam }); } });
+                    var paramName = getParamsForProgram(PROGRAM_CODE, fromArea)[fromParam] || 'Parameter ' + fromParam;
+                    items.push({ label: paramName, go: function() { navigateTo('parameter', { area: fromArea, param: fromParam }); } });
                 }
             }
-            items.push({ label: fileName, go: function() { /* same page */ } });
-
+            items.push({ label: fileName, go: function() {} });
             var html = crumbWithoutSearch(items);
-            var backTarget;
-            var backLabel = '← Back';
+            var backTarget, backLabel = '← Back';
             if (fromArea) {
-                if (fromParam) {
-                    backTarget = function() { navigateTo('parameter', { area: fromArea, param: fromParam }); };
-                    backLabel = '← Back to Parameter';
-                } else {
-                    backTarget = function() { navigateTo('area', { area: fromArea }); };
-                    backLabel = '← Back to Area ' + fromArea;
-                }
-            } else {
-                backTarget = function() { navigateTo('landing', {}); };
-                backLabel = '← Back to Home';
-            }
-
-            html += '<div class="page-header-row"><button class="btn-back" data-back>' + backLabel +
-                '</button><h2>' + fileName + '</h2><span class="spacer"></span></div>';
-
+                if (fromParam) { backTarget = function() { navigateTo('parameter', { area: fromArea, param: fromParam }); }; backLabel = '← Back to Parameter'; }
+                else { backTarget = function() { navigateTo('area', { area: fromArea }); }; backLabel = '← Back to Area ' + fromArea; }
+            } else { backTarget = function() { navigateTo('landing', {}); }; backLabel = '← Back to Home'; }
+            html += '<div class="page-header-row"><button class="btn-back" data-back>' + backLabel + '</button><h2>' + fileName + '</h2><span class="spacer"></span></div>';
             var previewLink = getDriveLink(fileId);
             var openLink = getDriveOpenLink(fileId);
             if (previewLink) {
-                html += '<div class="pdf-container"><iframe src="' + previewLink +
-                    '" allow="autoplay" title="' + fileName +
-                    '"></iframe></div><div class="doc-actions"><a class="btn-open" href="' + openLink +
-                    '" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> Open in new tab</a></div>';
+                html += '<div class="pdf-container"><iframe src="' + previewLink + '" allow="autoplay" title="' + fileName + '"></iframe></div><div class="doc-actions"><a class="btn-open" href="' + openLink + '" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> Open in new tab</a></div>';
             } else {
                 var isSample = fileId && fileId.indexOf('SAMPLE_') === 0;
-                var msg = isSample ?
-                    'This is a sample document placeholder. Please replace the file ID with an actual Google Drive file ID.' :
-                    'No Google Drive file has been assigned to this document yet.';
-                html += '<div class="empty-state"><div class="icon"><i class="fas fa-file-pdf"></i></div><h3>' + (
-                    isSample ? 'Sample Document' :
-                    'Document not yet linked') + '</h3><p>' + msg +
-                    '</p><p style="font-size:.8rem;color:var(--tech-text-muted);margin-top:8px;">File ID: ' +
-                    fileId + '</p></div>';
+                var msg = isSample ? 'This is a sample document placeholder. Please replace the file ID with an actual Google Drive file ID.' : 'No Google Drive file has been assigned to this document yet.';
+                html += '<div class="empty-state"><div class="icon"><i class="fas fa-file-pdf"></i></div><h3>' + (isSample ? 'Sample Document' : 'Document not yet linked') + '</h3><p>' + msg + '</p><p style="font-size:.8rem;color:var(--tech-text-muted);margin-top:8px;">File ID: ' + fileId + '</p></div>';
             }
-
             wrap.innerHTML = html;
             bindCrumbs(wrap, items, false);
             wrap.querySelector('[data-back]').addEventListener('click', backTarget);
             return wrap;
         }
+
+        // ============================================================
+        // PREDICTIVE SEARCH — Areas, Parameters, and Indicators
+        // Design matches BSBA dark-blue + gold theme
+        // ============================================================
+        var SEARCH_INDEX = [];
+        var currentSuggestions = [];
+
+        function buildSearchIndex() {
+            SEARCH_INDEX = [];
+            var areaKeys = Object.keys(AREAS_FULL);
+            for (var i = 0; i < areaKeys.length; i++) {
+                var areaNum = areaKeys[i];
+                var areaName = getAreaNameForProgram(PROGRAM_CODE, areaNum);
+
+                // Area entry
+                SEARCH_INDEX.push({
+                    type: 'area',
+                    area: areaNum,
+                    param: null,
+                    title: 'Area ' + areaNum + ' — ' + areaName,
+                    subtitle: 'Area',
+                    icon: 'fa-layer-group'
+                });
+
+                // Parameter entries
+                var params = getParamsForProgram(PROGRAM_CODE, areaNum);
+                var paramKeys = Object.keys(params);
+                for (var j = 0; j < paramKeys.length; j++) {
+                    var pCode = paramKeys[j];
+                    SEARCH_INDEX.push({
+                        type: 'parameter',
+                        area: areaNum,
+                        param: pCode,
+                        title: 'Parameter ' + pCode + ' — ' + params[pCode],
+                        subtitle: 'Area ' + areaNum + ' · ' + areaName,
+                        icon: 'fa-list-check'
+                    });
+                }
+            }
+
+            // Indicator entries — galing sa DOCUMENT_FILES
+            var docKeys = Object.keys(DOCUMENT_FILES);
+            for (var k = 0; k < docKeys.length; k++) {
+                var key = docKeys[k];
+                var keyParts = key.split('-');
+                if (keyParts.length !== 4) continue;
+
+                var dArea = keyParts[1];
+                var dParam = keyParts[2];
+                var dCat = keyParts[3];
+
+                var dParams = getParamsForProgram(PROGRAM_CODE, dArea);
+                var dCatInfo = CATEGORIES.find(function(c) { return c.key === dCat; });
+                var dCatLabel = dCatInfo ? dCatInfo.label : dCat;
+
+                var docs = DOCUMENT_FILES[key];
+                for (var d = 0; d < docs.length; d++) {
+                    SEARCH_INDEX.push({
+                        type: 'document',
+                        area: dArea,
+                        param: dParam,
+                        category: dCat,
+                        fileIndex: d,
+                        title: docs[d].name,
+                        subtitle: 'Area ' + dArea + ' · Parameter ' + dParam + ' · ' + dCatLabel,
+                        icon: 'fa-file-lines'
+                    });
+                }
+            }
+        }
+
+        function filterSearchIndex(query) {
+            var q = query.trim().toLowerCase();
+            if (!q) return [];
+            var tokens = q.split(/\s+/);
+            var results = [];
+            SEARCH_INDEX.forEach(function(item, order) {
+                var title = item.title.toLowerCase();
+                var hay = title + ' ' + item.subtitle.toLowerCase();
+                var matchesAll = tokens.every(function(t) { return hay.indexOf(t) !== -1; });
+                if (!matchesAll) return;
+                var score = title.indexOf(q) === 0 ? 0 : (title.indexOf(q) !== -1 ? 1 : 2);
+                results.push({ item: item, score: score, order: order });
+            });
+            results.sort(function(a, b) { return a.score - b.score || a.order - b.order; });
+            return results.slice(0, 12).map(function(r) { return r.item; });
+        }
+
+        function escapeHtmlText(s) {
+            return String(s).replace(/[&<>"']/g, function(c) {
+                return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+            });
+        }
+        function escapeRegExpStr(s) {
+            return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        }
+        function highlightSearchMatch(text, query) {
+            var safe = escapeHtmlText(text);
+            var q = (query || '').trim();
+            if (!q) return safe;
+            var tokens = q.split(/\s+/).filter(Boolean).map(escapeRegExpStr);
+            if (!tokens.length) return safe;
+            var re = new RegExp('(' + tokens.join('|') + ')', 'ig');
+            return safe.replace(re, '<mark>$1</mark>');
+        }
+
+        function renderSearchSuggestions(dropdown, results, query) {
+            if (!results.length) {
+                dropdown.innerHTML = '<div class="no-results"><i class="fas fa-search"></i>Walang tugmang area, parameter, o indicator</div>';
+                return;
+            }
+            var html = '<div class="s-header">Suggestions (' + results.length + ')</div>';
+            for (var i = 0; i < results.length; i++) {
+                var item = results[i];
+                html += '<button type="button" class="search-suggestion-item" role="option" data-index="' + i + '" data-type="' + item.type + '">';
+                html += '  <span class="s-icon"><i class="fas ' + item.icon + '"></i></span>';
+                html += '  <span class="s-text">';
+                html += '    <span class="s-title">'    + highlightSearchMatch(item.title, query)    + '</span>';
+                html += '    <span class="s-subtitle">' + highlightSearchMatch(item.subtitle, query) + '</span>';
+                html += '  </span>';
+                html += '  <i class="fas fa-arrow-right s-go"></i>';
+                html += '</button>';
+            }
+            dropdown.innerHTML = html;
+        }
+
+        function closeSearchSuggestions() {
+            var dropdown = document.getElementById('searchSuggestions');
+            var input = document.getElementById('globalSearch');
+            if (dropdown) { dropdown.classList.remove('is-open'); dropdown.innerHTML = ''; }
+            if (input) input.setAttribute('aria-expanded', 'false');
+            currentSuggestions = [];
+        }
+
+        function handlePredictiveInput(input) {
+            var dropdown = document.getElementById('searchSuggestions');
+            if (!dropdown || !input) return;
+            var query = input.value;
+            if (!query.trim()) { closeSearchSuggestions(); return; }
+            currentSuggestions = filterSearchIndex(query);
+            renderSearchSuggestions(dropdown, currentSuggestions, query);
+            dropdown.classList.add('is-open');
+            input.setAttribute('aria-expanded', 'true');
+        }
+
+        function setActiveSuggestion(items, index) {
+            for (var i = 0; i < items.length; i++) items[i].classList.toggle('is-active', i === index);
+            if (items[index] && items[index].scrollIntoView) items[index].scrollIntoView({ block: 'nearest' });
+        }
+
+        function goToSuggestion(entry) {
+            if (!entry) return;
+            if (entry.type === 'area') {
+                navigateTo('area', { area: entry.area });
+            } else if (entry.type === 'parameter') {
+                navigateTo('parameter', { area: entry.area, param: entry.param });
+            } else if (entry.type === 'document') {
+                navigateTo('document', {
+                    area: entry.area,
+                    param: entry.param,
+                    category: entry.category,
+                    fileIndex: entry.fileIndex,
+                    currentPath: []
+                });
+            }
+            closeSearchSuggestions();
+        }
+
+        document.addEventListener('input', function(e) {
+            if (e.target && e.target.id === 'globalSearch') handlePredictiveInput(e.target);
+        });
+
+        document.addEventListener('focusin', function(e) {
+            if (e.target && e.target.id === 'globalSearch' && e.target.value.trim()) {
+                handlePredictiveInput(e.target);
+            }
+        });
+
+        document.addEventListener('keydown', function(e) {
+            if (!e.target || e.target.id !== 'globalSearch') return;
+            var dropdown = document.getElementById('searchSuggestions');
+            if (!dropdown || !dropdown.classList.contains('is-open')) return;
+            var items = dropdown.querySelectorAll('.search-suggestion-item');
+            if (!items.length) return;
+            var active = dropdown.querySelector('.search-suggestion-item.is-active');
+            var activeIndex = active ? Array.prototype.indexOf.call(items, active) : -1;
+
+            if (e.key === 'ArrowDown') {
+                e.preventDefault();
+                setActiveSuggestion(items, (activeIndex + 1) % items.length);
+            } else if (e.key === 'ArrowUp') {
+                e.preventDefault();
+                setActiveSuggestion(items, activeIndex <= 0 ? items.length - 1 : activeIndex - 1);
+            } else if (e.key === 'Enter') {
+                e.preventDefault();
+                if (activeIndex >= 0) goToSuggestion(currentSuggestions[activeIndex]);
+                else if (currentSuggestions.length) goToSuggestion(currentSuggestions[0]);
+            } else if (e.key === 'Escape') {
+                closeSearchSuggestions();
+                e.target.blur();
+            }
+        });
+
+        document.addEventListener('click', function(e) {
+            if (!e.target.closest) return;
+
+            if (e.target.closest('#clearSearch')) {
+                closeSearchSuggestions();
+                return;
+            }
+
+            var clickedSuggestion = e.target.closest('.search-suggestion-item');
+            if (clickedSuggestion) {
+                e.preventDefault();
+                var idx = Number(clickedSuggestion.dataset.index);
+                goToSuggestion(currentSuggestions[idx]);
+                return;
+            }
+
+            if (!e.target.closest('.search-container')) {
+                closeSearchSuggestions();
+            }
+        });
+
+        // Build agad (static data)
+        buildSearchIndex();
 
         // ============================================================
         // INIT
@@ -4748,20 +3931,12 @@
                 var paramKey = state.fromParam || null;
 
                 if (type === 'additional' || type === 'compliance' || type === 'selfsurvey') {
-                    if (areaKey) {
-                        fileId = getExtraFileId(type, areaKey);
-                    }
+                    if (areaKey) fileId = getExtraFileId(type, areaKey);
                 } else if (type === 'ppp' || type === 'bestpractices') {
-                    if (areaKey && paramKey) {
-                        fileId = getExtraFileId(type, areaKey, paramKey);
-                    }
+                    if (areaKey && paramKey) fileId = getExtraFileId(type, areaKey, paramKey);
                 }
 
-                if (!fileId) {
-                    navigateTo('landing', {});
-                    return;
-                }
-
+                if (!fileId) { navigateTo('landing', {}); return; }
                 state.specialFileId = fileId;
                 state.specialFileName = nameMap[type] || type;
             }
@@ -4770,15 +3945,11 @@
         }
         window.addEventListener('DOMContentLoaded', init);
 
-        
-  if (window.location.pathname.endsWith('.html')) {
-    window.location.href = window.location.pathname.replace('.html', '');
-
-  }
-elseif (window.location.pathname.endsWith('#')) {
-    window.location.href = window.location.pathname.replace('#', '');
-}
-</script>
-
+        if (window.location.pathname.endsWith('.html')) {
+            window.location.href = window.location.pathname.replace('.html', '');
+        } else if (window.location.pathname.endsWith('#')) {
+            window.location.href = window.location.pathname.replace('#', '');
+        }
+    </script>
 </body>
 </html>
