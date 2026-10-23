@@ -5,21 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>BSIT — AACCUP Accreditation System</title>
 
-    <!-- ===== GOOGLE FONTS (TECH THEME) ===== -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;800;900&family=Inter:wght@400;500;600;700;800&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet" />
-
-    <!-- ===== FONT AWESOME 6 (FREE ICONS) ===== -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
     <style>
-        /* ============================================================
-           BSIT — VIOLET / PURPLE TECH THEME (DARK + NEON + TRAVELING LIGHT)
-           WITH DARK/LIGHT MODE TOGGLE
-           ============================================================ */
-
-        /* ---- ROOT VARIABLES (DARK MODE — DEFAULT) ---- */
+        /* ==== (ROOT / DARK / LIGHT MODE — unchanged) ==== */
         :root,
         [data-theme="dark"] {
             --tech-bg: #0A0817;
@@ -28,7 +20,6 @@
             --tech-card-hover: #1D1A3F;
             --tech-border: #1D1A3F;
             --tech-border-light: #2D2A5F;
-
             --tech-violet: #8B5CF6;
             --tech-violet-light: #A78BFA;
             --tech-violet-dark: #6D28D9;
@@ -37,11 +28,9 @@
             --tech-pink: #D946EF;
             --tech-gold: #C084FC;
             --tech-green: #34D399;
-
             --tech-text: #EDE9FE;
             --tech-text-muted: #A5A0C0;
             --tech-text-dim: #5A5580;
-
             --glow-violet: 0 0 30px rgba(139, 92, 246, 0.25);
             --glow-violet-strong: 0 0 50px rgba(139, 92, 246, 0.4);
             --glow-purple: 0 0 30px rgba(124, 58, 237, 0.25);
@@ -49,49 +38,37 @@
             --glow-gold: 0 0 30px rgba(192, 132, 252, 0.25);
             --glow-green: 0 0 30px rgba(52, 211, 153, 0.25);
             --glow-white: 0 0 30px rgba(255, 255, 255, 0.10);
-
             --header-bg: linear-gradient(180deg, #0D0A2A 0%, #0A0817 100%);
             --footer-bg: linear-gradient(180deg, #0A0817 0%, #06041A 100%);
             --header-border: rgba(139, 92, 246, 0.15);
             --footer-border: rgba(139, 92, 246, 0.08);
-
             --glass-bg: rgba(21, 18, 47, 0.5);
             --glass-border: rgba(139, 92, 246, 0.08);
-
             --btn-bg: rgba(21, 18, 47, 0.6);
             --btn-bg-hover: rgba(21, 18, 47, 0.8);
             --btn-after-bg: rgb(21, 18, 47);
-
             --shadow-color: rgba(0, 0, 0, 0.3);
             --shadow-soft: 0 2px 30px rgba(139, 92, 246, 0.08);
             --shadow-hover: 0 8px 35px rgba(139, 92, 246, 0.12);
             --shadow-inset: inset 0 1px 0 rgba(255, 255, 255, 0.03);
-
             --watermark-opacity: 0.04;
             --watermark-opacity-hover: 0.06;
             --grid-opacity: 0.03;
             --orb-opacity: 0.06;
-
             --scrollbar-track: #0A0817;
             --scrollbar-thumb: var(--tech-violet);
-
             --radius: 14px;
             --radius-sm: 10px;
             --ease: cubic-bezier(0.4, 0, 0.2, 1);
             --ease-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
         }
-
-        /* ---- LIGHT MODE (UPDATED TO VIOLET/PURPLE THEME) ---- */
         [data-theme="light"] {
-            /* Backgrounds */
             --tech-bg: #F3EFFC;
             --tech-bg-secondary: #E8DFF5;
             --tech-card: #FFFFFF;
             --tech-card-hover: #FAF7FF;
             --tech-border: #D6CCE8;
             --tech-border-light: #E8DFF5;
-
-            /* Accent Colors - Violet Shades */
             --tech-violet: #6D28D9;
             --tech-violet-light: #7C3AED;
             --tech-violet-dark: #5B21B6;
@@ -100,13 +77,9 @@
             --tech-pink: #C026D3;
             --tech-gold: #8B5CF6;
             --tech-green: #059669;
-
-            /* Text Colors */
             --tech-text: #1A1A2E;
             --tech-text-muted: #4A3A6A;
             --tech-text-dim: #8A7A9A;
-
-            /* Glows - violet */
             --glow-violet: 0 0 24px rgba(109, 40, 217, 0.15);
             --glow-violet-strong: 0 0 40px rgba(109, 40, 217, 0.25);
             --glow-purple: 0 0 24px rgba(124, 58, 237, 0.15);
@@ -114,349 +87,157 @@
             --glow-gold: 0 0 24px rgba(139, 92, 246, 0.15);
             --glow-green: 0 0 24px rgba(5, 150, 105, 0.15);
             --glow-white: 0 0 24px rgba(0, 0, 0, 0.06);
-
-            /* Header & Footer - dark violet gradients (like BSBA light mode) */
             --header-bg: linear-gradient(135deg, #4C1D95 0%, #2E1065 100%);
             --footer-bg: #4C1D95;
             --header-border: 4px solid #A78BFA;
             --footer-border: 6px solid #A78BFA;
-
             --glass-bg: rgba(255, 255, 255, 0.6);
             --glass-border: rgba(0, 0, 0, 0.06);
-
-            /* Button Backgrounds */
             --btn-bg: #ffffff;
             --btn-bg-hover: #FAF7FF;
             --btn-after-bg: #ffffff;
-
-            /* Shadows */
             --shadow-color: rgba(0, 0, 0, 0.06);
             --shadow-soft: 0 4px 20px rgba(76, 29, 149, 0.08);
             --shadow-hover: 0 8px 35px rgba(76, 29, 149, 0.18);
             --shadow-inset: inset 0 1px 0 rgba(255, 255, 255, 0.5);
-
             --watermark-opacity: 0.03;
             --grid-opacity: 0.04;
             --orb-opacity: 0.04;
-
             --scrollbar-track: #F3EFFC;
             --scrollbar-thumb: #6D28D9;
         }
 
-        /* ---- LIGHT MODE: HEADER OVERRIDES ---- */
-        [data-theme="light"] header {
-            color: #ffffff;
-            border-bottom: 4px solid #A78BFA;
-        }
-
+        [data-theme="light"] header { color: #ffffff; border-bottom: 4px solid #A78BFA; }
         [data-theme="light"] header::after {
             background: linear-gradient(90deg, transparent, #A78BFA, #6D28D9, #A78BFA, transparent);
             opacity: 0.4;
         }
-
         [data-theme="light"] .title-block h1 {
-            color: #ffffff;
-            -webkit-text-fill-color: #ffffff;
-            background: none;
-            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            color: #ffffff; -webkit-text-fill-color: #ffffff;
+            background: none; text-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
-
         [data-theme="light"] .title-block .sub-header {
-            color: #C4B5FD;
-            -webkit-text-fill-color: #C4B5FD;
-            background: none;
+            color: #C4B5FD; -webkit-text-fill-color: #C4B5FD; background: none;
         }
-
-        /* ---- LIGHT MODE: FOOTER OVERRIDES ---- */
-        [data-theme="light"] footer {
-            color: rgba(255, 255, 255, 0.8);
-            border-top: 6px solid #A78BFA;
-        }
-
-        [data-theme="light"] footer strong {
-            color: #ffffff;
-        }
-
-        [data-theme="light"] footer .footer-course {
-            color: #C4B5FD;
-        }
-
+        [data-theme="light"] footer { color: rgba(255, 255, 255, 0.8); border-top: 6px solid #A78BFA; }
+        [data-theme="light"] footer strong { color: #ffffff; }
+        [data-theme="light"] footer .footer-course { color: #C4B5FD; }
         [data-theme="light"] footer .footer-divider {
             background: linear-gradient(90deg, #A78BFA, #6D28D9);
             box-shadow: 0 0 30px rgba(109, 40, 217, 0.3);
         }
-
-        [data-theme="light"] footer .footer-contact .value {
-            color: #C4B5FD;
-            text-shadow: 0 0 20px rgba(109, 40, 217, 0.2);
-        }
-
-        [data-theme="light"] footer .footer-contact .label {
-            opacity: 0.6;
-        }
-
+        [data-theme="light"] footer .footer-contact .value { color: #C4B5FD; text-shadow: 0 0 20px rgba(109, 40, 217, 0.2); }
+        [data-theme="light"] footer .footer-contact .label { opacity: 0.6; }
         [data-theme="light"] footer::before {
             background: linear-gradient(90deg, transparent, #A78BFA, #6D28D9, #A78BFA, transparent);
             opacity: 0.5;
         }
-
-        /* ---- LIGHT MODE: BUTTON OVERRIDES ---- */
         [data-theme="light"] .btn-neon {
-            background: #ffffff;
-            border: 2px solid #D6CCE8;
-            color: #1A1A2E;
-            box-shadow: var(--shadow-soft);
+            background: #ffffff; border: 2px solid #D6CCE8;
+            color: #1A1A2E; box-shadow: var(--shadow-soft);
         }
-
-        [data-theme="light"] .btn-neon::after {
-            background: #ffffff;
-        }
-
+        [data-theme="light"] .btn-neon::after { background: #ffffff; }
         [data-theme="light"] .btn-neon:hover {
             transform: translateY(-6px) scale(1.01);
             box-shadow: var(--shadow-hover), 0 0 25px rgba(109, 40, 217, 0.12);
             border-color: #6D28D9;
         }
-
-        [data-theme="light"] .btn-neon:hover::after {
-            background: #FAF7FF;
-        }
-
-        /* ---- Button variant border colors (spinning light) ---- */
-        [data-theme="light"] .btn-area-neon {
-            --border-color1: #5B21B6;
-        }
-        [data-theme="light"] .btn-param-neon {
-            --border-color1: #6D28D9;
-        }
-        [data-theme="light"] .btn-cat-neon {
-            --border-color1: #A78BFA;
-        }
-        [data-theme="light"] .btn-doc-neon {
-            --border-color1: #7C3AED;
-        }
-        [data-theme="light"] .btn-extra-neon {
-            --border-color1: #C026D3;
-        }
-        [data-theme="light"] .btn-back-neon {
-            --border-color1: #6D28D9;
-        }
-        [data-theme="light"] .btn-open-neon {
-            --border-color1: #6D28D9;
-        }
-
-        /* ---- LIGHT MODE: BACK BUTTON ---- */
-        [data-theme="light"] .btn-back {
-            color: #5B21B6;
-            background: #ffffff;
-            border: 2px solid #D6CCE8;
-        }
-
-        [data-theme="light"] .btn-back::after {
-            background: #ffffff;
-        }
-
+        [data-theme="light"] .btn-neon:hover::after { background: #FAF7FF; }
+        [data-theme="light"] .btn-area-neon { --border-color1: #5B21B6; }
+        [data-theme="light"] .btn-param-neon { --border-color1: #6D28D9; }
+        [data-theme="light"] .btn-cat-neon { --border-color1: #A78BFA; }
+        [data-theme="light"] .btn-doc-neon { --border-color1: #7C3AED; }
+        [data-theme="light"] .btn-extra-neon { --border-color1: #C026D3; }
+        [data-theme="light"] .btn-back-neon { --border-color1: #6D28D9; }
+        [data-theme="light"] .btn-open-neon { --border-color1: #6D28D9; }
+        [data-theme="light"] .btn-back { color: #5B21B6; background: #ffffff; border: 2px solid #D6CCE8; }
+        [data-theme="light"] .btn-back::after { background: #ffffff; }
         [data-theme="light"] .btn-back:hover {
-            transform: translateY(-3px);
-            border-color: #6D28D9;
+            transform: translateY(-3px); border-color: #6D28D9;
             box-shadow: var(--shadow-hover), 0 0 20px rgba(109, 40, 217, 0.08);
         }
-
         [data-theme="light"] .btn-back::before {
             background: conic-gradient(
                 from var(--angle),
-                transparent 0deg,
-                #6D28D9 10deg,
-                transparent 24deg,
-                transparent 176deg,
-                #6D28D9 186deg,
-                transparent 200deg,
+                transparent 0deg, #6D28D9 10deg, transparent 24deg,
+                transparent 176deg, #6D28D9 186deg, transparent 200deg,
                 transparent 360deg
             );
         }
-
-        /* ---- LIGHT MODE: OPEN BUTTON ---- */
-        [data-theme="light"] .btn-open {
-            color: #5B21B6;
-            background: #EDE9FE;
-            border: 2px solid #6D28D9;
-        }
-
-        [data-theme="light"] .btn-open::after {
-            background: #EDE9FE;
-        }
-
+        [data-theme="light"] .btn-open { color: #5B21B6; background: #EDE9FE; border: 2px solid #6D28D9; }
+        [data-theme="light"] .btn-open::after { background: #EDE9FE; }
         [data-theme="light"] .btn-open:hover {
-            transform: translateY(-4px);
-            border-color: #5B21B6;
+            transform: translateY(-4px); border-color: #5B21B6;
             box-shadow: var(--shadow-hover), 0 0 30px rgba(109, 40, 217, 0.15);
         }
-
-        [data-theme="light"] .btn-open:hover::after {
-            background: #DDD6F0;
-        }
-
-        /* ---- LIGHT MODE: NUM & LETTER BADGES ---- */
-        [data-theme="light"] .area-grid .num {
-            background: linear-gradient(160deg, #6D28D9, #5B21B6);
-        }
-
-        [data-theme="light"] .param-grid .letter {
-            background: linear-gradient(160deg, #6D28D9, #5B21B6);
-        }
-
-        /* ---- LIGHT MODE: ICONS ---- */
-        [data-theme="light"] .btn-neon .icon {
-            color: #6D28D9;
-            filter: drop-shadow(0 0 10px rgba(109, 40, 217, 0.2));
-        }
-
-        [data-theme="light"] .doc-grid .btn-neon .icon {
-            color: #6D28D9;
-            filter: drop-shadow(0 0 10px rgba(109, 40, 217, 0.1));
-        }
-
-        [data-theme="light"] .hierarchy-grid .file-icon {
-            color: #6D28D9;
-            filter: drop-shadow(0 0 8px rgba(109, 40, 217, 0.08));
-        }
-
+        [data-theme="light"] .btn-open:hover::after { background: #DDD6F0; }
+        [data-theme="light"] .area-grid .num { background: linear-gradient(160deg, #6D28D9, #5B21B6); }
+        [data-theme="light"] .param-grid .letter { background: linear-gradient(160deg, #6D28D9, #5B21B6); }
+        [data-theme="light"] .btn-neon .icon { color: #6D28D9; filter: drop-shadow(0 0 10px rgba(109, 40, 217, 0.2)); }
+        [data-theme="light"] .doc-grid .btn-neon .icon { color: #6D28D9; filter: drop-shadow(0 0 10px rgba(109, 40, 217, 0.1)); }
+        [data-theme="light"] .hierarchy-grid .file-icon { color: #6D28D9; filter: drop-shadow(0 0 8px rgba(109, 40, 217, 0.08)); }
         [data-theme="light"] .area-grid .arrow,
         [data-theme="light"] .param-grid .arrow,
-        [data-theme="light"] .hierarchy-grid .arrow {
-            color: #6D28D9;
-        }
-
-        /* ---- LIGHT MODE: BREADCRUMB ---- */
-        [data-theme="light"] .breadcrumb a {
-            color: #5B21B6;
-        }
-        [data-theme="light"] .breadcrumb a::after {
-            background: #6D28D9;
-        }
+        [data-theme="light"] .hierarchy-grid .arrow { color: #6D28D9; }
+        [data-theme="light"] .breadcrumb a { color: #5B21B6; }
+        [data-theme="light"] .breadcrumb a::after { background: #6D28D9; }
         [data-theme="light"] .breadcrumb a:hover {
-            background: rgba(109, 40, 217, 0.06);
-            color: var(--tech-text);
+            background: rgba(109, 40, 217, 0.06); color: var(--tech-text);
         }
         [data-theme="light"] .breadcrumb .current {
-            background: #EDE9FE;
-            border-color: #C4B5FD;
-            color: var(--tech-text);
+            background: #EDE9FE; border-color: #C4B5FD; color: var(--tech-text);
         }
-
-        /* ---- LIGHT MODE: SEARCH BAR ---- */
         [data-theme="light"] .search-container input {
-            background: rgba(255, 255, 255, 0.8);
-            border-color: #D6CCE8;
+            background: rgba(255, 255, 255, 0.8); border-color: #D6CCE8;
         }
         [data-theme="light"] .search-container input:focus {
-            border-color: #6D28D9;
-            box-shadow: 0 0 20px rgba(109, 40, 217, 0.15);
+            border-color: #6D28D9; box-shadow: 0 0 20px rgba(109, 40, 217, 0.15);
         }
-
-        /* ---- LIGHT MODE: EMPTY STATE ---- */
-        [data-theme="light"] .empty-state {
-            background: rgba(255, 255, 255, 0.6);
-            border-color: #D6CCE8;
-        }
-        [data-theme="light"] .empty-state .icon {
-            color: #6D28D9;
-        }
-        [data-theme="light"] .empty-state h3 {
-            color: #5B21B6;
-        }
-
-        /* ---- LIGHT MODE: PDF CONTAINER ---- */
+        [data-theme="light"] .empty-state { background: rgba(255, 255, 255, 0.6); border-color: #D6CCE8; }
+        [data-theme="light"] .empty-state .icon { color: #6D28D9; }
+        [data-theme="light"] .empty-state h3 { color: #5B21B6; }
         [data-theme="light"] .pdf-container {
-            background: white;
-            border-color: #D6CCE8;
-            box-shadow: var(--shadow-soft);
+            background: white; border-color: #D6CCE8; box-shadow: var(--shadow-soft);
         }
         [data-theme="light"] .pdf-container:hover {
             border-color: #6D28D9;
             box-shadow: var(--shadow-hover), 0 0 30px rgba(109, 40, 217, 0.04);
         }
-        [data-theme="light"] .pdf-container iframe {
-            background: #F3EFFC;
-        }
-
-        /* ---- LIGHT MODE: BACKGROUND GRID & ORBS (violet) ---- */
+        [data-theme="light"] .pdf-container iframe { background: #F3EFFC; }
         [data-theme="light"] body::before {
             background:
                 linear-gradient(rgba(109, 40, 217, var(--grid-opacity)) 1px, transparent 1px),
                 linear-gradient(90deg, rgba(109, 40, 217, var(--grid-opacity)) 1px, transparent 1px);
         }
-
         [data-theme="light"] body::after {
             background:
                 radial-gradient(ellipse 60% 40% at 10% 20%, rgba(109, 40, 217, var(--orb-opacity)) 0%, transparent 70%),
                 radial-gradient(ellipse 50% 60% at 90% 80%, rgba(91, 33, 182, var(--orb-opacity)) 0%, transparent 70%),
                 radial-gradient(ellipse 40% 30% at 50% 50%, rgba(167, 139, 250, calc(var(--orb-opacity) * 0.5)) 0%, transparent 60%);
         }
-
-        /* ---- LIGHT MODE: SCROLLBAR ---- */
         [data-theme="light"] ::-webkit-scrollbar-thumb {
-            background: #6D28D9;
-            box-shadow: 0 0 20px rgba(109, 40, 217, 0.15);
+            background: #6D28D9; box-shadow: 0 0 20px rgba(109, 40, 217, 0.15);
         }
-        [data-theme="light"] ::-webkit-scrollbar-thumb:hover {
-            background: #5B21B6;
-        }
+        [data-theme="light"] ::-webkit-scrollbar-thumb:hover { background: #5B21B6; }
 
-        /* ============================================================
-           CSS PROPERTY para sa animated angle
-           ============================================================ */
-        @property --angle {
-            syntax: '<angle>';
-            initial-value: 0deg;
-            inherits: false;
-        }
+        @property --angle { syntax: '<angle>'; initial-value: 0deg; inherits: false; }
 
-        /* ---- RESET & BASE ---- */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-            transition: background 0.4s var(--ease);
-        }
-
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; transition: background 0.4s var(--ease); }
         body {
             font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
             background: var(--tech-bg);
             color: var(--tech-text);
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            font-size: 18px;
-            line-height: 1.6;
-            position: relative;
-            overflow-x: hidden;
+            min-height: 100vh; display: flex; flex-direction: column;
+            font-size: 18px; line-height: 1.6;
+            position: relative; overflow-x: hidden;
             transition: background 0.4s var(--ease), color 0.4s var(--ease);
         }
+        a { color: inherit; text-decoration: none; }
+        button { font-family: inherit; cursor: pointer; border: none; background: none; }
 
-        a {
-            color: inherit;
-            text-decoration: none;
-        }
-        button {
-            font-family: inherit;
-            cursor: pointer;
-            border: none;
-            background: none;
-        }
-
-        /* ============================================================
-           BACKGROUND — Animated Grid + Glow Orbs + BSIT Logo Watermark
-           ============================================================ */
         body::before {
-            content: '';
-            position: fixed;
-            inset: 0;
-            z-index: -2;
+            content: ''; position: fixed; inset: 0; z-index: -2;
             background:
                 linear-gradient(rgba(139, 92, 246, var(--grid-opacity)) 1px, transparent 1px),
                 linear-gradient(90deg, rgba(139, 92, 246, var(--grid-opacity)) 1px, transparent 1px);
@@ -465,17 +246,9 @@
             pointer-events: none;
             transition: background 0.4s var(--ease);
         }
-
-        @keyframes gridMove {
-            0% { background-position: 0 0; }
-            100% { background-position: 60px 60px; }
-        }
-
+        @keyframes gridMove { 0% { background-position: 0 0; } 100% { background-position: 60px 60px; } }
         body::after {
-            content: '';
-            position: fixed;
-            inset: 0;
-            z-index: -1;
+            content: ''; position: fixed; inset: 0; z-index: -1;
             background:
                 radial-gradient(ellipse 60% 40% at 10% 20%, rgba(139, 92, 246, var(--orb-opacity)) 0%, transparent 70%),
                 radial-gradient(ellipse 50% 60% at 90% 80%, rgba(124, 58, 237, var(--orb-opacity)) 0%, transparent 70%),
@@ -484,328 +257,180 @@
             animation: orbPulse 8s ease-in-out infinite alternate;
             transition: background 0.4s var(--ease);
         }
-
         @keyframes orbPulse {
             0% { opacity: 0.6; transform: scale(1); }
             100% { opacity: 1; transform: scale(1.05); }
         }
-
-        /* ---- BSIT LOGO WATERMARK ---- */
         .bsit-watermark {
-            position: fixed;
-            top: 50%;
-            left: 50%;
+            position: fixed; top: 50%; left: 50%;
             transform: translate(-50%, -50%);
-            z-index: -1;
-            opacity: var(--watermark-opacity);
-            pointer-events: none;
-            user-select: none;
-            width: 600px;
-            height: 600px;
+            z-index: -1; opacity: var(--watermark-opacity);
+            pointer-events: none; user-select: none;
+            width: 600px; height: 600px;
             background: url('images/bsit-logo.png') center/contain no-repeat;
             animation: watermarkPulse 20s ease-in-out infinite alternate;
             transition: opacity 0.6s var(--ease);
         }
-
         @keyframes watermarkPulse {
-            0% { opacity:  0.10; transform: translate(-50%, -50%) scale(1); }
-            100% { opacity:  0.02; transform: translate(-50%, -50%) scale(1.05); }
+            0% { opacity: 0.10; transform: translate(-50%, -50%) scale(1); }
+            100% { opacity: 0.02; transform: translate(-50%, -50%) scale(1.05); }
         }
+        @media (max-width: 767px) { .bsit-watermark { width: 300px; height: 300px; } }
 
-        @media (max-width: 767px) {
-            .bsit-watermark {
-                width: 300px;
-                height: 300px;
-            }
-        }
-
-        ::-webkit-scrollbar {
-            width: 8px;
-            height: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: var(--scrollbar-track);
-            transition: background 0.4s var(--ease);
-        }
+        ::-webkit-scrollbar { width: 8px; height: 8px; }
+        ::-webkit-scrollbar-track { background: var(--scrollbar-track); transition: background 0.4s var(--ease); }
         ::-webkit-scrollbar-thumb {
-            background: var(--scrollbar-thumb);
-            border-radius: 4px;
+            background: var(--scrollbar-thumb); border-radius: 4px;
             box-shadow: var(--glow-violet);
             transition: background 0.4s var(--ease), box-shadow 0.4s var(--ease);
         }
-        ::-webkit-scrollbar-thumb:hover {
-            background: var(--tech-purple);
-            box-shadow: var(--glow-purple);
-        }
+        ::-webkit-scrollbar-thumb:hover { background: var(--tech-purple); box-shadow: var(--glow-purple); }
 
-        /* ============================================================
-           HEADER
-           ============================================================ */
         header {
             background: var(--header-bg);
             color: var(--tech-text);
             padding: 12px 32px;
             box-shadow: var(--shadow-soft), inset 0 -2px 0 var(--tech-violet);
-            position: sticky;
-            top: 0;
-            z-index: 100;
+            position: sticky; top: 0; z-index: 100;
             border-bottom: 2px solid var(--header-border);
             backdrop-filter: blur(10px);
             transition: background 0.4s var(--ease), border-color 0.4s var(--ease), box-shadow 0.4s var(--ease);
         }
-
         header::after {
-            content: '';
-            position: absolute;
-            bottom: -2px;
-            left: 0;
-            right: 0;
+            content: ''; position: absolute; bottom: -2px; left: 0; right: 0;
             height: 2px;
             background: linear-gradient(90deg, transparent, var(--tech-violet), var(--tech-purple), var(--tech-pink), transparent);
             background-size: 200% 100%;
             animation: scanLine 4s linear infinite;
-            opacity: 0.5;
-            pointer-events: none;
+            opacity: 0.5; pointer-events: none;
             transition: opacity 0.4s var(--ease);
         }
-
-        @keyframes scanLine {
-            0% { background-position: -200% 0; }
-            100% { background-position: 200% 0; }
-        }
-
+        @keyframes scanLine { 0% { background-position: -200% 0; } 100% { background-position: 200% 0; } }
         .header-container {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            flex-wrap: wrap;
-            margin: 0 auto;
-            position: relative;
-            z-index: 1;
+            display: flex; align-items: center; gap: 20px;
+            flex-wrap: wrap; margin: 0 auto; position: relative; z-index: 1;
         }
-
-        .logo-section {
-            display: flex;
-            align-items: center;
-            gap: 12px;/*-- before 18px  --*/
-            flex: 1;
-        }
-
+        .logo-section { display: flex; align-items: center; gap: 12px; flex: 1; }
         .logo {
-            height: 80px;
-            width: 80px;
-            border-radius: 50%;
+            height: 80px; width: 80px; border-radius: 50%;
             background: var(--tech-bg-secondary);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-            flex-shrink: 0;
+            display: flex; align-items: center; justify-content: center;
+            overflow: hidden; flex-shrink: 0;
             border: 2px solid var(--tech-violet);
             box-shadow: var(--glow-violet), inset 0 0 30px rgba(139, 92, 246, 0.05);
             transition: box-shadow 0.4s var(--ease), border-color 0.4s var(--ease), background 0.4s var(--ease);
             position: relative;
         }
-
         .logo:hover {
             box-shadow: var(--glow-violet-strong), inset 0 0 40px rgba(139, 92, 246, 0.08);
             border-color: var(--tech-purple);
         }
-
-        .logo img {
-            height: 100%;
-            width: 100%;
-            object-fit: cover;
-            border-radius: 50%;
-        }
-
+        .logo img { height: 100%; width: 100%; object-fit: cover; border-radius: 50%; }
         .logo-ring {
-            position: absolute;
-            inset: -4px;
-            border-radius: 50%;
+            position: absolute; inset: -4px; border-radius: 50%;
             border: 2px solid transparent;
             background: conic-gradient(from 0deg, var(--tech-violet), var(--tech-purple), var(--tech-pink), var(--tech-violet));
             -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 3px), #000 calc(100% - 2px));
             mask: radial-gradient(farthest-side, transparent calc(100% - 3px), #000 calc(100% - 2px));
             animation: spinBorder 8s linear infinite;
-            opacity: 0.6;
-            pointer-events: none;
+            opacity: 0.6; pointer-events: none;
             transition: opacity 0.4s var(--ease);
         }
-
         .bsit-logo {
-            height: 70px;
-            width: 70px;
-            border-radius: 50%;
+            height: 70px; width: 70px; border-radius: 50%;
             background: var(--tech-bg-secondary);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-            flex-shrink: 0;
+            display: flex; align-items: center; justify-content: center;
+            overflow: hidden; flex-shrink: 0;
             border: 2px solid var(--tech-violet);
             box-shadow: var(--glow-violet), inset 0 0 30px rgba(139, 92, 246, 0.05);
             transition: box-shadow 0.4s var(--ease), border-color 0.4s var(--ease), background 0.4s var(--ease);
             position: relative;
         }
-
         .bsit-logo:hover {
             box-shadow: var(--glow-violet-strong), inset 0 0 40px rgba(139, 92, 246, 0.08);
             border-color: var(--tech-purple);
         }
-
-        .bsit-logo img {
-            height: 100%;
-            width: 100%;
-            object-fit: cover;
-            border-radius: 50%;
-        }
-
+        .bsit-logo img { height: 100%; width: 100%; object-fit: cover; border-radius: 50%; }
         .bsit-logo-ring {
-            position: absolute;
-            inset: -4px;
-            border-radius: 50%;
+            position: absolute; inset: -4px; border-radius: 50%;
             border: 2px solid transparent;
             background: conic-gradient(from 0deg, var(--tech-violet), var(--tech-purple), var(--tech-pink), var(--tech-violet));
             -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 3px), #000 calc(100% - 2px));
             mask: radial-gradient(farthest-side, transparent calc(100% - 3px), #000 calc(100% - 2px));
             animation: spinBorder 8s linear infinite;
-            opacity: 0.6;
-            pointer-events: none;
+            opacity: 0.6; pointer-events: none;
             transition: opacity 0.4s var(--ease);
         }
+        @keyframes spinBorder { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
 
-        @keyframes spinBorder {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
-
-        .title-block {
-            flex: 1;
-        }
-
+        .title-block { flex: 1; }
         .title-block h1 {
             font-family: 'Orbitron', 'Segoe UI', sans-serif;
-            font-size: 1.4rem;
-            font-weight: 800;
-            line-height: 1.2;
+            font-size: 1.4rem; font-weight: 800; line-height: 1.2;
             letter-spacing: 1.5px;
             text-shadow: 0 0 30px rgba(139, 92, 246, 0.15);
             background: linear-gradient(90deg, var(--tech-text), var(--tech-violet));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
             background-clip: text;
             transition: background 0.4s var(--ease);
         }
-
         .title-block .sub-header {
-            display: block;
-            font-family: 'Inter', sans-serif;
-            font-size: 1rem;
-            font-weight: 500;
-            color: var(--tech-text-muted);
-            letter-spacing: 2px;
+            display: block; font-family: 'Inter', sans-serif;
+            font-size: 1rem; font-weight: 500;
+            color: var(--tech-text-muted); letter-spacing: 2px;
             -webkit-text-fill-color: var(--tech-text-muted);
             background: none;
             transition: color 0.4s var(--ease);
         }
+        .header-actions { display: flex; align-items: center; gap: 14px; flex-shrink: 0; }
 
-        .header-actions {
-            display: flex;
-            align-items: center;
-            gap: 14px;
-            flex-shrink: 0;
-        }
-
-        /* ---- THEME TOGGLE BUTTON ---- */
         .theme-toggle {
-            width: 48px;
-            height: 48px;
-            border-radius: 50%;
+            width: 48px; height: 48px; border-radius: 50%;
             background: var(--btn-bg);
             backdrop-filter: blur(8px);
             border: 2px solid rgba(255, 255, 255, 0.06);
-            color: var(--tech-text);
-            font-size: 1.3rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            color: var(--tech-text); font-size: 1.3rem;
+            display: flex; align-items: center; justify-content: center;
             transition: all 0.3s var(--ease);
             box-shadow: var(--shadow-soft);
-            position: relative;
-            overflow: visible;
-            isolation: isolate;
+            position: relative; overflow: visible; isolation: isolate;
         }
-
         .theme-toggle::before {
-            content: '';
-            position: absolute;
-            inset: -2px;
-            border-radius: 50%;
+            content: ''; position: absolute; inset: -2px; border-radius: 50%;
             background: conic-gradient(
                 from var(--angle),
-                transparent 0deg,
-                var(--tech-violet) 12deg,
-                transparent 28deg,
-                transparent 172deg,
-                var(--tech-violet) 188deg,
-                transparent 204deg,
+                transparent 0deg, var(--tech-violet) 12deg, transparent 28deg,
+                transparent 172deg, var(--tech-violet) 188deg, transparent 204deg,
                 transparent 360deg
             );
             z-index: -2;
             animation: spinLight 8s linear infinite;
-            will-change: --angle;
-            pointer-events: none;
+            will-change: --angle; pointer-events: none;
             filter: blur(1px) drop-shadow(0 0 8px var(--tech-violet));
             opacity: 0.4;
         }
-
         .theme-toggle::after {
-            content: '';
-            position: absolute;
-            inset: 2px;
-            border-radius: 50%;
-            background: var(--btn-bg);
-            z-index: -1;
+            content: ''; position: absolute; inset: 2px; border-radius: 50%;
+            background: var(--btn-bg); z-index: -1;
             transition: background 0.3s var(--ease);
         }
-
         .theme-toggle:hover {
-            transform: scale(1.08);
-            border-color: var(--tech-violet);
+            transform: scale(1.08); border-color: var(--tech-violet);
             box-shadow: var(--glow-violet);
         }
-
         .theme-toggle:hover::before {
             animation-duration: 3s;
             filter: blur(0px) drop-shadow(0 0 20px var(--tech-violet)) brightness(1.5);
             opacity: 1;
         }
+        .theme-toggle:active { transform: scale(0.94); }
+        @keyframes spinLight { to { --angle: 360deg; } }
 
-        .theme-toggle:active {
-            transform: scale(0.94);
-        }
-
-        @keyframes spinLight {
-            to { --angle: 360deg; }
-        }
-
-        /* ============================================================
-           MAIN
-           ============================================================ */
         main {
-            flex: 1;
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 20px 20px 40px;
-            width: 100%;
-            position: relative;
-            z-index: 1;
+            flex: 1; max-width: 1400px; margin: 0 auto;
+            padding: 20px 20px 40px; width: 100%; position: relative; z-index: 1;
         }
 
-        /* ============================================================
-           ANIMATIONS
-           ============================================================ */
         @keyframes glitchIn {
             0% { opacity: 0; transform: scale(0.98) translateY(24px); filter: blur(6px); }
             15% { opacity: 0.4; transform: scale(1.01) translateX(-4px); filter: blur(2px); }
@@ -813,34 +438,18 @@
             50% { opacity: 0.9; transform: scale(1); filter: blur(0); }
             100% { opacity: 1; transform: scale(1) translateY(0); filter: blur(0); }
         }
-
         @keyframes fadeUp {
             from { opacity: 0; transform: translateY(18px); filter: blur(4px); }
             to { opacity: 1; transform: translateY(0); filter: blur(0); }
         }
-
-        #app {
-            animation: glitchIn 0.8s var(--ease) both;
-        }
-
-        .area-grid>*,
-        .param-grid>*,
-        .doc-grid>*,
-        .hierarchy-grid>*,
-        .extra-grid>*,
-        .param-extra-grid>* {
+        #app { animation: glitchIn 0.8s var(--ease) both; }
+        .area-grid>*, .param-grid>*, .doc-grid>*, .hierarchy-grid>*, .extra-grid>*, .param-extra-grid>* {
             animation: fadeUp 0.6s var(--ease-bounce) both;
         }
 
-        /* ============================================================
-           BREADCRUMB
-           ============================================================ */
         .breadcrumb-wrapper {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 12px;
+            display: flex; align-items: center; justify-content: space-between;
+            flex-wrap: wrap; gap: 12px;
             background: var(--glass-bg);
             backdrop-filter: blur(12px);
             border-radius: var(--radius-sm);
@@ -849,230 +458,125 @@
             margin-bottom: 12px;
             box-shadow: var(--shadow-inset);
             transition: background 0.4s var(--ease), border-color 0.4s var(--ease), box-shadow 0.4s var(--ease);
+            position: relative;
+            z-index: 40;
         }
-
         .breadcrumb {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            gap: 6px;
-            font-size: 0.95rem;
-            color: var(--tech-text-muted);
-            flex: 1;
+            display: flex; flex-wrap: wrap; align-items: center;
+            gap: 6px; font-size: 0.95rem;
+            color: var(--tech-text-muted); flex: 1;
             transition: color 0.4s var(--ease);
         }
-
         .breadcrumb a {
-            color: var(--tech-violet);
-            text-decoration: none;
-            font-weight: 600;
-            padding: 4px 12px;
-            border-radius: 4px;
+            color: var(--tech-violet); text-decoration: none;
+            font-weight: 600; padding: 4px 12px; border-radius: 4px;
             transition: all 0.25s var(--ease);
-            font-size: 0.95rem;
-            position: relative;
+            font-size: 0.95rem; position: relative;
         }
-
         .breadcrumb a::after {
-            content: '';
-            position: absolute;
-            bottom: 2px;
-            left: 12px;
-            right: 12px;
-            height: 1px;
-            background: var(--tech-violet);
-            opacity: 0;
-            transition: opacity 0.3s var(--ease);
+            content: ''; position: absolute; bottom: 2px; left: 12px; right: 12px;
+            height: 1px; background: var(--tech-violet);
+            opacity: 0; transition: opacity 0.3s var(--ease);
             box-shadow: var(--glow-violet);
         }
-
         .breadcrumb a:hover {
             background: rgba(139, 92, 246, 0.06);
             color: var(--tech-text);
             text-shadow: 0 0 20px rgba(139, 92, 246, 0.2);
         }
-
-        .breadcrumb a:hover::after {
-            opacity: 1;
-        }
-
+        .breadcrumb a:hover::after { opacity: 1; }
         .breadcrumb .sep {
-            color: var(--tech-text-dim);
-            font-size: 1.1rem;
-            font-weight: 300;
-            padding: 0 2px;
+            color: var(--tech-text-dim); font-size: 1.1rem;
+            font-weight: 300; padding: 0 2px;
             transition: color 0.4s var(--ease);
         }
-
         .breadcrumb .current {
-            color: var(--tech-text);
-            font-weight: 500;
-            padding: 4px 12px;
-            font-size: 0.95rem;
+            color: var(--tech-text); font-weight: 500;
+            padding: 4px 12px; font-size: 0.95rem;
             background: rgba(139, 92, 246, 0.04);
             border-radius: 4px;
             border: 1px solid rgba(139, 92, 246, 0.06);
             transition: color 0.4s var(--ease), background 0.4s var(--ease), border-color 0.4s var(--ease);
         }
 
-        /* ---- SEARCH BAR ---- */
-        .search-container {
-            position: relative;
-            display: flex;
-            align-items: center;
-            flex-shrink: 0;
-        }
-
+        .search-container { position: relative; display: flex; align-items: center; flex-shrink: 0; }
         .search-container input {
             background: rgba(0, 0, 0, 0.3);
             border: 1px solid rgba(139, 92, 246, 0.15);
             border-radius: 20px;
             padding: 6px 36px 6px 14px;
-            font-size: 0.9rem;
-            color: var(--tech-text);
-            outline: none;
-            transition: all 0.3s var(--ease);
-            width: 180px;
-            font-family: 'Inter', sans-serif;
+            font-size: 0.9rem; color: var(--tech-text);
+            outline: none; transition: all 0.3s var(--ease);
+            width: 180px; font-family: 'Inter', sans-serif;
             backdrop-filter: blur(4px);
         }
-
         [data-theme="light"] .search-container input {
             background: rgba(255, 255, 255, 0.6);
             border-color: rgba(0, 0, 0, 0.08);
         }
-
-        .search-container input::placeholder {
-            color: var(--tech-text-dim);
-            font-weight: 400;
-        }
-
+        .search-container input::placeholder { color: var(--tech-text-dim); font-weight: 400; }
         .search-container input:focus {
             border-color: var(--tech-violet);
             box-shadow: 0 0 20px rgba(139, 92, 246, 0.15);
             width: 240px;
         }
-
         .search-container .search-icon {
-            position: absolute;
-            right: 12px;
-            top: 50%;
+            position: absolute; right: 12px; top: 50%;
             transform: translateY(-50%);
-            color: var(--tech-text-dim);
-            font-size: 0.85rem;
-            pointer-events: none;
-            transition: color 0.3s var(--ease);
+            color: var(--tech-text-dim); font-size: 0.85rem;
+            pointer-events: none; transition: color 0.3s var(--ease);
         }
-
-        .search-container input:focus ~ .search-icon {
-            color: var(--tech-violet);
-        }
-
+        .search-container input:focus ~ .search-icon { color: var(--tech-violet); display: none; }
         .search-container .clear-search {
-            position: absolute;
-            right: 12px;
-            top: 50%;
+            position: absolute; right: 12px; top: 50%;
             transform: translateY(-50%);
-            background: none;
-            border: none;
-            color: var(--tech-text-dim);
-            font-size: 0.8rem;
-            cursor: pointer;
-            padding: 0;
-            display: none;
-            transition: color 0.2s;
-            z-index: 2;
+            background: none; border: none;
+            color: var(--tech-text-dim); font-size: 0.8rem;
+            cursor: pointer; padding: 0; display: none;
+            transition: color 0.2s; z-index: 2;
         }
+        .search-container .clear-search:hover { color: var(--tech-text); }
+        .search-container .clear-search.visible { display: block; }
+        .search-container .clear-search.visible ~ .search-icon { display: none; }
 
-        .search-container .clear-search:hover {
-            color: var(--tech-text);
-        }
-
-        .search-container .clear-search.visible {
-            display: block;
-        }
-
-        .search-container input:focus ~ .search-icon {
-            display: none;
-        }
-
-        .search-container .clear-search.visible ~ .search-icon {
-            display: none;
-        }
-
-        /* ============================================================
-           PAGE HEADER ROW
-           ============================================================ */
         .page-header-row {
-            display: grid;
-            grid-template-columns: auto 1fr auto;
-            align-items: center;
-            gap: 16px;
-            margin: 6px 0 4px;
+            display: grid; grid-template-columns: auto 1fr auto;
+            align-items: center; gap: 16px; margin: 6px 0 4px;
         }
-
         .page-header-row h2 {
-            text-align: center;
-            margin: 0;
+            text-align: center; margin: 0;
             font-family: 'Orbitron', 'Inter', sans-serif;
             font-size: clamp(1.6rem, 3vw, 2.4rem);
-            font-weight: 800;
-            letter-spacing: 0.5px;
-            position: relative;
-            z-index: 1;
-            padding: 0;
+            font-weight: 800; letter-spacing: 0.5px;
+            position: relative; z-index: 1; padding: 0;
             background: linear-gradient(135deg, var(--tech-text) 40%, var(--tech-violet));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
             background-clip: text;
             text-shadow: 0 0 40px rgba(139, 92, 246, 0.08);
             transition: background 0.4s var(--ease), text-shadow 0.4s var(--ease);
         }
+        .page-header-row .btn-back { justify-self: start; padding: 10px 28px; font-size: 1rem; }
+        .page-header-row .spacer { width: 120px; }
 
-        .page-header-row .btn-back {
-            justify-self: start;
-            padding: 10px 28px;
-            font-size: 1rem;
-        }
-
-        .page-header-row .spacer {
-            width: 120px;
-        }
-
-        /* ============================================================
-           BUTTON — NEON WITH TRAVELING LIGHT (VIOLET THEME + SLOWER)
-           ============================================================ */
         .btn-neon {
             position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 14px;
-            padding: 16px 20px;
+            display: flex; align-items: center; justify-content: center;
+            gap: 14px; padding: 16px 20px;
             border-radius: var(--radius);
             background: var(--btn-bg);
             backdrop-filter: blur(8px);
             border: 2px solid #6c28d950;
             color: var(--tech-text);
-            font-weight: 600;
-            font-size: 1.05rem;
-            cursor: pointer;
-            transition: all 0.3s var(--ease);
-            overflow: visible;
-            text-align: left;
-            width: 100%;
-            height: 100%;
-            min-height: 130px;
+            font-weight: 600; font-size: 1.05rem;
+            cursor: pointer; transition: all 0.3s var(--ease);
+            overflow: visible; text-align: left;
+            width: 100%; height: 100%; min-height: 130px;
             word-break: break-word;
-            isolation: isolate;
-            z-index: 1;
+            isolation: isolate; z-index: 1;
             box-shadow: var(--shadow-inset);
         }
-
         .btn-neon::before {
-            content: '';
-            position: absolute;
-            inset: -2px;
+            content: ''; position: absolute; inset: -2px;
             border-radius: var(--radius);
             background: conic-gradient(
                 from var(--angle),
@@ -1087,353 +591,170 @@
             z-index: -2;
             animation: spinLightBtn var(--border-speed, 8s) linear infinite;
             transition: filter 0.3s var(--ease), animation-duration 0.3s var(--ease);
-            will-change: --angle;
-            pointer-events: none;
+            will-change: --angle; pointer-events: none;
             filter: blur(0.5px) drop-shadow(0 0 10px var(--border-color1));
         }
-
-        @keyframes spinLightBtn {
-            to { --angle: 360deg; }
-        }
-
+        @keyframes spinLightBtn { to { --angle: 360deg; } }
         .btn-neon::after {
-            content: '';
-            position: absolute;
-            inset: 2px;
+            content: ''; position: absolute; inset: 2px;
             border-radius: calc(var(--radius) - 2px);
             background: var(--btn-after-bg);
             z-index: -1;
             transition: background 0.3s var(--ease);
         }
-
         .btn-neon:hover {
             transform: translateY(-4px) scale(1.02);
             box-shadow: var(--btn-glow, var(--glow-violet));
         }
-
         .btn-neon:hover::before {
             animation-duration: calc(var(--border-speed, 8s) / 0.7);
             filter: blur(0px) drop-shadow(0 0 25px var(--border-color1)) brightness(1.5);
         }
-
         .btn-neon:active {
             transform: scale(0.97) translateY(0);
             box-shadow: 0 0 60px rgba(139, 92, 246, 0.2), inset 0 0 40px rgba(139, 92, 246, 0.05);
         }
-
         .btn-neon:active::before {
             animation-duration: 5s;
             filter: blur(0px) drop-shadow(0 0 35px var(--border-color1)) brightness(2);
         }
-
-        /* ---- Button Variants (SLOWER SPEEDS + VIOLET COLORS) ---- */
-        .btn-area-neon {
-            --border-color1: var(--tech-violet);
-            --border-speed: 20s;
-            --btn-glow: var(--glow-violet);
-        }
-
-        .btn-param-neon {
-            --border-color1: var(--tech-purple);
-            --border-speed: 14s;
-            --btn-glow: var(--glow-purple);
-        }
-
-        .btn-cat-neon {
-            --border-color1: var(--tech-green);
-            --border-speed: 12s;
-            --btn-glow: var(--glow-green);
-        }
-
-        .btn-doc-neon {
-            --border-color1: var(--tech-gold);
-            --border-speed: 14s;
-            --btn-glow: var(--glow-gold);
-        }
-
-        .btn-extra-neon {
-            --border-color1: var(--tech-pink);
-            --border-speed: 16s;
-            --btn-glow: var(--glow-pink);
-        }
-
-        .btn-back-neon {
-            --border-color1: rgba(255, 255, 255, 0.6);
-            --border-speed: 14s;
-            --btn-glow: var(--glow-white);
-        }
-
-        .btn-open-neon {
-            --border-color1: var(--tech-violet);
-            --border-speed: 12s;
-            --btn-glow: var(--glow-violet-strong);
-        }
-
-        /* ---- Icon styles ---- */
+        .btn-area-neon { --border-color1: var(--tech-violet); --border-speed: 20s; --btn-glow: var(--glow-violet); }
+        .btn-param-neon { --border-color1: var(--tech-purple); --border-speed: 14s; --btn-glow: var(--glow-purple); }
+        .btn-cat-neon { --border-color1: var(--tech-green); --border-speed: 12s; --btn-glow: var(--glow-green); }
+        .btn-doc-neon { --border-color1: var(--tech-gold); --border-speed: 14s; --btn-glow: var(--glow-gold); }
+        .btn-extra-neon { --border-color1: var(--tech-pink); --border-speed: 16s; --btn-glow: var(--glow-pink); }
+        .btn-back-neon { --border-color1: rgba(255, 255, 255, 0.6); --border-speed: 14s; --btn-glow: var(--glow-white); }
+        .btn-open-neon { --border-color1: var(--tech-violet); --border-speed: 12s; --btn-glow: var(--glow-violet-strong); }
         .btn-neon .icon {
-            font-size: 1.6rem;
-            flex-shrink: 0;
-            width: 2rem;
+            font-size: 1.6rem; flex-shrink: 0; width: 2rem;
             text-align: center;
             filter: drop-shadow(0 0 10px var(--border-color1, rgba(139,92,246,0.2)));
             transition: transform 0.3s var(--ease);
         }
+        .btn-neon:hover .icon { transform: scale(1.1); }
+        .btn-neon .btn-icon-sm { font-size: 1.2rem; flex-shrink: 0; width: 1.6rem; text-align: center; }
 
-        .btn-neon:hover .icon {
-            transform: scale(1.1);
+        .area-grid, .param-grid, .doc-grid, .hierarchy-grid, .extra-grid, .param-extra-grid {
+            display: flex; flex-wrap: wrap; justify-content: center;
+            gap: 18px; margin-top: 20px;
         }
-
-        .btn-neon .btn-icon-sm {
-            font-size: 1.2rem;
-            flex-shrink: 0;
-            width: 1.6rem;
-            text-align: center;
-        }
-
-        /* ============================================================
-           GRIDS
-           ============================================================ */
-        .area-grid,
-        .param-grid,
-        .doc-grid,
-        .hierarchy-grid,
-        .extra-grid,
-        .param-extra-grid {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 18px;
-            margin-top: 20px;
-        }
-
-        .area-grid>*,
-        .param-grid>*,
-        .doc-grid>*,
-        .hierarchy-grid>*,
-        .extra-grid>*,
-        .param-extra-grid>* {
+        .area-grid>*, .param-grid>*, .doc-grid>*, .hierarchy-grid>*, .extra-grid>*, .param-extra-grid>* {
             flex: 0 0 calc(25% - 18px);
             min-height: 120px;
             display: flex;
             border-radius: var(--radius);
             transition: all 0.3s var(--ease);
         }
-
-        /* ---- AREA BUTTONS ---- */
-        .area-grid>* {
-            flex: 0 0 calc(25% - 18px);
-        }
+        .area-grid>* { flex: 0 0 calc(25% - 18px); }
         .area-grid .num {
-            flex-shrink: 0;
-            width: 38px;
-            height: 38px;
+            flex-shrink: 0; width: 38px; height: 38px;
             border-radius: 8px;
             background: linear-gradient(160deg, var(--tech-violet), var(--tech-purple));
             color: var(--tech-bg);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 800;
-            font-size: 0.85rem;
+            display: flex; align-items: center; justify-content: center;
+            font-weight: 800; font-size: 0.85rem;
             box-shadow: 0 2px 12px rgba(139, 92, 246, 0.2);
             transition: all 0.3s var(--ease);
         }
         .area-grid .btn-neon:hover .num {
-            box-shadow: 0 0 30px rgba(139, 92, 246, 0.4);
-            transform: scale(1.05);
+            box-shadow: 0 0 30px rgba(139, 92, 246, 0.4); transform: scale(1.05);
         }
         .area-grid .label {
-            flex: 1;
-            font-weight: 600;
-            font-size: 1.3rem;
-            display: -webkit-box;
-            -webkit-line-clamp: 3;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            max-height: 3.8em;
-            line-height: 1.3;
+            flex: 1; font-weight: 600; font-size: 1.3rem;
+            display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical;
+            overflow: hidden; text-overflow: ellipsis;
+            max-height: 3.8em; line-height: 1.3;
             transition: color 0.3s var(--ease);
         }
         .area-grid .arrow {
-            font-size: 1.2rem;
-            opacity: 0.6;
-            flex-shrink: 0;
+            font-size: 1.2rem; opacity: 0.6; flex-shrink: 0;
             transition: transform 0.3s var(--ease), opacity 0.3s var(--ease);
         }
-        .area-grid .btn-neon:hover .arrow {
-            transform: translateX(4px);
-            opacity: 1;
-        }
+        .area-grid .btn-neon:hover .arrow { transform: translateX(4px); opacity: 1; }
 
-        /* ---- PARAMETER BUTTONS ---- */
-        .param-grid>* {
-            flex: 0 0 calc(33% - 18px);
-        }
+        .param-grid>* { flex: 0 0 calc(33% - 18px); }
         .param-grid .letter {
-                flex-shrink: 0;
-                width: 34px;
-                height: 34px;
-                border-radius: 50%;
-                background: rgba(123, 47, 190, .12);
-                border: 1px solid var(--tech-purple);
-                color: #C9A8F0;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                font-family: 'JetBrains Mono', monospace;
-                font-weight: 600;
-                font-size: .85rem;
-                box-shadow: 0 0 14px rgba(123, 47, 190, .4);
+            flex-shrink: 0; width: 34px; height: 34px;
+            border-radius: 50%;
+            background: rgba(123, 47, 190, .12);
+            border: 1px solid var(--tech-purple);
+            color: #C9A8F0;
+            display: flex; align-items: center; justify-content: center;
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: 600; font-size: .85rem;
+            box-shadow: 0 0 14px rgba(123, 47, 190, .4);
         }
         .param-grid .btn-neon:hover .letter {
-            box-shadow: 0 0 30px rgba(124, 58, 237, 0.4);
-            transform: scale(1.05);
+            box-shadow: 0 0 30px rgba(124, 58, 237, 0.4); transform: scale(1.05);
         }
         .param-grid .label {
-            flex: 1;
-            font-weight: 600;
-            font-size: 1.3rem;
-            display: -webkit-box;
-            -webkit-line-clamp: 3;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            max-height: 3.8em;
-            line-height: 1.3;
+            flex: 1; font-weight: 600; font-size: 1.3rem;
+            display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical;
+            overflow: hidden; text-overflow: ellipsis;
+            max-height: 3.8em; line-height: 1.3;
             transition: color 0.3s var(--ease);
         }
         .param-grid .arrow {
-            font-size: 1.2rem;
-            opacity: 0.6;
-            flex-shrink: 0;
+            font-size: 1.2rem; opacity: 0.6; flex-shrink: 0;
             transition: transform 0.3s var(--ease), opacity 0.3s var(--ease);
         }
-        .param-grid .btn-neon:hover .arrow {
-            transform: translateX(4px);
-            opacity: 1;
-        }
+        .param-grid .btn-neon:hover .arrow { transform: translateX(4px); opacity: 1; }
 
-        /* ---- DOC CATEGORY BUTTONS ---- */
-        .doc-grid>* {
-            flex: 0 0 calc(25% - 18px);
-        }
-        .doc-grid .btn-neon {
-            flex-direction: column;
-            gap: 8px;
-            text-align: center;
-            min-height: 130px;
-        }
+        .doc-grid>* { flex: 0 0 calc(25% - 18px); }
+        .doc-grid .btn-neon { flex-direction: column; gap: 8px; text-align: center; min-height: 130px; }
         .doc-grid .btn-neon .icon {
-            font-size: 2.4rem;
-            width: auto;
+            font-size: 2.4rem; width: auto;
             filter: drop-shadow(0 0 20px rgba(52, 211, 153, 0.15));
         }
-        .doc-grid .btn-neon:hover .icon {
-            transform: scale(1.1) translateY(-2px);
-        }
+        .doc-grid .btn-neon:hover .icon { transform: scale(1.1) translateY(-2px); }
         .doc-grid .label {
-            font-weight: 700;
-            font-size: 1.3rem;
-            display: -webkit-box;
-            -webkit-line-clamp: 2;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            max-height: 2.6em;
-            line-height: 1.3;
+            font-weight: 700; font-size: 1.3rem;
+            display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;
+            overflow: hidden; text-overflow: ellipsis;
+            max-height: 2.6em; line-height: 1.3;
             transition: color 0.3s var(--ease);
         }
 
-        /* ---- HIERARCHY BUTTONS ---- */
-        .hierarchy-grid>* {
-            flex: 0 0 calc(50% - 18px);
-            min-height: 120px;
-        }
-        .hierarchy-grid .btn-neon {
-            justify-content: flex-start;
-            gap: 14px;
-            padding: 14px 20px;
-            min-height: 80px;
-        }
+        .hierarchy-grid>* { flex: 0 0 calc(50% - 18px); min-height: 120px; }
+        .hierarchy-grid .btn-neon { justify-content: flex-start; gap: 14px; padding: 14px 20px; min-height: 80px; }
         .hierarchy-grid .file-icon {
-            font-size: 1.6rem;
-            flex-shrink: 0;
+            font-size: 1.6rem; flex-shrink: 0;
             filter: drop-shadow(0 0 16px rgba(192, 132, 252, 0.1));
-            width: 2rem;
-            text-align: center;
+            width: 2rem; text-align: center;
             transition: transform 0.3s var(--ease);
         }
-        .hierarchy-grid .btn-neon:hover .file-icon {
-            transform: scale(1.1);
-        }
+        .hierarchy-grid .btn-neon:hover .file-icon { transform: scale(1.1); }
         .hierarchy-grid .file-name {
-            flex: 1;
-            font-weight: 600;
-            word-break: break-word;
+            flex: 1; font-weight: 600; word-break: break-word;
             font-size: 1.3rem;
-            display: -webkit-box;
-            -webkit-line-clamp: 2;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            max-height: 2.6em;
-            line-height: 1.3;
+            display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;
+            overflow: hidden; text-overflow: ellipsis;
+            max-height: 2.6em; line-height: 1.3;
             transition: color 0.3s var(--ease);
         }
         .hierarchy-grid .arrow {
-            font-size: 1.3rem;
-            opacity: 0.5;
-            flex-shrink: 0;
+            font-size: 1.3rem; opacity: 0.5; flex-shrink: 0;
             transition: transform 0.3s var(--ease), opacity 0.3s var(--ease);
         }
-        .hierarchy-grid .btn-neon:hover .arrow {
-            transform: translateX(6px);
-            opacity: 1;
-        }
+        .hierarchy-grid .btn-neon:hover .arrow { transform: translateX(6px); opacity: 1; }
 
-        /* ---- EXTRA BUTTONS ---- */
-        .extra-grid>* {
-            flex: 0 0 calc(25% - 18px);
-            min-height: 100px;
+        .extra-grid>* { flex: 0 0 calc(25% - 18px); min-height: 100px; }
+        .param-extra-grid>* { flex: 0 0 calc(25% - 18px); min-height: 100px; }
+        .extra-grid .btn-neon, .param-extra-grid .btn-neon {
+            justify-content: center; gap: 10px;
+            min-height: 100px; font-size: 1.3rem;
+            padding: 14px 18px; text-align: center;
         }
-        .param-extra-grid>* {
-            flex: 0 0 calc(25% - 18px);
-            min-height: 100px;
+        .extra-grid .btn-neon .icon, .param-extra-grid .btn-neon .icon {
+            font-size: 1.4rem; width: auto;
         }
-        .extra-grid .btn-neon,
-        .param-extra-grid .btn-neon {
-            justify-content: center;
-            gap: 10px;
-            min-height: 100px;
-            font-size: 1.3rem;
-            padding: 14px 18px;
-            text-align: center;
-        }
+        .grid-item-hidden { display: none !important; }
 
-        .extra-grid .btn-neon .icon,
-        .param-extra-grid .btn-neon .icon {
-            font-size: 1.4rem;
-            width: auto;
-        }
-
-        /* ---- FILTERED ---- */
-        .grid-item-hidden {
-            display: none !important;
-        }
-
-        /* ============================================================
-           BACK BUTTON
-           ============================================================ */
         .btn-back {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            padding: 10px 28px;
+            display: inline-flex; align-items: center; justify-content: center;
+            gap: 8px; padding: 10px 28px;
             border-radius: 5px;
-            font-size: 1rem;
-            font-weight: 600;
+            font-size: 1rem; font-weight: 600;
             color: var(--tech-text);
             background: var(--btn-bg);
             backdrop-filter: blur(8px);
@@ -1441,136 +762,88 @@
             cursor: pointer;
             transition: all 0.3s var(--ease);
             text-decoration: none;
-            position: relative;
-            overflow: visible;
+            position: relative; overflow: visible;
             isolation: isolate;
             box-shadow: var(--shadow-soft);
         }
-
         .btn-back::before {
-            content: '';
-            position: absolute;
-            inset: -2px;
-            border-radius:5px;
+            content: ''; position: absolute; inset: -2px;
+            border-radius: 5px;
             background: conic-gradient(
                 from var(--angle),
-                transparent 0deg,
-                rgba(139, 92, 246, 0.8) 10deg,
-                transparent 24deg,
-                transparent 176deg,
-                rgba(139, 92, 246, 0.8) 186deg,
-                transparent 200deg,
+                transparent 0deg, rgba(139, 92, 246, 0.8) 10deg, transparent 24deg,
+                transparent 176deg, rgba(139, 92, 246, 0.8) 186deg, transparent 200deg,
                 transparent 360deg
             );
             z-index: -2;
             animation: spinLightBtn 14s linear infinite;
-            will-change: --angle;
-            pointer-events: none;
+            will-change: --angle; pointer-events: none;
             filter: blur(0.5px) drop-shadow(0 0 8px rgba(139, 92, 246, 0.3));
         }
-
         .btn-back::after {
-            content: '';
-            position: absolute;
-            inset: 2px;
+            content: ''; position: absolute; inset: 2px;
             border-radius: 5px;
             background: var(--btn-after-bg);
             z-index: -1;
             transition: background 0.3s var(--ease);
         }
-
         .btn-back:hover {
             transform: translateY(-2px);
             border-color: var(--tech-violet);
             box-shadow: var(--glow-violet);
         }
-
         .btn-back:hover::before {
             animation-duration: 6s;
             filter: blur(0px) drop-shadow(0 0 20px rgba(139, 92, 246, 0.6)) brightness(1.5);
         }
+        .btn-back:active { transform: scale(0.97); }
 
-        .btn-back:active {
-            transform: scale(0.97);
-        }
-
-        /* ============================================================
-           OPEN BUTTON
-           ============================================================ */
         .btn-open {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            padding: 12px 36px;
+            display: inline-flex; align-items: center; justify-content: center;
+            gap: 10px; padding: 12px 36px;
             border-radius: var(--radius-sm);
-            font-size: 1.05rem;
-            font-weight: 600;
+            font-size: 1.05rem; font-weight: 600;
             color: var(--tech-text);
             background: rgba(139, 92, 246, 0.06);
             backdrop-filter: blur(8px);
-            border: none;
-            cursor: pointer;
+            border: none; cursor: pointer;
             text-decoration: none;
             transition: all 0.3s var(--ease);
-            position: relative;
-            overflow: visible;
+            position: relative; overflow: visible;
             isolation: isolate;
         }
-
         .btn-open::before {
-            content: '';
-            position: absolute;
-            inset: -2px;
+            content: ''; position: absolute; inset: -2px;
             border-radius: var(--radius-sm);
             background: conic-gradient(
                 from var(--angle),
-                transparent 0deg,
-                var(--tech-violet) 10deg,
-                transparent 24deg,
-                transparent 176deg,
-                var(--tech-violet) 186deg,
-                transparent 200deg,
+                transparent 0deg, var(--tech-violet) 10deg, transparent 24deg,
+                transparent 176deg, var(--tech-violet) 186deg, transparent 200deg,
                 transparent 360deg
             );
             z-index: -2;
             animation: spinLightBtn 12s linear infinite;
-            will-change: --angle;
-            pointer-events: none;
+            will-change: --angle; pointer-events: none;
             filter: blur(0.5px) drop-shadow(0 0 10px var(--tech-violet));
         }
-
         .btn-open::after {
-            content: '';
-            position: absolute;
-            inset: 2px;
+            content: ''; position: absolute; inset: 2px;
             border-radius: calc(var(--radius-sm) - 2px);
             background: rgba(139, 92, 246, 0.04);
             z-index: -1;
             transition: background 0.3s var(--ease);
         }
-
         .btn-open:hover {
             transform: translateY(-3px);
             box-shadow: var(--glow-violet-strong);
         }
-
         .btn-open:hover::before {
             animation-duration: 5s;
             filter: blur(0px) drop-shadow(0 0 25px var(--tech-violet)) brightness(1.5);
         }
+        .btn-open:hover::after { background: rgba(139, 92, 246, 0.08); }
+        .btn-open:active { transform: scale(0.97); }
 
-        .btn-open:hover::after {
-            background: rgba(139, 92, 246, 0.08);
-        }
-
-        .btn-open:active {
-            transform: scale(0.97);
-        }
-
-        /* ============================================================
-           PDF VIEWER
-           ============================================================ */
         .pdf-container {
             background: var(--tech-card);
             border-radius: var(--radius);
@@ -1581,351 +854,370 @@
             transition: border-color 0.4s var(--ease), box-shadow 0.4s var(--ease), background 0.4s var(--ease);
             position: relative;
         }
-
         .pdf-container:hover {
             border-color: rgba(139, 92, 246, 0.3);
             box-shadow: var(--glow-violet-strong), inset 0 0 60px rgba(139, 92, 246, 0.04);
         }
-
         .pdf-container::before {
-            content: '';
-            position: absolute;
-            inset: -2px;
+            content: ''; position: absolute; inset: -2px;
             border-radius: var(--radius);
             background: conic-gradient(from 0deg,
-                    transparent,
-                    rgba(139, 92, 246, 0.08),
-                    transparent,
-                    rgba(124, 58, 237, 0.08),
-                    transparent);
+                    transparent, rgba(139, 92, 246, 0.08),
+                    transparent, rgba(124, 58, 237, 0.08), transparent);
             z-index: -1;
             animation: spinBorder 10s linear infinite;
             pointer-events: none;
             transition: opacity 0.4s var(--ease);
         }
-
         .pdf-container iframe {
-            display: block;
-            border: none;
-            width: 100%;
+            display: block; border: none; width: 100%;
             min-height: 700px;
             background: var(--tech-bg-secondary);
             transition: background 0.4s var(--ease);
         }
+        .doc-actions { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 8px; }
 
-        .doc-actions {
-            display: flex;
-            gap: 14px;
-            flex-wrap: wrap;
-            margin-top: 8px;
-        }
-
-        /* ============================================================
-           EMPTY STATE
-           ============================================================ */
         .empty-state {
             background: var(--glass-bg);
             backdrop-filter: blur(12px);
             border: 2px dashed rgba(139, 92, 246, 0.15);
             border-radius: var(--radius);
-            padding: 60px 30px;
-            text-align: center;
-            margin-top: 10px;
+            padding: 60px 30px; text-align: center; margin-top: 10px;
             box-shadow: inset 0 0 60px rgba(139, 92, 246, 0.02);
             transition: border-color 0.4s var(--ease), background 0.4s var(--ease);
         }
-
-        .empty-state:hover {
-            border-color: rgba(139, 92, 246, 0.25);
-        }
-
+        .empty-state:hover { border-color: rgba(139, 92, 246, 0.25); }
         .empty-state .icon {
-            font-size: 3.5rem;
-            margin-bottom: 16px;
+            font-size: 3.5rem; margin-bottom: 16px;
             filter: drop-shadow(0 0 30px rgba(139, 92, 246, 0.1));
             color: var(--tech-violet);
             transition: color 0.4s var(--ease);
         }
-
         .empty-state h3 {
             font-family: 'Orbitron', 'Inter', sans-serif;
-            font-size: 1.4rem;
-            margin-bottom: 10px;
+            font-size: 1.4rem; margin-bottom: 10px;
             color: var(--tech-text);
             transition: color 0.4s var(--ease);
         }
-
         .empty-state p {
-            color: var(--tech-text-muted);
-            font-size: 1.05rem;
-            margin-bottom: 24px;
-            max-width: 480px;
-            margin-left: auto;
-            margin-right: auto;
-            line-height: 1.6;
+            color: var(--tech-text-muted); font-size: 1.05rem;
+            margin-bottom: 24px; max-width: 480px;
+            margin-left: auto; margin-right: auto; line-height: 1.6;
             transition: color 0.4s var(--ease);
         }
 
-        /* ============================================================
-           FOOTER
-           ============================================================ */
         footer {
             background: var(--footer-bg);
             color: var(--tech-text-muted);
             text-align: center;
             padding: 32px 32px 28px;
-            font-size: 0.95rem;
-            margin-top: auto;
+            font-size: 0.95rem; margin-top: auto;
             border-top: 2px solid var(--footer-border);
-            position: relative;
-            z-index: 1;
+            position: relative; z-index: 1;
             transition: background 0.4s var(--ease), border-color 0.4s var(--ease), color 0.4s var(--ease);
         }
-
         footer::before {
-            content: '';
-            position: absolute;
-            top: -2px;
-            left: 0;
-            right: 0;
+            content: ''; position: absolute; top: -2px; left: 0; right: 0;
             height: 2px;
             background: linear-gradient(90deg, transparent, var(--tech-violet), var(--tech-purple), var(--tech-pink), transparent);
             background-size: 200% 100%;
             animation: scanLine 4s linear infinite;
-            opacity: 0.3;
-            pointer-events: none;
+            opacity: 0.3; pointer-events: none;
             transition: opacity 0.4s var(--ease);
         }
-
-        footer strong {
-            color: var(--tech-text);
-            font-weight: 700;
-            transition: color 0.4s var(--ease);
-        }
-
+        footer strong { color: var(--tech-text); font-weight: 700; transition: color 0.4s var(--ease); }
         footer .footer-course {
-            display: block;
-            margin-top: 4px;
-            font-size: 0.9rem;
-            opacity: 0.7;
-            font-family: 'Orbitron', sans-serif;
+            display: block; margin-top: 4px; font-size: 0.9rem;
+            opacity: 0.7; font-family: 'Orbitron', sans-serif;
             letter-spacing: 1px;
             transition: opacity 0.4s var(--ease);
         }
-
         footer .footer-divider {
-            width: 60px;
-            height: 2px;
+            width: 60px; height: 2px;
             background: linear-gradient(90deg, var(--tech-violet), var(--tech-purple));
-            margin: 16px auto;
-            border-radius: 2px;
+            margin: 16px auto; border-radius: 2px;
             box-shadow: var(--glow-violet);
             transition: background 0.4s var(--ease), box-shadow 0.4s var(--ease);
         }
-
         footer .footer-contact {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px 40px;
-            margin-top: 12px;
-            font-size: 0.9rem;
+            display: flex; flex-wrap: wrap; justify-content: center;
+            gap: 20px 40px; margin-top: 12px; font-size: 0.9rem;
         }
-
-        footer .footer-contact p {
-            margin: 4px 0;
-        }
-
-        footer .footer-contact .label {
-            opacity: 0.5;
-            font-weight: 400;
-            transition: opacity 0.4s var(--ease);
-        }
-
+        footer .footer-contact p { margin: 4px 0; }
+        footer .footer-contact .label { opacity: 0.5; font-weight: 400; transition: opacity 0.4s var(--ease); }
         footer .footer-contact .value {
-            font-weight: 600;
-            color: var(--tech-violet);
+            font-weight: 600; color: var(--tech-violet);
             text-shadow: 0 0 20px rgba(139, 92, 246, 0.1);
             transition: color 0.4s var(--ease), text-shadow 0.4s var(--ease);
         }
 
-        /* ============================================================
-           RESPONSIVE
-           ============================================================ */
         @media (max-width: 1023px) {
-            .area-grid>*,
-            .param-grid>*,
-            .doc-grid>*,
-            .hierarchy-grid>*,
-            .extra-grid>*,
-            .param-extra-grid>* {
+            .area-grid>*, .param-grid>*, .doc-grid>*, .hierarchy-grid>*, .extra-grid>*, .param-extra-grid>* {
                 flex: 0 0 calc(33.33% - 18px);
             }
         }
-
         @media (max-width: 767px) {
-            header {
-                padding: 10px 16px;
+            header { padding: 10px 16px; }
+            .title-block h1 { font-size: 1.1rem; letter-spacing: 0.5px; }
+            .title-block .sub-header { font-size: 0.8rem; letter-spacing: 1px; }
+            .logo { height: 50px; width: 50px; }
+            .logo-ring { inset: -3px; }
+            .bsit-logo { height: 45px; width: 45px; }
+            .bsit-logo-ring { inset: -3px; }
+            .theme-toggle { width: 40px; height: 40px; font-size: 1.1rem; }
+            main { padding: 12px 12px 30px; }
+            .area-grid>*, .param-grid>*, .doc-grid>*, .hierarchy-grid>*, .extra-grid>*, .param-extra-grid>* {
+                flex: 0 0 calc(50% - 14px); min-height: 100px;
             }
-            .title-block h1 {
-                font-size: 1.1rem;
-                letter-spacing: 0.5px;
-            }
-            .title-block .sub-header {
-                font-size: 0.8rem;
-                letter-spacing: 1px;
-            }
-            .logo {
-                height: 50px;
-                width: 50px;
-            }
-            .logo-ring {
-                inset: -3px;
-            }
-            .bsit-logo {
-                height: 45px;
-                width: 45px;
-            }
-            .bsit-logo-ring {
-                inset: -3px;
-            }
-
-            .theme-toggle {
-                width: 40px;
-                height: 40px;
-                font-size: 1.1rem;
-            }
-
-            main {
-                padding: 12px 12px 30px;
-            }
-
-            .area-grid>*,
-            .param-grid>*,
-            .doc-grid>*,
-            .hierarchy-grid>*,
-            .extra-grid>*,
-            .param-extra-grid>* {
-                flex: 0 0 calc(50% - 14px);
-                min-height: 100px;
-            }
-
-            .area-grid .label,
-            .param-grid .label {
-                font-size: 0.95rem;
-            }
-
+            .area-grid .label, .param-grid .label { font-size: 0.95rem; }
             .page-header-row {
-                grid-template-columns: 1fr;
-                justify-items: center;
-                gap: 8px;
-                margin: 8px 0 4px;
+                grid-template-columns: 1fr; justify-items: center;
+                gap: 8px; margin: 8px 0 4px;
             }
-            .page-header-row .btn-back {
-                justify-self: center;
-                order: 1;
-                width: 100%;
-                justify-content: center;
-            }
-            .page-header-row h2 {
-                order: 2;
-                font-size: clamp(1.2rem, 5vw, 1.6rem);
-                padding: 0;
-            }
-            .page-header-row .spacer {
-                display: none;
-            }
-
-            .pdf-container iframe {
-                min-height: 380px;
-            }
-            .doc-actions {
-                flex-direction: column;
-            }
-            .btn-open,
-            .btn-back {
-                width: 100%;
-                justify-content: center;
-            }
-
-            .breadcrumb-wrapper {
-                flex-direction: column;
-                align-items: stretch;
-                gap: 8px;
-                padding: 10px 14px;
-            }
-
-            .search-container {
-                width: 100%;
-            }
-
-            .search-container input {
-                width: 100% !important;
-            }
-
-            .search-container input:focus {
-                width: 100% !important;
-            }
-
-            .footer-contact {
-                flex-direction: column;
-                gap: 6px;
-            }
+            .page-header-row .btn-back { justify-self: center; order: 1; width: 100%; justify-content: center; }
+            .page-header-row h2 { order: 2; font-size: clamp(1.2rem, 5vw, 1.6rem); padding: 0; }
+            .page-header-row .spacer { display: none; }
+            .pdf-container iframe { min-height: 380px; }
+            .doc-actions { flex-direction: column; }
+            .btn-open, .btn-back { width: 100%; justify-content: center; }
+            .breadcrumb-wrapper { flex-direction: column; align-items: stretch; gap: 8px; padding: 10px 14px; }
+            .search-container { width: 100%; }
+            .search-container input, .search-container input:focus { width: 100% !important; }
+            .footer-contact { flex-direction: column; gap: 6px; }
         }
-
         @media (max-width: 479px) {
-            .area-grid>*,
-            .param-grid>*,
-            .doc-grid>*,
-            .hierarchy-grid>*,
-            .extra-grid>*,
-            .param-extra-grid>* {
-                flex: 0 0 100%;
-                min-height: 85px;
+            .area-grid>*, .param-grid>*, .doc-grid>*, .hierarchy-grid>*, .extra-grid>*, .param-extra-grid>* {
+                flex: 0 0 100%; min-height: 85px;
             }
-            .area-grid .btn-neon,
-            .param-grid .btn-neon {
-                min-height: 80px;
-                padding: 12px 16px;
-            }
-            .doc-grid .btn-neon {
-                min-height: 100px;
-            }
-            .area-grid .label,
-            .param-grid .label {
-                font-size: 0.9rem;
-            }
-            .doc-grid .btn-neon .icon {
-                font-size: 1.8rem;
-            }
-            .doc-grid .label {
-                font-size: 0.9rem;
-            }
-            .hierarchy-grid .btn-neon {
-                padding: 12px 16px;
-                min-height: 70px;
-            }
-            .hierarchy-grid .file-icon {
-                font-size: 1.3rem;
-                width: 1.8rem;
-            }
-            .hierarchy-grid .file-name {
-                font-size: 0.9rem;
-            }
+            .area-grid .btn-neon, .param-grid .btn-neon { min-height: 80px; padding: 12px 16px; }
+            .doc-grid .btn-neon { min-height: 100px; }
+            .area-grid .label, .param-grid .label { font-size: 0.9rem; }
+            .doc-grid .btn-neon .icon { font-size: 1.8rem; }
+            .doc-grid .label { font-size: 0.9rem; }
+            .hierarchy-grid .btn-neon { padding: 12px 16px; min-height: 70px; }
+            .hierarchy-grid .file-icon { font-size: 1.3rem; width: 1.8rem; }
+            .hierarchy-grid .file-name { font-size: 0.9rem; }
         }
+        .is-visible { animation: none !important; }
 
-        .is-visible {
-            animation: none !important;
+        /* ============================================================
+           PREDICTIVE SEARCH — SUGGESTIONS DROPDOWN (VIOLET TECH THEME)
+           ============================================================ */
+        .search-suggestions {
+            position: absolute;
+            top: calc(100% + 12px);
+            right: 0;
+            width: min(470px, calc(100vw - 40px));
+            max-height: 440px;
+            overflow-y: auto;
+            overscroll-behavior: contain;
+            background: var(--tech-card);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-sm);
+            box-shadow:
+                0 16px 50px rgba(0, 0, 0, 0.45),
+                0 0 40px rgba(139, 92, 246, 0.14);
+            padding: 6px;
+            z-index: 999;
+            display: none;
+        }
+        [data-theme="light"] .search-suggestions {
+            box-shadow:
+                0 16px 50px rgba(76, 29, 149, 0.18),
+                0 0 40px rgba(109, 40, 217, 0.10);
+        }
+        .search-suggestions.is-open {
+            display: block;
+            animation: suggestDropIn 0.2s var(--ease) both;
+        }
+        @keyframes suggestDropIn {
+            from { opacity: 0; transform: translateY(-8px) scale(0.98); }
+            to   { opacity: 1; transform: translateY(0) scale(1); }
+        }
+        .search-suggestions::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 20px; right: 20px;
+            height: 2px;
+            background: linear-gradient(90deg,
+                transparent, var(--tech-violet), var(--tech-pink),
+                var(--tech-purple), transparent);
+            opacity: 0.7;
+            border-radius: 2px;
+            pointer-events: none;
+            z-index: 1;
+        }
+        .search-suggestions .s-header {
+            font-family: 'Orbitron', 'Inter', sans-serif;
+            font-size: 0.66rem;
+            text-transform: uppercase;
+            letter-spacing: 2.5px;
+            font-weight: 700;
+            color: var(--tech-text-dim);
+            padding: 10px 14px 6px;
+            position: sticky;
+            top: 0;
+            background: var(--tech-card);
+            border-radius: 8px 8px 0 0;
+            z-index: 2;
+        }
+        .search-suggestion-item {
+            position: relative;
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            width: 100%;
+            padding: 10px 14px;
+            border-radius: 8px;
+            background: transparent;
+            color: var(--tech-text);
+            text-align: left;
+            transition: background 0.2s var(--ease);
+            font-family: inherit;
+            cursor: pointer;
+        }
+        .search-suggestion-item:hover,
+        .search-suggestion-item.is-active {
+            background: rgba(139, 92, 246, 0.10);
+        }
+        [data-theme="light"] .search-suggestion-item:hover,
+        [data-theme="light"] .search-suggestion-item.is-active {
+            background: rgba(109, 40, 217, 0.08);
+        }
+        .search-suggestion-item.is-active::before {
+            content: '';
+            position: absolute;
+            left: 4px; top: 50%;
+            transform: translateY(-50%);
+            width: 3px; height: 60%;
+            background: var(--tech-violet);
+            border-radius: 2px;
+            box-shadow: 0 0 12px var(--tech-violet);
+        }
+        .search-suggestion-item .s-icon {
+            flex-shrink: 0;
+            width: 36px; height: 36px;
+            border-radius: 8px;
+            display: flex; align-items: center; justify-content: center;
+            background: rgba(139, 92, 246, 0.12);
+            border: 1px solid rgba(139, 92, 246, 0.22);
+            color: var(--tech-violet);
+            font-size: 0.9rem;
+            margin-top: 1px;
+            transition: all 0.2s var(--ease);
+        }
+        .search-suggestion-item:hover .s-icon,
+        .search-suggestion-item.is-active .s-icon {
+            background: rgba(139, 92, 246, 0.20);
+            border-color: rgba(139, 92, 246, 0.4);
+            box-shadow: 0 0 12px rgba(139, 92, 246, 0.25);
+        }
+        /* Parameter items — purple accent */
+        .search-suggestion-item[data-type="parameter"] .s-icon {
+            color: var(--tech-purple);
+            background: rgba(124, 58, 237, 0.12);
+            border-color: rgba(124, 58, 237, 0.22);
+        }
+        /* Indicator (document) items — PINK accent to distinguish */
+        .search-suggestion-item[data-type="document"] .s-icon {
+            color: var(--tech-pink);
+            background: rgba(217, 70, 239, 0.10);
+            border-color: rgba(217, 70, 239, 0.22);
+        }
+        .search-suggestion-item[data-type="document"]:hover .s-icon,
+        .search-suggestion-item[data-type="document"].is-active .s-icon {
+            background: rgba(217, 70, 239, 0.20);
+            border-color: rgba(217, 70, 239, 0.42);
+            box-shadow: 0 0 12px rgba(217, 70, 239, 0.28);
+        }
+        [data-theme="light"] .search-suggestion-item[data-type="document"] .s-icon {
+            color: #A21CAF;
+            background: rgba(192, 38, 211, 0.10);
+            border-color: rgba(192, 38, 211, 0.28);
+        }
+        .search-suggestion-item .s-text { flex: 1; min-width: 0; }
+        .search-suggestion-item .s-title {
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            font-size: 0.9rem;
+            font-weight: 600;
+            line-height: 1.35;
+            color: var(--tech-text);
+        }
+        .search-suggestion-item .s-subtitle {
+            display: block;
+            margin-top: 2px;
+            font-family: 'Fira Code', monospace;
+            font-size: 0.72rem;
+            font-weight: 500;
+            color: var(--tech-text-muted);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .search-suggestion-item .s-go {
+            align-self: center;
+            font-size: 0.75rem;
+            color: var(--tech-violet);
+            opacity: 0.35;
+            flex-shrink: 0;
+            transition: all 0.2s var(--ease);
+        }
+        .search-suggestion-item:hover .s-go,
+        .search-suggestion-item.is-active .s-go {
+            opacity: 1;
+            transform: translateX(3px);
+        }
+        .search-suggestion-item mark {
+            background: rgba(139, 92, 246, 0.28);
+            color: var(--tech-text);
+            font-weight: 700;
+            border-radius: 3px;
+            padding: 0 2px;
+        }
+        [data-theme="light"] .search-suggestion-item mark {
+            background: rgba(109, 40, 217, 0.22);
+            color: #4C1D95;
+        }
+        .search-suggestions .no-results {
+            padding: 28px 16px 24px;
+            text-align: center;
+            color: var(--tech-text-muted);
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+        .search-suggestions .no-results i {
+            display: block;
+            font-size: 1.6rem;
+            color: var(--tech-violet);
+            opacity: 0.55;
+            margin-bottom: 10px;
+        }
+        .search-suggestions::-webkit-scrollbar { width: 6px; }
+        .search-suggestions::-webkit-scrollbar-track { background: transparent; }
+        .search-suggestions::-webkit-scrollbar-thumb {
+            background: var(--tech-violet);
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(139, 92, 246, 0.4);
+        }
+        @media (max-width: 767px) {
+            .search-suggestions {
+                left: 0; right: 0;
+                width: 100%;
+                max-height: 340px;
+            }
         }
     </style>
 </head>
 
 <body>
 
-    <!-- ===== BSIT LOGO WATERMARK ===== -->
     <div class="bsit-watermark"></div>
 
-    <!-- ===== HEADER ===== -->
     <header>
         <div class="header-container">
             <div class="logo-section">
@@ -1950,10 +1242,8 @@
         </div>
     </header>
 
-    <!-- ===== MAIN ===== -->
     <main id="app"></main>
 
-    <!-- ===== FOOTER ===== -->
     <footer>
         <p>&copy; 2026 Occidental Mindoro State University — <strong>BSIT Accreditation Document System</strong></p>
         <span class="footer-course">Bachelor of Science in Information Technology</span>
@@ -1965,99 +1255,86 @@
         </div>
     </footer>
 
-    <!-- ============================================================
-    JAVASCRIPT (unchanged)
-    ============================================================ -->
     <script>
-        // ============================================================
         // THEME TOGGLE
-        // ============================================================
         (function() {
             const toggle = document.getElementById('themeToggle');
             const icon = toggle.querySelector('i');
-
             let currentTheme = localStorage.getItem('bsit-theme') || 'dark';
-
             function setTheme(theme) {
                 currentTheme = theme;
                 document.documentElement.setAttribute('data-theme', theme);
                 icon.className = theme === 'dark' ? 'fas fa-moon' : 'fas fa-sun';
                 localStorage.setItem('bsit-theme', theme);
             }
-
             setTheme(currentTheme);
-
             toggle.addEventListener('click', function() {
                 setTheme(currentTheme === 'dark' ? 'light' : 'dark');
             });
         })();
 
-        // ============================================================
-        // BSIT DATA (unchanged)
-        // ============================================================
         var PROGRAM_CODE = 'BSIT';
         var PROGRAM_NAME = 'Bachelor of Science in Information Technology';
 
         var AREAS_FULL = {
-               1: { name: 'Vision, Mission, Goals, and Objectives', params: { A: 'STATEMENT OF VISION, MISSION, GOALS AND OBJECTIVES',
-                    B: 'DISSEMINATION AND ACCEPTABILITY' } },
-            2: { name: 'Faculty', params: { A: 'ACADEMIC QUALIFICATIONS AND PROFESSIONAL EXPERIENCE',
-                    B: 'RECRUITMENT, SELECTION, AND ORIENTATION',
-                    C: 'FACULTY ADEQUACY AND LEADING',
-                    D: 'RANK AND TENURE',
-                    E: 'FACULTY DEVELOPMENT',
-                    F: 'PROFESSIONAL PERFORMANCE AND SCHOLARLY WORKS',
-                    G: 'SALARIES, FRINGE BENEFITS, AND INCENTIVES',
-                    H: 'PROFESSIONALISM' } },
-            3: { name: 'Curriculum and Instruction', params: { A: 'CURRICULUM AND PROGRAM STUDIES',
-                    B: 'INSTRUCTIONAL PROCESS, METHODOLOGIES AND LEARNING OPPORTUNITIES',
-                    C: 'ASSESSMENT OF ACADEMIC PERFORMANCE',
-                    D: 'MANAGEMENT OF LEARNING',
-                    E: 'GRADUATION REQUIREMENTS',
-                    F: 'ADMINISTRATIVE SUPPORT FOR EFFECTIVE INSTRUCTION' } },
-            4: { name: 'Student Services', params: { A: 'STUDENT SERVICES PROGRAM (SSP)',
-                    B: 'STUDENT WELFARE',
-                    C: 'STUDENT DEVELOPMENT',
-                    D: 'INSTITUTIONAL STUDENT PROGRAM AND SERVICE',
-                    E: 'RESEARCH, MONITORING AND EVALUATION' } },
-            5: { name: 'Research', params: { A: 'PRIORITIES AND RELEVANCE',
-                    B: 'FUNDING AND OTHER RESOURCES',
-                    C: 'IMPLEMENTATION, MONITORING, EVALUATION AND UTILIZATION OF RESEARCH RESULTS/OUTPUTS',
-                    D: 'PUBLICATION AND DISSEMINATION' } },
-            6: { name: 'Extension and Community Involvement', params: { A: 'PRIORITIES AND RELEVANCE',
-                    B: 'PLANNING, IMPLEMENTATION, MONITORING, AND EVALUATION',
-                    C: 'FUNDING AND OTHER RESOURCES',
-                    D: 'MANAGEMENT OF LEARNING' } },
-            7: { name: 'Library', params: { A: 'ORGANIZATION AND ADMINISTRATION',
-                    B: 'COLLECTION DEVELOPMENT, ORGANIZATION AND PRESERVATION',
-                    C: 'LIBRARY SERVICES AND UTILIZATION',
-                    D: 'PHYSICAL FACILITIES AND EQUIPMENT',
-                    E: 'LIBRARY PERSONNEL',
-                    F: 'FINANCIAL SUPPORT',
-                    G: 'LINKAGES AND NETWORKING',
-                    H: 'EVALUATION AND MONITORING' } },
-            8: { name: 'Physical Plant and Facilities', params: { A: 'CAMPUS',
-                    B: 'BUILDINGS',
-                    C: 'CLASSROOMS',
-                    D: 'OFFICE AND STAFF ROOMS',
-                    E: 'ASSEMBLY, ATHLETIC AND SPORTS FACILITIES',
-                    F: 'MEDICAL AND DENTAL CLINIC',
-                    G: 'STUDENT CENTER',
-                    H: 'FOOD SERVICES/CANTEEN/CAFETERIA',
-                    I: 'ACCREDITATION CENTER',
-                    J: 'HOUSING (optional)' } },
-            9: { name: 'Laboratories', params: { A: 'LABORATORIES, SHOPS/FACILITIES',
-                    B: 'EQUIPMENT AND MATERIALS',
-                    C: 'MAINTENANCE',
-                    D: 'SPECIAL PROVISIONS' } },
-            10: { name: 'Administration', params: { A: 'ORGANIZATIONAL',
-                    B: 'ACADEMIC ADMINISTRATION',
-                    C: 'STUDENT ADMINISTRATION',
-                    D: 'FINANCIAL MANAGEMENT',
-                    E: 'SUPPLY MANAGEMENT',
-                    F: 'RECORDS MANAGEMENT',
-                    G: 'INSTITUTIONAL PLANNING AND DEVELOPMENT',
-                    H: 'PERFORMANCE OF ADMINISTRATIVE PERSONNEL' } }
+            1: { name: 'Vision, Mission, Goals, and Objectives', params: {
+                A: 'STATEMENT OF VISION, MISSION, GOALS AND OBJECTIVES',
+                B: 'DISSEMINATION AND ACCEPTABILITY' } },
+            2: { name: 'Faculty', params: {
+                A: 'ACADEMIC QUALIFICATIONS AND PROFESSIONAL EXPERIENCE',
+                B: 'RECRUITMENT, SELECTION, AND ORIENTATION',
+                C: 'FACULTY ADEQUACY AND LEADING',
+                D: 'RANK AND TENURE',
+                E: 'FACULTY DEVELOPMENT',
+                F: 'PROFESSIONAL PERFORMANCE AND SCHOLARLY WORKS',
+                G: 'SALARIES, FRINGE BENEFITS, AND INCENTIVES',
+                H: 'PROFESSIONALISM' } },
+            3: { name: 'Curriculum and Instruction', params: {
+                A: 'CURRICULUM AND PROGRAM STUDIES',
+                B: 'INSTRUCTIONAL PROCESS, METHODOLOGIES AND LEARNING OPPORTUNITIES',
+                C: 'ASSESSMENT OF ACADEMIC PERFORMANCE',
+                D: 'MANAGEMENT OF LEARNING',
+                E: 'GRADUATION REQUIREMENTS',
+                F: 'ADMINISTRATIVE SUPPORT FOR EFFECTIVE INSTRUCTION' } },
+            4: { name: 'Student Services', params: {
+                A: 'STUDENT SERVICES PROGRAM (SSP)',
+                B: 'STUDENT WELFARE',
+                C: 'STUDENT DEVELOPMENT',
+                D: 'INSTITUTIONAL STUDENT PROGRAM AND SERVICE',
+                E: 'RESEARCH, MONITORING AND EVALUATION' } },
+            5: { name: 'Research', params: {
+                A: 'PRIORITIES AND RELEVANCE',
+                B: 'FUNDING AND OTHER RESOURCES',
+                C: 'IMPLEMENTATION, MONITORING, EVALUATION AND UTILIZATION OF RESEARCH RESULTS/OUTPUTS',
+                D: 'PUBLICATION AND DISSEMINATION' } },
+            6: { name: 'Extension and Community Involvement', params: {
+                A: 'PRIORITIES AND RELEVANCE',
+                B: 'PLANNING, IMPLEMENTATION, MONITORING, AND EVALUATION',
+                C: 'FUNDING AND OTHER RESOURCES',
+                D: 'MANAGEMENT OF LEARNING' } },
+            7: { name: 'Library', params: {
+                A: 'ORGANIZATION AND ADMINISTRATION',
+                B: 'COLLECTION DEVELOPMENT, ORGANIZATION AND PRESERVATION',
+                C: 'LIBRARY SERVICES AND UTILIZATION',
+                D: 'PHYSICAL FACILITIES AND EQUIPMENT',
+                E: 'LIBRARY PERSONNEL', F: 'FINANCIAL SUPPORT',
+                G: 'LINKAGES AND NETWORKING', H: 'EVALUATION AND MONITORING' } },
+            8: { name: 'Physical Plant and Facilities', params: {
+                A: 'CAMPUS', B: 'BUILDINGS', C: 'CLASSROOMS',
+                D: 'OFFICE AND STAFF ROOMS',
+                E: 'ASSEMBLY, ATHLETIC AND SPORTS FACILITIES',
+                F: 'MEDICAL AND DENTAL CLINIC', G: 'STUDENT CENTER',
+                H: 'FOOD SERVICES/CANTEEN/CAFETERIA',
+                I: 'ACCREDITATION CENTER', J: 'HOUSING (optional)' } },
+            9: { name: 'Laboratories', params: {
+                A: 'LABORATORIES, SHOPS/FACILITIES', B: 'EQUIPMENT AND MATERIALS',
+                C: 'MAINTENANCE', D: 'SPECIAL PROVISIONS' } },
+            10: { name: 'Administration', params: {
+                A: 'ORGANIZATIONAL', B: 'ACADEMIC ADMINISTRATION',
+                C: 'STUDENT ADMINISTRATION', D: 'FINANCIAL MANAGEMENT',
+                E: 'SUPPLY MANAGEMENT', F: 'RECORDS MANAGEMENT',
+                G: 'INSTITUTIONAL PLANNING AND DEVELOPMENT',
+                H: 'PERFORMANCE OF ADMINISTRATIVE PERSONNEL' } }
         };
 
         var CATEGORIES = [
@@ -2066,9 +1343,6 @@
             { key: 'OUT', label: 'Outcome/s', icon: 'fa-trophy' }
         ];
 
-        // ============================================================
-        // SPECIAL FILE IDS
-        // ============================================================
         var EXTRA_FILE_IDS = {
             additional: {
                 '1': '1ADD_FILE_ID_FOR_AREA1',
@@ -2093,120 +1367,67 @@
             }
         };
 
-        // ============================================================
-        // DOCUMENT FILES
-        // ============================================================
         var DOCUMENT_FILES = {
-
-            // ─── BSIT (full) ───
             'BSIT-1-A-SIP': [
-                { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq',
-                    name: 'S.1. The institution has a system of determining the Vision and Mission.' },
-                { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq',
-                    name: 'S.2. The Vision clearly reflects what the institution hopes to become in the future.' },
-                { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq',
-                    name: 'S.3. The Mission clearly reflects the institutions legal and other statutory mandate.' },
-                { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq',
-                    name: 'S.4. The Goals of the College/ Academic Unit are consistent with the Mission of the institution.' },
-                { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq',
-                    name: 'S.5. The Objectives of the program have the expected outcomes in terms of competencies (skills and knowledge), values and other attributes of the graduates which include the development of:' },
-                { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq',
-                    name: 'S.5.1. technical skills in Information Technology Education;' },
-                { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq',
-                    name: 'S.5.2. research and extension capabilities;' },
-                { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq',
-                    name: 'S.5.3. students own ideas, desirable attitudes, personal discipline' },
-                { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq',
-                    name: 'S.5.4. moral character;' },
-                { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq',
-                    name: 'S.5.5. critical thinking skills; and' },
-                { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq',
-                    name: 'S.5.6. aesthetic and cultural values.' }
+                { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq', name: 'S.1. The institution has a system of determining the Vision and Mission.' },
+                { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq', name: 'S.2. The Vision clearly reflects what the institution hopes to become in the future.' },
+                { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq', name: 'S.3. The Mission clearly reflects the institutions legal and other statutory mandate.' },
+                { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq', name: 'S.4. The Goals of the College/ Academic Unit are consistent with the Mission of the institution.' },
+                { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq', name: 'S.5. The Objectives of the program have the expected outcomes in terms of competencies (skills and knowledge), values and other attributes of the graduates which include the development of:' },
+                { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq', name: 'S.5.1. technical skills in Information Technology Education;' },
+                { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq', name: 'S.5.2. research and extension capabilities;' },
+                { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq', name: 'S.5.3. students own ideas, desirable attitudes, personal discipline' },
+                { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq', name: 'S.5.4. moral character;' },
+                { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq', name: 'S.5.5. critical thinking skills; and' },
+                { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq', name: 'S.5.6. aesthetic and cultural values.' }
             ],
             'BSIT-1-A-IMP': [
-                { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq',
-                    name: 'I.1. The institution/College conducts a review on the statement of the Vision and Mission as well as its goals and program objectives for the approval of authorities concerned.' },
-                { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq',
-                    name: 'I.2. The College/Academic Unit follows a system of formulating its goals and the objectives of the program.' },
-                { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq',
-                    name: 'I.3. The College/Academic Units faculty, personnel, students and other stakeholders (cooperating agencies, linkages, alumni, industry sector and other concerned groups) participates in the formulation, review and/or revision of the VMGO' }
+                { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq', name: 'I.1. The institution/College conducts a review on the statement of the Vision and Mission as well as its goals and program objectives for the approval of authorities concerned.' },
+                { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq', name: 'I.2. The College/Academic Unit follows a system of formulating its goals and the objectives of the program.' },
+                { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq', name: 'I.3. The College/Academic Units faculty, personnel, students and other stakeholders (cooperating agencies, linkages, alumni, industry sector and other concerned groups) participates in the formulation, review and/or revision of the VMGO' }
             ],
             'BSIT-1-A-OUT': [
-                { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq',
-                    name: 'O.1. The VMGO are crafted and duly approved by the BOR/BOT.' }
+                { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq', name: 'O.1. The VMGO are crafted and duly approved by the BOR/BOT.' }
             ],
-
             'BSIT-1-B-SIP': [
-                { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq',
-                    name: 'S.1. The VMGO are available on bulletin boards, in catalogs/manuals and in other forms of communication media.' }
+                { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq', name: 'S.1. The VMGO are available on bulletin boards, in catalogs/manuals and in other forms of communication media.' }
             ],
             'BSIT-1-B-IMP': [
-                { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq',
-                    name: 'I.1. A system of dissemination and acceptability of the VMGO is enforced' },
-                { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq',
-                    name: 'I.2. The administrators/faculty attend in-service seminars and training on awareness and acceptability of the:' },
-                { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq',
-                    name: 'I.2.1. Vision and Mission of the Institution;' },
-                { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq',
-                    name: 'I.2.2. Goals of the College/Academic Unit; and' },
-                { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq',
-                    name: 'I.2.3. Objectives of the Program.' },
-                { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq',
-                    name: 'I.3. The formulation/review/revision of the VMGO is participated in by the following:' },
-                { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq',
-                    name: 'I.3.1. administrators;' },
-                { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq',
-                    name: 'I.3.2. faculty;' },
-                { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq',
-                    name: 'I.3.3. staff;' },
-                { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq',
-                    name: 'I.3.4. students; and' },
-                { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq',
-                    name: 'I.3.5. other stakeholders.' },
-                { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq',
-                    name: 'I.4. The faculty and staff perform their jobs/functions in consonance with the VMGO.' },
-                { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq',
-                    name: 'I.5. The VMGO are widely disseminated to different agencies, institutions, industry sector and the community.' }
+                { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq', name: 'I.1. A system of dissemination and acceptability of the VMGO is enforced' },
+                { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq', name: 'I.2. The administrators/faculty attend in-service seminars and training on awareness and acceptability of the:' },
+                { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq', name: 'I.2.1. Vision and Mission of the Institution;' },
+                { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq', name: 'I.2.2. Goals of the College/Academic Unit; and' },
+                { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq', name: 'I.2.3. Objectives of the Program.' },
+                { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq', name: 'I.3. The formulation/review/revision of the VMGO is participated in by the following:' },
+                { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq', name: 'I.3.1. administrators;' },
+                { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq', name: 'I.3.2. faculty;' },
+                { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq', name: 'I.3.3. staff;' },
+                { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq', name: 'I.3.4. students; and' },
+                { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq', name: 'I.3.5. other stakeholders.' },
+                { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq', name: 'I.4. The faculty and staff perform their jobs/functions in consonance with the VMGO.' },
+                { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq', name: 'I.5. The VMGO are widely disseminated to different agencies, institutions, industry sector and the community.' }
             ],
             'BSIT-1-B-OUT': [
-                { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq',
-                    name: 'O.1. There is full awareness and acceptance of the VMGO by the administrators, faculty, staff, students and other stakeholders.' },
-                { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq',
-                    name: 'O.2. There is congruency between actual educational practices and activities with the following:' },
-                { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq',
-                    name: 'O.2.1. Vision and Mission of the SUC;' },
-                { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq',
-                    name: 'O.2.2. Goals of the College/ Academic Unit' },
-                { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq',
-                    name: 'O.2.3. Objectives of the Information Technology Education program' },
-                { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq',
-                    name: 'O.3. The goals and objectives are being achieved.' }
+                { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq', name: 'O.1. There is full awareness and acceptance of the VMGO by the administrators, faculty, staff, students and other stakeholders.' },
+                { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq', name: 'O.2. There is congruency between actual educational practices and activities with the following:' },
+                { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq', name: 'O.2.1. Vision and Mission of the SUC;' },
+                { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq', name: 'O.2.2. Goals of the College/ Academic Unit' },
+                { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq', name: 'O.2.3. Objectives of the Information Technology Education program' },
+                { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq', name: 'O.3. The goals and objectives are being achieved.' }
             ],
             'BSIT-2-A-SIP': [
-                { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq',
-                    name: 'S.1. The required number of faculty possess graduate degrees appropriate and relevant to the Program or any of the allied fields.' },
-                { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq',
-                    name: 'S.1.1. Master in Information Technology for 30% of the faculty handling IT courses; and' },
-                { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq',
-                    name: 'S.1.2. IT or allied degrees and any of the following:' },
-                { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq',
-                    name: 'S.1.2.1. IT industry experience of 20% of the faculty for years in technical administration, system design, applications programming or equivalent within the last 5 years; and' },
-                { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq',
-                    name: 'S.1.2.2. proficiency in the teaching ITE courses as proven by the certification issued by a certifying body as the Philippine National IT Standard (PhilNITS), Brainbench, Oracle or Microsoft, etc. provide that the teaching load assigned to him/her is aligned with the area of certification.' },
-                { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq',
-                    name: 'S.2. Other qualifications such as the following are considered:' },
-                { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq',
-                    name: 'S.2.2. Computer literacy.' },
-                { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq',
-                    name: 'S.2.3. technical skills and competence;' },
-                { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq',
-                    name: 'S.2.4. special abilities' },
-                { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq',
-                    name: 'S.2.5. research capability;' },
-                { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq',
-                    name: 'S.3. Faculty handling OJT/practicum courses have had at least three (3) Years of teaching and industry-based experience in the field, if applicable.' },
-                { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq',
-                    name: 'S.4. At least 50% of the faculty are Graduate Degree holders.' }
+                { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq', name: 'S.1. The required number of faculty possess graduate degrees appropriate and relevant to the Program or any of the allied fields.' },
+                { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq', name: 'S.1.1. Master in Information Technology for 30% of the faculty handling IT courses; and' },
+                { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq', name: 'S.1.2. IT or allied degrees and any of the following:' },
+                { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq', name: 'S.1.2.1. IT industry experience of 20% of the faculty for years in technical administration, system design, applications programming or equivalent within the last 5 years; and' },
+                { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq', name: 'S.1.2.2. proficiency in the teaching ITE courses as proven by the certification issued by a certifying body as the Philippine National IT Standard (PhilNITS), Brainbench, Oracle or Microsoft, etc. provide that the teaching load assigned to him/her is aligned with the area of certification.' },
+                { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq', name: 'S.2. Other qualifications such as the following are considered:' },
+                { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq', name: 'S.2.2. Computer literacy.' },
+                { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq', name: 'S.2.3. technical skills and competence;' },
+                { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq', name: 'S.2.4. special abilities' },
+                { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq', name: 'S.2.5. research capability;' },
+                { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq', name: 'S.3. Faculty handling OJT/practicum courses have had at least three (3) Years of teaching and industry-based experience in the field, if applicable.' },
+                { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq', name: 'S.4. At least 50% of the faculty are Graduate Degree holders.' }
             ],
             'BSIT-2-A-IMP': [
                 { id: '1-iY5enVj57wfLD0RsN_YFIL440jcnlGq',
@@ -4936,40 +4157,30 @@
             'BSIT-10-H-OUT': [
                 { id: 'SAMPLE LINK',
                     name: 'O.1. The administrative personnel/staff have commendable performance.' }
-            ],
-
+            ]
         };
 
-        // ============================================================
-        // HELPER FUNCTIONS (unchanged)
-        // ============================================================
         function getParamsForProgram(program, areaNum) {
             var areaData = AREAS_FULL[areaNum];
             return areaData ? areaData.params : {};
         }
-
         function getAreaNameForProgram(program, areaNum) {
             var areaData = AREAS_FULL[areaNum];
             return areaData ? areaData.name : 'Area ' + areaNum;
         }
-
         function getDocumentFiles(program, area, param, catKey) {
-            var key = program + '-' + area + '-' + param + '-' + catKey;
-            return DOCUMENT_FILES[key] || [];
+            return DOCUMENT_FILES[program + '-' + area + '-' + param + '-' + catKey] || [];
         }
-
         function getDriveLink(fileId) {
             if (!fileId || fileId === 'FILE_ID_HERE' || fileId === 'FILE_ID_HERE_2' || fileId === 'FILE_ID_HERE_3' ||
                 fileId.indexOf('SAMPLE_') === 0 || fileId.indexOf('_FILE_ID') !== -1) return null;
             return 'https://drive.google.com/file/d/' + fileId + '/preview';
         }
-
         function getDriveOpenLink(fileId) {
             if (!fileId || fileId === 'FILE_ID_HERE' || fileId === 'FILE_ID_HERE_2' || fileId === 'FILE_ID_HERE_3' ||
                 fileId.indexOf('SAMPLE_') === 0 || fileId.indexOf('_FILE_ID') !== -1) return null;
             return 'https://drive.google.com/file/d/' + fileId + '/view?usp=sharing';
         }
-
         function getExtraFileId(type, area, param) {
             var map = EXTRA_FILE_IDS[type];
             if (!map) return null;
@@ -4977,28 +4188,22 @@
                 return map[String(area)] || null;
             } else if (type === 'ppp' || type === 'bestpractices') {
                 if (!param) return null;
-                var key = area + '-' + param;
-                return map[key] || null;
+                return map[area + '-' + param] || null;
             }
             return null;
         }
-
         function getAllSearchableTextForArea(areaNum) {
             var texts = [];
             var areaData = AREAS_FULL[areaNum];
             if (!areaData) return '';
             texts.push(areaData.name);
             var params = areaData.params;
-            for (var p in params) {
-                texts.push(params[p]);
-            }
+            for (var p in params) texts.push(params[p]);
             var prefix = 'BSIT-' + areaNum + '-';
             for (var key in DOCUMENT_FILES) {
                 if (key.indexOf(prefix) === 0) {
                     var files = DOCUMENT_FILES[key];
-                    for (var f = 0; f < files.length; f++) {
-                        texts.push(files[f].name);
-                    }
+                    for (var f = 0; f < files.length; f++) texts.push(files[f].name);
                 }
             }
             var extraTypes = ['additional', 'compliance', 'selfsurvey'];
@@ -5008,66 +4213,50 @@
                 'selfsurvey': 'Self Survey'
             };
             for (var t = 0; t < extraTypes.length; t++) {
-                var type = extraTypes[t];
-                var fileId = getExtraFileId(type, areaNum);
-                if (fileId) {
-                    texts.push(nameMap[type]);
-                }
+                if (getExtraFileId(extraTypes[t], areaNum)) texts.push(nameMap[extraTypes[t]]);
             }
             for (var p2 in params) {
-                var pppId = getExtraFileId('ppp', areaNum, p2);
-                if (pppId) texts.push('PPP');
-                var bestId = getExtraFileId('bestpractices', areaNum, p2);
-                if (bestId) texts.push('Best Practice/s');
+                if (getExtraFileId('ppp', areaNum, p2)) texts.push('PPP');
+                if (getExtraFileId('bestpractices', areaNum, p2)) texts.push('Best Practice/s');
             }
             return texts.join(' ').toLowerCase();
         }
 
-        // HIERARCHY BUILDER
         function parseHierarchyCode(name) {
             var cleaned = name.replace(/\.\s+/g, '.').replace(/\s+\./g, '.');
             var match = cleaned.match(/^([A-Z]\.\d+(?:\.\d+)*)/);
             return match ? match[1] : null;
         }
-
         function buildHierarchy(files) {
             var root = { children: [] };
             var nodeMap = {};
             files.forEach(function(file) {
                 var code = parseHierarchyCode(file.name);
                 if (!code) return;
-                if (!nodeMap[code]) nodeMap[code] = { code: code, name: file.name, id: null, index: null,
-                    children: [] };
+                if (!nodeMap[code]) nodeMap[code] = { code: code, name: file.name, id: null, index: null, children: [] };
             });
             files.forEach(function(file, index) {
                 var code = parseHierarchyCode(file.name);
-                if (!code) { root.children.push({ code: null, name: file.name, id: file.id, index: index,
-                        children: [] });
-                    return; }
+                if (!code) { root.children.push({ code: null, name: file.name, id: file.id, index: index, children: [] }); return; }
                 var node = nodeMap[code];
-                if (node) { node.id = file.id;
-                    node.index = index;
-                    node.name = file.name; }
+                if (node) { node.id = file.id; node.index = index; node.name = file.name; }
             });
-            var allCodes = Object.keys(nodeMap);
-            allCodes.forEach(function(code) {
+            Object.keys(nodeMap).forEach(function(code) {
                 var parts = code.split('.');
-                if (parts.length === 1) { root.children.push(nodeMap[code]); } else {
+                if (parts.length === 1) root.children.push(nodeMap[code]);
+                else {
                     var parentCode = parts.slice(0, -1).join('.');
                     if (nodeMap[parentCode]) nodeMap[parentCode].children.push(nodeMap[code]);
                     else root.children.push(nodeMap[code]);
                 }
             });
-
             function sortChildren(node) {
                 if (node.children) {
                     node.children.sort(function(a, b) {
-                        var aParts = a.code.split('.'),
-                            bParts = b.code.split('.');
+                        var aParts = a.code.split('.'), bParts = b.code.split('.');
                         for (var i = 0; i < Math.min(aParts.length, bParts.length); i++) {
                             if (aParts[i] !== bParts[i]) {
-                                var aNum = parseInt(aParts[i]),
-                                    bNum = parseInt(bParts[i]);
+                                var aNum = parseInt(aParts[i]), bNum = parseInt(bParts[i]);
                                 if (!isNaN(aNum) && !isNaN(bNum)) return aNum - bNum;
                                 return aParts[i].localeCompare(bParts[i]);
                             }
@@ -5081,22 +4270,11 @@
             return root.children;
         }
 
-        // ============================================================
-        // ROUTER (unchanged)
-        // ============================================================
+        // ROUTER
         var state = {
-            page: 'landing',
-            program: PROGRAM_CODE,
-            area: null,
-            param: null,
-            category: null,
-            fileIndex: null,
-            currentPath: [],
-            specialFileId: null,
-            specialFileName: null,
-            specialType: null,
-            fromArea: null,
-            fromParam: null
+            page: 'landing', program: PROGRAM_CODE, area: null, param: null,
+            category: null, fileIndex: null, currentPath: [], specialFileId: null,
+            specialFileName: null, specialType: null, fromArea: null, fromParam: null
         };
 
         function parseHash() {
@@ -5106,57 +4284,40 @@
             if (parts.length === 1) {
                 var page = parts[0];
                 if (page === 'additional' || page === 'compliance' || page === 'selfsurvey' ||
-                    page === 'ppp' || page === 'bestpractices') {
-                    return { page: 'special', specialType: page };
-                }
+                    page === 'ppp' || page === 'bestpractices') return { page: 'special', specialType: page };
                 if (AREAS_FULL[page]) return { page: 'area', area: page };
-                else return { page: 'notfound' };
+                return { page: 'notfound' };
             }
             if (parts.length === 2) {
-                var area = parts[0],
-                    param = parts[1];
-                var params = getParamsForProgram(PROGRAM_CODE, area);
-                if (AREAS_FULL[area] && params[param]) return { page: 'parameter', area: area, param: param };
-                else return { page: 'notfound' };
+                var area = parts[0], param = parts[1];
+                if (AREAS_FULL[area] && getParamsForProgram(PROGRAM_CODE, area)[param]) return { page: 'parameter', area: area, param: param };
+                return { page: 'notfound' };
             }
             if (parts.length === 3) {
-                var area = parts[0],
-                    param = parts[1],
-                    cat = parts[2];
-                var isValidCat = CATEGORIES.some(function(c) { return c.key === cat; });
-                var params2 = getParamsForProgram(PROGRAM_CODE, area);
-                if (AREAS_FULL[area] && params2[param] && isValidCat) return { page: 'category', area: area,
-                    param: param, category: cat };
-                else return { page: 'notfound' };
+                var area = parts[0], param = parts[1], cat = parts[2];
+                if (AREAS_FULL[area] && getParamsForProgram(PROGRAM_CODE, area)[param] && CATEGORIES.some(function(c){return c.key===cat;}))
+                    return { page: 'category', area: area, param: param, category: cat };
+                return { page: 'notfound' };
             }
             if (parts.length === 4) {
-                var area = parts[0],
-                    param = parts[1],
-                    cat = parts[2],
-                    idx = parseInt(parts[3]);
-                var isValidCat2 = CATEGORIES.some(function(c) { return c.key === cat; });
-                var params3 = getParamsForProgram(PROGRAM_CODE, area);
-                if (AREAS_FULL[area] && params3[param] && isValidCat2 && !isNaN(idx)) return { page: 'document',
-                    area: area, param: param, category: cat, fileIndex: idx };
-                else return { page: 'notfound' };
+                var area = parts[0], param = parts[1], cat = parts[2], idx = parseInt(parts[3]);
+                if (AREAS_FULL[area] && getParamsForProgram(PROGRAM_CODE, area)[param] && CATEGORIES.some(function(c){return c.key===cat;}) && !isNaN(idx))
+                    return { page: 'document', area: area, param: param, category: cat, fileIndex: idx };
+                return { page: 'notfound' };
             }
             return { page: 'notfound' };
         }
 
         function navigateTo(page, data) {
             data = data || {};
-            var newState = Object.assign({}, state, { page: page }, data);
-            state = newState;
+            state = Object.assign({}, state, { page: page }, data);
             var parts = [];
             if (data.area) parts.push(data.area);
             if (data.param) parts.push(data.param);
             if (data.category) parts.push(data.category);
             if (data.fileIndex !== undefined && data.fileIndex !== null) parts.push(data.fileIndex);
-            if (page === 'special' && data.specialType) {
-                parts = [data.specialType];
-            }
-            var hash = parts.length ? '#/' + parts.join('/') : '#/';
-            window.location.hash = hash;
+            if (page === 'special' && data.specialType) parts = [data.specialType];
+            window.location.hash = parts.length ? '#/' + parts.join('/') : '#/';
             render();
         }
 
@@ -5166,26 +4327,18 @@
             render();
         });
 
-        // ============================================================
-        // RENDER FUNCTIONS (unchanged)
-        // ============================================================
-
         function applyStaggeredAnimation(container) {
             if (!container) return;
             var items = container.children;
-            for (var i = 0; i < items.length; i++) {
-                items[i].style.animationDelay = ((i + 1) * 0.07) + 's';
-            }
+            for (var i = 0; i < items.length; i++) items[i].style.animationDelay = ((i + 1) * 0.07) + 's';
         }
-
         function renderNotFound() {
             var wrap = document.createElement('div');
-            wrap.innerHTML =
-                `<div class="empty-state" style="margin-top:60px;"><div class="icon"><i class="fas fa-search"></i></div><h3>Page Not Found</h3><p>The requested page does not exist in this accreditation system.</p><button class="btn-back" onclick="navigateTo('landing',{})">← Go to Home</button></div>`;
+            wrap.innerHTML = '<div class="empty-state" style="margin-top:60px;"><div class="icon"><i class="fas fa-search"></i></div><h3>Page Not Found</h3><p>The requested page does not exist in this accreditation system.</p><button class="btn-back" onclick="navigateTo(\'landing\',{})">← Go to Home</button></div>';
             return wrap;
         }
 
-        // ---- BREADCRUMB FUNCTIONS ----
+        // ---- BREADCRUMB — updated with predictive search dropdown ----
         function crumbWithSearch(items) {
             var clickable = items.slice(0, -1);
             var html = '<div class="breadcrumb-wrapper">';
@@ -5200,11 +4353,12 @@
                 html += '<span class="current">' + last.label + '</span>';
             }
             html += '</nav>';
-
             html += '<div class="search-container">';
-            html += '<input type="text" id="globalSearch" placeholder="Search..." autocomplete="off" />';
+            html += '<input type="text" id="globalSearch" placeholder="Search areas, parameters, indicators..." autocomplete="off" ' +
+                    'role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="searchSuggestions" />';
             html += '<i class="fas fa-search search-icon"></i>';
             html += '<button class="clear-search" id="clearSearch" aria-label="Clear search"><i class="fas fa-times"></i></button>';
+            html += '<div class="search-suggestions" id="searchSuggestions" role="listbox" aria-label="Search suggestions"></div>';
             html += '</div>';
             html += '</div>';
             return html;
@@ -5233,38 +4387,28 @@
             container.querySelectorAll('[data-crumb]').forEach(function(a) {
                 var idx = Number(a.dataset.crumb);
                 if (idx < clickable.length) {
-                    a.addEventListener('click', function(e) { e.preventDefault();
-                        clickable[idx].go(); });
+                    a.addEventListener('click', function(e) { e.preventDefault(); clickable[idx].go(); });
                 }
             });
-
             if (withSearch) {
                 var searchInput = container.querySelector('#globalSearch');
                 if (searchInput) {
                     var newInput = searchInput.cloneNode(true);
                     searchInput.parentNode.replaceChild(newInput, searchInput);
-
                     newInput.addEventListener('input', function() {
                         var query = this.value.trim().toLowerCase();
                         var clear = container.querySelector('#clearSearch');
                         if (clear) {
-                            if (query.length > 0) {
-                                clear.classList.add('visible');
-                            } else {
-                                clear.classList.remove('visible');
-                            }
+                            if (query.length > 0) clear.classList.add('visible');
+                            else clear.classList.remove('visible');
                         }
                         filterGridItems(container, query);
                     });
-
                     var newClear = container.querySelector('#clearSearch');
                     if (newClear) {
                         newClear.addEventListener('click', function() {
                             var inp = container.querySelector('#globalSearch');
-                            if (inp) {
-                                inp.value = '';
-                                inp.dispatchEvent(new Event('input'));
-                            }
+                            if (inp) { inp.value = ''; inp.dispatchEvent(new Event('input')); }
                             this.classList.remove('visible');
                         });
                     }
@@ -5279,17 +4423,13 @@
                 for (var i = 0; i < items.length; i++) {
                     var item = items[i];
                     var show = false;
-                    if (query === '') {
-                        show = true;
-                    } else {
+                    if (query === '') show = true;
+                    else {
                         if (state.page === 'landing') {
                             var btn = item.querySelector('.btn-neon');
                             if (btn && btn.dataset.area) {
-                                var areaNum = btn.dataset.area;
-                                var searchableText = getAllSearchableTextForArea(areaNum);
-                                if (searchableText.indexOf(query) !== -1) {
-                                    show = true;
-                                }
+                                var searchableText = getAllSearchableTextForArea(btn.dataset.area);
+                                if (searchableText.indexOf(query) !== -1) show = true;
                             }
                         } else {
                             var text = item.textContent.toLowerCase();
@@ -5301,17 +4441,11 @@
                                 if (btn2.dataset.cat) dataText += ' ' + btn2.dataset.cat;
                                 if (btn2.dataset.type) dataText += ' ' + btn2.dataset.type;
                             }
-                            var fullText = text + ' ' + dataText;
-                            if (fullText.indexOf(query) !== -1) {
-                                show = true;
-                            }
+                            if ((text + ' ' + dataText).indexOf(query) !== -1) show = true;
                         }
                     }
-                    if (show) {
-                        item.classList.remove('grid-item-hidden');
-                    } else {
-                        item.classList.add('grid-item-hidden');
-                    }
+                    if (show) item.classList.remove('grid-item-hidden');
+                    else item.classList.add('grid-item-hidden');
                 }
             });
         }
@@ -5322,26 +4456,13 @@
             app.classList.remove('is-visible');
             var node;
             switch (state.page) {
-                case 'landing':
-                    node = renderLanding();
-                    break;
-                case 'area':
-                    node = renderArea();
-                    break;
-                case 'parameter':
-                    node = renderParameter();
-                    break;
-                case 'category':
-                    node = renderCategory();
-                    break;
-                case 'document':
-                    node = renderDocument();
-                    break;
-                case 'special':
-                    node = renderSpecialDocument();
-                    break;
-                default:
-                    node = renderNotFound();
+                case 'landing': node = renderLanding(); break;
+                case 'area': node = renderArea(); break;
+                case 'parameter': node = renderParameter(); break;
+                case 'category': node = renderCategory(); break;
+                case 'document': node = renderDocument(); break;
+                case 'special': node = renderSpecialDocument(); break;
+                default: node = renderNotFound();
             }
             app.appendChild(node);
             void app.offsetWidth;
@@ -5349,27 +4470,26 @@
             void app.offsetHeight;
             app.style.animation = '';
             app.classList.add('is-visible');
-
             var grids = node.querySelectorAll('.area-grid, .param-grid, .doc-grid, .hierarchy-grid, .extra-grid, .param-extra-grid');
-            for (var g = 0; g < grids.length; g++) {
-                applyStaggeredAnimation(grids[g]);
-            }
+            for (var g = 0; g < grids.length; g++) applyStaggeredAnimation(grids[g]);
 
             var title = 'BSIT — AACCUP Accreditation';
-            if (state.page === 'area' && state.area) { var areaName = getAreaNameForProgram(PROGRAM_CODE, state.area);
-                title = 'Area ' + state.area + ' — ' + areaName; } else if (state.page === 'parameter' && state.param) {
-                var pn = getParamsForProgram(PROGRAM_CODE, state.area)[state.param] || 'Parameter';
-                title = pn; } else if (state.page === 'category') { var cat = CATEGORIES.find(function(c) { return c
-                        .key === state.category; });
-                title = cat ? cat.label : state.category; } else if (state.page === 'document') { var files =
-                    getDocumentFiles(PROGRAM_CODE, state.area, state.param, state.category);
-                var f = files[state.fileIndex];
-                title = f ? f.name : 'Document'; } else if (state.page === 'special') { title = state.specialFileName ||
-                    'Document'; }
+            if (state.page === 'area' && state.area) {
+                title = 'Area ' + state.area + ' — ' + getAreaNameForProgram(PROGRAM_CODE, state.area);
+            } else if (state.page === 'parameter' && state.param) {
+                title = getParamsForProgram(PROGRAM_CODE, state.area)[state.param] || 'Parameter';
+            } else if (state.page === 'category') {
+                var cat = CATEGORIES.find(function(c) { return c.key === state.category; });
+                title = cat ? cat.label : state.category;
+            } else if (state.page === 'document') {
+                var f = getDocumentFiles(PROGRAM_CODE, state.area, state.param, state.category)[state.fileIndex];
+                title = f ? f.name : 'Document';
+            } else if (state.page === 'special') {
+                title = state.specialFileName || 'Document';
+            }
             document.title = title + ' | BSIT | OMSC';
         }
 
-        // ---- LANDING ----
         function renderLanding() {
             var wrap = document.createElement('div');
             var items = [{ label: 'BSIT Home', go: function() { navigateTo('landing', {}); } }];
@@ -5386,7 +4506,8 @@
                 var name = getAreaNameForProgram(PROGRAM_CODE, key);
                 html += '<div><button class="btn-neon btn-area-neon btn-area" data-area="' + key +
                     '"><span class="num">' + key +
-                    '</span><span class="label">' + name + '</span><span class="arrow"><i class="fas fa-chevron-right"></i></span></button></div>';
+                    '</span><span class="label">' + name +
+                    '</span><span class="arrow"><i class="fas fa-chevron-right"></i></span></button></div>';
             }
             html += '</div>';
             wrap.innerHTML = html;
@@ -5397,7 +4518,6 @@
             return wrap;
         }
 
-        // ---- AREA ----
         function renderArea() {
             var area = state.area;
             var areaName = getAreaNameForProgram(PROGRAM_CODE, area);
@@ -5408,61 +4528,42 @@
                 { label: 'Area ' + area, go: function() { navigateTo('area', { area: area }); } }
             ];
             var html = crumbWithoutSearch(items);
-            html +=
-                '<div class="page-header-row"><button class="btn-back" data-back>← Back to Areas</button><h2>' +
+            html += '<div class="page-header-row"><button class="btn-back" data-back>← Back to Areas</button><h2>' +
                 areaName + '</h2><span class="spacer"></span></div>';
             html += '<div class="param-grid">';
             var paramKeys = Object.keys(params);
             for (var p = 0; p < paramKeys.length; p++) {
                 var code = paramKeys[p];
-                var name = params[code];
                 html += '<div><button class="btn-neon btn-param-neon btn-param" data-param="' + code +
                     '"><span class="letter">' + code +
-                    '</span><span class="label">' + name + '</span><span class="arrow"><i class="fas fa-chevron-right"></i></span></button></div>';
+                    '</span><span class="label">' + params[code] +
+                    '</span><span class="arrow"><i class="fas fa-chevron-right"></i></span></button></div>';
             }
             html += '</div>';
-
             var additionalId = getExtraFileId('additional', area);
             var complianceId = getExtraFileId('compliance', area);
             var selfsurveyId = getExtraFileId('selfsurvey', area);
-
             html += '<div class="extra-grid">';
-            if (additionalId) {
-                html += '<div><button class="btn-neon btn-extra-neon btn-extra" data-type="additional" data-fileid="' +
-                    additionalId + '"><span class="icon"><i class="fas fa-paperclip"></i></span> Additional Needed Requirements</button></div>';
-            }
-            if (complianceId) {
-                html += '<div><button class="btn-neon btn-extra-neon btn-extra" data-type="compliance" data-fileid="' +
-                    complianceId + '"><span class="icon"><i class="fas fa-check-circle"></i></span> Compliance with AACUP Recommendations</button></div>';
-            }
-            if (selfsurveyId) {
-                html += '<div><button class="btn-neon btn-extra-neon btn-extra" data-type="selfsurvey" data-fileid="' +
-                    selfsurveyId + '"><span class="icon"><i class="fas fa-pen"></i></span> Self Survey</button></div>';
-            }
+            if (additionalId) html += '<div><button class="btn-neon btn-extra-neon btn-extra" data-type="additional" data-fileid="' + additionalId + '"><span class="icon"><i class="fas fa-paperclip"></i></span> Additional Needed Requirements</button></div>';
+            if (complianceId) html += '<div><button class="btn-neon btn-extra-neon btn-extra" data-type="compliance" data-fileid="' + complianceId + '"><span class="icon"><i class="fas fa-check-circle"></i></span> Compliance with AACUP Recommendations</button></div>';
+            if (selfsurveyId) html += '<div><button class="btn-neon btn-extra-neon btn-extra" data-type="selfsurvey" data-fileid="' + selfsurveyId + '"><span class="icon"><i class="fas fa-pen"></i></span> Self Survey</button></div>';
             html += '</div>';
-
             wrap.innerHTML = html;
             bindCrumbs(wrap, items, false);
             wrap.querySelector('[data-back]').addEventListener('click', function() { navigateTo('landing', {}); });
             wrap.querySelectorAll('.btn-param').forEach(function(b) {
-                b.addEventListener('click', function() {
-                    navigateTo('parameter', { area: area, param: b.dataset.param });
-                });
+                b.addEventListener('click', function() { navigateTo('parameter', { area: area, param: b.dataset.param }); });
             });
             wrap.querySelectorAll('.btn-extra').forEach(function(b) {
                 b.addEventListener('click', function() {
-                    var fileId = b.dataset.fileid;
-                    var type = b.dataset.type;
                     var nameMap = {
                         'additional': 'Additional Needed Requirements',
                         'compliance': 'Compliance with AACUP Recommendations',
                         'selfsurvey': 'Self Survey'
                     };
-                    var displayName = nameMap[type] || b.textContent.trim();
                     navigateTo('special', {
-                        specialType: type,
-                        specialFileId: fileId,
-                        specialFileName: displayName,
+                        specialType: b.dataset.type, specialFileId: b.dataset.fileid,
+                        specialFileName: nameMap[b.dataset.type] || b.textContent.trim(),
                         fromArea: area
                     });
                 });
@@ -5470,77 +4571,50 @@
             return wrap;
         }
 
-        // ---- PARAMETER ----
         function renderParameter() {
-            var area = state.area,
-                param = state.param;
-            var params = getParamsForProgram(PROGRAM_CODE, area);
-            var paramName = params[param] || 'Parameter ' + param;
+            var area = state.area, param = state.param;
+            var paramName = getParamsForProgram(PROGRAM_CODE, area)[param] || 'Parameter ' + param;
             var wrap = document.createElement('div');
             var items = [
                 { label: 'BSIT Home', go: function() { navigateTo('landing', {}); } },
                 { label: 'Area ' + area, go: function() { navigateTo('area', { area: area }); } },
-                { label: 'Parameter ' + param, go: function() { navigateTo('parameter', { area: area,
-                        param: param }); } }
+                { label: 'Parameter ' + param, go: function() { navigateTo('parameter', { area: area, param: param }); } }
             ];
             var html = crumbWithoutSearch(items);
-            html +=
-                '<div class="page-header-row"><button class="btn-back" data-back>← Back to Area ' + area +
-                '</button><h2>' + paramName + '</h2><span class="spacer"></span></div>';
+            html += '<div class="page-header-row"><button class="btn-back" data-back>← Back to Area ' + area + '</button><h2>' + paramName + '</h2><span class="spacer"></span></div>';
             html += '<div class="doc-grid">';
             for (var c = 0; c < CATEGORIES.length; c++) {
                 var cat = CATEGORIES[c];
                 html += '<div><button class="btn-neon btn-cat-neon btn-doc" data-cat="' + cat.key +
-                    '"><span class="icon"><i class="fas ' + cat.icon + '"></i></span><span class="label">' + cat
-                    .label + '</span></button></div>';
+                    '"><span class="icon"><i class="fas ' + cat.icon + '"></i></span><span class="label">' + cat.label + '</span></button></div>';
             }
             html += '</div>';
-
             html += '<div class="param-extra-grid">';
             var pppId = getExtraFileId('ppp', area, param);
-            if (pppId) {
-                html += '<div><button class="btn-neon btn-extra-neon btn-param-extra" data-type="ppp" data-fileid="' +
-                    pppId + '"><span class="icon"><i class="fas fa-chart-bar"></i></span> PPP</button></div>';
-            }
+            if (pppId) html += '<div><button class="btn-neon btn-extra-neon btn-param-extra" data-type="ppp" data-fileid="' + pppId + '"><span class="icon"><i class="fas fa-chart-bar"></i></span> PPP</button></div>';
             var bestId = getExtraFileId('bestpractices', area, param);
-            if (bestId) {
-                html += '<div><button class="btn-neon btn-extra-neon btn-param-extra" data-type="bestpractices" data-fileid="' +
-                    bestId + '"><span class="icon"><i class="fas fa-star"></i></span> Best Practice/s</button></div>';
-            }
+            if (bestId) html += '<div><button class="btn-neon btn-extra-neon btn-param-extra" data-type="bestpractices" data-fileid="' + bestId + '"><span class="icon"><i class="fas fa-star"></i></span> Best Practice/s</button></div>';
             html += '</div>';
-
             wrap.innerHTML = html;
             bindCrumbs(wrap, items, false);
             wrap.querySelector('[data-back]').addEventListener('click', function() { navigateTo('area', { area: area }); });
             wrap.querySelectorAll('.btn-doc').forEach(function(b) {
-                b.addEventListener('click', function() {
-                    navigateTo('category', { area: area, param: param, category: b.dataset.cat });
-                });
+                b.addEventListener('click', function() { navigateTo('category', { area: area, param: param, category: b.dataset.cat }); });
             });
             wrap.querySelectorAll('.btn-param-extra').forEach(function(b) {
                 b.addEventListener('click', function() {
-                    var fileId = b.dataset.fileid;
-                    var type = b.dataset.type;
-                    var displayName = (type === 'ppp') ? 'PPP (Program Performance Profile)' :
-                        'Best Practice/s';
+                    var displayName = (b.dataset.type === 'ppp') ? 'PPP (Program Performance Profile)' : 'Best Practice/s';
                     navigateTo('special', {
-                        specialType: type,
-                        specialFileId: fileId,
-                        specialFileName: displayName,
-                        fromArea: area,
-                        fromParam: param
+                        specialType: b.dataset.type, specialFileId: b.dataset.fileid,
+                        specialFileName: displayName, fromArea: area, fromParam: param
                     });
                 });
             });
             return wrap;
         }
 
-        // ---- CATEGORY ----
         function renderCategory() {
-            var area = state.area,
-                param = state.param,
-                category = state.category;
-            var params = getParamsForProgram(PROGRAM_CODE, area);
+            var area = state.area, param = state.param, category = state.category;
             var catInfo = CATEGORIES.find(function(c) { return c.key === category; });
             var files = getDocumentFiles(PROGRAM_CODE, area, param, category);
             var tree = buildHierarchy(files);
@@ -5552,69 +4626,58 @@
                 for (var cc = 0; cc < currentNode.children.length; cc++) {
                     if (currentNode.children[cc].code === code) { child = currentNode.children[cc]; break; }
                 }
-                if (!child) { state.currentPath = [];
-                    currentNode = { children: tree }; break; }
+                if (!child) { state.currentPath = []; currentNode = { children: tree }; break; }
                 currentNode = child;
             }
             var displayNodes = currentNode.children || [];
-
             var pathLabels = [];
             var temp = { children: tree };
             for (var lp = 0; lp < state.currentPath.length; lp++) {
-                var cCode = state.currentPath[lp];
                 var found = null;
                 for (var fc = 0; fc < temp.children.length; fc++) {
-                    if (temp.children[fc].code === cCode) { found = temp.children[fc]; break; }
+                    if (temp.children[fc].code === state.currentPath[lp]) { found = temp.children[fc]; break; }
                 }
                 if (!found) break;
                 pathLabels.push({ code: found.code, name: found.name });
                 temp = found;
             }
-
             var wrap = document.createElement('div');
             var items = [
                 { label: 'BSIT Home', go: function() { navigateTo('landing', {}); } },
                 { label: 'Area ' + area, go: function() { navigateTo('area', { area: area }); } },
-                { label: 'Parameter ' + param, go: function() { navigateTo('parameter', { area: area,
-                        param: param }); } },
-                { label: catInfo ? catInfo.label : category, go: function() { navigateTo('category', { area: area,
-                        param: param, category: category }); } }
+                { label: 'Parameter ' + param, go: function() { navigateTo('parameter', { area: area, param: param }); } },
+                { label: catInfo ? catInfo.label : category, go: function() { navigateTo('category', { area: area, param: param, category: category }); } }
             ];
             for (var pl = 0; pl < pathLabels.length; pl++) {
                 (function(idx) {
                     var p = pathLabels[idx];
                     var pathUpTo = state.currentPath.slice(0, idx + 1);
-                    items.push({ label: p.code, go: function() { navigateTo('category', { area: area,
-                                param: param, category: category, currentPath: pathUpTo }); } });
+                    items.push({ label: p.code, go: function() { navigateTo('category', { area: area, param: param, category: category, currentPath: pathUpTo }); } });
                 })(pl);
             }
             var html = crumbWithoutSearch(items);
             var backTarget, backLabel;
             if (state.currentPath && state.currentPath.length > 0) {
                 var parentPath = state.currentPath.slice(0, -1);
-                backTarget = function() { navigateTo('category', { area: area, param: param, category: category,
-                        currentPath: parentPath }); };
+                backTarget = function() { navigateTo('category', { area: area, param: param, category: category, currentPath: parentPath }); };
                 backLabel = '← Back';
             } else {
                 backTarget = function() { navigateTo('parameter', { area: area, param: param }); };
                 backLabel = '← Back to Parameter';
             }
             html += '<div class="page-header-row"><button class="btn-back" data-back>' + backLabel +
-                '</button><h2>' + (catInfo ? catInfo.label : category) +
-                '</h2><span class="spacer"></span></div>';
+                '</button><h2>' + (catInfo ? catInfo.label : category) + '</h2><span class="spacer"></span></div>';
             if (displayNodes.length === 0) {
-                html +=
-                    '<div class="empty-state"><div class="icon"><i class="fas fa-folder-open"></i></div><h3>No items in this level</h3><p>This folder is empty.</p></div>';
+                html += '<div class="empty-state"><div class="icon"><i class="fas fa-folder-open"></i></div><h3>No items in this level</h3><p>This folder is empty.</p></div>';
             } else {
                 html += '<div class="hierarchy-grid">';
                 for (var dn = 0; dn < displayNodes.length; dn++) {
                     var node = displayNodes[dn];
                     var isLeaf = node.children.length === 0;
-                    var icon = isLeaf ? 'fa-file' : 'fa-folder';
                     var dataAttr = isLeaf ? 'data-index="' + node.index + '"' : 'data-code="' + node.code + '"';
                     html += '<div><button class="btn-neon btn-doc-neon btn-file" ' + dataAttr +
-                        '><span class="file-icon"><i class="fas ' + icon + '"></i></span><span class="file-name">' +
-                        node.name +
+                        '><span class="file-icon"><i class="fas ' + (isLeaf ? 'fa-file' : 'fa-folder') +
+                        '"></i></span><span class="file-name">' + node.name +
                         '</span><span class="arrow"><i class="fas fa-chevron-right"></i></span></button></div>';
                 }
                 html += '</div>';
@@ -5624,170 +4687,100 @@
             wrap.querySelector('[data-back]').addEventListener('click', backTarget);
             wrap.querySelectorAll('.btn-file').forEach(function(btn) {
                 btn.addEventListener('click', function() {
-                    var index = this.dataset.index;
-                    if (index !== undefined) {
-                        navigateTo('document', { area: area, param: param, category: category,
-                            fileIndex: parseInt(index) });
-                    } else {
-                        var code2 = this.dataset.code;
-                        if (code2) {
-                            var newPath = state.currentPath.concat([code2]);
-                            navigateTo('category', { area: area, param: param, category: category,
-                                currentPath: newPath });
-                        }
+                    if (this.dataset.index !== undefined) {
+                        navigateTo('document', { area: area, param: param, category: category, fileIndex: parseInt(this.dataset.index) });
+                    } else if (this.dataset.code) {
+                        var newPath = state.currentPath.concat([this.dataset.code]);
+                        navigateTo('category', { area: area, param: param, category: category, currentPath: newPath });
                     }
                 });
             });
             return wrap;
         }
 
-        // ---- DOCUMENT ----
         function renderDocument() {
-            var area = state.area,
-                param = state.param,
-                category = state.category,
-                fileIndex = state.fileIndex;
-            var params = getParamsForProgram(PROGRAM_CODE, area);
+            var area = state.area, param = state.param, category = state.category, fileIndex = state.fileIndex;
             var catInfo = CATEGORIES.find(function(c) { return c.key === category; });
-            var files = getDocumentFiles(PROGRAM_CODE, area, param, category);
-            var file = files[fileIndex];
-
+            var file = getDocumentFiles(PROGRAM_CODE, area, param, category)[fileIndex];
             var wrap = document.createElement('div');
             var items = [
                 { label: 'BSIT Home', go: function() { navigateTo('landing', {}); } },
                 { label: 'Area ' + area, go: function() { navigateTo('area', { area: area }); } },
-                { label: 'Parameter ' + param, go: function() { navigateTo('parameter', { area: area,
-                        param: param }); } },
-                { label: catInfo ? catInfo.label : category, go: function() { navigateTo('category', { area: area,
-                        param: param, category: category, currentPath: state.currentPath || [] }); } }
+                { label: 'Parameter ' + param, go: function() { navigateTo('parameter', { area: area, param: param }); } },
+                { label: catInfo ? catInfo.label : category, go: function() { navigateTo('category', { area: area, param: param, category: category, currentPath: state.currentPath || [] }); } }
             ];
-            var filesForCat = getDocumentFiles(PROGRAM_CODE, area, param, category);
-            var tree2 = buildHierarchy(filesForCat);
-            var pathLabels2 = [];
-            var temp2 = { children: tree2 };
+            var temp2 = { children: buildHierarchy(getDocumentFiles(PROGRAM_CODE, area, param, category)) };
             for (var lp2 = 0; lp2 < (state.currentPath || []).length; lp2++) {
-                var cCode2 = state.currentPath[lp2];
                 var found2 = null;
                 for (var fc2 = 0; fc2 < temp2.children.length; fc2++) {
-                    if (temp2.children[fc2].code === cCode2) { found2 = temp2.children[fc2]; break; }
+                    if (temp2.children[fc2].code === state.currentPath[lp2]) { found2 = temp2.children[fc2]; break; }
                 }
                 if (!found2) break;
-                pathLabels2.push({ code: found2.code, name: found2.name });
+                (function(idx) {
+                    var pathUpTo2 = (state.currentPath || []).slice(0, idx + 1);
+                    items.push({ label: found2.code, go: function() { navigateTo('category', { area: area, param: param, category: category, currentPath: pathUpTo2 }); } });
+                })(lp2);
                 temp2 = found2;
             }
-            for (var pl2 = 0; pl2 < pathLabels2.length; pl2++) {
-                (function(idx) {
-                    var p2 = pathLabels2[idx];
-                    var pathUpTo2 = (state.currentPath || []).slice(0, idx + 1);
-                    items.push({ label: p2.code, go: function() { navigateTo('category', { area: area,
-                                param: param, category: category, currentPath: pathUpTo2 }); } });
-                })(pl2);
-            }
-
             var html = crumbWithoutSearch(items);
             if (!file) {
-                html +=
-                    '<div class="page-header-row"><button class="btn-back" data-back>← Back to files</button><h2>File not found</h2><span class="spacer"></span></div><div class="empty-state"><div class="icon"><i class="fas fa-exclamation-circle"></i></div><p>The requested document could not be found.</p></div>';
+                html += '<div class="page-header-row"><button class="btn-back" data-back>← Back to files</button><h2>File not found</h2><span class="spacer"></span></div><div class="empty-state"><div class="icon"><i class="fas fa-exclamation-circle"></i></div><p>The requested document could not be found.</p></div>';
                 wrap.innerHTML = html;
                 bindCrumbs(wrap, items, false);
-                wrap.querySelector('[data-back]').addEventListener('click', function() { navigateTo('category', {
-                        area: area,
-                        param: param,
-                        category: category,
-                        currentPath: state.currentPath || []
-                    }); });
+                wrap.querySelector('[data-back]').addEventListener('click', function() {
+                    navigateTo('category', { area: area, param: param, category: category, currentPath: state.currentPath || [] });
+                });
                 return wrap;
             }
-
             var previewLink = getDriveLink(file.id);
             var openLink = getDriveOpenLink(file.id);
-            html += '<div class="page-header-row"><button class="btn-back" data-back>← Back to files</button><h2>' +
-                file.name + '</h2><span class="spacer"></span></div>';
+            html += '<div class="page-header-row"><button class="btn-back" data-back>← Back to files</button><h2>' + file.name + '</h2><span class="spacer"></span></div>';
             if (previewLink) {
-                html += '<div class="pdf-container"><iframe src="' + previewLink +
-                    '" allow="autoplay" title="' + file.name +
-                    '"></iframe></div><div class="doc-actions"><a class="btn-open" href="' + openLink +
-                    '" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> Open in new tab</a></div>';
+                html += '<div class="pdf-container"><iframe src="' + previewLink + '" allow="autoplay" title="' + file.name + '"></iframe></div><div class="doc-actions"><a class="btn-open" href="' + openLink + '" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> Open in new tab</a></div>';
             } else {
                 var isSample = file.id && file.id.indexOf('SAMPLE_') === 0;
-                var msg = isSample ?
-                    'This is a sample document placeholder. Please replace the file ID with an actual Google Drive file ID.' :
-                    'No Google Drive file has been assigned to this document yet.';
-                html += '<div class="empty-state"><div class="icon"><i class="fas fa-file-pdf"></i></div><h3>' + (
-                    isSample ? 'Sample Document' :
-                    'Document not yet linked') + '</h3><p>' + msg +
-                    '</p><p style="font-size:.8rem;color:var(--tech-text-muted);margin-top:8px;">File ID: ' + file
-                    .id +
-                    '</p></div>';
+                var msg = isSample ? 'This is a sample document placeholder. Please replace the file ID with an actual Google Drive file ID.' : 'No Google Drive file has been assigned to this document yet.';
+                html += '<div class="empty-state"><div class="icon"><i class="fas fa-file-pdf"></i></div><h3>' + (isSample ? 'Sample Document' : 'Document not yet linked') + '</h3><p>' + msg + '</p><p style="font-size:.8rem;color:var(--tech-text-muted);margin-top:8px;">File ID: ' + file.id + '</p></div>';
             }
             wrap.innerHTML = html;
             bindCrumbs(wrap, items, false);
-            wrap.querySelector('[data-back]').addEventListener('click', function() { navigateTo('category', { area: area,
-                    param: param, category: category, currentPath: state.currentPath || [] }); });
+            wrap.querySelector('[data-back]').addEventListener('click', function() {
+                navigateTo('category', { area: area, param: param, category: category, currentPath: state.currentPath || [] });
+            });
             return wrap;
         }
 
-        // ---- SPECIAL DOCUMENT ----
         function renderSpecialDocument() {
             var fileId = state.specialFileId;
             var fileName = state.specialFileName || 'Document';
-            var specialType = state.specialType;
             var fromArea = state.fromArea || null;
             var fromParam = state.fromParam || null;
-
             var wrap = document.createElement('div');
-            var items = [];
-            items.push({ label: 'BSIT Home', go: function() { navigateTo('landing', {}); } });
+            var items = [{ label: 'BSIT Home', go: function() { navigateTo('landing', {}); } }];
             if (fromArea) {
-                var areaName = getAreaNameForProgram(PROGRAM_CODE, fromArea);
                 items.push({ label: 'Area ' + fromArea, go: function() { navigateTo('area', { area: fromArea }); } });
                 if (fromParam) {
-                    var params = getParamsForProgram(PROGRAM_CODE, fromArea);
-                    var paramName = params[fromParam] || 'Parameter ' + fromParam;
-                    items.push({ label: paramName, go: function() { navigateTo('parameter', { area: fromArea,
-                            param: fromParam }); } });
+                    var paramName = getParamsForProgram(PROGRAM_CODE, fromArea)[fromParam] || 'Parameter ' + fromParam;
+                    items.push({ label: paramName, go: function() { navigateTo('parameter', { area: fromArea, param: fromParam }); } });
                 }
             }
-            items.push({ label: fileName, go: function() { /* same page */ } });
-
+            items.push({ label: fileName, go: function() {} });
             var html = crumbWithoutSearch(items);
-            var backTarget;
-            var backLabel = '← Back';
+            var backTarget, backLabel = '← Back';
             if (fromArea) {
-                if (fromParam) {
-                    backTarget = function() { navigateTo('parameter', { area: fromArea, param: fromParam }); };
-                    backLabel = '← Back to Parameter';
-                } else {
-                    backTarget = function() { navigateTo('area', { area: fromArea }); };
-                    backLabel = '← Back to Area ' + fromArea;
-                }
-            } else {
-                backTarget = function() { navigateTo('landing', {}); };
-                backLabel = '← Back to Home';
-            }
-
-            html += '<div class="page-header-row"><button class="btn-back" data-back>' + backLabel +
-                '</button><h2>' + fileName + '</h2><span class="spacer"></span></div>';
-
+                if (fromParam) { backTarget = function() { navigateTo('parameter', { area: fromArea, param: fromParam }); }; backLabel = '← Back to Parameter'; }
+                else { backTarget = function() { navigateTo('area', { area: fromArea }); }; backLabel = '← Back to Area ' + fromArea; }
+            } else { backTarget = function() { navigateTo('landing', {}); }; backLabel = '← Back to Home'; }
+            html += '<div class="page-header-row"><button class="btn-back" data-back>' + backLabel + '</button><h2>' + fileName + '</h2><span class="spacer"></span></div>';
             var previewLink = getDriveLink(fileId);
             var openLink = getDriveOpenLink(fileId);
             if (previewLink) {
-                html += '<div class="pdf-container"><iframe src="' + previewLink +
-                    '" allow="autoplay" title="' + fileName +
-                    '"></iframe></div><div class="doc-actions"><a class="btn-open" href="' + openLink +
-                    '" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> Open in new tab</a></div>';
+                html += '<div class="pdf-container"><iframe src="' + previewLink + '" allow="autoplay" title="' + fileName + '"></iframe></div><div class="doc-actions"><a class="btn-open" href="' + openLink + '" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> Open in new tab</a></div>';
             } else {
                 var isSample = fileId && fileId.indexOf('SAMPLE_') === 0;
-                var msg = isSample ?
-                    'This is a sample document placeholder. Please replace the file ID with an actual Google Drive file ID.' :
-                    'No Google Drive file has been assigned to this document yet.';
-                html += '<div class="empty-state"><div class="icon"><i class="fas fa-file-pdf"></i></div><h3>' + (
-                    isSample ? 'Sample Document' :
-                    'Document not yet linked') + '</h3><p>' + msg +
-                    '</p><p style="font-size:.8rem;color:var(--tech-text-muted);margin-top:8px;">File ID: ' +
-                    fileId + '</p></div>';
+                var msg = isSample ? 'This is a sample document placeholder. Please replace the file ID with an actual Google Drive file ID.' : 'No Google Drive file has been assigned to this document yet.';
+                html += '<div class="empty-state"><div class="icon"><i class="fas fa-file-pdf"></i></div><h3>' + (isSample ? 'Sample Document' : 'Document not yet linked') + '</h3><p>' + msg + '</p><p style="font-size:.8rem;color:var(--tech-text-muted);margin-top:8px;">File ID: ' + fileId + '</p></div>';
             }
-
             wrap.innerHTML = html;
             bindCrumbs(wrap, items, false);
             wrap.querySelector('[data-back]').addEventListener('click', backTarget);
@@ -5795,8 +4788,231 @@
         }
 
         // ============================================================
-        // INIT
+        // PREDICTIVE SEARCH — Areas, Parameters, and Indicators
+        // Design matches BSIT violet/purple neon tech theme
         // ============================================================
+        var SEARCH_INDEX = [];
+        var currentSuggestions = [];
+
+        function buildSearchIndex() {
+            SEARCH_INDEX = [];
+            var areaKeys = Object.keys(AREAS_FULL);
+            for (var i = 0; i < areaKeys.length; i++) {
+                var areaNum = areaKeys[i];
+                var areaName = getAreaNameForProgram(PROGRAM_CODE, areaNum);
+
+                // Area entry
+                SEARCH_INDEX.push({
+                    type: 'area',
+                    area: areaNum,
+                    param: null,
+                    title: 'Area ' + areaNum + ' — ' + areaName,
+                    subtitle: 'Area',
+                    icon: 'fa-layer-group'
+                });
+
+                // Parameter entries
+                var params = getParamsForProgram(PROGRAM_CODE, areaNum);
+                var paramKeys = Object.keys(params);
+                for (var j = 0; j < paramKeys.length; j++) {
+                    var pCode = paramKeys[j];
+                    SEARCH_INDEX.push({
+                        type: 'parameter',
+                        area: areaNum,
+                        param: pCode,
+                        title: 'Parameter ' + pCode + ' — ' + params[pCode],
+                        subtitle: 'Area ' + areaNum + ' · ' + areaName,
+                        icon: 'fa-list-check'
+                    });
+                }
+            }
+
+            // Indicator entries — galing sa DOCUMENT_FILES
+            var docKeys = Object.keys(DOCUMENT_FILES);
+            for (var k = 0; k < docKeys.length; k++) {
+                var key = docKeys[k];
+                var keyParts = key.split('-');
+                if (keyParts.length !== 4) continue;
+
+                var dArea = keyParts[1];
+                var dParam = keyParts[2];
+                var dCat = keyParts[3];
+
+                var dCatInfo = CATEGORIES.find(function(c) { return c.key === dCat; });
+                var dCatLabel = dCatInfo ? dCatInfo.label : dCat;
+
+                var docs = DOCUMENT_FILES[key];
+                for (var d = 0; d < docs.length; d++) {
+                    SEARCH_INDEX.push({
+                        type: 'document',
+                        area: dArea,
+                        param: dParam,
+                        category: dCat,
+                        fileIndex: d,
+                        title: docs[d].name,
+                        subtitle: 'A' + dArea + ' · P' + dParam + ' · ' + dCatLabel,
+                        icon: 'fa-file-lines'
+                    });
+                }
+            }
+        }
+
+        function filterSearchIndex(query) {
+            var q = query.trim().toLowerCase();
+            if (!q) return [];
+            var tokens = q.split(/\s+/);
+            var results = [];
+            SEARCH_INDEX.forEach(function(item, order) {
+                var title = item.title.toLowerCase();
+                var hay = title + ' ' + item.subtitle.toLowerCase();
+                var matchesAll = tokens.every(function(t) { return hay.indexOf(t) !== -1; });
+                if (!matchesAll) return;
+                var score = title.indexOf(q) === 0 ? 0 : (title.indexOf(q) !== -1 ? 1 : 2);
+                results.push({ item: item, score: score, order: order });
+            });
+            results.sort(function(a, b) { return a.score - b.score || a.order - b.order; });
+            return results.slice(0, 12).map(function(r) { return r.item; });
+        }
+
+        function escapeHtmlText(s) {
+            return String(s).replace(/[&<>"']/g, function(c) {
+                return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+            });
+        }
+        function escapeRegExpStr(s) {
+            return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        }
+        function highlightSearchMatch(text, query) {
+            var safe = escapeHtmlText(text);
+            var q = (query || '').trim();
+            if (!q) return safe;
+            var tokens = q.split(/\s+/).filter(Boolean).map(escapeRegExpStr);
+            if (!tokens.length) return safe;
+            var re = new RegExp('(' + tokens.join('|') + ')', 'ig');
+            return safe.replace(re, '<mark>$1</mark>');
+        }
+
+        function renderSearchSuggestions(dropdown, results, query) {
+            if (!results.length) {
+                dropdown.innerHTML = '<div class="no-results"><i class="fas fa-search"></i>Walang tugmang area, parameter, o indicator</div>';
+                return;
+            }
+            var html = '<div class="s-header">// Suggestions (' + results.length + ')</div>';
+            for (var i = 0; i < results.length; i++) {
+                var item = results[i];
+                html += '<button type="button" class="search-suggestion-item" role="option" data-index="' + i + '" data-type="' + item.type + '">';
+                html += '  <span class="s-icon"><i class="fas ' + item.icon + '"></i></span>';
+                html += '  <span class="s-text">';
+                html += '    <span class="s-title">'    + highlightSearchMatch(item.title, query)    + '</span>';
+                html += '    <span class="s-subtitle">' + highlightSearchMatch(item.subtitle, query) + '</span>';
+                html += '  </span>';
+                html += '  <i class="fas fa-arrow-right s-go"></i>';
+                html += '</button>';
+            }
+            dropdown.innerHTML = html;
+        }
+
+        function closeSearchSuggestions() {
+            var dropdown = document.getElementById('searchSuggestions');
+            var input = document.getElementById('globalSearch');
+            if (dropdown) { dropdown.classList.remove('is-open'); dropdown.innerHTML = ''; }
+            if (input) input.setAttribute('aria-expanded', 'false');
+            currentSuggestions = [];
+        }
+
+        function handlePredictiveInput(input) {
+            var dropdown = document.getElementById('searchSuggestions');
+            if (!dropdown || !input) return;
+            var query = input.value;
+            if (!query.trim()) { closeSearchSuggestions(); return; }
+            currentSuggestions = filterSearchIndex(query);
+            renderSearchSuggestions(dropdown, currentSuggestions, query);
+            dropdown.classList.add('is-open');
+            input.setAttribute('aria-expanded', 'true');
+        }
+
+        function setActiveSuggestion(items, index) {
+            for (var i = 0; i < items.length; i++) items[i].classList.toggle('is-active', i === index);
+            if (items[index] && items[index].scrollIntoView) items[index].scrollIntoView({ block: 'nearest' });
+        }
+
+        function goToSuggestion(entry) {
+            if (!entry) return;
+            if (entry.type === 'area') {
+                navigateTo('area', { area: entry.area });
+            } else if (entry.type === 'parameter') {
+                navigateTo('parameter', { area: entry.area, param: entry.param });
+            } else if (entry.type === 'document') {
+                navigateTo('document', {
+                    area: entry.area,
+                    param: entry.param,
+                    category: entry.category,
+                    fileIndex: entry.fileIndex,
+                    currentPath: []
+                });
+            }
+            closeSearchSuggestions();
+        }
+
+        document.addEventListener('input', function(e) {
+            if (e.target && e.target.id === 'globalSearch') handlePredictiveInput(e.target);
+        });
+
+        document.addEventListener('focusin', function(e) {
+            if (e.target && e.target.id === 'globalSearch' && e.target.value.trim()) {
+                handlePredictiveInput(e.target);
+            }
+        });
+
+        document.addEventListener('keydown', function(e) {
+            if (!e.target || e.target.id !== 'globalSearch') return;
+            var dropdown = document.getElementById('searchSuggestions');
+            if (!dropdown || !dropdown.classList.contains('is-open')) return;
+            var items = dropdown.querySelectorAll('.search-suggestion-item');
+            if (!items.length) return;
+            var active = dropdown.querySelector('.search-suggestion-item.is-active');
+            var activeIndex = active ? Array.prototype.indexOf.call(items, active) : -1;
+
+            if (e.key === 'ArrowDown') {
+                e.preventDefault();
+                setActiveSuggestion(items, (activeIndex + 1) % items.length);
+            } else if (e.key === 'ArrowUp') {
+                e.preventDefault();
+                setActiveSuggestion(items, activeIndex <= 0 ? items.length - 1 : activeIndex - 1);
+            } else if (e.key === 'Enter') {
+                e.preventDefault();
+                if (activeIndex >= 0) goToSuggestion(currentSuggestions[activeIndex]);
+                else if (currentSuggestions.length) goToSuggestion(currentSuggestions[0]);
+            } else if (e.key === 'Escape') {
+                closeSearchSuggestions();
+                e.target.blur();
+            }
+        });
+
+        document.addEventListener('click', function(e) {
+            if (!e.target.closest) return;
+
+            if (e.target.closest('#clearSearch')) {
+                closeSearchSuggestions();
+                return;
+            }
+
+            var clickedSuggestion = e.target.closest('.search-suggestion-item');
+            if (clickedSuggestion) {
+                e.preventDefault();
+                var idx = Number(clickedSuggestion.dataset.index);
+                goToSuggestion(currentSuggestions[idx]);
+                return;
+            }
+
+            if (!e.target.closest('.search-container')) {
+                closeSearchSuggestions();
+            }
+        });
+
+        // Build agad (static data)
+        buildSearchIndex();
+
         function init() {
             var parsed = parseHash();
             state = Object.assign({}, state, parsed, { currentPath: [] });
@@ -5815,20 +5031,12 @@
                 var paramKey = state.fromParam || null;
 
                 if (type === 'additional' || type === 'compliance' || type === 'selfsurvey') {
-                    if (areaKey) {
-                        fileId = getExtraFileId(type, areaKey);
-                    }
+                    if (areaKey) fileId = getExtraFileId(type, areaKey);
                 } else if (type === 'ppp' || type === 'bestpractices') {
-                    if (areaKey && paramKey) {
-                        fileId = getExtraFileId(type, areaKey, paramKey);
-                    }
+                    if (areaKey && paramKey) fileId = getExtraFileId(type, areaKey, paramKey);
                 }
 
-                if (!fileId) {
-                    navigateTo('landing', {});
-                    return;
-                }
-
+                if (!fileId) { navigateTo('landing', {}); return; }
                 state.specialFileId = fileId;
                 state.specialFileName = nameMap[type] || type;
             }
@@ -5837,9 +5045,9 @@
         }
         window.addEventListener('DOMContentLoaded', init);
 
-  if (window.location.pathname.endsWith('.html')) {
-    window.location.href = window.location.pathname.replace('.html', '');
-  }
+        if (window.location.pathname.endsWith('.html')) {
+            window.location.href = window.location.pathname.replace('.html', '');
+        }
     </script>
 </body>
 </html>
